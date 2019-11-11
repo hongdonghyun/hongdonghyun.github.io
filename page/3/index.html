@@ -51,32 +51,31 @@
   };
 </script>
 
-  <meta name="description" content="Swift 기초  Playground 실행 단축키 shift + enter :선택 줄 까지 실행 shift + command + enter : 전체 실행  주석(comment) 123&#x2F;*내용*&#x2F;  여러줄 주석  &#x2F;&#x2F;  한줄주석  command + &#x2F;   &#x2F;&#x2F;&#x2F;  한줄주석 + Quick help markup  command + option + &#x2F;    세미">
-<meta name="keywords" content="정리">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Swift 기초">
-<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9&#x2F;index.html">
+  <meta name="description" content="개발을 잘하고 싶읍니다">
+<meta name="keywords" content="python,swift,hexo,django,flask,aws">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hong3의 개발블로그">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;page&#x2F;3&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
-<meta property="og:description" content="Swift 기초  Playground 실행 단축키 shift + enter :선택 줄 까지 실행 shift + command + enter : 전체 실행  주석(comment) 123&#x2F;*내용*&#x2F;  여러줄 주석  &#x2F;&#x2F;  한줄주석  command + &#x2F;   &#x2F;&#x2F;&#x2F;  한줄주석 + Quick help markup  command + option + &#x2F;    세미">
+<meta property="og:description" content="개발을 잘하고 싶읍니다">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-11-11T11:47:18.318Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://hongdonghyun.github.io/2019/11/Swift%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9/">
+<link rel="canonical" href="http://hongdonghyun.github.io/page/3/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true,
+    isHome: true,
+    isPost: false,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Swift 기초 | Hong3의 개발블로그</title>
+  <title>Hong3의 개발블로그</title>
   
 
 
@@ -187,10 +186,10 @@
             
 
   <div class="posts-expand">
-      
+        
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -204,7 +203,8 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Swift 기초
+          
+            <a href="/2019/11/Swift%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9/" class="post-title-link" itemprop="url">Swift 기초</a>
         </h1>
 
         <div class="post-meta">
@@ -260,7 +260,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="swift-기초"><a class="markdownIt-Anchor" href="#swift-기초"></a> Swift 기초</h1>
+          <h1 id="swift-기초"><a class="markdownIt-Anchor" href="#swift-기초"></a> Swift 기초</h1>
 <h3 id="playground-실행-단축키"><a class="markdownIt-Anchor" href="#playground-실행-단축키"></a> Playground 실행 단축키</h3>
 <p>shift + enter :선택 줄 까지 실행<br />
 shift + command + enter : 전체 실행</p>
@@ -367,33 +367,15 @@ Float 4Byte</p>
 <h2 id="logical-operators"><a class="markdownIt-Anchor" href="#logical-operators"></a> Logical Operators</h2>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">returnTrue</span><span class="params">()</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"function called"</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 아래 3개의 케이스에서 returnTrue 메서드는 각각 몇 번씩 호출될까?</span></span><br><span class="line"><span class="comment">// 우선순위 : &amp;&amp; &gt; ||</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\n---------- [ Case 1 ] ----------\n"</span>)</span><br><span class="line">returnTrue() &amp;&amp; returnTrue() &amp;&amp; <span class="literal">false</span> || <span class="literal">true</span> &amp;&amp; returnTrue()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\n---------- [ Case 2 ] ----------\n"</span>)</span><br><span class="line">returnTrue() &amp;&amp; <span class="literal">false</span> &amp;&amp; returnTrue() || returnTrue()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\n---------- [ Case 3 ] ----------\n"</span>)</span><br><span class="line">returnTrue() || returnTrue() &amp;&amp; returnTrue() || <span class="literal">false</span> &amp;&amp; returnTrue()</span><br></pre></td></tr></table></figure>
 
+      
     </div>
 
     
     
     
-
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%EC%A0%95%EB%A6%AC/" rel="tag"># 정리</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-            </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/Swift%20%E1%84%92%E1%85%A1%E1%86%B7%E1%84%89%E1%85%AE,%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A5%E1%86%AB,%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A9%E1%86%A8%E1%84%86%E1%85%AE%E1%86%AB/" rel="prev" title="Swift 함수,조건,반복문">
-                  Swift 함수,조건,반복문 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
+        <div class="post-eof"></div>
       </footer>
-    
   </article>
   
   
@@ -401,16 +383,15 @@ Float 4Byte</p>
 
   </div>
 
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+
 
           </div>
           
-    
-  <div class="comments" id="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
 
         </div>
           
@@ -435,7 +416,6 @@ Float 4Byte</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#swift-기초"><span class="nav-number">1.</span> <span class="nav-text"> Swift 기초</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#playground-실행-단축키"><span class="nav-number">1.0.1.</span> <span class="nav-text"> Playground 실행 단축키</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#주석comment"><span class="nav-number">1.1.</span> <span class="nav-text"> 주석(comment)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#세미콜론"><span class="nav-number">1.2.</span> <span class="nav-text"> 세미콜론</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#var-vs-let"><span class="nav-number">1.3.</span> <span class="nav-text"> var vs let</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#변수네이밍"><span class="nav-number">1.4.</span> <span class="nav-text"> 변수네이밍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#사용할-수-없는-네이밍"><span class="nav-number">1.4.1.</span> <span class="nav-text"> 사용할 수 없는 네이밍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#type-annotation"><span class="nav-number">1.5.</span> <span class="nav-text"> Type Annotation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#type-inference"><span class="nav-number">1.6.</span> <span class="nav-text"> Type Inference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#literals-type"><span class="nav-number">1.7.</span> <span class="nav-text"> Literals &amp; Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#integer"><span class="nav-number">1.8.</span> <span class="nav-text"> Integer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#floating-point-literal"><span class="nav-number">1.9.</span> <span class="nav-text"> Floating-point Literal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#boolean-literal"><span class="nav-number">1.10.</span> <span class="nav-text"> Boolean Literal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-literal"><span class="nav-number">1.11.</span> <span class="nav-text"> String Literal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#character-literal"><span class="nav-number">1.12.</span> <span class="nav-text"> Character Literal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typealias"><span class="nav-number">1.13.</span> <span class="nav-text"> Typealias</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#type-conversion"><span class="nav-number">1.14.</span> <span class="nav-text"> Type Conversion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#logical-operators"><span class="nav-number">1.15.</span> <span class="nav-text"> Logical Operators</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -562,27 +542,6 @@ Float 4Byte</p>
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  function loadComments() {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: {page: {
-            url: "http://hongdonghyun.github.io/2019/11/Swift%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9/",
-            identifier: "2019/11/Swift 기초/",
-            title: "Swift 기초"
-          }
-        }
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://hong3.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  }
-    window.addEventListener('load', loadComments, false);
 </script>
 
 </body>
