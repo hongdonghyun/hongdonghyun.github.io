@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Hong3의 개발블로그" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '복사',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="컴퓨터 일반  Int16이 표현할 수 있는 숫자의 범위는? -32768 ~ 32767  2^15 ~ 2^15-1   프로그램 vs 프로세스 차이점은? 프로그램 : 어떤 작업을. 위해 실행할 수. 있는 파일 프로세스 : 프로그램을 실행시키는 주체  메모리에는 크게 4가지 부분으로 나누어 저장되는 데 그 이름과 특성    CODE     DATA   HEAP">
+<meta name="keywords" content="python,swift,hexo,django,flask,aws">
+<meta property="og:type" content="article">
+<meta property="og:title" content="사전테스트 풀이">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;%E1%84%80%E1%85%AA%E1%84%8C%E1%85%A6-%E1%84%89%E1%85%A1%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3&#x2F;index.html">
+<meta property="og:site_name" content="Hong3의 개발블로그">
+<meta property="og:description" content="컴퓨터 일반  Int16이 표현할 수 있는 숫자의 범위는? -32768 ~ 32767  2^15 ~ 2^15-1   프로그램 vs 프로세스 차이점은? 프로그램 : 어떤 작업을. 위해 실행할 수. 있는 파일 프로세스 : 프로그램을 실행시키는 주체  메모리에는 크게 4가지 부분으로 나누어 저장되는 데 그 이름과 특성    CODE     DATA   HEAP">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-11-09T11:41:23.538Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://hongdonghyun.github.io/2019/11/%E1%84%80%E1%85%AA%E1%84%8C%E1%85%A6-%E1%84%89%E1%85%A1%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>사전테스트 풀이 | Hong3의 개발블로그</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hong3의 개발블로그</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">- dev hong3</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>태그</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%E1%84%80%E1%85%AA%E1%84%8C%E1%85%A6-%E1%84%89%E1%85%A1%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          사전테스트 풀이
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-07 18:00:00" itemprop="dateCreated datePublished" datetime="2019-11-07T18:00:00+09:00">2019-11-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-09 20:41:23" itemprop="dateModified" datetime="2019-11-09T20:41:23+09:00">2019-11-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">과제</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="컴퓨터-일반"><a class="markdownIt-Anchor" href="#컴퓨터-일반"></a> 컴퓨터 일반</h2>
+<h4 id="int16이-표현할-수-있는-숫자의-범위는"><a class="markdownIt-Anchor" href="#int16이-표현할-수-있는-숫자의-범위는"></a> Int16이 표현할 수 있는 숫자의 범위는?</h4>
+<p><strong>-32768 ~ 32767</strong></p>
+<blockquote>
+<p>2^15 ~ 2^15-1</p>
+</blockquote>
+<h4 id="프로그램-vs-프로세스-차이점은"><a class="markdownIt-Anchor" href="#프로그램-vs-프로세스-차이점은"></a> 프로그램 vs 프로세스 차이점은?</h4>
+<p><strong>프로그램 : 어떤 작업을. 위해 실행할 수. 있는 파일</strong></p>
+<p><strong>프로세스 : 프로그램을 실행시키는 주체</strong></p>
+<h4 id="메모리에는-크게-4가지-부분으로-나누어-저장되는-데-그-이름과-특성"><a class="markdownIt-Anchor" href="#메모리에는-크게-4가지-부분으로-나누어-저장되는-데-그-이름과-특성"></a> 메모리에는 크게 4가지 부분으로 나누어 저장되는 데 그 이름과 특성</h4>
+<table>
+<thead>
+<tr>
+<th>CODE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATA</td>
+</tr>
+<tr>
+<td>HEAP</td>
+</tr>
+<tr>
+<td>STACK</td>
+</tr>
+</tbody>
+</table>
+<p>CODE(프로그램 명령이 위치하는곳): 함수 제어문,상수의 영역</p>
+<p>DATA: 전역,정적변수, 배열,구조체등이 저장됨<br />
+프로그램이 실행 될 때 생성되고 프로그램이 종료 되면 시스템에 반환 된다.</p>
+<p>HEAP: 동적으로 메모리 할당을 위해 존재하는 영역</p>
+<p>STACK: 프로그램이 자동으로 사용하는 임시 메모리 영역이다.</p>
+<p>지역변수, 매개변수, 리턴 값 등 잠시 사용되었다가 사라지는 데이터를 저장하는 영역이다.</p>
+<blockquote>
+<p>HEAP overflow:heap이 위에서부터 주소값을 채워져 내려오다가 stack영역을 침범하는 경우.</p>
+</blockquote>
+<blockquote>
+<p>STACK overflow:stack영역이 heap을 침범</p>
+</blockquote>
+<h4 id="비트연산자의-종류"><a class="markdownIt-Anchor" href="#비트연산자의-종류"></a> 비트연산자의 종류</h4>
+<p><strong>AND,OR,NOT</strong>등이 있다.</p>
+<ul>
+<li>0011 1100(60)</li>
+<li>0000 1101(13)</li>
+<li>0000 1000(AND)</li>
+<li>0011 1101(OR)</li>
+<li>1100 0011(NOT)</li>
+<li>1111 0010(NOT)</li>
+</ul>
+<h4 id="다음-연산0010-1101-2-에-대한-결과"><a class="markdownIt-Anchor" href="#다음-연산0010-1101-2-에-대한-결과"></a> 다음 연산(0010 1101) &gt;&gt;2 에 대한 결과</h4>
+<p><strong>1011 = 18</strong></p>
+<h4 id="프로그램을-실행했을-때-실제-동작되기까지의-과정"><a class="markdownIt-Anchor" href="#프로그램을-실행했을-때-실제-동작되기까지의-과정"></a> 프로그램을 실행했을 때 실제 동작되기까지의 과정</h4>
+<ol>
+<li>Fetch</li>
+</ol>
+<ul>
+<li>메모리에 존재하는 명령을 CPU에게 할당</li>
+</ul>
+<ol start="2">
+<li>Decode</li>
+</ol>
+<ul>
+<li>가져온 명령을 CPU가 해석</li>
+</ul>
+<ol start="3">
+<li>Execute</li>
+</ol>
+<ul>
+<li>해석된 명령어를 CPU가 실행</li>
+</ul>
+<h2 id="swift"><a class="markdownIt-Anchor" href="#swift"></a> Swift</h2>
+<h4 id="swift-네이밍-컨벤션"><a class="markdownIt-Anchor" href="#swift-네이밍-컨벤션"></a> Swift 네이밍 컨벤션</h4>
+<p>Pascal Case: 모든 단어의 첫 시작 부분을 대문자로 표기</p>
+<blockquote>
+<p>Swift 에서는 ﬁlename, class, struct, enum, protocol 및 type 에 대해 이것을 사용</p>
+</blockquote>
+<p>camelCase : 시작 부분을 제외한 각 단어의 첫 글자를 대문자로 표기</p>
+<blockquote>
+<p>Swift 에서는 변수명, 함수, 메서드 등 pascal case 이외에 모두 camel case 사용</p>
+</blockquote>
+<h4 id="클래스와-인스턴스의-차이"><a class="markdownIt-Anchor" href="#클래스와-인스턴스의-차이"></a> 클래스와 인스턴스의 차이</h4>
+<p>클래스: 객체를 구현하기 위한 설계도 혹은 틀<br />
+연관된 메서드들의 집합</p>
+<p>인스턴스: 클래스 생성에 따라 메모리에 할당된 객체</p>
+<p>OOP의 특징: 캡슐화,상속성,다형성,추상화</p>
+<h4 id="struct구조체-vs-class클래스"><a class="markdownIt-Anchor" href="#struct구조체-vs-class클래스"></a> Struct(구조체) vs Class(클래스)</h4>
+<p>Struct</p>
+<ol>
+<li>Call by value</li>
+<li>상속이 불가</li>
+<li>stack memory에 할당(속도가 빠름)</li>
+</ol>
+<p>Class</p>
+<ol>
+<li>Call by reference</li>
+<li>상속 가능</li>
+<li>heap memory에 할당(속도가 느림)</li>
+</ol>
+<h4 id="call-by-reference-vs-call-by-value"><a class="markdownIt-Anchor" href="#call-by-reference-vs-call-by-value"></a> Call by Reference vs Call by Value</h4>
+<p>Call by Value:</p>
+<p>값에 의한 호출방식은 함수 호출시 전달되는 변수의 값을 복사하여 함수의 인자로 전달한다.</p>
+<p>Call by Reference:</p>
+<p>참조에 의한 호출방식은 함수 호출시 인자로 전달되는 변수의 레퍼런스를 전달한다.</p>
+<h4 id="enum열거형에-대해서-설명하고-예시코드"><a class="markdownIt-Anchor" href="#enum열거형에-대해서-설명하고-예시코드"></a> Enum(열거형)에 대해서 설명하고 예시코드</h4>
+<ol>
+<li>
+<p>열거형은 가능한 상태들과 관련된 값들을 정해진 가짓 수로 모아둔 집합체로 정의된 타입</p>
+</li>
+<li>
+<p>내포된 열거형, 메서드, 연관값, 패턴매칭을 활용하여 계층적 구조의 데이터를 정의할 수 있다.</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">enum Movement &#123;</span><br><span class="line">    case Left</span><br><span class="line">    case Right</span><br><span class="line">    case Top</span><br><span class="line">    case Bottom</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="uikit-framework를-통해-사용할-수-있는-클래스"><a class="markdownIt-Anchor" href="#uikit-framework를-통해-사용할-수-있는-클래스"></a> UIKit Framework를 통해 사용할 수 있는 클래스</h4>
+<ul>
+<li>UIActivityItemsConfiguration</li>
+<li>UISceneSizeRestrictions</li>
+</ul>
+<h4 id="uiviewcontroller-의-lifecycle"><a class="markdownIt-Anchor" href="#uiviewcontroller-의-lifecycle"></a> UIViewController 의 LifeCycle</h4>
+<p>viewDidLoad (뷰가 로드됨) -&gt; 초기화작업</p>
+<p>viewWillAppear (뷰가 나타날것) -&gt; 다른뷰를 왔다 갔다할때 호출</p>
+<p>viewDidAppear (뷰가 나타났다) -&gt; 뷰가 화면에 나타난 직후</p>
+<p>viewWillDisappear (뷰가 사라질 것이다) -&gt; 뷰가 사라지기 직전</p>
+<p>viewDidDisappear (뷰가 사라졌다) -&gt; 뷰컨트롤러가 뷰가 제거되었음을 알려줌</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/%E1%84%86%E1%85%A1%E1%84%8F%E1%85%B3%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%AE%E1%86%AB%E1%84%87%E1%85%A5%E1%86%B8%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5/" rel="next" title="마크다운 문법 정리">
+                  <i class="fa fa-chevron-left"></i> 마크다운 문법 정리
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/python-%E1%84%92%E1%85%A2%E1%84%8B%E1%85%AC%E1%84%80%E1%85%A7%E1%86%AF%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF/" rel="prev" title="해외결제모듈 사용기">
+                  해외결제모듈 사용기 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#컴퓨터-일반"><span class="nav-number">1.</span> <span class="nav-text"> 컴퓨터 일반</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#int16이-표현할-수-있는-숫자의-범위는"><span class="nav-number">1.0.1.</span> <span class="nav-text"> Int16이 표현할 수 있는 숫자의 범위는?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#프로그램-vs-프로세스-차이점은"><span class="nav-number">1.0.2.</span> <span class="nav-text"> 프로그램 vs 프로세스 차이점은?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#메모리에는-크게-4가지-부분으로-나누어-저장되는-데-그-이름과-특성"><span class="nav-number">1.0.3.</span> <span class="nav-text"> 메모리에는 크게 4가지 부분으로 나누어 저장되는 데 그 이름과 특성</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#비트연산자의-종류"><span class="nav-number">1.0.4.</span> <span class="nav-text"> 비트연산자의 종류</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#다음-연산0010-1101-2-에-대한-결과"><span class="nav-number">1.0.5.</span> <span class="nav-text"> 다음 연산(0010 1101) &gt;&gt;2 에 대한 결과</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#프로그램을-실행했을-때-실제-동작되기까지의-과정"><span class="nav-number">1.0.6.</span> <span class="nav-text"> 프로그램을 실행했을 때 실제 동작되기까지의 과정</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#swift"><span class="nav-number">2.</span> <span class="nav-text"> Swift</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#swift-네이밍-컨벤션"><span class="nav-number">2.0.1.</span> <span class="nav-text"> Swift 네이밍 컨벤션</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#클래스와-인스턴스의-차이"><span class="nav-number">2.0.2.</span> <span class="nav-text"> 클래스와 인스턴스의 차이</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#struct구조체-vs-class클래스"><span class="nav-number">2.0.3.</span> <span class="nav-text"> Struct(구조체) vs Class(클래스)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#call-by-reference-vs-call-by-value"><span class="nav-number">2.0.4.</span> <span class="nav-text"> Call by Reference vs Call by Value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#enum열거형에-대해서-설명하고-예시코드"><span class="nav-number">2.0.5.</span> <span class="nav-text"> Enum(열거형)에 대해서 설명하고 예시코드</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uikit-framework를-통해-사용할-수-있는-클래스"><span class="nav-number">2.0.6.</span> <span class="nav-text"> UIKit Framework를 통해 사용할 수 있는 클래스</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uiviewcontroller-의-lifecycle"><span class="nav-number">2.0.7.</span> <span class="nav-text"> UIViewController 의 LifeCycle</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Hong3</p>
+  <div class="site-description" itemprop="description">개발을 잘하고 싶읍니다</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hong3</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

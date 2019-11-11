@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Hong3의 개발블로그" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '복사',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Playground 실행 단축키 shift + enter :선택 줄 까지 실행 shift + command + enter : 전체 실행  주석(comment) 123&#x2F;*내용*&#x2F;  여러줄 주석  &#x2F;&#x2F;  한줄주석  command + &#x2F;   &#x2F;&#x2F;&#x2F;  한줄주석 + Quick help markup  command + option + &#x2F;    세미콜론  Swift는">
+<meta name="keywords" content="정리">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift 기초">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-Swift%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9&#x2F;index.html">
+<meta property="og:site_name" content="Hong3의 개발블로그">
+<meta property="og:description" content="Playground 실행 단축키 shift + enter :선택 줄 까지 실행 shift + command + enter : 전체 실행  주석(comment) 123&#x2F;*내용*&#x2F;  여러줄 주석  &#x2F;&#x2F;  한줄주석  command + &#x2F;   &#x2F;&#x2F;&#x2F;  한줄주석 + Quick help markup  command + option + &#x2F;    세미콜론  Swift는">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-11-08T09:59:46.067Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://hongdonghyun.github.io/2019/11/Swift-Swift%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Swift 기초 | Hong3의 개발블로그</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hong3의 개발블로그</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">- dev hong3</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>태그</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-Swift%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Swift 기초
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-06 09:00:00" itemprop="dateCreated datePublished" datetime="2019-11-06T09:00:00+09:00">2019-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-08 18:59:46" itemprop="dateModified" datetime="2019-11-08T18:59:46+09:00">2019-11-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="playground-실행-단축키"><a class="markdownIt-Anchor" href="#playground-실행-단축키"></a> Playground 실행 단축키</h3>
+<p>shift + enter :선택 줄 까지 실행<br />
+shift + command + enter : 전체 실행</p>
+<h2 id="주석comment"><a class="markdownIt-Anchor" href="#주석comment"></a> 주석(comment)</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">내용</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>여러줄 주석</p>
+</blockquote>
+<p><code>//</code></p>
+<blockquote>
+<p>한줄주석</p>
+<blockquote>
+<p>command + /</p>
+</blockquote>
+</blockquote>
+<p><code>///</code></p>
+<blockquote>
+<p>한줄주석 + Quick help markup</p>
+<blockquote>
+<p>command + option + /</p>
+</blockquote>
+</blockquote>
+<h2 id="세미콜론"><a class="markdownIt-Anchor" href="#세미콜론"></a> 세미콜론</h2>
+<ul>
+<li>Swift는 세미콜론이 옵션이다.</li>
+<li>한 라인에 여러구문을 사용하고 싶을 때 사용(다중명령)</li>
+</ul>
+<p>ex)</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">1</span>); <span class="built_in">print</span>(<span class="number">2</span>); <span class="built_in">print</span>(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="var-vs-let"><a class="markdownIt-Anchor" href="#var-vs-let"></a> var vs let</h2>
+<ul>
+<li>상수: 값 변경이 불가능 -&gt; var</li>
+<li>변수: 설정한 값을 추후에 변경가능 -&gt; let</li>
+</ul>
+<h2 id="변수네이밍"><a class="markdownIt-Anchor" href="#변수네이밍"></a> 변수네이밍</h2>
+<p>영어 외에도 유니코드 문자를 포함한 대부분의 문자를 사용해 네이밍 가능</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> π = <span class="number">3.14159</span></span><br><span class="line"><span class="keyword">let</span> 你好 = <span class="string">"你好世界"</span></span><br><span class="line"><span class="keyword">let</span> 🐶🐮 = <span class="string">"dogcow"</span></span><br><span class="line"><span class="keyword">let</span> 한글 = <span class="string">"세종대왕"</span></span><br><span class="line"><span class="keyword">let</span> `<span class="keyword">let</span>` = <span class="number">1</span>   <span class="comment">// Swift 에서 사용되는 키워드일 경우 backquote(`) 를 이용해 사용 가능</span></span><br></pre></td></tr></table></figure>
+<h3 id="사용할-수-없는-네이밍"><a class="markdownIt-Anchor" href="#사용할-수-없는-네이밍"></a> 사용할 수 없는 네이밍</h3>
+<p>변수로 사용할 수 없는 이름</p>
+<ol>
+<li>같은 스코프 범위 내에서 중복되는 이름</li>
+<li>공백문자 <code>let bla nk = &quot;123&quot;</code></li>
+<li>수학 기호 (√, ∑ 등)</li>
+<li>화살표 (→, ← 등)</li>
+<li>숫자로 시작하는 이름 (시작 부분 외에는 사용 가능) <code>let 123변수 = &quot;456&quot;</code></li>
+</ol>
+<h2 id="type-annotation"><a class="markdownIt-Anchor" href="#type-annotation"></a> Type Annotation</h2>
+<p>변수 선언시 사용될 자료의 타입을 명시하는 것</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> year: <span class="type">Int</span> = <span class="number">2019</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> language: <span class="type">String</span></span><br><span class="line">language = <span class="string">"Swift"</span></span><br></pre></td></tr></table></figure>
+<p>동시에 선언도 가능하다.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> red, green, blue: <span class="type">Double</span></span><br></pre></td></tr></table></figure>
+<h2 id="type-inference"><a class="markdownIt-Anchor" href="#type-inference"></a> Type Inference</h2>
+<p>변수 선언 시 초기화로 사용되는 값의 타입을 통해 변수의 타입을 추론하여 적용하는 것</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name: <span class="type">String</span> = <span class="string">"Tori"</span></span><br><span class="line">type(of: name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> age: <span class="type">Int</span> = <span class="number">4</span></span><br><span class="line">type(of: age)</span><br><span class="line"></span><br><span class="line"><span class="comment">//타입추론</span></span><br><span class="line"><span class="keyword">var</span> weight = <span class="number">6.4</span></span><br><span class="line">type(of: weight)</span><br></pre></td></tr></table></figure>
+<h2 id="literals-type"><a class="markdownIt-Anchor" href="#literals-type"></a> Literals &amp; Type</h2>
+<ul>
+<li>리터럴</li>
+<li>소스코드에서 고정된 값으로 표현되는 문자 (데이터) 그 자체</li>
+<li>정수 / 실수 / 문자 / 문자열 / 불리언 리터럴 등</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> signedInteger = <span class="number">123</span></span><br><span class="line">signedInteger = +<span class="number">123</span></span><br><span class="line">type(of: signedInteger)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> decimalInteger = <span class="number">17</span></span><br><span class="line"><span class="keyword">let</span> binaryInteger = <span class="number">0b10001</span></span><br><span class="line">type(of: binaryInteger)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> octalInteger = <span class="number">0o21</span></span><br><span class="line"><span class="keyword">let</span> hexadecimalInteger = <span class="number">0x11</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bigNumber = <span class="number">1_000_000_000</span></span><br><span class="line">bigNumber = <span class="number">000_001_000_000_000</span></span><br></pre></td></tr></table></figure>
+<h2 id="integer"><a class="markdownIt-Anchor" href="#integer"></a> Integer</h2>
+<ul>
+<li>8-bit : Int8, UInt8</li>
+<li>16-bit : Int16, UInt16</li>
+<li>32-bit : Int32, UInt32</li>
+<li>64-bit : Int64, UInt64</li>
+<li>Platform dependent(플랫폼 의존성을 가진 Int) : Int, UInt</li>
+</ul>
+<blockquote>
+<p>현대의 기기는 64bit</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> integer = <span class="number">123</span></span><br><span class="line"><span class="keyword">var</span> unsignedInteger: <span class="type">UInt</span> = <span class="number">123</span></span><br></pre></td></tr></table></figure>
+<h2 id="floating-point-literal"><a class="markdownIt-Anchor" href="#floating-point-literal"></a> Floating-point Literal</h2>
+<p>Swift에서 소수점은 기본적으로 Double로 받아들인다.</p>
+<blockquote>
+<p>Double 8Byte<br />
+Float 4Byte</p>
+<blockquote>
+<p>Double - 최소 소수점 이하 15 자리수 이하의 정밀도</p>
+<p>Float - 최소 소수점 이하 6 자리수 이하의 정밀도</p>
+<p>부동 소수점이므로 소수점 이하의 정밀도는 변경 될 수 있음</p>
+</blockquote>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> floatingPoint = <span class="number">1.23</span></span><br><span class="line"><span class="keyword">var</span> floatValue: <span class="type">Float</span> = <span class="number">1.23</span></span><br><span class="line">floatingPoint = <span class="number">1.23e4</span> <span class="comment">//지수 표현식</span></span><br></pre></td></tr></table></figure>
+<h2 id="boolean-literal"><a class="markdownIt-Anchor" href="#boolean-literal"></a> Boolean Literal</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isBool = <span class="literal">true</span></span><br><span class="line">isBool = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p><strong>0 != false, 1 != true</strong></p>
+<h2 id="string-literal"><a class="markdownIt-Anchor" href="#string-literal"></a> String Literal</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> language: <span class="type">String</span> = <span class="string">"Swift"</span></span><br></pre></td></tr></table></figure>
+<h2 id="character-literal"><a class="markdownIt-Anchor" href="#character-literal"></a> Character Literal</h2>
+<p>오직 하나의 문자를 표현할 때 사용</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nonCharacter = <span class="string">"C"</span></span><br><span class="line">type(of: nonCharacter)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>type은 String이 나옴</p>
+</blockquote>
+<p>Charcter를 사용하고 싶다면</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> character: <span class="type">Character</span> = <span class="string">"C"</span></span><br><span class="line">type(of: character)</span><br></pre></td></tr></table></figure>
+<h2 id="typealias"><a class="markdownIt-Anchor" href="#typealias"></a> Typealias</h2>
+<p>문맥상 더 적절한 이름으로 기존 타입의 이름을 참조하여 사용하고 싶을 경우 사용</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// typealias &lt;바꿀이름&gt; = &lt;바꿀타입&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typealias</span> <span class="type">Index</span> = <span class="type">Int</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> firstIndex: <span class="type">Index</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h2 id="type-conversion"><a class="markdownIt-Anchor" href="#type-conversion"></a> Type Conversion</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> height = <span class="type">Int8</span>(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">let</span> width = <span class="number">10</span> <span class="comment">//Int로 선언됨</span></span><br><span class="line"><span class="comment">//let area = height * width // Int * Int8 타입오류</span></span><br><span class="line"><span class="comment">//print(area)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> h = <span class="type">Int8</span>(<span class="number">12</span>)</span><br><span class="line"><span class="comment">//let x = 10 * h //10은 아직 Int가 정의되지 않음 그래서 연산때 Int8 * Int8이 되었다.</span></span><br><span class="line"><span class="comment">//print(x)</span></span><br></pre></td></tr></table></figure>
+<h2 id="logical-operators"><a class="markdownIt-Anchor" href="#logical-operators"></a> Logical Operators</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">returnTrue</span><span class="params">()</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"function called"</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 아래 3개의 케이스에서 returnTrue 메서드는 각각 몇 번씩 호출될까?</span></span><br><span class="line"><span class="comment">// 우선순위 : &amp;&amp; &gt; ||</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\n---------- [ Case 1 ] ----------\n"</span>)</span><br><span class="line">returnTrue() &amp;&amp; returnTrue() &amp;&amp; <span class="literal">false</span> || <span class="literal">true</span> &amp;&amp; returnTrue()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\n---------- [ Case 2 ] ----------\n"</span>)</span><br><span class="line">returnTrue() &amp;&amp; <span class="literal">false</span> &amp;&amp; returnTrue() || returnTrue()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\n---------- [ Case 3 ] ----------\n"</span>)</span><br><span class="line">returnTrue() || returnTrue() &amp;&amp; returnTrue() || <span class="literal">false</span> &amp;&amp; returnTrue()</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%EC%A0%95%EB%A6%AC/" rel="tag"># 정리</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/Swift-%E1%84%92%E1%85%A1%E1%86%B7%E1%84%89%E1%85%AE,%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB,%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A9%E1%86%A8%E1%84%86%E1%85%AE%E1%86%AB/" rel="prev" title="Swift 함수,조건,반복문">
+                  Swift 함수,조건,반복문 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#playground-실행-단축키"><span class="nav-number">1.</span> <span class="nav-text"> Playground 실행 단축키</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#주석comment"><span class="nav-number"></span> <span class="nav-text"> 주석(comment)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#세미콜론"><span class="nav-number"></span> <span class="nav-text"> 세미콜론</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#var-vs-let"><span class="nav-number"></span> <span class="nav-text"> var vs let</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#변수네이밍"><span class="nav-number"></span> <span class="nav-text"> 변수네이밍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#사용할-수-없는-네이밍"><span class="nav-number">1.</span> <span class="nav-text"> 사용할 수 없는 네이밍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#type-annotation"><span class="nav-number"></span> <span class="nav-text"> Type Annotation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#type-inference"><span class="nav-number"></span> <span class="nav-text"> Type Inference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#literals-type"><span class="nav-number"></span> <span class="nav-text"> Literals &amp; Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#integer"><span class="nav-number"></span> <span class="nav-text"> Integer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#floating-point-literal"><span class="nav-number"></span> <span class="nav-text"> Floating-point Literal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#boolean-literal"><span class="nav-number"></span> <span class="nav-text"> Boolean Literal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-literal"><span class="nav-number"></span> <span class="nav-text"> String Literal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#character-literal"><span class="nav-number"></span> <span class="nav-text"> Character Literal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typealias"><span class="nav-number"></span> <span class="nav-text"> Typealias</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#type-conversion"><span class="nav-number"></span> <span class="nav-text"> Type Conversion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#logical-operators"><span class="nav-number"></span> <span class="nav-text"> Logical Operators</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Hong3</p>
+  <div class="site-description" itemprop="description">개발을 잘하고 싶읍니다</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hong3</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
