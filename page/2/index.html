@@ -190,6 +190,195 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B8%B0%EC%B4%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/Swift-%EA%B8%B0%EC%B4%88/" class="post-title-link" itemprop="url">Swift-기초</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2019-11-11 21:59:11 / Updated at: 21:59:25" itemprop="dateCreated datePublished" datetime="2019-11-11T21:59:11+09:00">2019-11-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/Swift-%EA%B8%B0%EC%B4%88/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-기초/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="swift-기초"><a class="markdownIt-Anchor" href="#swift-기초"></a> Swift 기초</h1>
+<h3 id="playground-실행-단축키"><a class="markdownIt-Anchor" href="#playground-실행-단축키"></a> Playground 실행 단축키</h3>
+<p>shift + enter :선택 줄 까지 실행<br />
+shift + command + enter : 전체 실행</p>
+<h2 id="주석comment"><a class="markdownIt-Anchor" href="#주석comment"></a> 주석(comment)</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">내용</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>여러줄 주석</p>
+</blockquote>
+<p><code>//</code></p>
+<blockquote>
+<p>한줄주석</p>
+<blockquote>
+<p>command + /</p>
+</blockquote>
+</blockquote>
+<p><code>///</code></p>
+<blockquote>
+<p>한줄주석 + Quick help markup</p>
+<blockquote>
+<p>command + option + /</p>
+</blockquote>
+</blockquote>
+<h2 id="세미콜론"><a class="markdownIt-Anchor" href="#세미콜론"></a> 세미콜론</h2>
+<ul>
+<li>Swift는 세미콜론이 옵션이다.</li>
+<li>한 라인에 여러구문을 사용하고 싶을 때 사용(다중명령)</li>
+</ul>
+<p>ex)</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">1</span>); <span class="built_in">print</span>(<span class="number">2</span>); <span class="built_in">print</span>(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="var-vs-let"><a class="markdownIt-Anchor" href="#var-vs-let"></a> var vs let</h2>
+<ul>
+<li>상수: 값 변경이 불가능 -&gt; var</li>
+<li>변수: 설정한 값을 추후에 변경가능 -&gt; let</li>
+</ul>
+<h2 id="변수네이밍"><a class="markdownIt-Anchor" href="#변수네이밍"></a> 변수네이밍</h2>
+<p>영어 외에도 유니코드 문자를 포함한 대부분의 문자를 사용해 네이밍 가능</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> π = <span class="number">3.14159</span></span><br><span class="line"><span class="keyword">let</span> 你好 = <span class="string">"你好世界"</span></span><br><span class="line"><span class="keyword">let</span> 🐶🐮 = <span class="string">"dogcow"</span></span><br><span class="line"><span class="keyword">let</span> 한글 = <span class="string">"세종대왕"</span></span><br><span class="line"><span class="keyword">let</span> `<span class="keyword">let</span>` = <span class="number">1</span>   <span class="comment">// Swift 에서 사용되는 키워드일 경우 backquote(`) 를 이용해 사용 가능</span></span><br></pre></td></tr></table></figure>
+<h3 id="사용할-수-없는-네이밍"><a class="markdownIt-Anchor" href="#사용할-수-없는-네이밍"></a> 사용할 수 없는 네이밍</h3>
+<p>변수로 사용할 수 없는 이름</p>
+<ol>
+<li>같은 스코프 범위 내에서 중복되는 이름</li>
+<li>공백문자 <code>let bla nk = &quot;123&quot;</code></li>
+<li>수학 기호 (√, ∑ 등)</li>
+<li>화살표 (→, ← 등)</li>
+<li>숫자로 시작하는 이름 (시작 부분 외에는 사용 가능) <code>let 123변수 = &quot;456&quot;</code></li>
+</ol>
+<h2 id="type-annotation"><a class="markdownIt-Anchor" href="#type-annotation"></a> Type Annotation</h2>
+<p>변수 선언시 사용될 자료의 타입을 명시하는 것</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> year: <span class="type">Int</span> = <span class="number">2019</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> language: <span class="type">String</span></span><br><span class="line">language = <span class="string">"Swift"</span></span><br></pre></td></tr></table></figure>
+<p>동시에 선언도 가능하다.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> red, green, blue: <span class="type">Double</span></span><br></pre></td></tr></table></figure>
+<h2 id="type-inference"><a class="markdownIt-Anchor" href="#type-inference"></a> Type Inference</h2>
+<p>변수 선언 시 초기화로 사용되는 값의 타입을 통해 변수의 타입을 추론하여 적용하는 것</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name: <span class="type">String</span> = <span class="string">"Tori"</span></span><br><span class="line">type(of: name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> age: <span class="type">Int</span> = <span class="number">4</span></span><br><span class="line">type(of: age)</span><br><span class="line"></span><br><span class="line"><span class="comment">//타입추론</span></span><br><span class="line"><span class="keyword">var</span> weight = <span class="number">6.4</span></span><br><span class="line">type(of: weight)</span><br></pre></td></tr></table></figure>
+<h2 id="literals-type"><a class="markdownIt-Anchor" href="#literals-type"></a> Literals &amp; Type</h2>
+<ul>
+<li>리터럴</li>
+<li>소스코드에서 고정된 값으로 표현되는 문자 (데이터) 그 자체</li>
+<li>정수 / 실수 / 문자 / 문자열 / 불리언 리터럴 등</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> signedInteger = <span class="number">123</span></span><br><span class="line">signedInteger = +<span class="number">123</span></span><br><span class="line">type(of: signedInteger)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> decimalInteger = <span class="number">17</span></span><br><span class="line"><span class="keyword">let</span> binaryInteger = <span class="number">0b10001</span></span><br><span class="line">type(of: binaryInteger)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> octalInteger = <span class="number">0o21</span></span><br><span class="line"><span class="keyword">let</span> hexadecimalInteger = <span class="number">0x11</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bigNumber = <span class="number">1_000_000_000</span></span><br><span class="line">bigNumber = <span class="number">000_001_000_000_000</span></span><br></pre></td></tr></table></figure>
+<h2 id="integer"><a class="markdownIt-Anchor" href="#integer"></a> Integer</h2>
+<ul>
+<li>8-bit : Int8, UInt8</li>
+<li>16-bit : Int16, UInt16</li>
+<li>32-bit : Int32, UInt32</li>
+<li>64-bit : Int64, UInt64</li>
+<li>Platform dependent(플랫폼 의존성을 가진 Int) : Int, UInt</li>
+</ul>
+<blockquote>
+<p>현대의 기기는 64bit</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> integer = <span class="number">123</span></span><br><span class="line"><span class="keyword">var</span> unsignedInteger: <span class="type">UInt</span> = <span class="number">123</span></span><br></pre></td></tr></table></figure>
+<h2 id="floating-point-literal"><a class="markdownIt-Anchor" href="#floating-point-literal"></a> Floating-point Literal</h2>
+<p>Swift에서 소수점은 기본적으로 Double로 받아들인다.</p>
+<blockquote>
+<p>Double 8Byte<br />
+Float 4Byte</p>
+<blockquote>
+<p>Double - 최소 소수점 이하 15 자리수 이하의 정밀도</p>
+<p>Float - 최소 소수점 이하 6 자리수 이하의 정밀도</p>
+<p>부동 소수점이므로 소수점 이하의 정밀도는 변경 될 수 있음</p>
+</blockquote>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> floatingPoint = <span class="number">1.23</span></span><br><span class="line"><span class="keyword">var</span> floatValue: <span class="type">Float</span> = <span class="number">1.23</span></span><br><span class="line">floatingPoint = <span class="number">1.23e4</span> <span class="comment">//지수 표현식</span></span><br></pre></td></tr></table></figure>
+<h2 id="boolean-literal"><a class="markdownIt-Anchor" href="#boolean-literal"></a> Boolean Literal</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isBool = <span class="literal">true</span></span><br><span class="line">isBool = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p><strong>0 != false, 1 != true</strong></p>
+<h2 id="string-literal"><a class="markdownIt-Anchor" href="#string-literal"></a> String Literal</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> language: <span class="type">String</span> = <span class="string">"Swift"</span></span><br></pre></td></tr></table></figure>
+<h2 id="character-literal"><a class="markdownIt-Anchor" href="#character-literal"></a> Character Literal</h2>
+<p>오직 하나의 문자를 표현할 때 사용</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nonCharacter = <span class="string">"C"</span></span><br><span class="line">type(of: nonCharacter)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>type은 String이 나옴</p>
+</blockquote>
+<p>Charcter를 사용하고 싶다면</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> character: <span class="type">Character</span> = <span class="string">"C"</span></span><br><span class="line">type(of: character)</span><br></pre></td></tr></table></figure>
+<h2 id="typealias"><a class="markdownIt-Anchor" href="#typealias"></a> Typealias</h2>
+<p>문맥상 더 적절한 이름으로 기존 타입의 이름을 참조하여 사용하고 싶을 경우 사용</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// typealias &lt;바꿀이름&gt; = &lt;바꿀타입&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typealias</span> <span class="type">Index</span> = <span class="type">Int</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> firstIndex: <span class="type">Index</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h2 id="type-conversion"><a class="markdownIt-Anchor" href="#type-conversion"></a> Type Conversion</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> height = <span class="type">Int8</span>(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">let</span> width = <span class="number">10</span> <span class="comment">//Int로 선언됨</span></span><br><span class="line"><span class="comment">//let area = height * width // Int * Int8 타입오류</span></span><br><span class="line"><span class="comment">//print(area)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> h = <span class="type">Int8</span>(<span class="number">12</span>)</span><br><span class="line"><span class="comment">//let x = 10 * h //10은 아직 Int가 정의되지 않음 그래서 연산때 Int8 * Int8이 되었다.</span></span><br><span class="line"><span class="comment">//print(x)</span></span><br></pre></td></tr></table></figure>
+<h2 id="logical-operators"><a class="markdownIt-Anchor" href="#logical-operators"></a> Logical Operators</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">returnTrue</span><span class="params">()</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"function called"</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 아래 3개의 케이스에서 returnTrue 메서드는 각각 몇 번씩 호출될까?</span></span><br><span class="line"><span class="comment">// 우선순위 : &amp;&amp; &gt; ||</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\n---------- [ Case 1 ] ----------\n"</span>)</span><br><span class="line">returnTrue() &amp;&amp; returnTrue() &amp;&amp; <span class="literal">false</span> || <span class="literal">true</span> &amp;&amp; returnTrue()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\n---------- [ Case 2 ] ----------\n"</span>)</span><br><span class="line">returnTrue() &amp;&amp; <span class="literal">false</span> &amp;&amp; returnTrue() || returnTrue()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\n---------- [ Case 3 ] ----------\n"</span>)</span><br><span class="line">returnTrue() || returnTrue() &amp;&amp; returnTrue() || <span class="literal">false</span> &amp;&amp; returnTrue()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%EC%9E%90%EC%A3%BC%EC%93%B0%EB%8A%94-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D-%EB%AA%A8%EC%9D%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -758,234 +947,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="post-title-link" itemprop="url">Hexo로 Github Page 만들기</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2019-11-11 15:06:19 / Updated at: 20:19:46" itemprop="dateCreated datePublished" datetime="2019-11-11T15:06:19+09:00">2019-11-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Hexo로 Github Page 만들기/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="hexo로-github-page-만들기"><a class="markdownIt-Anchor" href="#hexo로-github-page-만들기"></a> Hexo로 Github Page 만들기</h1>
-<h2 id="hexo"><a class="markdownIt-Anchor" href="#hexo"></a> Hexo</h2>
-<p>Node.js기반의 정적페이지 생성기</p>
-<p>사용자가 급격하게 상승중</p>
-<blockquote><p><s>오픈소스는 사용자가 많은게 짱임</s></p>
-</blockquote>
-<h2 id="시작하기전"><a class="markdownIt-Anchor" href="#시작하기전"></a> 시작하기전</h2>
-<p>github페이지를 만들어야 하기 때문에 github계정은 필수이며,</p>
-<p>간단한 터미널 명령어는 사용할 수 있어야한다.</p>
-<p>또한 <strong>깃허브페이지는 계정당 하나만 생성할 수 있다.</strong></p>
-<blockquote>
-<p>레포이름에 계정명이 들어가야하기 때문</p>
-</blockquote>
-<ol>
-<li>git</li>
-<li>github 계정</li>
-<li>터미널</li>
-<li>markdown 문법</li>
-<li>vi 혹은 emacs같은 익숙한 에디터</li>
-</ol>
-<p>해당 게시물에서는 MacOS기준으로 설명한다.</p>
-<h2 id="설치"><a class="markdownIt-Anchor" href="#설치"></a> 설치</h2>
-<h3 id="레포생성"><a class="markdownIt-Anchor" href="#레포생성"></a> 레포생성</h3>
-<p><img src="/images/hexo_screen1.png" alt="" /></p>
-<p>해당 사진처럼 레포를 생성하는 과정에서</p>
-<p><strong><a href="http://hongdonghyun.github.io">hongdonghyun.github.io</a></strong>와 같이</p>
-<p>닉네임(이메일아닙니다.).github.io의 형식으로 레포를 만들어야합니다.</p>
-<blockquote>
-<p>터미널 사용을 최소화 하기위해 README.md를 생성하도록<br />
-Initialize this repository with a README 체크</p>
-</blockquote>
-<p>다 입력하셨다면 Create repository</p>
-<p>다음과 같은 결과화면<br />
-<img src="/images/hexo_screen2.png" alt="" /></p>
-<h2 id="hexo-설치하기전"><a class="markdownIt-Anchor" href="#hexo-설치하기전"></a> Hexo 설치하기전</h2>
-<p>Hexo는 Node.js로 만들어졌기 때문에</p>
-<p>당연히 사용하려면 Node.js가 설치 되어있어야한다.</p>
-<h3 id="nodejs-설치"><a class="markdownIt-Anchor" href="#nodejs-설치"></a> Node.js 설치</h3>
-<p>Node를 깔려면 <a href="https://brew.sh/index_ko" target="_blank" rel="noopener">Homebrew</a>를 사용한다.</p>
-<p>만약 Homebrew설치가 안되어있다면 링크를 타고가서 설치하도록 한다.</p>
-<p>brew가 있다면 다음 코드를 입력하자</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>만약 설치가 안된다면 <code>sudo brew install node</code>를 해보자</p>
-</blockquote>
-<h3 id="nodejs-설치확인"><a class="markdownIt-Anchor" href="#nodejs-설치확인"></a> Node.js 설치확인</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<p>v12.13.0, 6.12.0등등의 버전이 나온다면 정상적으로 설치되었다.</p>
-<h2 id="hexo-설치"><a class="markdownIt-Anchor" href="#hexo-설치"></a> Hexo 설치</h2>
-<p>Hexo를 설치하려면 다음과 같이 터미널에 입력한다.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>설치가 만약 안된다면 가장앞에 sudo를 붙여보자.</p>
-</blockquote>
-<h3 id="hexo-설치확인"><a class="markdownIt-Anchor" href="#hexo-설치확인"></a> Hexo 설치확인</h3>
-<p>터미널에서 <code>hexo</code>라고 치면</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Usage: hexo &lt;command&gt;</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  help     Get help on a command.</span><br><span class="line">  init     Create a new Hexo folder.</span><br><span class="line">  version  Display version information.</span><br><span class="line"></span><br><span class="line">Global Options:</span><br><span class="line">  --config  Specify config file instead of using _config.yml</span><br><span class="line">  --cwd     Specify the CWD</span><br><span class="line">  --debug   Display all verbose messages in the terminal</span><br><span class="line">  --draft   Display draft posts</span><br><span class="line">  --safe    Disable all plugins and scripts</span><br><span class="line">  --silent  Hide output on console</span><br><span class="line"></span><br><span class="line">For more help, you can use &apos;hexo help [command]&apos; for the detailed information</span><br><span class="line">or you can check the docs: http://hexo.io/docs/</span><br></pre></td></tr></table></figure>
-<p>이러한 형식의 매뉴얼이 나온다.</p>
-<p>매뉴얼이 나온다면 정상적으로 설치 되었다.</p>
-<h3 id="hexo-디렉토리-지정"><a class="markdownIt-Anchor" href="#hexo-디렉토리-지정"></a> Hexo 디렉토리 지정</h3>
-<p>Hexo설치가 완료 되었다면</p>
-<p>내 컴퓨터에서 블로그를 관리할 디렉토리를 지정해주어야 한다.</p>
-<p>앞으로 자주 접근해야하니 컴퓨터 구석탱이 찾기 어려운곳에 지정하지 말고</p>
-<p>눈에 띄는곳으로 지정하자.</p>
-<p>다음과 같이 입력해보자.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;디렉토리&gt;</span><br></pre></td></tr></table></figure>
-<p>저는 모든 개발코드를 <code>projects</code>라는 폴더 밑에서 관리하기 때문에</p>
-<p><code>cd</code>명령어로 <code>projects</code>까지 이동 후 hexo init 폴더명을 지정했습니다.</p>
-<blockquote>
-<p>폴더가 없다면 hexo init 명령어가 알아서 만들어줍니다.</p>
-</blockquote>
-<h3 id="hexo-init-결과확인"><a class="markdownIt-Anchor" href="#hexo-init-결과확인"></a> Hexo init 결과확인</h3>
-<p><img src="/images/hexo_screen3.png" alt="" /></p>
-<p>위에서 지정했던 폴더로 이동하고 <code>ls</code>를 쳐보면 다음과 같이 나와야 한다.</p>
-<h3 id="hexo-server"><a class="markdownIt-Anchor" href="#hexo-server"></a> Hexo server</h3>
-<p><code>init</code>이후 해당 폴더에서 <code>hexo server</code>를 입력하면</p>
-<p><code>localhost:4000</code>에서 내 블로그를 확인할 수 있다.</p>
-<h3 id="hexo-server-결과"><a class="markdownIt-Anchor" href="#hexo-server-결과"></a> Hexo server 결과</h3>
-<p><img src="/images/hexo_screen4.png" alt="" /></p>
-<h2 id="포스팅-작성"><a class="markdownIt-Anchor" href="#포스팅-작성"></a> 포스팅 작성</h2>
-<h3 id="포스팅-생성"><a class="markdownIt-Anchor" href="#포스팅-생성"></a> 포스팅 생성</h3>
-<p>터미널에서 다음과 같이 입력하자.</p>
-<p><code>hexo new 포스팅제목</code><br />
-해당 커맨드를 입력하면 <code>init에서 지정한 폴더명/source/_posts/</code>에 <code>포스팅제목.md</code>가 생긴걸 확인할 수 있다.</p>
-<h3 id="포스팅-확인"><a class="markdownIt-Anchor" href="#포스팅-확인"></a> 포스팅 확인</h3>
-<p><code>cd</code> 명령어로<code>init에서 지정한 폴더명/source/_posts/</code>로 이동한 후 파일이 존재하는지 <code>ls</code>로 확인해보자.</p>
-<p><img src="/images/hexo_screen5.png" alt="" /></p>
-<blockquote>
-<p>저는 first-posting이라는 이름으로 생성했습니다.</p>
-<p>hello-world.md는 초기에 생성해주는 파일이에요.</p>
-</blockquote>
-<p>해당 파일을 에디터로 열어보게 되면<br />
-<img src="/images/hexo_screen6.png" alt="" /></p>
-<p>다음과 같은 부분이 나타나는데<br />
-포스팅을 등록할때 해당부분을 채워주면된다.</p>
-<h2 id="배포"><a class="markdownIt-Anchor" href="#배포"></a> 배포</h2>
-<p>이제 hexo도 설치했고, 로컬컴퓨터에서 동작도 확인했고, 포스팅을 작성하는법도 알았다.</p>
-<p>남은건 이제 인터넷 세상에 블로그를 공개하는일만 남았다.</p>
-<h3 id="config"><a class="markdownIt-Anchor" href="#config"></a> config</h3>
-<p>배포를 하기위해선 아까 만들어 두었던 github page와 연동을 해줘야한다.</p>
-<p><code>블로그폴더</code> 최상단으로 이동하자.</p>
-<p><img src="/images/hexo_screen3.png" alt="" /></p>
-<blockquote>
-<p>여기</p>
-</blockquote>
-<p>여기서 _config.yml을 수정해보도록 한다.</p>
-<p>수정하기에 앞서 <a href="https://hexo.io/ko/docs/configuration.html" target="_blank" rel="noopener">여기</a>를 한번 보고가면 편하다.</p>
-<p>가장 기본적인 부분만 수정해보도록 하자.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"> <span class="attr">title:</span> <span class="string">Hong3의</span> <span class="string">개발블로그</span></span><br><span class="line"> <span class="attr">subtitle:</span> <span class="string">'- dev hong3'</span></span><br><span class="line"> <span class="attr">description:</span> <span class="string">'개발을 잘하고 싶읍니다'</span></span><br><span class="line"> <span class="attr">keywords:</span> <span class="string">python,swift,hexo,django,flask,aws</span></span><br><span class="line"> <span class="attr">author:</span> <span class="string">Hong3</span></span><br><span class="line"> <span class="attr">language:</span> <span class="string">ko</span></span><br><span class="line"> <span class="attr">timezone:</span> <span class="string">'Asia/Seoul'</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment"># URL</span></span><br><span class="line"> <span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and r    oot as '/child/'</span></span><br><span class="line"> <span class="attr">url:</span> <span class="string">http://hongdonghyun.github.io</span></span><br><span class="line"> <span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"> <span class="attr">permalink:</span> <span class="string">:year/:month/:title/</span></span><br><span class="line"> <span class="attr">permalink_defaults:</span></span><br><span class="line"> <span class="attr">pretty_urls:</span></span><br><span class="line">   <span class="attr">trailing_index:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing index.html from permalinks</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>저는 이런식으로 수정했습니다.</p>
-</blockquote>
-<h3 id="deploy-config"><a class="markdownIt-Anchor" href="#deploy-config"></a> deploy config</h3>
-<p>_config.yml파일 제일밑으로가면<br />
-<code>#Deployment</code>부분이 있다.</p>
-<p>해당부분을 <code>git</code>을 사용해 <code>githubpage</code>를 띄우도록 수정한다.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">   <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">   <span class="attr">repo:</span> <span class="string">https://github.com/hongdonghyun/hongdonghyun.github.io.git</span></span><br><span class="line">   <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<p>repo에 들어갈 주소는 포스팅 처음에 시작했던 레포지토리에서 <code>clone or download</code>를 누르면 나오는 주소를 복사해서 넣어주면됩니다.</p>
-<p><img src="/images/hexo_screen2.png" alt="" /></p>
-<h3 id="정적파일생성"><a class="markdownIt-Anchor" href="#정적파일생성"></a> 정적파일생성</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-<p>hexo generate를 입력하면 정적파일들을 만들어낸다.</p>
-<h3 id="배포-2"><a class="markdownIt-Anchor" href="#배포-2"></a> 배포</h3>
-<p>배포하기전 하나의 과정이 더 남았다.<br />
-<code>hexo-deployer-git</code>라는 플러그인을 설치해 주어야만 진정으로 배포가 가능해진다.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Warning이 많이 뜨지만 걱정 ㄴㄴ</p>
-</blockquote>
-<p>설치가 다되었다면</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<h3 id="배포결과-확인"><a class="markdownIt-Anchor" href="#배포결과-확인"></a> 배포결과 확인</h3>
-<p><img src="/images/hexo_screen7.png" alt="" /></p>
-<blockquote>
-<p>배포가 다되었다면 깃허브에서 뭔가 주루룩하고 올라와있다.</p>
-</blockquote>
-<p>배포를 하고 1분만 기다렸다가 자신의 사이트로 접속해보자.</p>
-<blockquote>
-<p>github이 바빠서 바로바로 업데이트를 못해주는 경우가 있기때문</p>
-</blockquote>
-<p><img src="/images/hexo_screen8.png" alt="" /></p>
-<p>위와 같은 사이트가 나온다면 완벽하게 블로그를 생성해낸것이다.</p>
-<blockquote>
-<p>축하</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1034,20 +995,20 @@ Initialize this repository with a README 체크</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
