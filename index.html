@@ -201,6 +201,121 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-3/" class="post-title-link" itemprop="url">Swift 과제 풀이 3</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2019-11-13 20:33:12 / Updated at: 20:33:43" itemprop="dateCreated datePublished" datetime="2019-11-13T20:33:12+09:00">2019-11-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">과제</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-3/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-과제-풀이-3/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>[보기] 철수 - apple, 영희 - banana, 진수 - grape, 미희 - strawberry<br />
+위 보기처럼 학생과 좋아하는 과일을 매칭시킨 정보를 Dictionary 형태로 만들고<br />
+스펠링에 'e’가 들어간 과일을 모두 찾아 그것과 매칭되는 학생 이름을 배열로 반환하는 함수</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">findFruit</span><span class="params">()</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">String</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> studentDictionary = [<span class="string">"철수"</span>:<span class="string">"apple"</span>,<span class="string">"영희"</span>:<span class="string">"banana"</span>,<span class="string">"진수"</span>:<span class="string">"grape"</span>,<span class="string">"미희"</span>:<span class="string">"strawberry"</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> resultArray: <span class="type">Array</span>&lt;<span class="type">String</span>&gt; = []</span><br><span class="line">    <span class="keyword">for</span> (name, fruit) <span class="keyword">in</span> studentDictionary &#123;</span><br><span class="line">        <span class="keyword">if</span> fruit.<span class="built_in">contains</span>(<span class="string">"e"</span>) &#123;</span><br><span class="line">            resultArray.append(name)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> resultArray</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(findFruit())</span><br></pre></td></tr></table></figure>
+<ul>
+<li>&lt;2&gt;<br />
+임의의 정수 배열을 입력받았을 때 홀수는 배열의 앞부분, 짝수는 배열의 뒷부분에 위치하도록 구성된 새로운 배열을 반환하는 함수</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sortArray</span><span class="params">(<span class="number">_</span> input: Array&lt;Int&gt;)</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> oddArray: <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; = []</span><br><span class="line">    <span class="keyword">var</span> evenArray: <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> input &#123;</span><br><span class="line">        <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span> &#123;</span><br><span class="line">            evenArray.append(i)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            oddArray.append(i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> oddArray + evenArray</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(sortArray([<span class="number">2</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>]))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>&lt;3&gt; 0 ~ 9 사이의 숫자가 들어있는 배열에서 각 숫자가 몇 개씩 있는지 출력하는 함수<br />
+입력 : [1, 3, 3, 3, 8]<br />
+결과 : “숫자 1 : 1개, 숫자 3 : 3개, 숫자 8 : 1개”</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">numberCount</span><span class="params">(<span class="number">_</span> input: Array&lt;Int&gt;)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> counter: [<span class="type">Int</span>: <span class="type">Int</span>] = [:]</span><br><span class="line">    <span class="keyword">var</span> resultString: <span class="type">String</span> = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> input &#123;</span><br><span class="line">        counter[i] = (counter[i] ?? <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (key, value) <span class="keyword">in</span> counter &#123;</span><br><span class="line">        resultString += <span class="string">"숫자 "</span> + <span class="type">String</span>(key) + <span class="string">" : "</span> + <span class="type">String</span>(value) + <span class="string">"개, "</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="type">String</span>(resultString.<span class="built_in">dropLast</span>(<span class="number">2</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(numberCount([<span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">8</span>]))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>자연수를 입력받아 원래 숫자를 반대 순서로 뒤집은 숫자를 반환하는 함수</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">intReverse</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">Int</span>(<span class="type">String</span>(<span class="type">String</span>(input).reversed()))!</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">intReverse(<span class="number">123</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>100 ~ 900 사이의 숫자 중 하나를 입력받아 각 자리의 숫자가 모두 다른지 여부를 반환하는 함수</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">diffNumber</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> bak = input / <span class="number">100</span></span><br><span class="line">    <span class="keyword">let</span> sip = (input % <span class="number">100</span>) / <span class="number">10</span></span><br><span class="line">    <span class="keyword">let</span> ill = input % <span class="number">10</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (bak, sip) == (sip, ill) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>별도로 전달한 식육목 모식도 라는 자료를 보고 Dictionary 자료형에 맞도록 중첩형태로 데이터를 저장하고 해당 변수에서 표범 하위 분류를 찾아 사자와 호랑이를 출력하기</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sixSixTree = [</span><br><span class="line">    <span class="string">"식육목"</span>: [</span><br><span class="line">        <span class="string">"개과"</span>: [</span><br><span class="line">            <span class="string">"개"</span>: [</span><br><span class="line">                <span class="string">"자칼"</span>,</span><br><span class="line">                <span class="string">"늑대"</span>,</span><br><span class="line">                <span class="string">"북미산 이리"</span>,</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"여우"</span>: [</span><br><span class="line">                <span class="string">"아메리카 여우"</span>,</span><br><span class="line">                <span class="string">"유럽 여우"</span>,</span><br><span class="line">            ]</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"고양이과"</span>: [</span><br><span class="line">            <span class="string">"고양이"</span>,</span><br><span class="line">            <span class="string">"살쾡이"</span>,</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"표범"</span>: [</span><br><span class="line">            <span class="string">"사자"</span>,</span><br><span class="line">            <span class="string">"호랑이"</span>,</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>주어진 문자 배열에서 중복되지 않는 문자만을 뽑아내 배열로 반환해주는 함수</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">duplicateRemove</span><span class="params">(<span class="number">_</span> input:Array&lt;String&gt;)</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">String</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> arrayToSet = <span class="type">Set</span>(input)</span><br><span class="line">    <span class="keyword">return</span> <span class="type">Array</span>(arrayToSet)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">duplicateRemove([<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>,<span class="string">"a"</span>])</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-array-dict-set/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -226,7 +341,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2019-11-13 16:06:33 / Updated at: 16:10:09" itemprop="dateCreated datePublished" datetime="2019-11-13T16:06:33+09:00">2019-11-13</time>
+              <time title="Post created: 2019-11-13 16:06:33 / Updated at: 16:11:47" itemprop="dateCreated datePublished" datetime="2019-11-13T16:06:33+09:00">2019-11-13</time>
             </span>
 
           
@@ -829,245 +944,6 @@ generate &amp;&amp; deploy 입니다.</p>
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/git-branch-%EC%97%B0%EC%8A%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/git-branch-%EC%97%B0%EC%8A%B5/" class="post-title-link" itemprop="url">git branch 연습</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-
-              <time title="Post created: 2019-11-12 10:49:23" itemprop="dateCreated datePublished" datetime="2019-11-12T10:49:23+09:00">2019-11-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-13 12:43:19" itemprop="dateModified" datetime="2019-11-13T12:43:19+09:00">2019-11-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/git-branch-%EC%97%B0%EC%8A%B5/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/git-branch-연습/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="깃-연습"><a class="markdownIt-Anchor" href="#깃-연습"></a> 깃 연습</h1>
-<h2 id="git-branch"><a class="markdownIt-Anchor" href="#git-branch"></a> git branch</h2>
-<ul>
-<li>
-<p><code>git branch</code> : 해당 git 폴더에서 브랜치 목록을 보여준다.</p>
-</li>
-<li>
-<p><code>git branch &lt;브랜치이름&gt;</code> : 해당 git 폴더에서 &lt;브랜치이름&gt;의 브랜치를 생성한다.</p>
-</li>
-<li>
-<p><code>git checkout &lt;이동할 브랜치 이름&gt;</code> : 해당 git 폴더에서 &lt;이동할 브랜치이름&gt;을 입력하면 브랜치가 이동한다.</p>
-</li>
-<li>
-<p><code>git checkout -b &lt;브랜치이름&gt;</code> : 해당 브랜치를 생성하고 이동한다.</p>
-</li>
-</ul>
-<blockquote>
-<p>Switched to branch &lt;이동할 브랜치이름&gt;이 shell출력으로 나타난다.</p>
-<blockquote>
-<p>git branch를 다시입력하면 브랜치가 변경된걸 확인할 수 있다.</p>
-</blockquote>
-</blockquote>
-<ul>
-<li><code>git branch -D &lt;삭제할 브랜치 이름&gt;</code> : 해당 브랜치를 삭제</li>
-</ul>
-<blockquote>
-<p>Deleted branch &lt;브랜치이름&gt;.이 shell출력으로 나타난다.</p>
-</blockquote>
-<ul>
-<li>
-<p><code>git diff &lt;브랜치이름&gt;</code> : 현재 브랜치와 입력한 브랜치의 코드 차이점을 보여준다</p>
-</li>
-<li>
-<p><code>git merge &lt;브랜치이름&gt;</code> : 현재 브랜치에 입력한 브랜치를 합친다.</p>
-</li>
-</ul>
-<h2 id="협업-연습git-flow"><a class="markdownIt-Anchor" href="#협업-연습git-flow"></a> 협업 연습(Git flow)</h2>
-<p><a href="http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html" target="_blank" rel="noopener">우아한형제들 기술 블로그</a></p>
-<h2 id="시나리오"><a class="markdownIt-Anchor" href="#시나리오"></a> 시나리오</h2>
-<p>Fork and merge 시나리오</p>
-<p><strong>팀장의 경우</strong></p>
-<ol>
-<li>
-<p>create-repo (public/init <a href="http://README.md" target="_blank" rel="noopener">README.md</a>)</p>
-</li>
-<li>
-<p>repo 주소 복사</p>
-</li>
-<li>
-<p>내컴퓨터에 clone</p>
-</li>
-<li>
-<p>git flow init</p>
-</li>
-<li>
-<p>git branch</p>
-</li>
-</ol>
-<blockquote>
-<p>develop 브랜치 생성 확인</p>
-</blockquote>
-<ol start="6">
-<li>
-<p><a href="http://README.md" target="_blank" rel="noopener">README.md</a> 수정</p>
-</li>
-<li>
-<p>add -&gt; commit -&gt; push(git push -u옵션)</p>
-</li>
-<li>
-<p>팀원이 14.까지 끝냈다면 pull request가 생긴다.</p>
-</li>
-<li>
-<p>내용을 확인하고 confirm ,reject여부를 결정</p>
-</li>
-</ol>
-<ul>
-<li>
-<p>reject의 경우</p>
-<ol>
-<li>팀원은 다시 내용을 수정해서 add -&gt; commit -&gt; push를 한다.</li>
-<li>github pull request에서 변경내역이 확인 가능하다.</li>
-</ol>
-</li>
-<li>
-<p>confirm의 경우</p>
-</li>
-</ul>
-<ol>
-<li>merge를 진행</li>
-<li>결과 확인</li>
-</ol>
-<p><strong>팀원의 경우</strong></p>
-<ol>
-<li>팀장의 repo를 Fork</li>
-</ol>
-<blockquote>
-<p>팀원 계정에 팀장의 repo를 복사하여 생긴다.</p>
-</blockquote>
-<ol start="2">
-<li>
-<p>1.에서 fork한 repo의 주소를 복사</p>
-</li>
-<li>
-<p>팀장의 repo에 가서 Issue 생성</p>
-</li>
-</ol>
-<blockquote>
-<p>Issue는 제안/신고/건의등을 하는공간</p>
-</blockquote>
-<ol start="4">
-<li>
-<p>Issue를 적고 Issue number 확인</p>
-</li>
-<li>
-<p>내 컴퓨터에 git clone</p>
-</li>
-<li>
-<p>git flow init -&gt; enter</p>
-</li>
-<li>
-<p>git pull origin develop</p>
-</li>
-<li>
-<p>git flow feature start &lt;기능명&gt;</p>
-</li>
-<li>
-<p>기능작성</p>
-</li>
-<li>
-<p>add -&gt; commit</p>
-</li>
-<li>
-<p>git flow feature finish &lt;기능명&gt;</p>
-</li>
-<li>
-<p>git push origin develop</p>
-</li>
-<li>
-<p>github에서 pull request를 날린다.</p>
-</li>
-</ol>
-<blockquote>
-<p>팀원의 develop -&gt; 팀장의 develop으로 보낸다.</p>
-</blockquote>
-<ol start="14">
-<li>pull request memo</li>
-</ol>
-<blockquote>
-<p>solved: #Issue number</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1118,7 +994,7 @@ generate &amp;&amp; deploy 입니다.</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
