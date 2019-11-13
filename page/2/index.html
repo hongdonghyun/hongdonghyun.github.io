@@ -21,7 +21,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.5.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
@@ -187,6 +187,92 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%ED%95%A8%EC%88%98-%ED%92%80%EC%9D%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/Swift-%ED%95%A8%EC%88%98-%ED%92%80%EC%9D%B4/" class="post-title-link" itemprop="url">Swift-함수-풀이</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2019-11-11 22:03:46 / Updated at: 22:04:05" itemprop="dateCreated datePublished" datetime="2019-11-11T22:03:46+09:00">2019-11-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">과제</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/Swift-%ED%95%A8%EC%88%98-%ED%92%80%EC%9D%B4/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-함수-풀이/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="swift-함수-과제"><a class="markdownIt-Anchor" href="#swift-함수-과제"></a> Swift 함수 과제</h1>
+<h1 id="과제풀이"><a class="markdownIt-Anchor" href="#과제풀이"></a> 과제풀이</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="comment">//이름과 나이를 입력 받아 자신을 소개하는 글을 출력하는 함수</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">introduce</span><span class="params">(age: Int, name: String)</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"이름은 \(name)입니다."</span>);<span class="built_in">print</span>(<span class="string">"나이는 \(age)살 입니다."</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//정수를 하나 입력받아 2의 배수 여부를 반환하는 함수</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">multipleOf2</span><span class="params">(number: Int)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> number % <span class="number">2</span> == <span class="number">0</span> ? <span class="literal">true</span> : <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//정수를 두 개 입력 받아 곱한 결과를 반환하는 함수 (파라미터 하나의 기본 값은 10)</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">multipleTwoNumber</span><span class="params">(n1: Int, n2: Int = <span class="number">10</span>)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> n1 * n2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//4과목의 시험 점수를 입력받아 평균 점수를 반환하는 함수</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">averageScores</span><span class="params">(scores: Int...)</span></span> -&gt; <span class="type">Any</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> scoreLength = scores.<span class="built_in">count</span></span><br><span class="line">    <span class="keyword">if</span> scoreLength &gt; <span class="number">5</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Out of range"</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> scores.<span class="built_in">reduce</span>(<span class="number">0</span>,+) / scoreLength</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">scoreDivision</span><span class="params">(score: Double)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> returnGrade: <span class="type">String</span></span><br><span class="line">    <span class="keyword">switch</span> score &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">90</span>...<span class="number">100</span>:</span><br><span class="line">            returnGrade = <span class="string">"A"</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">80</span>...<span class="number">90</span>:</span><br><span class="line">            returnGrade = <span class="string">"B"</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">70</span>...<span class="number">80</span>:</span><br><span class="line">            returnGrade = <span class="string">"C"</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>...<span class="number">70</span>:</span><br><span class="line">            returnGrade = <span class="string">"F"</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        returnGrade = <span class="string">"Unknown Error"</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> returnGrade</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//점수를 입력받아 학점을 반환하는 함수 만들기 (90점 이상 A, 80점 이상 B, 70점 이상 C, 그 이하 F)</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">scoreToGrade</span><span class="params">(score: Int)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> scoreDivision(score: <span class="type">Double</span>(score))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 가변 인자 파라미터를 이용해 점수를 여러 개 입력받아 평균 점수에 대한 학점을 반환하는 함수 (90점 이상 A, 80점 이상 B, 70점 이상 C, 그 이하 F)</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">scoreToGrade</span><span class="params">(scores: Int...)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> scoreAverage: <span class="type">Double</span> = <span class="type">Double</span>(scores.<span class="built_in">reduce</span>(<span class="number">0</span>,+) / scores.<span class="built_in">count</span>)</span><br><span class="line">    <span class="keyword">return</span> scoreDivision(score: scoreAverage)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">introduce(age: <span class="number">20</span>,name: <span class="string">"홍동현"</span>)</span><br><span class="line"><span class="built_in">print</span>(multipleOf2(number: <span class="number">5</span>))</span><br><span class="line"><span class="built_in">print</span>(multipleTwoNumber(n1: <span class="number">100</span>))</span><br><span class="line"><span class="built_in">print</span>(averageScores(scores: <span class="number">100</span>,<span class="number">90</span>,<span class="number">80</span>,<span class="number">70</span>))</span><br><span class="line"><span class="built_in">print</span>(scoreToGrade(scores: <span class="number">33</span>,<span class="number">33</span>,<span class="number">34</span>))</span><br><span class="line"><span class="built_in">print</span>(scoreToGrade(score: <span class="number">69</span>))</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -817,131 +903,6 @@ Float 4Byte</p>
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%9D%98-github%EA%B3%84%EC%A0%95-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%9D%98-github%EA%B3%84%EC%A0%95-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" class="post-title-link" itemprop="url">여러개의-github계정-사용하기</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2019-11-11 21:56:42 / Updated at: 21:57:02" itemprop="dateCreated datePublished" datetime="2019-11-11T21:56:42+09:00">2019-11-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Github/" itemprop="url" rel="index">
-                    <span itemprop="name">Github</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%9D%98-github%EA%B3%84%EC%A0%95-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/여러개의-github계정-사용하기/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="github계정-여러개-사용하기"><a class="markdownIt-Anchor" href="#github계정-여러개-사용하기"></a> github계정 여러개 사용하기</h1>
-<p>하나의 컴퓨터에서 여러개의 github의 계정을 사용하고 싶을 때를 설명해 둔 글입니다.</p>
-<p>github에서 여러개의 계정을 사용하고 싶을때(개인,회사)</p>
-<p>MacOS기준</p>
-<h2 id="1새로운-ssh키-만들기"><a class="markdownIt-Anchor" href="#1새로운-ssh키-만들기"></a> 1.새로운 SSH키 만들기</h2>
-<p>SSH키는 기본적으로 ~/.ssh 에 저장된다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">cd ~/.ssh</span><br><span class="line"></span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line">사용자가 만들어 둔 키의 리스트들</span><br></pre></td></tr></table></figure>
-<p>.pub는 공개키이고 붙어있지 않은것은 개인키이다. (rsa)<br />
-새로운계정에서 사용할 SSH키를 만들어 보자</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;username@email.com&quot; // 새 계정의 이메일 주소</span><br></pre></td></tr></table></figure>
-<p>저장될 경로를 물어보는데 default가 id_rsa일것이다.</p>
-<p><strong>기존의 키를 덮어 쓰지않도록 조심하여 키 이름을 만들자</strong></p>
-<p>암호는 그냥 엔터엔터 해서 넘어가면 됩니다.</p>
-<p>암호를 입력할 경우 키를 사용할때마다 암호를 입력했던것 같은데 깃헙에서는 어떻게 되는지 잘 모르겠다.</p>
-<p>ls 명령을 사용하여 만들어진것을 확인한 후,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat 만들었던 공개키(.pub)</span><br><span class="line"></span><br><span class="line">~~~~~ ssh-rsa로 시작하는 알수없는 문자열~~~~</span><br></pre></td></tr></table></figure>
-<p>이 나오는데 이 내용을 복사하여 github에 등록할것이다.</p>
-<h1 id="2-ssh-키-설정하기"><a class="markdownIt-Anchor" href="#2-ssh-키-설정하기"></a> 2. SSH 키 설정하기</h1>
-<p><a href="https://github.com/" target="_blank" rel="noopener">github</a>에 다른계정으로 로그인 후</p>
-<p>settings -&gt; SSH and GPG keys -&gt; New SSH key</p>
-<p>title에는 구분할 수 있는 이름을,</p>
-<p>key에는 아까 cat명령으로 복사했던 문자열을 넣는다.</p>
-<p>그 다음 터미널에서 생성한 키를 SSH에 추가한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/만들었던 개인키</span><br></pre></td></tr></table></figure>
-<h1 id="3config-파일-만들기"><a class="markdownIt-Anchor" href="#3config-파일-만들기"></a> 3.Config 파일 만들기</h1>
-<p>로컬에서 작업한 내용을 푸시할 때 어떤키를 참조할지 결정하도록 Config파일을 수정하자.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">cd ~/.ssh</span><br><span class="line"></span><br><span class="line">vim config</span><br></pre></td></tr></table></figure>
-<p>config파일에는 밑의 내용을 입력한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># Default account</span><br><span class="line"></span><br><span class="line">Host github.com</span><br><span class="line"></span><br><span class="line">    HostName github.com</span><br><span class="line"></span><br><span class="line">    User git</span><br><span class="line"></span><br><span class="line">    IdentityFile ~/.ssh/원래쓰던키</span><br><span class="line"></span><br><span class="line"># Second account</span><br><span class="line"></span><br><span class="line">Host github.com-second</span><br><span class="line"></span><br><span class="line">    HostName github.com</span><br><span class="line"></span><br><span class="line">    User git</span><br><span class="line"></span><br><span class="line">    IdentityFile ~/.ssh/새로만든키</span><br></pre></td></tr></table></figure>
-<h1 id="4-새-계정으로-push-테스트"><a class="markdownIt-Anchor" href="#4-새-계정으로-push-테스트"></a> 4. 새 계정으로 push 테스트</h1>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line">git add -A</span><br><span class="line"></span><br><span class="line">git commit -m &apos;first commit&apos;</span><br><span class="line"></span><br><span class="line">git remote add origin git@github.com-second:YOURNAME/REPOSITORY.git</span><br></pre></td></tr></table></figure>
-<p><strong>YOURNAME</strong>에는 github계정의 이름</p>
-<p><strong>REPOSITORY</strong>에는 새로만든 레포의 이름</p>
-<p>아까 만든 3에서만든 config파일에서 Host github.com-second라고 입력했다.</p>
-<p>그러므로 원격저장소 등록시 <a href="http://github.com" target="_blank" rel="noopener">github.com</a> 대신 github.com-second라고 입력해야 키를 구분하여 쓸 수 있다.</p>
-<blockquote>
-<p>기존의 계정으로 작업하려면 git@github.com으로 하면 된다.</p>
-</blockquote>
-<h2 id="에러났을때"><a class="markdownIt-Anchor" href="#에러났을때"></a> 에러났을때</h2>
-<p>ex) git access denied라고 뜨면</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ssh-add ~/.ssh/새로만든 개인키</span><br></pre></td></tr></table></figure>
-<p>를 입력하고 다시해보자.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -992,20 +953,20 @@ Float 4Byte</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -1052,7 +1013,7 @@ Float 4Byte</p>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
   </div>
 
         
@@ -1078,7 +1039,7 @@ Float 4Byte</p>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script>
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 <script src="/js/next-boot.js"></script>
 
 
