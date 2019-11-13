@@ -201,6 +201,117 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%EC%9E%90%EC%A3%BC%EC%93%B0%EB%8A%94-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D-%EB%AA%A8%EC%9D%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/%EC%9E%90%EC%A3%BC%EC%93%B0%EB%8A%94-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D-%EB%AA%A8%EC%9D%8C/" class="post-title-link" itemprop="url">자주쓰는 정규표현식 모음</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-11 21:57:57" itemprop="dateCreated datePublished" datetime="2019-11-11T21:57:57+09:00">2019-11-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-13 12:47:26" itemprop="dateModified" datetime="2019-11-13T12:47:26+09:00">2019-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Regex/" itemprop="url" rel="index">
+                    <span itemprop="name">Regex</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/%EC%9E%90%EC%A3%BC%EC%93%B0%EB%8A%94-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D-%EB%AA%A8%EC%9D%8C/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/자주쓰는-정규표현식-모음/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="자주쓰는-정규표현식-모음"><a class="markdownIt-Anchor" href="#자주쓰는-정규표현식-모음"></a> 자주쓰는 정규표현식 모음</h1>
+<h2 id="정규표현식"><a class="markdownIt-Anchor" href="#정규표현식"></a> 정규표현식</h2>
+<p>휴대폰번호 정규식이나 이메일 체크 정규식 같은것들 모음<br />
+정규식사용은 프레임워크별로 크게 다르지 않으니 적절하게 바꿔쓰면 됩니다.</p>
+<h1 id="공백체크"><a class="markdownIt-Anchor" href="#공백체크"></a> 공백체크</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;\s/g&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="숫자체크"><a class="markdownIt-Anchor" href="#숫자체크"></a> 숫자체크</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^[0-9]+$&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="아이디-비밀번호-정규식"><a class="markdownIt-Anchor" href="#아이디-비밀번호-정규식"></a> 아이디, 비밀번호 정규식</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^[a-z0-9_]&#123;4,20&#125;$&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="휴대폰번호-정규식"><a class="markdownIt-Anchor" href="#휴대폰번호-정규식"></a> 휴대폰번호 정규식</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^\d&#123;3&#125;-\d&#123;3,4&#125;-\d&#123;4&#125;$&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="휴대폰번호-체크-정규식"><a class="markdownIt-Anchor" href="#휴대폰번호-체크-정규식"></a> 휴대폰번호 체크 정규식</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^01([0|1|6|7|8|9]?)-?([0-9]&#123;3,4&#125;)-?([0-9]&#123;4&#125;)$&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="일반전화-정규식"><a class="markdownIt-Anchor" href="#일반전화-정규식"></a> 일반전화 정규식</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^\d&#123;2,3&#125;-\d&#123;3,4&#125;-\d&#123;4&#125;$&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="이메일-체크-정규식"><a class="markdownIt-Anchor" href="#이메일-체크-정규식"></a> 이메일 체크 정규식</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]&#123;2,3&#125;$&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="주민번호"><a class="markdownIt-Anchor" href="#주민번호"></a> 주민번호</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^(?:[0-9]&#123;2&#125;(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,1]))-[1-4][0-9]&#123;6&#125;$&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="한글과-영문만-가능"><a class="markdownIt-Anchor" href="#한글과-영문만-가능"></a> 한글과 영문만 가능</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^[가-힣a-zA-Z]+$&apos;)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%9D%98-github%EA%B3%84%EC%A0%95-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -931,231 +1042,11 @@ Initialize this repository with a README 체크</p>
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%E1%84%86%E1%85%A1%E1%84%8F%E1%85%B3%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%AE%E1%86%AB%E1%84%87%E1%85%A5%E1%86%B8%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/%E1%84%86%E1%85%A1%E1%84%8F%E1%85%B3%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%AE%E1%86%AB%E1%84%87%E1%85%A5%E1%86%B8%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5/" class="post-title-link" itemprop="url">마크다운 문법 정리</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-
-              <time title="Post created: 2019-11-06 12:00:00" itemprop="dateCreated datePublished" datetime="2019-11-06T12:00:00+09:00">2019-11-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-13 12:44:10" itemprop="dateModified" datetime="2019-11-13T12:44:10+09:00">2019-11-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4/" itemprop="url" rel="index">
-                    <span itemprop="name">마크다운</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/%E1%84%86%E1%85%A1%E1%84%8F%E1%85%B3%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%86%E1%85%AE%E1%86%AB%E1%84%87%E1%85%A5%E1%86%B8%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/마크다운 문법 정리/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="markdown"><a class="markdownIt-Anchor" href="#markdown"></a> MarkDown</h1>
-<h1 id="headers"><a class="markdownIt-Anchor" href="#headers"></a> Headers</h1>
-<p><code># 이후 내용작성</code></p>
-<h1 id="h1"><a class="markdownIt-Anchor" href="#h1"></a> h1</h1>
-<h2 id="h2"><a class="markdownIt-Anchor" href="#h2"></a> h2</h2>
-<h3 id="h3"><a class="markdownIt-Anchor" href="#h3"></a> h3</h3>
-<h4 id="h4"><a class="markdownIt-Anchor" href="#h4"></a> h4</h4>
-<h5 id="h5"><a class="markdownIt-Anchor" href="#h5"></a> h5</h5>
-<h6 id="h6"><a class="markdownIt-Anchor" href="#h6"></a> h6</h6>
-<h1 id="emphasis"><a class="markdownIt-Anchor" href="#emphasis"></a> Emphasis</h1>
-<h2 id="italic"><a class="markdownIt-Anchor" href="#italic"></a> Italic</h2>
-<p><code>*italic*</code></p>
-<p><em>italic</em></p>
-<h2 id="bold"><a class="markdownIt-Anchor" href="#bold"></a> Bold</h2>
-<p><code>**Bold** __Bold__</code></p>
-<p><strong>Bold</strong> <strong>Bold</strong></p>
-<h2 id="strikethrough"><a class="markdownIt-Anchor" href="#strikethrough"></a> Strikethrough</h2>
-<p><code>~~Strikethrough~~</code></p>
-<p><s>Strikethrough</s></p>
-<h2 id="combo"><a class="markdownIt-Anchor" href="#combo"></a> Combo</h2>
-<p><code>~~*__BolditalicStrikeThrough__*~~</code></p>
-<p><s><em><strong>BolditalicStrikeThrough</strong></em></s></p>
-<h2 id="underline"><a class="markdownIt-Anchor" href="#underline"></a> UnderLine</h2>
-<p><code>_UnderLine_</code></p>
-<p><em>UnderLine</em></p>
-<h1 id="list"><a class="markdownIt-Anchor" href="#list"></a> List</h1>
-<h2 id="orderedlists"><a class="markdownIt-Anchor" href="#orderedlists"></a> OrderedLists</h2>
-<ol>
-<li>순서1</li>
-<li>순서2</li>
-<li>순서3</li>
-</ol>
-<h2 id="unorderedlists"><a class="markdownIt-Anchor" href="#unorderedlists"></a> UnorderedLists</h2>
-<p><code>- or * or +</code></p>
-<ul>
-<li>순서1</li>
-<li>순서2</li>
-<li>순서3</li>
-</ul>
-<ul>
-<li>순서1</li>
-<li>순서2</li>
-<li>순서3</li>
-</ul>
-<ul>
-<li>순서1</li>
-<li>순서2</li>
-<li>순서3</li>
-</ul>
-<h2 id="combo-2"><a class="markdownIt-Anchor" href="#combo-2"></a> Combo</h2>
-<ol>
-<li>순서1</li>
-<li>순서2</li>
-</ol>
-<ul>
-<li>순서2-1</li>
-</ul>
-<ol start="3">
-<li>순서3</li>
-</ol>
-<ul>
-<li>순서3-1</li>
-<li>순서3-2</li>
-</ul>
-<ul>
-<li>바꿔치기</li>
-<li>종료</li>
-</ul>
-<h1 id="hyperlink"><a class="markdownIt-Anchor" href="#hyperlink"></a> HyperLink</h1>
-<h2 id="url"><a class="markdownIt-Anchor" href="#url"></a> URL</h2>
-<p><code>[GOOGLE](https://www.google.com &quot;Comment&quot;)</code></p>
-<p><code>[Header](Headers)</code></p>
-<p><a href="https://www.google.com" target="_blank" rel="noopener" title="Comment">GOOGLE</a><br><br />
-<a href="Headers">Header</a></p>
-<blockquote>
-<p><br>은 줄바꿈 html태그</p>
-</blockquote>
-<h2 id="image"><a class="markdownIt-Anchor" href="#image"></a> Image</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![Alt](https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png)</span><br></pre></td></tr></table></figure>
-<p><img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Alt" /></p>
-<h3 id="link-to-the-image"><a class="markdownIt-Anchor" href="#link-to-the-image"></a> Link to the Image</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[![Alt](https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png)](https://www.google.com)</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.google.com" target="_blank" rel="noopener"><img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Alt" /></a></p>
-<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
-<h2 id="inline-code"><a class="markdownIt-Anchor" href="#inline-code"></a> Inline Code</h2>
-<p><code>inlinecode</code></p>
-<h2 id="block-code"><a class="markdownIt-Anchor" href="#block-code"></a> Block Code</h2>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"hello world"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"hello world"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"hello world"</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="table"><a class="markdownIt-Anchor" href="#table"></a> Table</h1>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-<th>Des</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>One</td>
-<td>1</td>
-<td>숫자 1</td>
-</tr>
-<tr>
-<td>Two</td>
-<td>2</td>
-<td>숫자 2</td>
-</tr>
-<tr>
-<td>Three</td>
-<td>3</td>
-<td>숫자 3</td>
-</tr>
-</tbody>
-</table>
-<h1 id="blockquote"><a class="markdownIt-Anchor" href="#blockquote"></a> BlockQuote</h1>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; BlockQuote</span><br><span class="line">&gt;&gt; Nested BlockQuote</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>BlockQuote</p>
-<blockquote>
-<p>Nested BlockQuote</p>
-</blockquote>
-</blockquote>
-<h1 id="horizon"><a class="markdownIt-Anchor" href="#horizon"></a> horizon</h1>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">***</span><br><span class="line">___</span><br></pre></td></tr></table></figure>
-<hr />
-<hr />
-<hr />
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
 
@@ -1201,7 +1092,7 @@ Initialize this repository with a README 체크</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
