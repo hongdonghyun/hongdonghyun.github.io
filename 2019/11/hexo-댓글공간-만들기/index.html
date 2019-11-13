@@ -51,13 +51,13 @@
   };
 </script>
 
-  <meta name="description" content="Hexo 시리즈 바로가기   Hexo로 Github Page 만들기   Hexo 테마 설정하기   Hexo 댓글 만들기    헥소 댓글창 만들기 본 포스팅은 next 테마를 기준으로 설명합니다.  Disqus Disqus는 소셜 댓글 서비스 댓글영역과 로직을 직접 구현하지 않아도 위젯 형태로 서비스를 제공함 특별한 기능을 사용하지 않는다면 basic플랜(">
+  <meta name="description" content="Hexo 시리즈 바로가기   Hexo로 Github Page 만들기   Hexo 테마 설정하기   Hexo 댓글 만들기   구글 애널리틱스 연동하기    헥소 댓글창 만들기 본 포스팅은 next 테마를 기준으로 설명합니다.  Disqus Disqus는 소셜 댓글 서비스 댓글영역과 로직을 직접 구현하지 않아도 위젯 형태로 서비스를 제공함 특별한 기능을 사용">
 <meta name="keywords" content="hexo,disqus">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo_댓글공간_만들기">
 <meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
-<meta property="og:description" content="Hexo 시리즈 바로가기   Hexo로 Github Page 만들기   Hexo 테마 설정하기   Hexo 댓글 만들기    헥소 댓글창 만들기 본 포스팅은 next 테마를 기준으로 설명합니다.  Disqus Disqus는 소셜 댓글 서비스 댓글영역과 로직을 직접 구현하지 않아도 위젯 형태로 서비스를 제공함 특별한 기능을 사용하지 않는다면 basic플랜(">
+<meta property="og:description" content="Hexo 시리즈 바로가기   Hexo로 Github Page 만들기   Hexo 테마 설정하기   Hexo 댓글 만들기   구글 애널리틱스 연동하기    헥소 댓글창 만들기 본 포스팅은 next 테마를 기준으로 설명합니다.  Disqus Disqus는 소셜 댓글 서비스 댓글영역과 로직을 직접 구현하지 않아도 위젯 형태로 서비스를 제공함 특별한 기능을 사용">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0&#x2F;hexo_disqus1.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0&#x2F;hexo_disqus2.png">
@@ -66,7 +66,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0&#x2F;hexo_disqus5.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0&#x2F;hexo_disqus6.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0&#x2F;hexo_disqus7.png">
-<meta property="og:updated_time" content="2019-11-12T06:00:19.693Z">
+<meta property="og:updated_time" content="2019-11-13T02:16:50.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0&#x2F;hexo_disqus1.png">
 
@@ -232,10 +232,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">작성일</span>
-              
 
-              <time title="Post created: 2019-11-12 14:15:28 / Updated at: 15:00:19" itemprop="dateCreated datePublished" datetime="2019-11-12T14:15:28+09:00">2019-11-12</time>
+              <time title="Post created: 2019-11-12 14:15:28" itemprop="dateCreated datePublished" datetime="2019-11-12T14:15:28+09:00">2019-11-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-13 11:16:50" itemprop="dateModified" datetime="2019-11-13T11:16:50+09:00">2019-11-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -283,6 +289,9 @@
 </li>
 <li>
 <p><a href="https://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 댓글 만들기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">구글 애널리틱스 연동하기</a></p>
 </li>
 </ol>
 <h1 id="헥소-댓글창-만들기"><a class="markdownIt-Anchor" href="#헥소-댓글창-만들기"></a> 헥소 댓글창 만들기</h1>
