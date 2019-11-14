@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Hong3의 개발블로그">
 <meta property="og:description" content="[보기] 철수 - apple, 영희 - banana, 진수 - grape, 미희 - strawberry 위 보기처럼 학생과 좋아하는 과일을 매칭시킨 정보를 Dictionary 형태로 만들고 스펠링에 &amp;apos;e’가 들어간 과일을 모두 찾아 그것과 매칭되는 학생 이름을 배열로 반환하는 함수  12345678910111213func findFruit() -&amp;gt;">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-11-13T11:33:43.883Z">
+<meta property="og:updated_time" content="2019-11-14T03:54:40.535Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-3/">
@@ -224,10 +224,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">작성일</span>
-              
 
-              <time title="Post created: 2019-11-13 20:33:12 / Updated at: 20:33:43" itemprop="dateCreated datePublished" datetime="2019-11-13T20:33:12+09:00">2019-11-13</time>
+              <time title="Post created: 2019-11-13 20:33:12" itemprop="dateCreated datePublished" datetime="2019-11-13T20:33:12+09:00">2019-11-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-14 12:54:40" itemprop="dateModified" datetime="2019-11-14T12:54:40+09:00">2019-11-14</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -293,7 +299,7 @@
 <ul>
 <li>별도로 전달한 식육목 모식도 라는 자료를 보고 Dictionary 자료형에 맞도록 중첩형태로 데이터를 저장하고 해당 변수에서 표범 하위 분류를 찾아 사자와 호랑이를 출력하기</li>
 </ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sixSixTree = [</span><br><span class="line">    <span class="string">"식육목"</span>: [</span><br><span class="line">        <span class="string">"개과"</span>: [</span><br><span class="line">            <span class="string">"개"</span>: [</span><br><span class="line">                <span class="string">"자칼"</span>,</span><br><span class="line">                <span class="string">"늑대"</span>,</span><br><span class="line">                <span class="string">"북미산 이리"</span>,</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"여우"</span>: [</span><br><span class="line">                <span class="string">"아메리카 여우"</span>,</span><br><span class="line">                <span class="string">"유럽 여우"</span>,</span><br><span class="line">            ]</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"고양이과"</span>: [</span><br><span class="line">            <span class="string">"고양이"</span>,</span><br><span class="line">            <span class="string">"살쾡이"</span>,</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"표범"</span>: [</span><br><span class="line">            <span class="string">"사자"</span>,</span><br><span class="line">            <span class="string">"호랑이"</span>,</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sixSixTree = [</span><br><span class="line">    <span class="string">"식육목"</span>: [</span><br><span class="line">        <span class="string">"개과"</span>: [</span><br><span class="line">            <span class="string">"개"</span>: [</span><br><span class="line">                <span class="string">"자칼"</span>,</span><br><span class="line">                <span class="string">"늑대"</span>,</span><br><span class="line">                <span class="string">"북미산 이리"</span>,</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"여우"</span>: [</span><br><span class="line">                <span class="string">"아메리카 여우"</span>,</span><br><span class="line">                <span class="string">"유럽 여우"</span>,</span><br><span class="line">            ]</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"고양이과"</span>: [</span><br><span class="line">            <span class="string">"고양이"</span>: [</span><br><span class="line">          	  <span class="string">"고양이"</span>,</span><br><span class="line">          	  <span class="string">"살쾡이"</span>,</span><br><span class="line">	        ],</span><br><span class="line">            <span class="string">"표범"</span>: [</span><br><span class="line">	            <span class="string">"사자"</span>,</span><br><span class="line">	            <span class="string">"호랑이"</span>,</span><br><span class="line">	            ]</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <ul>
 <li>주어진 문자 배열에서 중복되지 않는 문자만을 뽑아내 배열로 반환해주는 함수</li>
 </ul>
