@@ -54,14 +54,15 @@
   <meta name="description" content="개발을 잘하고 싶읍니다">
 <meta name="keywords" content="python,swift,hexo,django,flask,aws">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hong3의 개발블로그">
-<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;tags&#x2F;disqus&#x2F;index.html">
+<meta property="og:title" content="sitemap">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;sitemap&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
 <meta property="og:description" content="개발을 잘하고 싶읍니다">
 <meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-11-15T01:39:41.111Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://hongdonghyun.github.io/tags/disqus/">
+<link rel="canonical" href="http://hongdonghyun.github.io/sitemap/">
 
 
 <script id="page-configurations">
@@ -70,12 +71,13 @@
     sidebar: "",
     isHome: false,
     isPost: false,
-    isPage: false,
+    isPage: true,
     isArchive: false
   };
 </script>
 
-  <title>태그: disqus | Hong3의 개발블로그</title>
+  <title>sitemap | Hong3의 개발블로그
+  </title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106140746-2"></script>
     <script>
@@ -192,58 +194,56 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
           <div class="content">
             
 
+  <div class="posts-expand">
+    
+    
+    
+    <div class="post-block" lang="ko">
+      <header class="post-header">
+
+<h2 class="post-title" itemprop="name headline">sitemap
+</h2>
+
+<div class="post-meta">
   
-  
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">disqus
-          <small>태그</small>
-        </h2>
-      </div>
+
+</div>
+
+</header>
 
       
-    <div class="collection-year">
-      <h2 class="collection-header">2019</h2>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-12T14:15:28+09:00"
-              content="2019-11-12">
-          11-12
-        </time>
+      
+      
+      <div class="post-body">
+          
       </div>
-
-      <h3 class="post-title">
-          <a class="post-title-link" href="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/" itemprop="url">
-            <span itemprop="name">hexo 댓글공간 만들기</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
-
+      
+      
+      
     </div>
+    
+
+    
+    
+    
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
           
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
         </div>
           
@@ -404,6 +404,27 @@
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://hongdonghyun.github.io/sitemap/index.html",
+            identifier: "sitemap/index.html",
+            title: "sitemap"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://hong3.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
 </script>
 
 </body>
