@@ -224,10 +224,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">작성일</span>
-              
 
-              <time title="Post created: 2019-11-15 10:17:42 / Updated at: 11:16:23" itemprop="dateCreated datePublished" datetime="2019-11-15T10:17:42+09:00">2019-11-15</time>
+              <time title="Post created: 2019-11-15 10:17:42" itemprop="dateCreated datePublished" datetime="2019-11-15T10:17:42+09:00">2019-11-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-16 18:14:45" itemprop="dateModified" datetime="2019-11-16T18:14:45+09:00">2019-11-16</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -284,8 +290,9 @@
 </li>
 </ol>
 <h1 id="블로그에-메뉴-추가하기"><a class="markdownIt-Anchor" href="#블로그에-메뉴-추가하기"></a> 블로그에 메뉴 추가하기</h1>
+<h2 id="포스팅을-참고하시기전에"><a class="markdownIt-Anchor" href="#포스팅을-참고하시기전에"></a> 포스팅을 참고하시기전에…</h2>
 <p>블로그에 메뉴를 어떻게 추가했냐는 문의가 생각보다 많아 포스팅 합니다.</p>
-<p>해당 포스팅은 Hexo, next테마를 기준으로 작성 되었으며 테마별로 지원이 되지 않거나 적용방법이 다를 수 있으니 테마별 공식문서를 참고해주세요.</p>
+<p>해당 포스팅은 <code>Hexo</code>, <code>next</code>테마를 기준으로 작성 되었으며 <strong>테마별로 지원이 되지 않거나 적용방법이 다를 수 있으니 테마별 공식문서를 참고해주세요</strong>.</p>
 <h2 id="메뉴-적용하기"><a class="markdownIt-Anchor" href="#메뉴-적용하기"></a> 메뉴 적용하기</h2>
 <ol>
 <li><code>블로그 최상단 디렉토리</code>에서 <code>themes/next</code>로 이동하여 <code>_config.yml</code> 파일을 에디터로 연다.</li>
@@ -310,11 +317,12 @@
 <p>다시 <code>블로그 최상단 디렉토리</code>로 이동하자.</p>
 <ol start="4">
 <li>이제 커맨드창에 다음과 같이 입력한다.<br />
-<code>hexo new page &lt;만들페이지 ex)about&gt;</code></li>
+<code>hexo new page &lt;만들페이지&gt;</code></li>
 </ol>
-<blockquote>
-<p>저는 sitemap으로 했습니다.</p>
-</blockquote>
+<ul>
+<li>카테고리를 만들고 싶다면 <code>hexo new page categories</code></li>
+<li>태그를 만들고 싶다면 <code>hexo new page tags</code></li>
+</ul>
 <img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu5.png" class="" title="hexo_menu5">
 <p>페이지를 만들고 다시 메뉴에 접근해보면 또 안될것이다.</p>
 <blockquote>
@@ -327,9 +335,15 @@ about은 여기까지 하면 접근됩니다.</p>
 <ol start="5">
 <li>해당<code>index.md</code>를 열어보면 다음 스크린샷 처럼 나올것이다.</li>
 </ol>
+<blockquote>
+<p>title을 당연히 다를수가 있다.</p>
+</blockquote>
 <img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu6.png" class="" title="hexo_menu6">
 <p>해당파일에 다음과 같은 한줄을 추가한다.<br />
 <code>type: categories</code></p>
+<blockquote>
+<p>tags라면 <code>type: tags</code>를 입력하면 되겠죠?</p>
+</blockquote>
 <img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu7.png" class="" title="hexo_menu7">
 <p>다음처럼 입력하고 저장후 <code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</code><br />
 를 실행하고 <code>localhost:4000</code>으로 들어가 확인해보자.</p>
@@ -339,19 +353,20 @@ about은 여기까지 하면 접근됩니다.</p>
 접근은 되지만 내용물이 없을것이다.</p>
 </blockquote>
 <p>아마도 상당수가 다음 스크린샷처럼 안나올것이다.<br />
-그건 게시물 마다 카테고리를 분류해주지 않았기 때문에 그렇다.</p>
+그건 <strong>게시물마다 카테고리를 분류해주지 않았기 때문</strong>에 그렇다.</p>
 <h2 id="게시물-카테고리-분류"><a class="markdownIt-Anchor" href="#게시물-카테고리-분류"></a> 게시물 카테고리 분류</h2>
 <p>블로그의 포스팅이 존재하는 <code>블로그 최상단디렉토리/source/_posts</code>로 들어가서 자신이 작성한 게시물 아무거나 하나 열어본다.</p>
 <img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu9.png" class="" title="hexo_menu9">
 <p>파일 최상단에 다음과 같은 내용이 꼭 있어야한다.</p>
 <blockquote>
-<p>없으면 헥소가 포스팅으로 인정안해줌 ㅇㅈ? ㅇㅇㅈ</p>
+<p>없으면 헥소가 포스팅으로 인정안해줌 ㅇㅈ?<br />
+Hexo: 인정합니다.</p>
 </blockquote>
 <p>categories에 적당한 분류명을 적어주고 저장한다.</p>
 <p>저장하고 <code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</code>를 하고 카테고리에 가보면 이제 카테고리가 나오는것을 확인할 수 있을것이다.</p>
 <blockquote>
 <p>안되면 뭔가 세팅을 잘못했다.<br />
-<s>컴퓨터는 거짓말하지 않는다.</s><br />
+<s>컴퓨터는 거짓말을 하지 않는다.</s><br />
 천천히 다시 따라해보시고<br />
 잘 모르시겠다면 댓글을 남겨주세요.</p>
 </blockquote>
