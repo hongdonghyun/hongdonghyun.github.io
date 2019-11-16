@@ -365,10 +365,42 @@ td {
   transform: rotate(45deg);
   top: -5px;
 }
+.highlight-wrap {
+  position: relative;
+}
+.highlight-wrap:hover .copy-btn,
+.highlight-wrap .copy-btn:focus {
+  opacity: 1;
+}
+.copy-btn {
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1.6;
+  opacity: 0;
+  outline: 0;
+  padding: 2px 6px;
+  position: absolute;
+  transition: opacity 0.3s ease-in-out;
+  vertical-align: middle;
+  white-space: nowrap;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  background-color: #eee;
+  background-image: linear-gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
+  font-size: 0.8125em;
+  right: 4px;
+  top: 8px;
+}
 pre,
 .highlight {
-  background: #f7f7f7;
-  color: #4d4d4c;
+  background: #000;
+  color: #eaeaea;
   line-height: 1.6;
   margin: 0 auto 20px;
 }
@@ -390,13 +422,13 @@ pre {
 }
 pre code {
   background: none;
-  color: #4d4d4c;
+  color: #eaeaea;
   font-size: 0.875em;
   padding: 0;
   text-shadow: none;
 }
 .highlight *::selection {
-  background: #d6d6d6;
+  background: #424242;
 }
 .highlight pre {
   border: 0;
@@ -414,7 +446,7 @@ pre code {
 }
 .highlight figcaption {
   background: #eee;
-  color: #4d4d4c;
+  color: #eaeaea;
   line-height: 1em;
   margin: 0;
   padding: 0.5em;
@@ -428,21 +460,21 @@ pre code {
   clear: both;
 }
 .highlight figcaption a {
-  color: #4d4d4c;
+  color: #eaeaea;
   float: right;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #4d4d4c;
+  border-bottom-color: #eaeaea;
 }
 .highlight .gutter pre {
-  background: #eff2f3;
-  color: #869194;
+  background: #292929;
+  color: #666;
   padding-left: 10px;
   padding-right: 10px;
   text-align: right;
 }
 .highlight .code pre {
-  background: #f7f7f7;
+  background: #000;
   padding-left: 10px;
   width: 100%;
 }
@@ -459,20 +491,20 @@ pre code {
   border: 0;
 }
 pre .deletion {
-  background: #fdd;
+  background: #800000;
 }
 pre .addition {
-  background: #dfd;
+  background: #008000;
 }
 pre .meta {
-  color: #eab700;
+  color: #e7c547;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
 }
 pre .comment {
-  color: #8e908c;
+  color: #969896;
 }
 pre .variable,
 pre .attribute,
@@ -487,7 +519,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #c82829;
+  color: #d54e53;
 }
 pre .number,
 pre .preprocessor,
@@ -497,7 +529,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #f5871f;
+  color: #e78c45;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute,
@@ -510,11 +542,11 @@ pre .ruby .symbol,
 pre .xml .cdata,
 pre .special,
 pre .formula {
-  color: #718c00;
+  color: #b9ca4a;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #3e999f;
+  color: #70c0b1;
 }
 pre .function,
 pre .python .decorator,
@@ -524,11 +556,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #4271ae;
+  color: #7aa6da;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #8959a8;
+  color: #c397d8;
 }
 .blockquote-center {
   border-left: none;
@@ -1147,7 +1179,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #24772f;
+  background: #78bdb6;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
