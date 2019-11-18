@@ -51,31 +51,32 @@
   };
 </script>
 
-  <meta name="description" content="개발을 잘하고 싶읍니다">
-<meta name="keywords" content="python,swift,hexo,django,flask,aws">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hong3의 개발블로그">
-<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;index.html">
+  <meta name="description" content="다음과 같은 속성(Property)과 행위(Method)를 가지는 클래스 만들어보기. 구현 내용은 자유롭게  1234567891011121314151617181920class Dog &amp;#123;    &#x2F;*    ** 강아지 (Dog)    - 속성: 이름, 나이, 몸무게, 견종    - 행위: 짖기, 먹기    *&#x2F;    var name: String =">
+<meta name="keywords" content="Swift기초">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift 과제 풀이 6">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-6&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
-<meta property="og:description" content="개발을 잘하고 싶읍니다">
+<meta property="og:description" content="다음과 같은 속성(Property)과 행위(Method)를 가지는 클래스 만들어보기. 구현 내용은 자유롭게  1234567891011121314151617181920class Dog &amp;#123;    &#x2F;*    ** 강아지 (Dog)    - 속성: 이름, 나이, 몸무게, 견종    - 행위: 짖기, 먹기    *&#x2F;    var name: String =">
 <meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-11-18T11:02:07.441Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://hongdonghyun.github.io/">
+<link rel="canonical" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-6/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Hong3의 개발블로그</title>
+  <title>Swift 과제 풀이 6 | Hong3의 개발블로그</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106140746-2"></script>
     <script>
@@ -197,10 +198,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -214,8 +215,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-6/" class="post-title-link" itemprop="url">Swift 과제 풀이 6</a>
+          Swift 과제 풀이 6
         </h2>
 
         <div class="post-meta">
@@ -247,6 +247,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
   <span class="post-meta-item">
     
@@ -271,7 +278,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ol>
+        <ol>
 <li>다음과 같은 속성(Property)과 행위(Method)를 가지는 클래스 만들어보기.<br />
 구현 내용은 자유롭게</li>
 </ol>
@@ -292,400 +299,33 @@
 <li>첨부된 그림을 참고하여 각 도형별 클래스를 만들고 각각의 넓이, 둘레, 부피를 구하는 프로퍼티와 메서드 구현하기</li>
 </ol>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Poly</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> width: <span class="type">Double?</span></span><br><span class="line">    <span class="keyword">var</span> height: <span class="type">Double?</span></span><br><span class="line">    <span class="keyword">var</span> length: <span class="type">Double?</span></span><br><span class="line">    <span class="keyword">var</span> radius: <span class="type">Double?</span></span><br><span class="line">    <span class="keyword">var</span> upperWidth: <span class="type">Double?</span></span><br><span class="line">    <span class="keyword">var</span> pi: <span class="type">Double</span> = <span class="number">3.14</span></span><br><span class="line">    <span class="keyword">var</span> <span class="type">A</span>: <span class="type">Double?</span> = <span class="literal">nil</span></span><br><span class="line">    <span class="keyword">var</span> <span class="type">P</span>: <span class="type">Double?</span> = <span class="literal">nil</span></span><br><span class="line">    <span class="keyword">var</span> <span class="type">C</span>: <span class="type">Double?</span> = <span class="literal">nil</span></span><br><span class="line">    <span class="keyword">var</span> <span class="type">V</span>: <span class="type">Double?</span> = <span class="literal">nil</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(width: <span class="type">Double?</span> = <span class="literal">nil</span>,upperWidth: <span class="type">Double?</span> = <span class="literal">nil</span>, length: <span class="type">Double?</span> = <span class="literal">nil</span>, height: <span class="type">Double?</span> = <span class="literal">nil</span>,radius: <span class="type">Double?</span> = <span class="literal">nil</span>, poly: <span class="type">Int?</span>) &#123;</span><br><span class="line">        <span class="keyword">switch</span> poly &#123;</span><br><span class="line">        <span class="comment">// square</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> w = width &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">A</span> = w * w</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">P</span> = <span class="number">4</span> * w</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="comment">// rectangle</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> w = width, <span class="keyword">let</span> h = height &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">A</span> = w * h</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">P</span> = (<span class="number">2</span> * w) + (<span class="number">2</span> * h)</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> r = radius &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">A</span> = <span class="keyword">self</span>.pi * (r * r)</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">C</span> = <span class="number">2</span> * <span class="keyword">self</span>.pi * r</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> w = width, <span class="keyword">let</span> h = height &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">A</span> = <span class="number">0.5</span> * w * h</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> uw = upperWidth, <span class="keyword">let</span> w = width, <span class="keyword">let</span> h = height &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">A</span> = <span class="number">0.5</span> * h * ( uw + w )</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> w = width &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">V</span> = w * w * w</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> w = width, <span class="keyword">let</span> l = length, <span class="keyword">let</span> h = height &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">V</span> = w * l * h</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> r = radius, <span class="keyword">let</span> h = height &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">V</span> = <span class="keyword">self</span>.pi * (r * r) * h</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> r = radius &#123;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">self</span>.<span class="type">V</span> = <span class="number">1.3</span> * <span class="keyword">self</span>.pi * (r * r * r)</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> r = radius, <span class="keyword">let</span> h = height &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">V</span> = <span class="number">0.3</span> * <span class="keyword">self</span>.pi * (r * r) * h</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">self</span>.width = <span class="number">0</span></span><br><span class="line">            <span class="keyword">self</span>.height = <span class="number">0</span></span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">getResult</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"--------------------"</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"넓이(A): "</span>, <span class="keyword">self</span>.<span class="type">A</span> ?? <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"둘레(P): "</span>, <span class="keyword">self</span>.<span class="type">P</span> ?? <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"원의둘레(C): "</span>, <span class="keyword">self</span>.<span class="type">C</span> ?? <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"부피(V): "</span>, <span class="keyword">self</span>.<span class="type">V</span> ?? <span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>...<span class="number">9</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    <span class="type">Poly</span>(width: <span class="number">5</span>,upperWidth: <span class="number">5</span>, length: <span class="number">5</span>, height: <span class="number">5</span>,radius: <span class="number">4</span>, poly: i).getResult()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/Swift%EA%B8%B0%EC%B4%88/" rel="tag"># Swift기초</a>
+          </div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/" rel="next" title="hexo sitemap,robots.txt 추가하기">
+                  <i class="fa fa-chevron-left"></i> hexo sitemap,robots.txt 추가하기
+                </a>
+            </div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/" class="post-title-link" itemprop="url">hexo sitemap,robots.txt 추가하기</a>
-        </h2>
+            <span class="post-nav-divider"></span>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2019-11-18 10:32:06 / Updated at: 12:17:37" itemprop="dateCreated datePublished" datetime="2019-11-18T10:32:06+09:00">2019-11-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/hexo-sitemap-robots-txt-추가하기/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="hexo-시리즈-바로가기"><a class="markdownIt-Anchor" href="#hexo-시리즈-바로가기"></a> Hexo 시리즈 바로가기</h1>
-<ol>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo로 Github Page 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/">Hexo 테마 설정하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 댓글 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">구글 애널리틱스 연동하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 메뉴 추가하기</a></p>
-</li>
-</ol>
-<h1 id="hexo-seo최적화"><a class="markdownIt-Anchor" href="#hexo-seo최적화"></a> hexo SEO최적화</h1>
-<h2 id="seo란"><a class="markdownIt-Anchor" href="#seo란"></a> SEO란?</h2>
-<p>Search Engine Optimization</p>
-<p>검색엔진최적화 라는 뜻을 가지며,</p>
-<p>우리가 만든 웹사이트가 검색엔진에 좀 더 노출이 많이되고, 상위에 노출 되도록 하는것입니다.</p>
-<p>웹사이트를 상위노출 시키기 위한 수많은 방법들이 존재하지만</p>
-<p>이번 포스팅에서는 가장 기초적이며 SEO에 기본이 되는 부분들을 세팅해보려고 한다.</p>
-<ul>
-<li>sitemap.xml</li>
-<li>robots.txt</li>
-<li>rss</li>
-<li>canonical meta tag</li>
-</ul>
-<h2 id="sitemap"><a class="markdownIt-Anchor" href="#sitemap"></a> sitemap</h2>
-<p>사이트맵은 일종의 지도다.<br />
-검색엔진들을 위한 지도라고 생각하면 된다.<br />
-검색엔진에게 우리 사이트의 구조를 알려주는 파일이라고 생각하면 된다.</p>
-<h3 id="설치-및-적용"><a class="markdownIt-Anchor" href="#설치-및-적용"></a> 설치 및 적용</h3>
-<ol>
-<li><code>블로그 루트 디렉토리</code>에서 해당 플러그인 설치</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-seo-friendly-sitemap --save</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>에디터로 <code>블로그 루트 디렉토리</code>에 있는 <code>_config.yml</code>을 열어준다.</li>
-</ol>
-<blockquote>
-<p><code>theme/</code>안에 있는 <code>_config.yml</code> 아닙니다.</p>
-</blockquote>
-<ol start="3">
-<li>다음과 같은 내용을 적어준다.</li>
-</ol>
-<img src="/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/hexo_seo1.png" class="" title="hexo_seo1">
-<p>path값은 필수이며, 나머지 옵션은 선택입니다.</p>
-<ul>
-<li>
-<p>path: 루트 디렉토리에 <code>sitemap.xml</code>생성 <code>url/sitemap.xml</code>로 확인이 가능함</p>
-</li>
-<li>
-<p>tag: sitemap에 tag 포함여부</p>
-</li>
-<li>
-<p>category: sitemap에 category 포함여부</p>
-</li>
-</ul>
-<h3 id="확인"><a class="markdownIt-Anchor" href="#확인"></a> 확인</h3>
-<ol>
-<li>
-<p><code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</code></p>
-</li>
-<li>
-<p><code>localhost:4000/sitemap.xml</code> 으로 접근하여 확인</p>
-</li>
-</ol>
-<h2 id="robotstxt"><a class="markdownIt-Anchor" href="#robotstxt"></a> robots.txt</h2>
-<p>웹사이트에는 검색엔진에 노출되야하는 페이지와 노출되면 안되는 페이지가 존재할 수 있다.</p>
-<blockquote>
-<p>ex)<br />
-admin페이지는 노출되면 안된다.<br />
-상품을 파는 페이지는 노출이 되어야한다.</p>
-</blockquote>
-<p>그러한 페이지들을 구분하여 검색엔진에게 알려주는 파일이다.</p>
-<p>더 자세한 내용을 <a href="https://support.google.com/webmasters/answer/6062596?hl=ko" target="_blank" rel="noopener">여기</a>를 참고하자.</p>
-<h3 id="설치-및-적용-2"><a class="markdownIt-Anchor" href="#설치-및-적용-2"></a> 설치 및 적용</h3>
-<ol>
-<li>
-<pre class="highlight"><code class=""></code></pre>
-</li>
-</ol>
-<p>npm install hexo-generator-robotstxt --save</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 에디터로 `블로그 루트 디렉토리`에 있는 `_config.yml`을 열어준다.</span><br><span class="line"></span><br><span class="line">```shell</span><br><span class="line">robotstxt:</span><br><span class="line">  useragent: &quot;*&quot;</span><br><span class="line">  allow:</span><br><span class="line">    - /</span><br><span class="line">  sitemap: https://&lt;username&gt;.github.io/sitemap.xml</span><br></pre></td></tr></table></figure>
-<ul>
-<li>useragent: 적용시킬 검색엔진 대상</li>
-</ul>
-<blockquote>
-<p>*은 모든 검색엔진에게 적용</p>
-</blockquote>
-<ul>
-<li>allow: 허용할 페이지</li>
-</ul>
-<blockquote>
-<p>/밑에 모든 페이지를 긁어도 좋다.</p>
-</blockquote>
-<ul>
-<li>
-<p>disallow: 금지할 페이지</p>
-</li>
-<li>
-<p>sitemap: 사이트맵의 위치</p>
-</li>
-</ul>
-<blockquote>
-<p><username> 여러분의 github page 주소를 적어주시면 됩니다.</p>
-</blockquote>
-<h3 id="확인-2"><a class="markdownIt-Anchor" href="#확인-2"></a> 확인</h3>
-<ol>
-<li>
-<p><code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</code></p>
-</li>
-<li>
-<p><code>localhost:4000/robots.txt</code> 으로 접근하여 확인</p>
-</li>
-</ol>
-<h2 id="rss"><a class="markdownIt-Anchor" href="#rss"></a> rss</h2>
-<p>RSS feed 는 사이트내의 최신 콘텐츠를 담고 있는 파일</p>
-<p>검색엔진에게 새글 목록만 따로 긁을 수 있게 해준다고 생각하자.</p>
-<h3 id="설치-및-적용-3"><a class="markdownIt-Anchor" href="#설치-및-적용-3"></a> 설치 및 적용</h3>
-<ol>
-<li>
-<pre class="highlight"><code class=""></code></pre>
-</li>
-</ol>
-<p>npm install hexo-generator-feed --save</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 에디터로 `블로그 루트 디렉토리`에 있는 `_config.yml`을 열어준다.</span><br><span class="line"></span><br><span class="line">3. ```yml</span><br><span class="line">feed:</span><br><span class="line">  type: rss2</span><br><span class="line">  path: rss2.xml</span><br><span class="line">  limit: 10</span><br></pre></td></tr></table></figure>
-<ul>
-<li>type: rss파일 타입</li>
-<li>path: 최신피드가 생성될 경로</li>
-<li>limit: 최신 포스트 갯수</li>
-</ul>
-<h3 id="확인-3"><a class="markdownIt-Anchor" href="#확인-3"></a> 확인</h3>
-<ol>
-<li>
-<p><code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</code></p>
-</li>
-<li>
-<p><code>localhost:4000</code> 으로 접근하여 사이드바에 rss버튼을 눌러보자.</p>
-</li>
-</ol>
-<h2 id="canonical"><a class="markdownIt-Anchor" href="#canonical"></a> canonical</h2>
-<p>canonical<code>속성</code>을 가진 <code>&lt;meta&gt;</code>태그를 자동으로 생성해준다.</p>
-<p>대표 URL을 만들어준다.</p>
-<blockquote>
-<p>이게 있으면 SEO에 유리함</p>
-</blockquote>
-<h3 id="설치-및-적용-4"><a class="markdownIt-Anchor" href="#설치-및-적용-4"></a> 설치 및 적용</h3>
-<p>1.```<br />
-npm install --save hexo-auto-canonical</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**어려움**</span><br><span class="line"></span><br><span class="line">2. `블로그 루트디렉토리/themes/&lt;적용된테마&gt;/layout/_partials/head`로 이동한다.</span><br><span class="line"></span><br><span class="line">&#123;% asset_img hexo_seo2.png hexo_seo2 %&#125;</span><br><span class="line"></span><br><span class="line">3. 에디터로 `head.swig`를 연다.</span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=2&quot;&gt;</span><br><span class="line">&lt;meta name=&quot;theme-color&quot; content=&quot;&#123;&#123; theme.android_chrome_color &#125;&#125;&quot;&gt;</span><br><span class="line">&lt;meta name=&quot;generator&quot; content=&quot;Hexo &#123;&#123; hexo_version &#125;&#125;&quot;&gt;</span><br><span class="line">&lt;%- autoCanonical(config, page) %&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>대충 집어넣어준다.<br />
-head안에만 있으면 된다.</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/" class="post-title-link" itemprop="url">블로그 방문자 카운팅하기</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2019-11-17 22:06:42 / Updated at: 22:32:47" itemprop="dateCreated datePublished" datetime="2019-11-17T22:06:42+09:00">2019-11-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/블로그-방문자-카운팅하기/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="hexo-시리즈-바로가기"><a class="markdownIt-Anchor" href="#hexo-시리즈-바로가기"></a> Hexo 시리즈 바로가기</h1>
-<ol>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo로 Github Page 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/">Hexo 테마 설정하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 댓글 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">구글 애널리틱스 연동하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 메뉴 추가하기</a></p>
-</li>
-</ol>
-<h1 id="블로그-방문자조회수-카운팅"><a class="markdownIt-Anchor" href="#블로그-방문자조회수-카운팅"></a> 블로그 방문자,조회수 카운팅</h1>
-<h1 id="포스팅을-참고하시기전에"><a class="markdownIt-Anchor" href="#포스팅을-참고하시기전에"></a> 포스팅을 참고하시기전에…</h1>
-<p>해당 포스팅은 <code>Hexo</code>, <code>next</code>테마를 기준으로 작성 되었으며 <strong>테마별로 지원이 되지 않거나 적용방법이 다를 수 있으니 테마별 공식문서를 참고해주세요</strong>.</p>
-<h2 id="busuanzi"><a class="markdownIt-Anchor" href="#busuanzi"></a> busuanzi</h2>
-<p><code>next</code> 테마 설정파일을 구경하던중</p>
-<p><code>busuanzi_count</code>라는 옵션을 발견했다.</p>
-<img src="/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/hexo_busuanzi2.png" class="" title="hexo_busuanzi2">
-<blockquote>
-<p>enable을 <code>true</code>로 해주면 쓸 수 있다.</p>
-</blockquote>
-<p>해당 내용을 검색해보니 홈페이지의 방문자와 조회수를 카운트 해주는 라이브러리 라는것을 알게 되었다.</p>
-<p><a href="https://busuanzi.ibruce.info/" target="_blank" rel="noopener">부수안지</a></p>
-<p>중국어로 되어있어 번역기의 힘을 빌려야 했지만<br />
-첫 화면에서 <code>script</code>코드를 주는것을 보고 대강 사용법을 알것 같았다.</p>
-<p>1개의 <code>script</code>코드와 2개의 <code>span</code>코드를 주고 있다.</p>
-<img src="/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/hexo_busuanzi1.png" class="" title="hexo_busuanzi1">
-<p>이제 이 코드를 테마 어딘가에 넣어주면 된다는 것이다.</p>
-<h2 id="적용하기"><a class="markdownIt-Anchor" href="#적용하기"></a> 적용하기</h2>
-<p><a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener">공식문서</a>를 좀 더 살펴보니<br />
-<code>hexo/theme/layout/_partials</code>의 <code>footer.ejs</code>파일에 내용을 추가하라고 한다.</p>
-<p>왜인지 모르겠지만 난 <code>ejs</code>파일이 아니라 <code>swig</code>파일이다.</p>
-<p>별차이는 없을것 같아 <code>footer.swig</code>파일에 내용을 추가해 주었다.</p>
-<h3 id="script"><a class="markdownIt-Anchor" href="#script"></a> script</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if theme.busuanzi.enabled %&#125;</span><br><span class="line">&lt;script async src = &quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script &gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="span"><a class="markdownIt-Anchor" href="#span"></a> span</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.busuanzi.enabled %&#125;</span><br><span class="line">&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;</span><br><span class="line"> 총 조회 &lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt; 회</span><br><span class="line">&lt;/span&gt; |</span><br><span class="line"></span><br><span class="line">&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;</span><br><span class="line"> 총 방문자 &lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt; 명</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>footer.swig파일 가장 하단에 내용을 추가해주자.</p>
-</blockquote>
-<h2 id="확인"><a class="markdownIt-Anchor" href="#확인"></a> 확인</h2>
-<p><code>script</code>,<code>span</code>을 넣고 자신의 블로그 가장 하단으로 가면<br />
-조회수와 방문자수가 찍혀있다.</p>
-<h2 id="위치변경"><a class="markdownIt-Anchor" href="#위치변경"></a> 위치변경</h2>
-<ul>
-<li>
-<p>만약 조회수,방문자수 중 보여주고 싶지 않은게 있다면 주석처리만 해주면 된다.</p>
-</li>
-<li>
-<p>홈페이지 하단이 아니라 다른곳에서 노출하고 싶다면 노출하고 싶은 부분에 <code>span</code>만<br />
-추가해주면 해당부분에서 잘 보인다.</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
@@ -693,15 +333,16 @@ head안에만 있으면 된다.</p>
 
   </div>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
-  </nav>
-
-
 
           </div>
           
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
         </div>
           
@@ -890,6 +531,27 @@ head안에만 있으면 된다.</p>
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-6/",
+            identifier: "2019/11/Swift-과제-풀이-6/",
+            title: "Swift 과제 풀이 6"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://hong3.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
 </script>
 
 </body>
