@@ -8,6 +8,54 @@
     </url>
 
     <url>
+        <loc>http://hongdonghyun.github.io/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/</loc>
+        <lastmod>2019-11-19T01:12:53.165Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
+        <lastmod>2019-11-19T01:12:41.083Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
+        <lastmod>2019-11-19T01:12:31.129Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/</loc>
+        <lastmod>2019-11-19T01:12:20.712Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/</loc>
+        <lastmod>2019-11-19T01:12:12.359Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/</loc>
+        <lastmod>2019-11-19T01:12:02.462Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
         <lastmod>2019-11-19T01:11:17.945Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -16,32 +64,8 @@
     </url>
 
     <url>
-        <loc>http://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/</loc>
-        <lastmod>2019-11-18T12:21:57.916Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-6/</loc>
         <lastmod>2019-11-18T11:02:07.441Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
-        <lastmod>2019-11-18T01:34:03.135Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/</loc>
-        <lastmod>2019-11-17T13:32:47.611Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -106,30 +130,6 @@
     <url>
         <loc>http://hongdonghyun.github.io/2019/11/Swift-Closure/</loc>
         <lastmod>2019-11-15T07:41:11.116Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/</loc>
-        <lastmod>2019-11-15T01:58:47.264Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/</loc>
-        <lastmod>2019-11-15T01:58:38.313Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
-        <lastmod>2019-11-15T01:58:26.224Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
