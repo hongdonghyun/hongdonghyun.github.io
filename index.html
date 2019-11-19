@@ -341,7 +341,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-19 10:12:12" itemprop="dateModified" datetime="2019-11-19T10:12:12+09:00">2019-11-19</time>
+                <time title="Updated at: 2019-11-19 10:16:24" itemprop="dateModified" datetime="2019-11-19T10:16:24+09:00">2019-11-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -415,7 +415,6 @@
 <li>sitemap.xml</li>
 <li>robots.txt</li>
 <li>rss</li>
-<li>canonical meta tag</li>
 </ul>
 <h2 id="sitemap"><a class="markdownIt-Anchor" href="#sitemap"></a> sitemap</h2>
 <p>사이트맵은 일종의 지도다.<br />
@@ -468,12 +467,13 @@ admin페이지는 노출되면 안된다.<br />
 <p>더 자세한 내용을 <a href="https://support.google.com/webmasters/answer/6062596?hl=ko" target="_blank" rel="noopener">여기</a>를 참고하자.</p>
 <h3 id="설치-및-적용-2"><a class="markdownIt-Anchor" href="#설치-및-적용-2"></a> 설치 및 적용</h3>
 <ol>
-<li>
-<pre class="highlight"><code class=""></code></pre>
-</li>
+<li>설치</li>
 </ol>
-<p>npm install hexo-generator-robotstxt --save</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 에디터로 `블로그 루트 디렉토리`에 있는 `_config.yml`을 열어준다.</span><br><span class="line"></span><br><span class="line">```shell</span><br><span class="line">robotstxt:</span><br><span class="line">  useragent: &quot;*&quot;</span><br><span class="line">  allow:</span><br><span class="line">    - /</span><br><span class="line">  sitemap: https://&lt;username&gt;.github.io/sitemap.xml</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-robotstxt --save</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>에디터로 <code>블로그 루트 디렉토리</code>에 있는 <code>_config.yml</code>을 열어준다.</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">robotstxt:</span><br><span class="line">  useragent: "*"</span><br><span class="line">  allow:</span><br><span class="line">    - /</span><br><span class="line">  sitemap: https://&lt;username&gt;.github.io/sitemap.xml</span><br></pre></td></tr></table></figure>
 <ul>
 <li>useragent: 적용시킬 검색엔진 대상</li>
 </ul>
@@ -511,12 +511,18 @@ admin페이지는 노출되면 안된다.<br />
 <p>검색엔진에게 새글 목록만 따로 긁을 수 있게 해준다고 생각하자.</p>
 <h3 id="설치-및-적용-3"><a class="markdownIt-Anchor" href="#설치-및-적용-3"></a> 설치 및 적용</h3>
 <ol>
+<li>설치</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+<ol start="2">
 <li>
-<pre class="highlight"><code class=""></code></pre>
+<p>에디터로 <code>블로그 루트 디렉토리</code>에 있는 <code>_config.yml</code>을 열어준다.</p>
+</li>
+<li>
+<p>파일 수정</p>
 </li>
 </ol>
-<p>npm install hexo-generator-feed --save</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 에디터로 `블로그 루트 디렉토리`에 있는 `_config.yml`을 열어준다.</span><br><span class="line"></span><br><span class="line">3. ```yml</span><br><span class="line">feed:</span><br><span class="line">  type: rss2</span><br><span class="line">  path: rss2.xml</span><br><span class="line">  limit: 10</span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feed:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">rss2</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">rss2.xml</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>type: rss파일 타입</li>
 <li>path: 최신피드가 생성될 경로</li>
@@ -531,20 +537,6 @@ admin페이지는 노출되면 안된다.<br />
 <p><code>localhost:4000</code> 으로 접근하여 사이드바에 rss버튼을 눌러보자.</p>
 </li>
 </ol>
-<h2 id="canonical"><a class="markdownIt-Anchor" href="#canonical"></a> canonical</h2>
-<p>canonical<code>속성</code>을 가진 <code>&lt;meta&gt;</code>태그를 자동으로 생성해준다.</p>
-<p>대표 URL을 만들어준다.</p>
-<blockquote>
-<p>이게 있으면 SEO에 유리함</p>
-</blockquote>
-<h3 id="설치-및-적용-4"><a class="markdownIt-Anchor" href="#설치-및-적용-4"></a> 설치 및 적용</h3>
-<p>1.```<br />
-npm install --save hexo-auto-canonical</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**어려움**</span><br><span class="line"></span><br><span class="line">2. `블로그 루트디렉토리/themes/&lt;적용된테마&gt;/layout/_partials/head`로 이동한다.</span><br><span class="line"></span><br><span class="line">&#123;% asset_img hexo_seo2.png hexo_seo2 %&#125;</span><br><span class="line"></span><br><span class="line">3. 에디터로 `head.swig`를 연다.</span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=2&quot;&gt;</span><br><span class="line">&lt;meta name=&quot;theme-color&quot; content=&quot;&#123;&#123; theme.android_chrome_color &#125;&#125;&quot;&gt;</span><br><span class="line">&lt;meta name=&quot;generator&quot; content=&quot;Hexo &#123;&#123; hexo_version &#125;&#125;&quot;&gt;</span><br><span class="line">&lt;%- autoCanonical(config, page) %&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>대충 집어넣어준다.<br />
-head안에만 있으면 된다.</p>
-</blockquote>
 
       
     </div>
