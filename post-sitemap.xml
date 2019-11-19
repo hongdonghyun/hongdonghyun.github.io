@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-6/</loc>
+        <lastmod>2019-11-19T09:40:24.439Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-7/</loc>
-        <lastmod>2019-11-19T09:37:18.431Z</lastmod>
+        <lastmod>2019-11-19T09:39:32.486Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -66,14 +74,6 @@
     <url>
         <loc>http://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
         <lastmod>2019-11-19T01:11:17.945Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-6/</loc>
-        <lastmod>2019-11-18T11:02:07.441Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
