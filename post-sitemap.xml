@@ -8,8 +8,24 @@
     </url>
 
     <url>
-        <loc>http://hongdonghyun.github.io/2019/11/TTT/</loc>
-        <lastmod>2019-11-20T05:25:44.036Z</lastmod>
+        <loc>http://hongdonghyun.github.io/2019/11/Swift-Insertion-Sort/</loc>
+        <lastmod>2019-11-20T06:57:49.661Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hongdonghyun.github.io/2019/11/Swift-Bubble-Sort/</loc>
+        <lastmod>2019-11-20T06:51:45.461Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hongdonghyun.github.io/2019/11/Swift-Selection-Sort/</loc>
+        <lastmod>2019-11-20T06:51:32.803Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
