@@ -52,15 +52,15 @@
   };
 </script>
 
-  <meta name="description" content="Swift로 풀어보기  Selection Sort 시간복잡도: O(n^2) n 개의 원소를 가진 배열을 정렬할 때, 계속해서 바꾸는 것이 아니라 비교하고 있는 값의 index 를 저장해둔다. 그리고 최종적으로 한 번만 바꿔준다.  Code 123456789101112131415161718192021let sequence = 1 ..&amp;lt; 100+1fun">
+  <meta name="description" content="Swift로 풀어보기  Selection Sort  시간복잡도: O(n^2) n 개의 원소를 가진 배열을 정렬할 때, 계속해서 바꾸는 것이 아니라 비교하고 있는 값의 index 를 저장해둔다. 그리고 최종적으로 한 번만 바꿔준다.  Code 123456789101112131415161718192021let sequence = 1 ..&amp;lt; 100+1fu">
 <meta name="keywords" content="Swift,Sort,Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Swift]Selection Sort">
 <meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-Selection-Sort&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
-<meta property="og:description" content="Swift로 풀어보기  Selection Sort 시간복잡도: O(n^2) n 개의 원소를 가진 배열을 정렬할 때, 계속해서 바꾸는 것이 아니라 비교하고 있는 값의 index 를 저장해둔다. 그리고 최종적으로 한 번만 바꿔준다.  Code 123456789101112131415161718192021let sequence = 1 ..&amp;lt; 100+1fun">
+<meta property="og:description" content="Swift로 풀어보기  Selection Sort  시간복잡도: O(n^2) n 개의 원소를 가진 배열을 정렬할 때, 계속해서 바꾸는 것이 아니라 비교하고 있는 값의 index 를 저장해둔다. 그리고 최종적으로 한 번만 바꿔준다.  Code 123456789101112131415161718192021let sequence = 1 ..&amp;lt; 100+1fu">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-11-20T06:51:32.803Z">
+<meta property="og:updated_time" content="2019-11-20T07:05:13.626Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2019/11/Swift-Selection-Sort/">
@@ -227,7 +227,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2019-11-20 15:45:17 / Updated at: 15:51:32" itemprop="dateCreated datePublished" datetime="2019-11-20T15:45:17+09:00">2019-11-20</time>
+              <time title="Post created: 2019-11-20 15:45:17 / Updated at: 16:05:13" itemprop="dateCreated datePublished" datetime="2019-11-20T15:45:17+09:00">2019-11-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,19 +275,24 @@
       
         <h1 id="swift로-풀어보기"><a class="markdownIt-Anchor" href="#swift로-풀어보기"></a> Swift로 풀어보기</h1>
 <h2 id="selection-sort"><a class="markdownIt-Anchor" href="#selection-sort"></a> Selection Sort</h2>
+<div class="video-container"><iframe src="//www.youtube.com/embed/xWBP4lzkoyM" frameborder="0" allowfullscreen></iframe></div>
 <p>시간복잡도: O(n^2)</p>
 <p>n 개의 원소를 가진 배열을 정렬할 때, 계속해서 바꾸는 것이 아니라 비교하고 있는 값의 index 를 저장해둔다.<br />
 그리고 최종적으로 한 번만 바꿔준다.</p>
 <h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h2>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sequence = <span class="number">1</span> ..&lt; <span class="number">100</span>+<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">selectionSort</span><span class="params">()</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> randomArray = sequence.shuffled()</span><br><span class="line">    <span class="keyword">var</span> value: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">var</span> location: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;randomArray.<span class="built_in">count</span> &#123;</span><br><span class="line">        value = randomArray[i]</span><br><span class="line">        location = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i+<span class="number">1</span>..&lt;randomArray.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="comment">// 제일 작은값 찾는중</span></span><br><span class="line">            <span class="keyword">if</span> value &gt; randomArray[j] &#123;</span><br><span class="line">                value = randomArray[j]</span><br><span class="line">                location = j</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 완전순회 후 변경</span></span><br><span class="line">        randomArray.swapAt(i, location)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> randomArray</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="개인정리"><a class="markdownIt-Anchor" href="#개인정리"></a> 개인정리</h2>
-<p>for문안에 값과위치를 저장 할 수있도록 변수를 할당한다.</p>
-<p>그리고 중첩된 for문이 끝나면 값에대한 조건순회가 끝났으므로<br />
-찾은 위치와 값을 바꿔준다.</p>
+<p>for문안에 값과 위치를 저장 할 수있도록 변수를 할당한다.</p>
+<p>그리고 중첩된 for문이 끝나면 값에 대한 조건순회가 끝났으므로 순회를 시작했던 값과 조건순회중 찾은 가장 작은값의 위치를 바꿔준다.</p>
 <p>버블소트는 매번 위치를 수정해 주었다면<br />
 셀렉션소트는 한번 다 훑고 수정해준다는것이 차이점</p>
-<blockquote>
 <p>하지만 둘다 시간복잡도는 O(n^2) 이라는점</p>
+<blockquote>
+<p>Bubble은 핵비효율적이었다면<br />
+Selection은 덜 비효율</p>
+<blockquote>
+<p>아무튼 비효율적임</p>
+</blockquote>
 </blockquote>
 
     </div>
