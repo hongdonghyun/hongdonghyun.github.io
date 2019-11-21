@@ -52,18 +52,21 @@
   };
 </script>
 
-  <meta name="description" content="Swift 함수 과제  과제풀이 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162import UIKit&#x2F;&#x2F;이름과 나이를 입력 받아 자신을 소개하는 글을 출력하는 함수func introduce(age:">
-<meta name="keywords" content="Swift기초">
+  <meta name="description" content="문제  Button을 누를 때마다 Label 의 값 변경하기  +버튼 또는 -버튼을 누르면 숫자가 증가&#x2F;감소하도록 만들기 숫자가 증가할 때는 label의 텍스트 색을 파란색, 감소할 때는 빨간색으로 변경     코드 123456789101112131415161718192021222324252627282930313233343536373839404142434">
+<meta name="keywords" content="swift 기초,UIKit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Swift 함수 풀이">
-<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-%ED%95%A8%EC%88%98-%ED%92%80%EC%9D%B4&#x2F;index.html">
+<meta property="og:title" content="Swift 과제 풀이 8">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
-<meta property="og:description" content="Swift 함수 과제  과제풀이 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162import UIKit&#x2F;&#x2F;이름과 나이를 입력 받아 자신을 소개하는 글을 출력하는 함수func introduce(age:">
+<meta property="og:description" content="문제  Button을 누를 때마다 Label 의 값 변경하기  +버튼 또는 -버튼을 누르면 숫자가 증가&#x2F;감소하도록 만들기 숫자가 증가할 때는 label의 텍스트 색을 파란색, 감소할 때는 빨간색으로 변경     코드 123456789101112131415161718192021222324252627282930313233343536373839404142434">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-11-15T07:57:21.755Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8&#x2F;result1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8&#x2F;result2.png">
+<meta property="og:updated_time" content="2019-11-21T12:58:36.847Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8&#x2F;result1.png">
 
-<link rel="canonical" href="http://hongdonghyun.github.io/2019/11/Swift-%ED%95%A8%EC%88%98-%ED%92%80%EC%9D%B4/">
+<link rel="canonical" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8/">
 
 
 <script id="page-configurations">
@@ -77,7 +80,7 @@
   };
 </script>
 
-  <title>Swift 함수 풀이 | Hong3의 개발블로그</title>
+  <title>Swift 과제 풀이 8 | Hong3의 개발블로그</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106140746-2"></script>
     <script>
@@ -203,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%ED%95%A8%EC%88%98-%ED%92%80%EC%9D%B4/">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
@@ -216,7 +219,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          Swift 함수 풀이
+          Swift 과제 풀이 8
         </h2>
 
         <div class="post-meta">
@@ -225,16 +228,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">작성일</span>
+              
 
-              <time title="Post created: 2019-11-11 22:03:46" itemprop="dateCreated datePublished" datetime="2019-11-11T22:03:46+09:00">2019-11-11</time>
+              <time title="Post created: 2019-11-21 21:54:19 / Updated at: 21:58:36" itemprop="dateCreated datePublished" datetime="2019-11-21T21:54:19+09:00">2019-11-21</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-15 16:57:21" itemprop="dateModified" datetime="2019-11-15T16:57:21+09:00">2019-11-15</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -269,8 +266,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/11/Swift-%ED%95%A8%EC%88%98-%ED%92%80%EC%9D%B4/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-함수-풀이/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-과제-풀이-8/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -285,10 +282,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="swift-함수-과제"><a class="markdownIt-Anchor" href="#swift-함수-과제"></a> Swift 함수 과제</h1>
-<h1 id="과제풀이"><a class="markdownIt-Anchor" href="#과제풀이"></a> 과제풀이</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="comment">//이름과 나이를 입력 받아 자신을 소개하는 글을 출력하는 함수</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">introduce</span><span class="params">(age: Int, name: String)</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"이름은 \(name)입니다."</span>);<span class="built_in">print</span>(<span class="string">"나이는 \(age)살 입니다."</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//정수를 하나 입력받아 2의 배수 여부를 반환하는 함수</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">multipleOf2</span><span class="params">(number: Int)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> number % <span class="number">2</span> == <span class="number">0</span> ? <span class="literal">true</span> : <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//정수를 두 개 입력 받아 곱한 결과를 반환하는 함수 (파라미터 하나의 기본 값은 10)</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">multipleTwoNumber</span><span class="params">(n1: Int, n2: Int = <span class="number">10</span>)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> n1 * n2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//4과목의 시험 점수를 입력받아 평균 점수를 반환하는 함수</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">averageScores</span><span class="params">(scores: Int...)</span></span> -&gt; <span class="type">Any</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> scoreLength = scores.<span class="built_in">count</span></span><br><span class="line">    <span class="keyword">if</span> scoreLength &gt; <span class="number">5</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Out of range"</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> scores.<span class="built_in">reduce</span>(<span class="number">0</span>,+) / scoreLength</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">scoreDivision</span><span class="params">(score: Double)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> returnGrade: <span class="type">String</span></span><br><span class="line">    <span class="keyword">switch</span> score &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">90</span>...<span class="number">100</span>:</span><br><span class="line">            returnGrade = <span class="string">"A"</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">80</span>...<span class="number">90</span>:</span><br><span class="line">            returnGrade = <span class="string">"B"</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">70</span>...<span class="number">80</span>:</span><br><span class="line">            returnGrade = <span class="string">"C"</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>...<span class="number">70</span>:</span><br><span class="line">            returnGrade = <span class="string">"F"</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        returnGrade = <span class="string">"Unknown Error"</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> returnGrade</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//점수를 입력받아 학점을 반환하는 함수 만들기 (90점 이상 A, 80점 이상 B, 70점 이상 C, 그 이하 F)</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">scoreToGrade</span><span class="params">(score: Int)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> scoreDivision(score: <span class="type">Double</span>(score))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 가변 인자 파라미터를 이용해 점수를 여러 개 입력받아 평균 점수에 대한 학점을 반환하는 함수 (90점 이상 A, 80점 이상 B, 70점 이상 C, 그 이하 F)</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">scoreToGrade</span><span class="params">(scores: Int...)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> scoreAverage: <span class="type">Double</span> = <span class="type">Double</span>(scores.<span class="built_in">reduce</span>(<span class="number">0</span>,+) / scores.<span class="built_in">count</span>)</span><br><span class="line">    <span class="keyword">return</span> scoreDivision(score: scoreAverage)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">introduce(age: <span class="number">20</span>,name: <span class="string">"홍동현"</span>)</span><br><span class="line"><span class="built_in">print</span>(multipleOf2(number: <span class="number">5</span>))</span><br><span class="line"><span class="built_in">print</span>(multipleTwoNumber(n1: <span class="number">100</span>))</span><br><span class="line"><span class="built_in">print</span>(averageScores(scores: <span class="number">100</span>,<span class="number">90</span>,<span class="number">80</span>,<span class="number">70</span>))</span><br><span class="line"><span class="built_in">print</span>(scoreToGrade(scores: <span class="number">33</span>,<span class="number">33</span>,<span class="number">34</span>))</span><br><span class="line"><span class="built_in">print</span>(scoreToGrade(score: <span class="number">69</span>))</span><br></pre></td></tr></table></figure>
-
+        <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<ul>
+<li>Button을 누를 때마다 Label 의 값 변경하기
+<ol>
+<li>+버튼 또는 -버튼을 누르면 숫자가 증가/감소하도록 만들기</li>
+<li>숫자가 증가할 때는 label의 텍스트 색을 파란색, 감소할 때는 빨간색으로 변경</li>
+</ol>
+</li>
+</ul>
+<h1 id="코드"><a class="markdownIt-Anchor" href="#코드"></a> 코드</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> resultLabel = <span class="type">UILabel</span>()</span><br><span class="line">    <span class="keyword">let</span> subBtn = <span class="type">UIButton</span>(type: .system)</span><br><span class="line">    <span class="keyword">let</span> addBtn = <span class="type">UIButton</span>(type: .system)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        </span><br><span class="line">        resultLabel.frame = <span class="type">CGRect</span>(x: <span class="number">200</span>, y: <span class="number">300</span>, width: <span class="number">100</span>, height: <span class="number">100</span>)</span><br><span class="line">        resultLabel.text = <span class="type">String</span>(<span class="built_in">count</span>)</span><br><span class="line">        resultLabel.font = <span class="type">UIFont</span>.systemFont(ofSize: <span class="number">50</span>)</span><br><span class="line">        </span><br><span class="line">        addBtn.setTitle(<span class="string">"+"</span>, <span class="keyword">for</span>: .normal)</span><br><span class="line">        addBtn.frame = <span class="type">CGRect</span>(x: <span class="number">20</span>, y: <span class="number">400</span>, width: <span class="number">150</span>, height: <span class="number">50</span>)</span><br><span class="line">        addBtn.titleLabel?.font = <span class="type">UIFont</span>.systemFont(ofSize: <span class="number">30</span>)</span><br><span class="line">        addBtn.layer.borderWidth = <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        addBtn.addTarget(<span class="keyword">self</span>, action: #selector(actionAdd(<span class="number">_</span>:)), <span class="keyword">for</span>: .touchUpInside)</span><br><span class="line">        </span><br><span class="line">        subBtn.setTitle(<span class="string">"-"</span>, <span class="keyword">for</span>: .normal)</span><br><span class="line">        subBtn.frame = <span class="type">CGRect</span>(x: <span class="number">240</span>, y: <span class="number">400</span>, width: <span class="number">150</span>, height: <span class="number">50</span>)</span><br><span class="line">        subBtn.titleLabel?.font = <span class="type">UIFont</span>.systemFont(ofSize: <span class="number">30</span>)</span><br><span class="line">        subBtn.layer.borderWidth = <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        subBtn.addTarget(<span class="keyword">self</span>, action: #selector(actionSub(<span class="number">_</span>:)), <span class="keyword">for</span>: .touchUpInside)</span><br><span class="line">        </span><br><span class="line">        view.addSubview(addBtn)</span><br><span class="line">        view.addSubview(subBtn)</span><br><span class="line">        view.addSubview(resultLabel)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">actionAdd</span><span class="params">(<span class="number">_</span> sender: UIButton)</span></span> &#123;</span><br><span class="line">        <span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line">        resultLabel.text = <span class="type">String</span>(<span class="built_in">count</span>)</span><br><span class="line">        resultLabel.textColor = .systemBlue</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">actionSub</span><span class="params">(<span class="number">_</span> sender: UIButton)</span></span> &#123;</span><br><span class="line">        <span class="built_in">count</span> -= <span class="number">1</span></span><br><span class="line">        resultLabel.text = <span class="type">String</span>(<span class="built_in">count</span>)</span><br><span class="line">        resultLabel.textColor = .systemRed</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="스크린샷"><a class="markdownIt-Anchor" href="#스크린샷"></a> 스크린샷</h1>
+<img src="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8/result1.png" class="" title="result1">
+<img src="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8/result2.png" class="" title="result2">
     </div>
 
     
@@ -297,24 +304,22 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Swift%EA%B8%B0%EC%B4%88/" rel="tag"># Swift기초</a>
+              <a href="/tags/swift-%EA%B8%B0%EC%B4%88/" rel="tag"># swift 기초</a>
+              <a href="/tags/UIKit/" rel="tag"># UIKit</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/Swift-%ED%95%A8%EC%88%98-%EC%A1%B0%EA%B1%B4%EB%AC%B8-%EB%B0%98%EB%B3%B5%EB%AC%B8/" rel="next" title="Swift 함수,조건문,반복문">
-                  <i class="fa fa-chevron-left"></i> Swift 함수,조건문,반복문
+                <a href="/2019/11/Swift-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/" rel="next" title="[Swift]최대공약수,최소공배수">
+                  <i class="fa fa-chevron-left"></i> [Swift]최대공약수,최소공배수
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/" rel="prev" title="hexo theme 설정">
-                  hexo theme 설정 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -360,7 +365,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#swift-함수-과제"><span class="nav-number">1.</span> <span class="nav-text"> Swift 함수 과제</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#과제풀이"><span class="nav-number">2.</span> <span class="nav-text"> 과제풀이</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#문제"><span class="nav-number">1.</span> <span class="nav-text"> 문제</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#코드"><span class="nav-number">2.</span> <span class="nav-text"> 코드</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#스크린샷"><span class="nav-number">3.</span> <span class="nav-text"> 스크린샷</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -532,9 +537,9 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://hongdonghyun.github.io/2019/11/Swift-%ED%95%A8%EC%88%98-%ED%92%80%EC%9D%B4/",
-            identifier: "2019/11/Swift-함수-풀이/",
-            title: "Swift 함수 풀이"
+            url: "http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8/",
+            identifier: "2019/11/Swift-과제-풀이-8/",
+            title: "Swift 과제 풀이 8"
           }
         }
       });
