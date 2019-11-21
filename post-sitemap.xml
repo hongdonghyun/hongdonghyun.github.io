@@ -8,8 +8,24 @@
     </url>
 
     <url>
+        <loc>http://hongdonghyun.github.io/2019/11/Swift-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/</loc>
+        <lastmod>2019-11-21T11:10:49.043Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hongdonghyun.github.io/2019/11/Swift-369/</loc>
+        <lastmod>2019-11-21T11:08:27.964Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://hongdonghyun.github.io/2019/11/Swift-%EC%A0%95%EC%88%98%EC%9D%98-%ED%95%A9/</loc>
-        <lastmod>2019-11-21T11:05:06.807Z</lastmod>
+        <lastmod>2019-11-21T11:08:22.755Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -18,22 +34,6 @@
     <url>
         <loc>http://hongdonghyun.github.io/2019/11/Swift-%EC%88%98%ED%8F%AC%EC%9E%90/</loc>
         <lastmod>2019-11-21T11:02:58.462Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/Swift-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/</loc>
-        <lastmod>2019-11-21T11:02:02.074Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/Swift-369/</loc>
-        <lastmod>2019-11-21T11:01:21.327Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
