@@ -202,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-4/">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
@@ -216,7 +216,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-4/" class="post-title-link" itemprop="url">Swift 과제 풀이 4</a>
+            <a href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-5/" class="post-title-link" itemprop="url">Swift 과제 풀이 5</a>
         </h2>
 
         <div class="post-meta">
@@ -225,16 +225,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">작성일</span>
+              
 
-              <time title="Post created: 2019-11-14 19:41:17" itemprop="dateCreated datePublished" datetime="2019-11-14T19:41:17+09:00">2019-11-14</time>
+              <time title="Post created: 2019-11-15 16:41:51 / Updated at: 16:54:45" itemprop="dateCreated datePublished" datetime="2019-11-15T16:41:51+09:00">2019-11-15</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-15 16:54:21" itemprop="dateModified" datetime="2019-11-15T16:54:21+09:00">2019-11-15</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -262,8 +256,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-4/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-과제-풀이-4/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-5/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-과제-풀이-5/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -278,25 +272,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ul>
-<li>옵셔널 타입의 문자열 파라미터 3개를 입력받은 뒤, 옵셔널을 추출하여 Unwrapped 된 하나의 문자열로 합쳐서 반환하는 함수</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">combineString</span><span class="params">(str1: String?, str2: String?, str3: String?)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line"><span class="comment">//    guard let str1 = str1, let str2 = str2, let str3 = str3 else &#123; return nil &#125;</span></span><br><span class="line">    <span class="keyword">return</span> (str1 ?? <span class="string">""</span>) + (str2 ?? <span class="string">""</span>) + (str3 ?? <span class="string">""</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">combineString(str1: <span class="string">"AB"</span>, str2: <span class="string">"CD"</span>, str3: <span class="string">"EF"</span>)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>사칙연산(+, -, *, /)을 가진 enum 타입 Arithmetic과 2개의 자연수를 입력 파라미터로 받아 (파라미터 총 3개) 해당 연산의 결과를 반환하는 함수 구현</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Arithmetic</span> </span>&#123;</span><br><span class="line">  <span class="keyword">case</span> addition, subtraction, multiplication, division</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sum</span><span class="params">(input1: Int, input2: Int)</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> result: <span class="type">Double</span> = <span class="number">0.0</span></span><br><span class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> .addition:</span><br><span class="line">            result = <span class="type">Double</span>(input1 + input2)</span><br><span class="line">        <span class="keyword">case</span> .subtraction:</span><br><span class="line">            result = <span class="type">Double</span>(input1 - input2)</span><br><span class="line">        <span class="keyword">case</span> .multiplication:</span><br><span class="line">            result = <span class="type">Double</span>(input1 * input2)</span><br><span class="line">        <span class="keyword">case</span> .division:</span><br><span class="line">            result = <span class="type">Double</span>(input1 / input2)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="type">Arithmetic</span>.addition</span><br><span class="line">a.sum(input1: <span class="number">1</span>, input2: <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>celcius, fahrenheit, kelvin 온도 3가지 케이스를 가진 enum 타입 Temperature 를 정의<br />
-각 케이스에는 Double 타입의 Associated Value 를 받도록 함<br />
-추가로 Temperature 타입 내부에 각 온도를 섭씨 온도로 변환해주는 toCelcius() 함수를 구현</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Temperature</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> celcius(<span class="type">Double</span>)</span><br><span class="line">    <span class="keyword">case</span> fahrenheit(<span class="type">Double</span>)</span><br><span class="line">    <span class="keyword">case</span> kelvin(<span class="type">Double</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">toCelcius</span><span class="params">()</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">let</span> .celcius(x):</span><br><span class="line">            <span class="keyword">return</span> x</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">let</span> .fahrenheit(x):</span><br><span class="line">            <span class="keyword">return</span> (x - <span class="number">32</span>) * <span class="number">5</span> / <span class="number">9</span></span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">let</span> .kelvin(x):</span><br><span class="line">            <span class="keyword">return</span> x + <span class="type">Double</span>(<span class="number">273</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> temp = <span class="type">Temperature</span>.fahrenheit(<span class="number">100.5</span>)</span><br><span class="line"><span class="built_in">print</span>(temp.toCelcius())</span><br></pre></td></tr></table></figure>
-<ul>
-<li>다음 ArithmeticExpression 의 각 케이스별로 연산을 수행하고 그 값을 반환하는 evaluate 함수 구현</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">문제형식</span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">ArithmeticExpression</span> </span>&#123;</span><br><span class="line">  <span class="keyword">case</span> number(<span class="type">Int</span>)</span><br><span class="line">  <span class="keyword">case</span> addition(<span class="type">ArithmeticExpression</span>, <span class="type">ArithmeticExpression</span>)</span><br><span class="line">  <span class="keyword">case</span> multiplication(<span class="type">ArithmeticExpression</span>, <span class="type">ArithmeticExpression</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> five = <span class="type">ArithmeticExpression</span>.number(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">let</span> four = <span class="type">ArithmeticExpression</span>.number(<span class="number">4</span>)</span><br><span class="line"><span class="keyword">let</span> sum = <span class="type">ArithmeticExpression</span>.addition(five, four)</span><br><span class="line"><span class="keyword">let</span> product = <span class="type">ArithmeticExpression</span>.multiplication(sum, <span class="type">ArithmeticExpression</span>.number(<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">정답</span><br><span class="line"><span class="keyword">indirect</span> <span class="class"><span class="keyword">enum</span> <span class="title">ArithmeticExpression</span> </span>&#123;</span><br><span class="line">  <span class="keyword">case</span> number(<span class="type">Int</span>)</span><br><span class="line">  <span class="keyword">case</span> addition(<span class="type">ArithmeticExpression</span>, <span class="type">ArithmeticExpression</span>)</span><br><span class="line">  <span class="keyword">case</span> multiplication(<span class="type">ArithmeticExpression</span>, <span class="type">ArithmeticExpression</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> five = <span class="type">ArithmeticExpression</span>.number(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">let</span> four = <span class="type">ArithmeticExpression</span>.number(<span class="number">4</span>)</span><br><span class="line"><span class="keyword">let</span> sum = <span class="type">ArithmeticExpression</span>.addition(five, four)</span><br><span class="line"><span class="keyword">let</span> product = <span class="type">ArithmeticExpression</span>.multiplication(sum, <span class="type">ArithmeticExpression</span>.number(<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">evaluate</span><span class="params">(<span class="number">_</span> expression: ArithmeticExpression)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> expression &#123;</span><br><span class="line">        <span class="keyword">case</span> .number(<span class="keyword">let</span> number):</span><br><span class="line">            <span class="keyword">return</span> number</span><br><span class="line">        <span class="keyword">case</span> .addition(<span class="keyword">let</span> input1, <span class="keyword">let</span> input2):</span><br><span class="line">            <span class="keyword">return</span> evaluate(input1) + evaluate(input2)</span><br><span class="line">        <span class="keyword">case</span> .multiplication(<span class="keyword">let</span> input1, <span class="keyword">let</span> input2):</span><br><span class="line">            <span class="keyword">return</span> evaluate(input1) * evaluate(input2)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">evaluate(product)</span><br></pre></td></tr></table></figure>
+          <ol>
+<li>정수를 하나 입력받아 2의 배수 여부를 반환하는 클로져</li>
+</ol>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> evenCheck = &#123; $<span class="number">0</span> % <span class="number">2</span> == <span class="number">0</span> &#125;</span><br><span class="line"><span class="built_in">print</span>(evenCheck(<span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>정수를 두 개 입력 받아 곱한 결과를 반환하는 클로져</li>
+</ol>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> intMul: (<span class="type">Int</span>, <span class="type">Int</span>) -&gt; <span class="type">Int</span> = &#123; $<span class="number">0</span> * $<span class="number">1</span> &#125;</span><br><span class="line"><span class="built_in">print</span>(intMul(<span class="number">4</span>,<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>아래 두 클로저를 Syntax Optimization을 이용하여 최대한 줄여보기</li>
+</ol>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> someClosure: (<span class="type">String</span>, <span class="type">String</span>) -&gt; <span class="type">Bool</span> = &#123; (s1: <span class="type">String</span>, s2: <span class="type">String</span>) -&gt; <span class="type">Bool</span> <span class="keyword">in</span></span><br><span class="line">  <span class="keyword">let</span> isAscending: <span class="type">Bool</span></span><br><span class="line">  <span class="keyword">if</span> s1 &gt; s2 &#123;</span><br><span class="line">    isAscending = <span class="literal">true</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    isAscending = <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> isAscending</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> someClosureOptimize: (<span class="type">String</span>, <span class="type">String</span>) -&gt; <span class="type">Bool</span> = &#123; $<span class="number">0</span> &gt; $<span class="number">1</span> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(someClosureOptimize(<span class="string">"str"</span>,<span class="string">"st"</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> otherClosure: ([<span class="type">Int</span>]) -&gt; <span class="type">Int</span> = &#123; (values: [<span class="type">Int</span>]) -&gt; <span class="type">Int</span> <span class="keyword">in</span></span><br><span class="line">  <span class="keyword">var</span> <span class="built_in">count</span>: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> values &#123;</span><br><span class="line">    <span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">count</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> otherClosureOptimize: ([<span class="type">Int</span>]) -&gt; <span class="type">Int</span> = &#123; $<span class="number">0</span>.<span class="built_in">count</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(otherClosureOptimize([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]))</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -315,7 +303,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-Enumerations/">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-Closure/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
@@ -329,7 +317,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/Swift-Enumerations/" class="post-title-link" itemprop="url">Swift Enumerations</a>
+            <a href="/2019/11/Swift-Closure/" class="post-title-link" itemprop="url">Swift Closure</a>
         </h2>
 
         <div class="post-meta">
@@ -340,7 +328,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2019-11-14 19:37:44 / Updated at: 19:42:06" itemprop="dateCreated datePublished" datetime="2019-11-14T19:37:44+09:00">2019-11-14</time>
+              <time title="Post created: 2019-11-15 16:37:42 / Updated at: 16:41:11" itemprop="dateCreated datePublished" datetime="2019-11-15T16:37:42+09:00">2019-11-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -363,8 +351,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/11/Swift-Enumerations/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-Enumerations/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/11/Swift-Closure/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-Closure/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -379,44 +367,72 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="enumerations열거형"><a class="markdownIt-Anchor" href="#enumerations열거형"></a> Enumerations(열거형)</h1>
-<p>연관된 값의 그룹에 대해 공통 타입을 정의한 뒤 type-safe 하게 해당 값들을 사용 가능</p>
+          <h1 id="closure"><a class="markdownIt-Anchor" href="#closure"></a> Closure</h1>
 <ul>
-<li>열거형 타입의 이름은 Pascal Case</li>
-<li>각각의 case는 Camel Case</li>
+<li>코드에서 사용하거나 전달할 수 있는 독립적인 기능을 가진 블럭</li>
+<li>함수도 클로저의 일종</li>
 </ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">CompassPoint</span> </span>&#123;</span><br><span class="line">  <span class="keyword">case</span> north</span><br><span class="line">  <span class="keyword">case</span> south</span><br><span class="line">  <span class="keyword">case</span> east</span><br><span class="line">  <span class="keyword">case</span> west</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">OddOrEven</span> </span>&#123;</span><br><span class="line">  <span class="keyword">case</span> odd(<span class="type">Int</span>)</span><br><span class="line">  <span class="keyword">case</span> even(<span class="type">Int</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>타입을 연관 지을수가 있다.</p>
-</blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number = <span class="type">OddOrEven</span>.even(<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> number &#123;</span><br><span class="line"><span class="keyword">case</span> .odd(<span class="keyword">let</span> x): <span class="built_in">print</span>(<span class="string">"홀수 :"</span>, x)</span><br><span class="line"><span class="keyword">case</span> .even(<span class="keyword">let</span> x): <span class="built_in">print</span>(<span class="string">"짝수 :"</span>, x)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> number &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> .odd(x): <span class="built_in">print</span>(<span class="string">"홀수 :"</span>, x)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> .even(x): <span class="built_in">print</span>(<span class="string">"짝수 :"</span>, x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>값도 넣을 수 있다.</p>
-</blockquote>
-<h2 id="raw-value"><a class="markdownIt-Anchor" href="#raw-value"></a> Raw Value</h2>
+<p>클로저는 다음 3가지 중 한 가지 유형을 가짐</p>
 <ul>
-<li>
-<p>Strings, Characters, or any of the Integer or Floating-point number types</p>
-</li>
-<li>
-<p>raw value 는 해당 Enumeration 내에서 반드시 고유한 값이어야 함.</p>
-</li>
+<li>Global functions: 이름을 가지며, 어떤 값도 캡쳐하지 않는 클로저</li>
+<li>Nested functions: 이름을 가지며, 감싸고 있는 함수의 값을 캡쳐하는 클로저</li>
+<li>Closure: 주변 문맥(Context)의 값을 캡쳐할 수 있으며, 간단한 문법으로 쓰여진 이름 없는 클로저</li>
 </ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">WeekdayAgain</span>: <span class="title">Int</span> </span>&#123;  </span><br><span class="line">  <span class="keyword">case</span> sunday, monday = <span class="number">100</span>, tuesday = <span class="number">101</span>, wednesday, thursday, friday, saturday</span><br><span class="line"> </span><br><span class="line"><span class="type">WeekdayAgain</span>.sunday <span class="comment">// sunday</span></span><br><span class="line"><span class="type">WeekdayAgain</span>.sunday.rawValue <span class="comment">// o</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>rawvalue는 기본값이 0임</p>
+<p>클로저는 특정 문맥의 상수나 변수의 값을 캡쳐할 수 있다.<br />
+원본 값이 사라져도 클로져의 내부에서 그 값을 활용할 수 있다.<br />
+중첩함수에서 쉽게 찾아볼수있다.</p>
 </blockquote>
-<h2 id="nested"><a class="markdownIt-Anchor" href="#nested"></a> Nested</h2>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Wearable</span> </span>&#123;</span><br><span class="line">  <span class="class"><span class="keyword">enum</span> <span class="title">Weight</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> light = <span class="number">1</span></span><br><span class="line">    <span class="keyword">case</span> heavy = <span class="number">2</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="class"><span class="keyword">enum</span> <span class="title">Armor</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> light = <span class="number">2</span></span><br><span class="line">    <span class="keyword">case</span> heavy = <span class="number">4</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">case</span> helmet(weight: <span class="type">Weight</span>, armor: <span class="type">Armor</span>)</span><br><span class="line">  <span class="keyword">case</span> boots</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">info</span><span class="params">()</span></span> -&gt; (weight: <span class="type">Int</span>, armor: <span class="type">Int</span>) &#123;</span><br><span class="line">    <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> .helmet(<span class="keyword">let</span> weight, <span class="keyword">let</span> armor):</span><br><span class="line">      <span class="keyword">return</span> (weight: weight.rawValue * <span class="number">2</span>, armor: armor.rawValue * <span class="number">5</span>)</span><br><span class="line">    <span class="keyword">case</span> .boots:</span><br><span class="line">      <span class="keyword">return</span> (<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">Wearable</span>.boots</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> woodenHelmet = <span class="type">Wearable</span>.helmet(weight: .light, armor: .heavy)</span><br><span class="line">woodenHelmet.info()</span><br></pre></td></tr></table></figure>
+<h2 id="closure를-쓰는-이유"><a class="markdownIt-Anchor" href="#closure를-쓰는-이유"></a> Closure를 쓰는 이유</h2>
+<ul>
+<li>문법 간소화 / 읽기 좋은 코드</li>
+<li>지연 생성</li>
+<li>주변 컨텍스트의 값을 캡쳐하여 작업 수행 가능</li>
+</ul>
+<h2 id="global-functions전역-함수"><a class="markdownIt-Anchor" href="#global-functions전역-함수"></a> Global functions(전역 함수)</h2>
+<p>코드 어디에서나 사용할 수 있는 함수들<br />
+<code>print,max</code>등등…</p>
 <blockquote>
-<p>enum이 중첩된 형태로 쓸수도 있고<br />
-내부에 함수를 만들어 사용할 수도 있다.</p>
+<p>Swift에서는 Free function이라고 부름</p>
 </blockquote>
-<h2 id="recursive-enumerations"><a class="markdownIt-Anchor" href="#recursive-enumerations"></a> Recursive Enumerations</h2>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">ArithmeticExpression</span> </span>&#123;</span><br><span class="line">  <span class="keyword">case</span> number(<span class="type">Int</span>)</span><br><span class="line">  <span class="keyword">indirect</span> <span class="keyword">case</span> addition(<span class="type">ArithmeticExpression</span>, <span class="type">ArithmeticExpression</span>)</span><br><span class="line">  <span class="keyword">indirect</span> <span class="keyword">case</span> multiplication(<span class="type">ArithmeticExpression</span>, <span class="type">ArithmeticExpression</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>or</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">indirect</span> <span class="class"><span class="keyword">enum</span> <span class="title">ArithmeticExpression</span> </span>&#123;</span><br><span class="line">  <span class="keyword">case</span> number(<span class="type">Int</span>)</span><br><span class="line">  <span class="keyword">case</span> addition(<span class="type">ArithmeticExpression</span>, <span class="type">ArithmeticExpression</span>)</span><br><span class="line">  <span class="keyword">case</span> multiplication(<span class="type">ArithmeticExpression</span>, <span class="type">ArithmeticExpression</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="nested-functions중첩-함수"><a class="markdownIt-Anchor" href="#nested-functions중첩-함수"></a> Nested functions(중첩 함수)</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">outsideFunction</span><span class="params">()</span></span> -&gt; () -&gt; () &#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">0</span></span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">nestedFunction</span><span class="params">()</span></span> &#123;</span><br><span class="line">    x += <span class="number">1</span>    <span class="comment">// 그 자신의 함수가 가지지 않은 값을 사용</span></span><br><span class="line">    <span class="built_in">print</span>(x)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> nestedFunction</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>() -&gt; () 함수안의 함수의 파라미터와 반환타입을 지정</p>
+</blockquote>
+<h2 id="closure-2"><a class="markdownIt-Anchor" href="#closure-2"></a> Closure</h2>
+<h3 id="syntax"><a class="markdownIt-Anchor" href="#syntax"></a> syntax</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123; (parameters) -&gt; <span class="keyword">return</span> type <span class="keyword">in</span></span><br><span class="line">  statements</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="예제"><a class="markdownIt-Anchor" href="#예제"></a> 예제</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 파라미터 + 반환 타입을 가진 클로저</span></span><br><span class="line"><span class="comment">// Type Annotation</span></span><br><span class="line"><span class="keyword">let</span> closureWithParamAndReturnType1: (<span class="type">String</span>) -&gt; <span class="type">String</span> = &#123; param <span class="keyword">in</span></span><br><span class="line">  <span class="keyword">return</span> param + <span class="string">"!"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(closureWithParamAndReturnType1(<span class="string">"closure"</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">// Argument Label은 생략. 함수의 Argument Label을 (_)로 생략한 것과 동일</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 파라미터 + 반환 타입을 가진 클로저</span></span><br><span class="line"><span class="keyword">let</span> closureWithParamAndReturnType2 = &#123; (param: <span class="type">String</span>) -&gt; <span class="type">String</span> <span class="keyword">in</span></span><br><span class="line">  <span class="keyword">return</span> param + <span class="string">"!"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(closureWithParamAndReturnType2(<span class="string">"closure"</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 파라미터 + 반환 타입을 가진 클로저</span></span><br><span class="line"><span class="comment">// Type Inference</span></span><br><span class="line"><span class="keyword">let</span> closureWithParamAndReturnType3 = &#123; param <span class="keyword">in</span></span><br><span class="line">  param + <span class="string">"!"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(closureWithParamAndReturnType3(<span class="string">"closure"</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="문법-최적화"><a class="markdownIt-Anchor" href="#문법-최적화"></a> 문법 최적화</h3>
+<ul>
+<li>문맥을 통해 매개변수 및 반환 값에 대한 타입 추론</li>
+<li>단일 표현식 클로저에서의 반환 키워드 생략</li>
+</ul>
+<blockquote>
+<p>(이제는 함수에서도 사용이 가능)</p>
+</blockquote>
+<ul>
+<li>축약 인수명(<code>$0</code>,<code>$1</code>등등)</li>
+<li>후행 클로저 문법</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">performClosure</span><span class="params">(param: <span class="params">(String)</span></span></span> -&gt; <span class="type">Int</span>) &#123;</span><br><span class="line">  param(<span class="string">"Swift"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 클로저로 함수 넘김</span></span><br><span class="line">performClosure(param: &#123; (str: <span class="type">String</span>) -&gt; <span class="type">Int</span> <span class="keyword">in</span></span><br><span class="line">  <span class="keyword">return</span> str.<span class="built_in">count</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 반환타입 제거 (함수에서 이미 명시됨)</span></span><br><span class="line">performClosure(param: &#123; (str: <span class="type">String</span>) <span class="keyword">in</span></span><br><span class="line">  <span class="keyword">return</span> str.<span class="built_in">count</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 매개변수 타입 제거 (함수에서 이미 명시됨)</span></span><br><span class="line">performClosure(param: &#123; str <span class="keyword">in</span></span><br><span class="line">  <span class="keyword">return</span> str.<span class="built_in">count</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 축약 인수명 사용</span></span><br><span class="line">performClosure(param: &#123;</span><br><span class="line">  <span class="keyword">return</span> $<span class="number">0</span>.<span class="built_in">count</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 리턴제거 (한줄일때 제거가능)</span></span><br><span class="line">performClosure(param: &#123;</span><br><span class="line">  $<span class="number">0</span>.<span class="built_in">count</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 괄호를 앞당김</span></span><br><span class="line">performClosure(param: ) &#123;</span><br><span class="line">  $<span class="number">0</span>.<span class="built_in">count</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// trailing closure 적용</span></span><br><span class="line">performClosure() &#123;</span><br><span class="line">  $<span class="number">0</span>.<span class="built_in">count</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 괄호 제거</span></span><br><span class="line">performClosure &#123; $<span class="number">0</span>.<span class="built_in">count</span> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="inline-closure"><a class="markdownIt-Anchor" href="#inline-closure"></a> Inline closure</h3>
+<ul>
+<li>인라인 클로저 - 변수나 함수처럼 중간 매개체 없이 사용되는 클로저</li>
+</ul>
+<p>ex)</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">closureParamFunction(closure: &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Inline closure - Explicit closure parameter name"</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="trailing-closure후위-클로저"><a class="markdownIt-Anchor" href="#trailing-closure후위-클로저"></a> Trailing Closure(후위 클로저)</h3>
+<ul>
+<li>함수의 괄호가 닫힌 후에도 인수로 취급되는 클로저</li>
+<li>함수의 마지막 인수(Argument)에만 사용 가능하고 해당 인수명은 생략</li>
+<li>하나의 라인에 다 표현하지 못할 긴 클로져에 유용</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">multiClosureParams</span><span class="params">(closure1: <span class="params">()</span></span></span> -&gt; <span class="type">Void</span>, closure2: () -&gt; <span class="type">Void</span>) &#123;</span><br><span class="line">  closure1()</span><br><span class="line">  closure2()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">multiClosureParams(closure1: &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"inline"</span>)</span><br><span class="line">&#125;, closure2: &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"inline"</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>    ⬇︎</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">multiClosureParams(closure1: &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"inline"</span>)</span><br><span class="line">&#125;) &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"trailing"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -435,7 +451,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%E1%84%80%E1%85%AA%E1%84%8C%E1%85%A6-%E1%84%91%E1%85%AE%E1%86%AF%E1%84%8B%E1%85%B5-3/">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
@@ -449,7 +465,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/Swift-%E1%84%80%E1%85%AA%E1%84%8C%E1%85%A6-%E1%84%91%E1%85%AE%E1%86%AF%E1%84%8B%E1%85%B5-3/" class="post-title-link" itemprop="url">Swift 과제 풀이 3</a>
+            <a href="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="post-title-link" itemprop="url">Hexo about,catregory,tags등 목록 만들기</a>
         </h2>
 
         <div class="post-meta">
@@ -459,14 +475,14 @@
               </span>
               <span class="post-meta-item-text">작성일</span>
 
-              <time title="Post created: 2019-11-13 20:33:12" itemprop="dateCreated datePublished" datetime="2019-11-13T20:33:12+09:00">2019-11-13</time>
+              <time title="Post created: 2019-11-15 10:17:42" itemprop="dateCreated datePublished" datetime="2019-11-15T10:17:42+09:00">2019-11-15</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-15 16:55:12" itemprop="dateModified" datetime="2019-11-15T16:55:12+09:00">2019-11-15</time>
+                <time title="Updated at: 2019-11-19 10:12:31" itemprop="dateModified" datetime="2019-11-19T10:12:31+09:00">2019-11-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -474,14 +490,8 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
-                    <span itemprop="name">과제</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%BC%EC%A0%9C/Swift/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift</span>
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
                   </a>
                 </span>
             </span>
@@ -495,8 +505,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/11/Swift-%E1%84%80%E1%85%AA%E1%84%8C%E1%85%A6-%E1%84%91%E1%85%AE%E1%86%AF%E1%84%8B%E1%85%B5-3/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-과제-풀이-3/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/hexo-about-catregory-tags-목록-만들기/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -511,39 +521,110 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ul>
-<li>[보기] 철수 - apple, 영희 - banana, 진수 - grape, 미희 - strawberry<br />
-위 보기처럼 학생과 좋아하는 과일을 매칭시킨 정보를 Dictionary 형태로 만들고<br />
-스펠링에 'e’가 들어간 과일을 모두 찾아 그것과 매칭되는 학생 이름을 배열로 반환하는 함수</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">findFruit</span><span class="params">()</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">String</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> studentDictionary = [<span class="string">"철수"</span>:<span class="string">"apple"</span>,<span class="string">"영희"</span>:<span class="string">"banana"</span>,<span class="string">"진수"</span>:<span class="string">"grape"</span>,<span class="string">"미희"</span>:<span class="string">"strawberry"</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> resultArray: <span class="type">Array</span>&lt;<span class="type">String</span>&gt; = []</span><br><span class="line">    <span class="keyword">for</span> (name, fruit) <span class="keyword">in</span> studentDictionary &#123;</span><br><span class="line">        <span class="keyword">if</span> fruit.<span class="built_in">contains</span>(<span class="string">"e"</span>) &#123;</span><br><span class="line">            resultArray.append(name)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> resultArray</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(findFruit())</span><br></pre></td></tr></table></figure>
+          <h1 id="hexo-시리즈-바로가기"><a class="markdownIt-Anchor" href="#hexo-시리즈-바로가기"></a> Hexo 시리즈 바로가기</h1>
+<ol>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo로 Github Page 만들기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/">Hexo 테마 설정하기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 댓글 만들기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">구글 애널리틱스 연동하기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 메뉴 추가하기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/">블로그 방문자 카운팅</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">sitemap.xmlrobots.txt 추가하기</a></p>
+</li>
+</ol>
+<h1 id="hexo에-메뉴-추가하기"><a class="markdownIt-Anchor" href="#hexo에-메뉴-추가하기"></a> hexo에 메뉴 추가하기</h1>
+<h2 id="포스팅을-참고하시기전에"><a class="markdownIt-Anchor" href="#포스팅을-참고하시기전에"></a> 포스팅을 참고하시기전에…</h2>
+<p>블로그에 메뉴를 어떻게 추가했냐는 문의가 생각보다 많아 포스팅 합니다.</p>
+<p>해당 포스팅은 <code>Hexo</code>, <code>next</code>테마를 기준으로 작성 되었으며 <strong>테마별로 지원이 되지 않거나 적용방법이 다를 수 있으니 테마별 공식문서를 참고해주세요</strong>.</p>
+<h2 id="메뉴-적용하기"><a class="markdownIt-Anchor" href="#메뉴-적용하기"></a> 메뉴 적용하기</h2>
+<ol>
+<li><code>블로그 최상단 디렉토리</code>에서 <code>themes/next</code>로 이동하여 <code>_config.yml</code> 파일을 에디터로 연다.</li>
+</ol>
+<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu1.png" class="" title="hexo_menu1">
+<blockquote>
+<p>여기</p>
+</blockquote>
+<ol start="2">
+<li><code>_config.yml</code>파일의 120번째줄 근처에 <code>menu</code>옵션이 존재한다.</li>
+</ol>
+<p>해당 옵션에서 본인이 사용하고 싶은 메뉴들의 주석(#)을 해제한다.</p>
+<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu2.png" class="" title="hexo_menu2">
+<p>다 하셨다면 <code>hexo clean &amp;&amp; hexo generate</code></p>
+<ol start="3">
+<li>그다음 <code>hexo server</code>로 로컬서버를 띄운 후 <code>localhost:4000</code>으로 들어가면 메뉴가 나타난다.</li>
+</ol>
+<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu3.png" class="" title="hexo_menu3">
+<p>하지만 해당메뉴를 눌러보면 사진처럼 나오고 동작하지 않는다.</p>
+<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu4.png" class="" title="hexo_menu4">
+<p>페이지가 나오지 않는 이유는 URL로 접근했지만 해당주소에 페이지가 존재하지 않아 나타나는 것이다.</p>
+<p>다시 <code>블로그 최상단 디렉토리</code>로 이동하자.</p>
+<ol start="4">
+<li>이제 커맨드창에 다음과 같이 입력한다.<br />
+<code>hexo new page &lt;만들페이지&gt;</code></li>
+</ol>
 <ul>
-<li>&lt;2&gt;<br />
-임의의 정수 배열을 입력받았을 때 홀수는 배열의 앞부분, 짝수는 배열의 뒷부분에 위치하도록 구성된 새로운 배열을 반환하는 함수</li>
+<li>카테고리를 만들고 싶다면 <code>hexo new page categories</code></li>
+<li>태그를 만들고 싶다면 <code>hexo new page tags</code></li>
 </ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sortArray</span><span class="params">(<span class="number">_</span> input: Array&lt;Int&gt;)</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> oddArray: <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; = []</span><br><span class="line">    <span class="keyword">var</span> evenArray: <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> input &#123;</span><br><span class="line">        <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span> &#123;</span><br><span class="line">            evenArray.append(i)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            oddArray.append(i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> oddArray + evenArray</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(sortArray([<span class="number">2</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>]))</span><br></pre></td></tr></table></figure>
-<ul>
-<li>&lt;3&gt; 0 ~ 9 사이의 숫자가 들어있는 배열에서 각 숫자가 몇 개씩 있는지 출력하는 함수<br />
-입력 : [1, 3, 3, 3, 8]<br />
-결과 : “숫자 1 : 1개, 숫자 3 : 3개, 숫자 8 : 1개”</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">numberCount</span><span class="params">(<span class="number">_</span> input: Array&lt;Int&gt;)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> counter: [<span class="type">Int</span>: <span class="type">Int</span>] = [:]</span><br><span class="line">    <span class="keyword">var</span> resultString: <span class="type">String</span> = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> input &#123;</span><br><span class="line">        counter[i] = (counter[i] ?? <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (key, value) <span class="keyword">in</span> counter &#123;</span><br><span class="line">        resultString += <span class="string">"숫자 "</span> + <span class="type">String</span>(key) + <span class="string">" : "</span> + <span class="type">String</span>(value) + <span class="string">"개, "</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="type">String</span>(resultString.<span class="built_in">dropLast</span>(<span class="number">2</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(numberCount([<span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">8</span>]))</span><br></pre></td></tr></table></figure>
-<ul>
-<li>자연수를 입력받아 원래 숫자를 반대 순서로 뒤집은 숫자를 반환하는 함수</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">intReverse</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">Int</span>(<span class="type">String</span>(<span class="type">String</span>(input).reversed()))!</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">intReverse(<span class="number">123</span>)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>100 ~ 900 사이의 숫자 중 하나를 입력받아 각 자리의 숫자가 모두 다른지 여부를 반환하는 함수</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">diffNumber</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> bak = input / <span class="number">100</span></span><br><span class="line">    <span class="keyword">let</span> sip = (input % <span class="number">100</span>) / <span class="number">10</span></span><br><span class="line">    <span class="keyword">let</span> ill = input % <span class="number">10</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (bak, sip) == (sip, ill) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>별도로 전달한 식육목 모식도 라는 자료를 보고 Dictionary 자료형에 맞도록 중첩형태로 데이터를 저장하고 해당 변수에서 표범 하위 분류를 찾아 사자와 호랑이를 출력하기</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sixSixTree = [</span><br><span class="line">    <span class="string">"식육목"</span>: [</span><br><span class="line">        <span class="string">"개과"</span>: [</span><br><span class="line">            <span class="string">"개"</span>: [</span><br><span class="line">                <span class="string">"자칼"</span>,</span><br><span class="line">                <span class="string">"늑대"</span>,</span><br><span class="line">                <span class="string">"북미산 이리"</span>,</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"여우"</span>: [</span><br><span class="line">                <span class="string">"아메리카 여우"</span>,</span><br><span class="line">                <span class="string">"유럽 여우"</span>,</span><br><span class="line">            ]</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"고양이과"</span>: [</span><br><span class="line">            <span class="string">"고양이"</span>: [</span><br><span class="line">          	  <span class="string">"고양이"</span>,</span><br><span class="line">          	  <span class="string">"살쾡이"</span>,</span><br><span class="line">	        ],</span><br><span class="line">            <span class="string">"표범"</span>: [</span><br><span class="line">	            <span class="string">"사자"</span>,</span><br><span class="line">	            <span class="string">"호랑이"</span>,</span><br><span class="line">	            ]</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>주어진 문자 배열에서 중복되지 않는 문자만을 뽑아내 배열로 반환해주는 함수</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">duplicateRemove</span><span class="params">(<span class="number">_</span> input:Array&lt;String&gt;)</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">String</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> arrayToSet = <span class="type">Set</span>(input)</span><br><span class="line">    <span class="keyword">return</span> <span class="type">Array</span>(arrayToSet)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">duplicateRemove([<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>,<span class="string">"a"</span>])</span><br></pre></td></tr></table></figure>
+<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu5.png" class="" title="hexo_menu5">
+<p>페이지를 만들고 다시 메뉴에 접근해보면 또 안될것이다.</p>
+<blockquote>
+<p>안되는게 정상입니다.<br />
+about은 여기까지 하면 접근됩니다.</p>
+</blockquote>
+<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu5.png" class="" title="hexo_menu5">
+<p>위의 스크린샷을 잘 보면 Hexo가 <code>source/&lt;path&gt;/index.md</code>를 만들었다고 나온다.<br />
+해당 경로로 이동하여 index.md를 열어본다.</p>
+<ol start="5">
+<li>해당<code>index.md</code>를 열어보면 다음 스크린샷 처럼 나올것이다.</li>
+</ol>
+<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu6.png" class="" title="hexo_menu6">
+<p>해당파일에 다음과 같은 한줄을 추가한다.<br />
+<code>type: categories</code></p>
+<blockquote>
+<p>tags라면 <code>type: tags</code>를 입력하면 되겠죠?</p>
+</blockquote>
+<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu7.png" class="" title="hexo_menu7">
+<p>다음처럼 입력하고 저장후 <code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</code><br />
+를 실행하고 <code>localhost:4000</code>으로 들어가 확인해보자.</p>
+<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu8.png" class="" title="hexo_menu8">
+<blockquote>
+<p>다음 스크린샷 처럼 나오면 좋겠지만…<br />
+접근은 되지만 내용물이 없을것이다.</p>
+</blockquote>
+<p>아마도 상당수가 다음 스크린샷처럼 안나올것이다.<br />
+그건 <strong>게시물마다 카테고리를 분류해주지 않았기 때문</strong>에 그렇다.</p>
+<h2 id="게시물-카테고리-분류"><a class="markdownIt-Anchor" href="#게시물-카테고리-분류"></a> 게시물 카테고리 분류</h2>
+<p>블로그의 포스팅이 존재하는 <code>블로그 최상단디렉토리/source/_posts</code>로 들어가서 자신이 작성한 게시물 아무거나 하나 열어본다.</p>
+<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu9.png" class="" title="hexo_menu9">
+<p>파일 최상단에 다음과 같은 내용이 꼭 있어야한다.</p>
+<blockquote>
+<p>없으면 헥소가 포스팅으로 인정안해줌 ㅇㅈ?<br />
+Hexo: 인정합니다.</p>
+</blockquote>
+<p>categories에 적당한 분류명을 적어주고 저장한다.</p>
+<p>저장하고 <code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</code>를 하고 카테고리에 가보면 이제 카테고리가 나오는것을 확인할 수 있을것이다.</p>
+<blockquote>
+<p>안되면 뭔가 세팅을 잘못했다.<br />
+<s>컴퓨터는 거짓말을 하지 않는다.</s><br />
+천천히 다시 따라해보시고<br />
+잘 모르시겠다면 댓글을 남겨주세요.</p>
+</blockquote>
+<h2 id="끝"><a class="markdownIt-Anchor" href="#끝"></a> 끝</h2>
+
       
     </div>
 
@@ -562,7 +643,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
 
@@ -608,20 +689,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
