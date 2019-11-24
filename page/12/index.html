@@ -202,6 +202,202 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EC%98%B5%EC%85%94%EB%84%90-%ED%8A%9C%ED%94%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/Swift-%EC%98%B5%EC%85%94%EB%84%90-%ED%8A%9C%ED%94%8C/" class="post-title-link" itemprop="url">Swift 옵셔널,튜플</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-11 21:59:45" itemprop="dateCreated datePublished" datetime="2019-11-11T21:59:45+09:00">2019-11-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-14 15:25:01" itemprop="dateModified" datetime="2019-11-14T15:25:01+09:00">2019-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/Swift-%EC%98%B5%EC%85%94%EB%84%90-%ED%8A%9C%ED%94%8C/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-옵셔널-튜플/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="옵셔널튜플"><a class="markdownIt-Anchor" href="#옵셔널튜플"></a> 옵셔널,튜플</h1>
+<h2 id="optional"><a class="markdownIt-Anchor" href="#optional"></a> Optional</h2>
+<p>Optional = enum + general</p>
+<p>값이 “있을 수도, 없을 수도” 있음</p>
+<h3 id="선언"><a class="markdownIt-Anchor" href="#선언"></a> 선언</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> optionalValue: <span class="type">Optional</span>&lt;<span class="type">Int</span>&gt; = <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> optionalValue: <span class="type">Int?</span> = <span class="literal">nil</span></span><br><span class="line"><span class="keyword">var</span> optionalValue: <span class="type">Int!</span> = <span class="number">100</span></span><br></pre></td></tr></table></figure>
+<p><code>Optional</code> -&gt; <code>NonOptional</code> (X)<br />
+<code>Optional</code> &lt;- <code>NonOptional</code> (O)</p>
+<h3 id="왜-필요한가"><a class="markdownIt-Anchor" href="#왜-필요한가"></a> 왜 필요한가?</h3>
+<ol>
+<li>변수에 값이 담길때 nil이 담길 가능성을 문서나 다른 자료를 통해 전달하지 않아도 코드만으로 표현이 가능하기 때문</li>
+</ol>
+<blockquote>
+<p>문서/주석 작성시간이 절약</p>
+</blockquote>
+<ol start="2">
+<li>전달받은 값이 optional이 아니라면 nil체크를 하지않더라도 안심할 수 있다.</li>
+</ol>
+<blockquote>
+<p>효율적인 코딩,예외처리에 좀 더 안전하다.</p>
+</blockquote>
+<p>ex)</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 옵셔널을 사용한 경우</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">someFunction</span><span class="params">(someOptionalParam: Int?)</span></span> &#123;&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 옵셔널을 사용하지 않은경우</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">someFunction</span><span class="params">(someParam: Int)</span></span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">someFunction(someOptionalParam: <span class="literal">nil</span>) <span class="comment">// 이상없음</span></span><br><span class="line"></span><br><span class="line">someFunction(someParam: <span class="literal">nil</span>) <span class="comment">// 컴파일단계에서 에러발생</span></span><br></pre></td></tr></table></figure>
+<h3 id="implicitly-unwrapped-optional암시적-추출-옵셔널"><a class="markdownIt-Anchor" href="#implicitly-unwrapped-optional암시적-추출-옵셔널"></a> Implicitly Unwrapped Optional(암시적 추출 옵셔널)</h3>
+<p>타입에 느낌표(!)가 붙는경우</p>
+<p>추후 어느 순간에서라도 nil 이 될 수 있는 경우에는 사용하지 말것</p>
+<p>nil value 를 체크해야 할 일이 생길 경우는 일반적인 옵셔널 타입 사용</p>
+<p>프로퍼티 지연 초기화에 많이 사용</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> optionalValue: <span class="type">Int!</span> = <span class="number">100</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>기존 변수처럼 사용가능</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">optionalValue = optionalValue + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>nil도 할당 가능</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">optionalValue = <span class="literal">nil</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>잘못된 접근을 한다면 런타임오류 발생</strong></li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">optionalValue = <span class="literal">nil</span></span><br><span class="line">optionalValue = optionalValue + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="optional-2"><a class="markdownIt-Anchor" href="#optional-2"></a> Optional</h3>
+<p>물음표(?)가 붙는경우</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Int값이 들어있을수도 없을수도 있다.</span></span><br><span class="line"><span class="keyword">var</span> optionalValue: <span class="type">Int?</span> = <span class="number">100</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>nil 할당 가능</li>
+</ul>
+<p><code>optionalValue = nil</code></p>
+<ul>
+<li>기존 변수처럼 사용이 불가</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 옵셔널값과 일반 값들은 타입이 다르므로 연산이 불가능하다.</span></span><br><span class="line">optionalValue = optionalValue + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="optional-unwrapping"><a class="markdownIt-Anchor" href="#optional-unwrapping"></a> Optional Unwrapping</h3>
+<p>옵셔널 추출에는 두가지 방법이 있다.</p>
+<ol>
+<li>Optional Binding(옵셔널 바인딩)</li>
+<li>Force Unwrapping(강제 추출)</li>
+</ol>
+<h4 id="optional-binding"><a class="markdownIt-Anchor" href="#optional-binding"></a> Optional Binding</h4>
+<p>nil체크 + 안전한 값 추출이 가능하다.</p>
+<img src="/2019/11/Swift-%EC%98%B5%EC%85%94%EB%84%90-%ED%8A%9C%ED%94%8C/optional1.png" class="" title="optional1">
+<blockquote>
+<p>값을 보호하는 방어벽이 있다.</p>
+</blockquote>
+<ul>
+<li>if-let 방식을 통한 옵셔널 바인딩</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> optionalValue: <span class="type">Int?</span> = <span class="number">100</span></span><br><span class="line"><span class="comment">// if-let 안에서만 사용이가능하다. 스코프를 벗어나면 컴파일 오류 발생</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> val: <span class="type">Int</span> = optionalValue &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"optional value is \(val)"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"optional value is nil"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>옵셔널 타입이 아닌경우 if-let을 사용하면 컴파일 오류 발생</p>
+</blockquote>
+<ul>
+<li>한번에 여러개 바인딩이 가능하다.</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> optionalValue: <span class="type">Int?</span> = <span class="number">100</span></span><br><span class="line"><span class="keyword">var</span> optionalValue2: <span class="type">String?</span> = <span class="string">"hong3"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> val = optionalValue, <span class="keyword">let</span> name: <span class="type">String</span> = optionalValue2&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"optional value is \(val)"</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"hello \(name)"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"optional value is nil"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>여러개를 바인딩할때 하나가 nil이라면?</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> optionalValue: <span class="type">Int?</span> = <span class="number">100</span></span><br><span class="line"><span class="keyword">var</span> optionalValue2: <span class="type">String?</span> = <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> val = optionalValue, <span class="keyword">let</span> name: <span class="type">String</span> = optionalValue2&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"optional value is \(val)"</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"hello \(name)"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"found nil"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>else로 빠져나가게 된다.</p>
+</blockquote>
+<ul>
+<li>여러개의 옵셔널 바인딩과 불리언 조건을 사용 가능</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 여러 개의 옵셔널 바인딩과 불리언 조건을 함께 사용 가능</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> firstNumber = <span class="type">Int</span>(<span class="string">"4"</span>),</span><br><span class="line">  <span class="keyword">let</span> secondNumber = <span class="type">Int</span>(<span class="string">"42"</span>), firstNumber &lt; secondNumber, secondNumber &lt; <span class="number">100</span> &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"\(firstNumber) &lt; \(secondNumber) &lt; 100"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 위와 동일한 동작</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> firstNumber = <span class="type">Int</span>(<span class="string">"4"</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">let</span> secondNumber = <span class="type">Int</span>(<span class="string">"42"</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> firstNumber &lt; secondNumber, secondNumber &lt; <span class="number">100</span> &#123;</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">"\(firstNumber) &lt; \(secondNumber) &lt; 100"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="force-unwrapping비추"><a class="markdownIt-Anchor" href="#force-unwrapping비추"></a> <s>Force Unwrapping</s>(비추)</h4>
+<p>옵셔널 타입의 값을 <strong>강제로 추출</strong>하게된다.</p>
+<p><strong>추천하지 않는방법이다.</strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> optionalValue: <span class="type">Int?</span> = <span class="number">100</span></span><br><span class="line"><span class="built_in">print</span>(optionalValue!)</span><br></pre></td></tr></table></figure>
+<p>만약 변수에 nil이 들어있다면</p>
+ <img src="/2019/11/Swift-%EC%98%B5%EC%85%94%EB%84%90-%ED%8A%9C%ED%94%8C/optional1.png" class="" title="optional1">
+<blockquote>
+<p>뚝배기를 부셔버렸다.</p>
+</blockquote>
+ <img src="/2019/11/Swift-%EC%98%B5%EC%85%94%EB%84%90-%ED%8A%9C%ED%94%8C/optional1.png" class="" title="optional1">
+<blockquote>
+<p>런타임 오류가 발생한다.</p>
+</blockquote>
+<h2 id="nil-coalescing-operator"><a class="markdownIt-Anchor" href="#nil-coalescing-operator"></a> Nil-coalescing Operator</h2>
+<p>nil이 들어왔을때 기본값을 설정한다.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">optionalStr = <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = <span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> optionalStr != <span class="literal">nil</span> &#123;</span><br><span class="line">   result = optionalStr!</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">   result = <span class="string">"This is a nil value"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> anotherExpression = optionalStr ?? <span class="string">"This is a nil value"</span></span><br></pre></td></tr></table></figure>
+<h2 id="tuple"><a class="markdownIt-Anchor" href="#tuple"></a> Tuple</h2>
+<h3 id="unnamed-tuple"><a class="markdownIt-Anchor" href="#unnamed-tuple"></a> Unnamed Tuple</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> threeValues: (<span class="type">Int</span>, <span class="type">Double</span>, <span class="type">String</span>) = (<span class="number">10</span>,  <span class="number">100.0</span>,  <span class="string">"이름"</span>)</span><br><span class="line">type(of: threeValues)</span><br><span class="line"></span><br><span class="line">threeValues</span><br><span class="line"></span><br><span class="line">threeValues.<span class="number">0</span> = <span class="number">5</span></span><br><span class="line">threeValues</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### <span class="type">Named</span> <span class="type">Tuple</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```swift</span><br><span class="line"><span class="keyword">let</span> iOS = (language: <span class="string">"Swift"</span>, version: <span class="string">"4"</span>)</span><br><span class="line"></span><br><span class="line">iOS.<span class="number">0</span></span><br><span class="line">iOS.<span class="number">1</span></span><br><span class="line"></span><br><span class="line">or</span><br><span class="line"></span><br><span class="line">iOS.language</span><br><span class="line">iOS.version</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B8%B0%EC%B4%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -504,137 +700,6 @@ Float 4Byte</p>
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%9D%98-github%EA%B3%84%EC%A0%95-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%9D%98-github%EA%B3%84%EC%A0%95-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" class="post-title-link" itemprop="url">여러개의 github계정 사용하기</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-
-              <time title="Post created: 2019-11-11 21:56:42" itemprop="dateCreated datePublished" datetime="2019-11-11T21:56:42+09:00">2019-11-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-13 12:43:36" itemprop="dateModified" datetime="2019-11-13T12:43:36+09:00">2019-11-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Github/" itemprop="url" rel="index">
-                    <span itemprop="name">Github</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%9D%98-github%EA%B3%84%EC%A0%95-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/여러개의-github계정-사용하기/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="github계정-여러개-사용하기"><a class="markdownIt-Anchor" href="#github계정-여러개-사용하기"></a> github계정 여러개 사용하기</h1>
-<p>하나의 컴퓨터에서 여러개의 github의 계정을 사용하고 싶을 때를 설명해 둔 글입니다.</p>
-<p>github에서 여러개의 계정을 사용하고 싶을때(개인,회사)</p>
-<p>MacOS기준</p>
-<h2 id="1새로운-ssh키-만들기"><a class="markdownIt-Anchor" href="#1새로운-ssh키-만들기"></a> 1.새로운 SSH키 만들기</h2>
-<p>SSH키는 기본적으로 ~/.ssh 에 저장된다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">cd ~/.ssh</span><br><span class="line"></span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line">사용자가 만들어 둔 키의 리스트들</span><br></pre></td></tr></table></figure>
-<p>.pub는 공개키이고 붙어있지 않은것은 개인키이다. (rsa)<br />
-새로운계정에서 사용할 SSH키를 만들어 보자</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;username@email.com&quot; // 새 계정의 이메일 주소</span><br></pre></td></tr></table></figure>
-<p>저장될 경로를 물어보는데 default가 id_rsa일것이다.</p>
-<p><strong>기존의 키를 덮어 쓰지않도록 조심하여 키 이름을 만들자</strong></p>
-<p>암호는 그냥 엔터엔터 해서 넘어가면 됩니다.</p>
-<p>암호를 입력할 경우 키를 사용할때마다 암호를 입력했던것 같은데 깃헙에서는 어떻게 되는지 잘 모르겠다.</p>
-<p>ls 명령을 사용하여 만들어진것을 확인한 후,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat 만들었던 공개키(.pub)</span><br><span class="line"></span><br><span class="line">~~~~~ ssh-rsa로 시작하는 알수없는 문자열~~~~</span><br></pre></td></tr></table></figure>
-<p>이 나오는데 이 내용을 복사하여 github에 등록할것이다.</p>
-<h1 id="2-ssh-키-설정하기"><a class="markdownIt-Anchor" href="#2-ssh-키-설정하기"></a> 2. SSH 키 설정하기</h1>
-<p><a href="https://github.com/" target="_blank" rel="noopener">github</a>에 다른계정으로 로그인 후</p>
-<p>settings -&gt; SSH and GPG keys -&gt; New SSH key</p>
-<p>title에는 구분할 수 있는 이름을,</p>
-<p>key에는 아까 cat명령으로 복사했던 문자열을 넣는다.</p>
-<p>그 다음 터미널에서 생성한 키를 SSH에 추가한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/만들었던 개인키</span><br></pre></td></tr></table></figure>
-<h1 id="3config-파일-만들기"><a class="markdownIt-Anchor" href="#3config-파일-만들기"></a> 3.Config 파일 만들기</h1>
-<p>로컬에서 작업한 내용을 푸시할 때 어떤키를 참조할지 결정하도록 Config파일을 수정하자.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">cd ~/.ssh</span><br><span class="line"></span><br><span class="line">vim config</span><br></pre></td></tr></table></figure>
-<p>config파일에는 밑의 내용을 입력한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># Default account</span><br><span class="line"></span><br><span class="line">Host github.com</span><br><span class="line"></span><br><span class="line">    HostName github.com</span><br><span class="line"></span><br><span class="line">    User git</span><br><span class="line"></span><br><span class="line">    IdentityFile ~/.ssh/원래쓰던키</span><br><span class="line"></span><br><span class="line"># Second account</span><br><span class="line"></span><br><span class="line">Host github.com-second</span><br><span class="line"></span><br><span class="line">    HostName github.com</span><br><span class="line"></span><br><span class="line">    User git</span><br><span class="line"></span><br><span class="line">    IdentityFile ~/.ssh/새로만든키</span><br></pre></td></tr></table></figure>
-<h1 id="4-새-계정으로-push-테스트"><a class="markdownIt-Anchor" href="#4-새-계정으로-push-테스트"></a> 4. 새 계정으로 push 테스트</h1>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line">git add -A</span><br><span class="line"></span><br><span class="line">git commit -m &apos;first commit&apos;</span><br><span class="line"></span><br><span class="line">git remote add origin git@github.com-second:YOURNAME/REPOSITORY.git</span><br></pre></td></tr></table></figure>
-<p><strong>YOURNAME</strong>에는 github계정의 이름</p>
-<p><strong>REPOSITORY</strong>에는 새로만든 레포의 이름</p>
-<p>아까 만든 3에서만든 config파일에서 Host github.com-second라고 입력했다.</p>
-<p>그러므로 원격저장소 등록시 <a href="http://github.com" target="_blank" rel="noopener">github.com</a> 대신 github.com-second라고 입력해야 키를 구분하여 쓸 수 있다.</p>
-<blockquote>
-<p>기존의 계정으로 작업하려면 git@github.com으로 하면 된다.</p>
-</blockquote>
-<h2 id="에러났을때"><a class="markdownIt-Anchor" href="#에러났을때"></a> 에러났을때</h2>
-<p>ex) git access denied라고 뜨면</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ssh-add ~/.ssh/새로만든 개인키</span><br></pre></td></tr></table></figure>
-<p>를 입력하고 다시해보자.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -685,7 +750,7 @@ Float 4Byte</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
