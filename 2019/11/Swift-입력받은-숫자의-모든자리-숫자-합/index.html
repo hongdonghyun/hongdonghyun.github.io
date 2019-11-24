@@ -52,15 +52,15 @@
   };
 </script>
 
-  <meta name="description" content="문제 입력받은 숫자의 모든 자리 숫자 합계를 출력하기 e.g.  123 -&amp;gt; 6 ,  5678 -&amp;gt; 26  code 123456789func solution(_ input: Int) -&amp;gt; Int &amp;#123;    var input = input    var result = 0    while input != 0 &amp;#123;    resul">
+  <meta name="description" content="문제 입력받은 숫자의 모든 자리 숫자 합계를 출력하기 e.g.  123 -&amp;gt; 6 ,  5678 -&amp;gt; 26  Code 123456789func solution(_ input: Int) -&amp;gt; Int &amp;#123;    var input = input    var result = 0    while input != 0 &amp;#123;    resul">
 <meta name="keywords" content="Swift,Algorithm,과제">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Swift]입력받은 숫자의 모든자리 숫자 합">
 <meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%9D%80-%EC%88%AB%EC%9E%90%EC%9D%98-%EB%AA%A8%EB%93%A0%EC%9E%90%EB%A6%AC-%EC%88%AB%EC%9E%90-%ED%95%A9&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
-<meta property="og:description" content="문제 입력받은 숫자의 모든 자리 숫자 합계를 출력하기 e.g.  123 -&amp;gt; 6 ,  5678 -&amp;gt; 26  code 123456789func solution(_ input: Int) -&amp;gt; Int &amp;#123;    var input = input    var result = 0    while input != 0 &amp;#123;    resul">
+<meta property="og:description" content="문제 입력받은 숫자의 모든 자리 숫자 합계를 출력하기 e.g.  123 -&amp;gt; 6 ,  5678 -&amp;gt; 26  Code 123456789func solution(_ input: Int) -&amp;gt; Int &amp;#123;    var input = input    var result = 0    while input != 0 &amp;#123;    resul">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-11-24T11:26:56.040Z">
+<meta property="og:updated_time" content="2019-11-24T11:28:08.311Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2019/11/Swift-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%9D%80-%EC%88%AB%EC%9E%90%EC%9D%98-%EB%AA%A8%EB%93%A0%EC%9E%90%EB%A6%AC-%EC%88%AB%EC%9E%90-%ED%95%A9/">
@@ -227,7 +227,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2019-11-24 20:14:35 / Updated at: 20:26:56" itemprop="dateCreated datePublished" datetime="2019-11-24T20:14:35+09:00">2019-11-24</time>
+              <time title="Post created: 2019-11-24 20:14:35 / Updated at: 20:28:08" itemprop="dateCreated datePublished" datetime="2019-11-24T20:14:35+09:00">2019-11-24</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,9 +274,9 @@
 
       
         <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
-<p>입력받은 숫자의 모든 자리 숫자 합계를 출력하기<br />
-e.g.  123 -&gt; 6 ,  5678 -&gt; 26</p>
-<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h1>
+<p>입력받은 숫자의 모든 자리 숫자 합계를 출력하기</p>
+<p>e.g.  123 -&gt; 6 ,  5678 -&gt; 26</p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> input = input</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> input != <span class="number">0</span> &#123;</span><br><span class="line">    result += input%<span class="number">10</span></span><br><span class="line">    input = input/<span class="number">10</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
 <p>입력받은 정수를 10으로 나머지 연산을 하게 되면<br />
@@ -360,7 +360,7 @@ e.g.  123 -&gt; 6 ,  5678 -&gt; 26</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#문제"><span class="nav-number">1.</span> <span class="nav-text"> 문제</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">2.</span> <span class="nav-text"> code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#풀이"><span class="nav-number">3.</span> <span class="nav-text"> 풀이</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#문제"><span class="nav-number">1.</span> <span class="nav-text"> 문제</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">2.</span> <span class="nav-text"> Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#풀이"><span class="nav-number">3.</span> <span class="nav-text"> 풀이</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

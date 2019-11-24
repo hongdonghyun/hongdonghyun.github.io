@@ -227,7 +227,18 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2019-11-24 20:26:15 / Updated at: 20:26:48" itemprop="dateCreated datePublished" datetime="2019-11-24T20:26:15+09:00">2019-11-24</time>
+              <time title="Post created: 2019-11-24 20:26:15 / Updated at: 20:29:57" itemprop="dateCreated datePublished" datetime="2019-11-24T20:26:15+09:00">2019-11-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
             </span>
 
           
@@ -255,11 +266,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>하샤드 수 구하기</p>
+          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p>하샤드 수 구하기</p>
 <ul>
-<li>하샤드 수 : 자연수 N의 각 자릿수 숫자의 합을 구한 뒤, 그 합한 숫자로 자기 자신이 나누어 떨어지는 수<br />
-e.g. 18의 자릿수 합은 1 + 8 = 9 이고, 18은 9로 나누어 떨어지므로 하샤드 수.</li>
+<li>하샤드 수 : 자연수 N의 각 자릿수 숫자의 합을 구한 뒤, 그 합한 숫자로 자기 자신이 나누어 떨어지는 수</li>
 </ul>
+<p>e.g. 18의 자릿수 합은 1 + 8 = 9 이고, 18은 9로 나누어 떨어지므로 하샤드 수.</p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> innerInput = input</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> innerInput != <span class="number">0</span> &#123;</span><br><span class="line">    result += innerInput%<span class="number">10</span></span><br><span class="line">    innerInput = innerInput/<span class="number">10</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> result / input == <span class="number">0</span> ? <span class="literal">true</span> : <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p><a href="https://hongdonghyun.github.io/2019/11/Swift-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%9D%80-%EC%88%AB%EC%9E%90%EC%9D%98-%EB%AA%A8%EB%93%A0%EC%9E%90%EB%A6%AC-%EC%88%AB%EC%9E%90-%ED%95%A9/">입력받은 숫자의 모든자리 합</a><br />
+해당 내용을 응용하면 금방 구현이 가능하다.</p>
+<p>하샤드 수를 구하기 위해선 자릿수를 모두 더해줘야 하기 때문에<br />
+나온 결과에서 자기자신으로 나누어 떨어지는지 확인하면 된다.</p>
 
       
     </div>
@@ -304,7 +323,7 @@ e.g. 18의 자릿수 합은 1 + 8 = 9 이고, 18은 9로 나누어 떨어지므�
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2019-11-24 20:14:35 / Updated at: 20:26:56" itemprop="dateCreated datePublished" datetime="2019-11-24T20:14:35+09:00">2019-11-24</time>
+              <time title="Post created: 2019-11-24 20:14:35 / Updated at: 20:28:08" itemprop="dateCreated datePublished" datetime="2019-11-24T20:14:35+09:00">2019-11-24</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -344,9 +363,9 @@ e.g. 18의 자릿수 합은 1 + 8 = 9 이고, 18은 9로 나누어 떨어지므�
 
       
           <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
-<p>입력받은 숫자의 모든 자리 숫자 합계를 출력하기<br />
-e.g.  123 -&gt; 6 ,  5678 -&gt; 26</p>
-<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h1>
+<p>입력받은 숫자의 모든 자리 숫자 합계를 출력하기</p>
+<p>e.g.  123 -&gt; 6 ,  5678 -&gt; 26</p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> input = input</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> input != <span class="number">0</span> &#123;</span><br><span class="line">    result += input%<span class="number">10</span></span><br><span class="line">    input = input/<span class="number">10</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
 <p>입력받은 정수를 10으로 나머지 연산을 하게 되면<br />

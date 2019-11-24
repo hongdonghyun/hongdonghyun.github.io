@@ -9,7 +9,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>개발을 잘하고 싶읍니다</description>
-    <pubDate>Sun, 24 Nov 2019 11:26:48 GMT</pubDate>
+    <pubDate>Sun, 24 Nov 2019 11:29:57 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -21,16 +21,16 @@
       
         
         
-          &lt;p&gt;하샤드 수 구하기&lt;/p&gt;
+          &lt;h1 id=&quot;문제&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#문제&quot;&gt;&lt;/a&gt; 문제&lt;/h1&gt;
+&lt;p&gt;하샤드 수 구하기&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;하샤드 수 : 자연수 N의 각 자릿수 숫자의 합을 구한 뒤, 그 합한 숫자로 자기 자신이 나누어 떨어지는 수&lt;br /&gt;
-e.g. 18의 자릿수 합은 1 + 8 = 9 이고, 18은 9로 나누어 떨어지므로 
+&lt;li&gt;하샤드 수 : 자연수 N의 각 자릿수 숫자의 합을 구한 뒤, 그 합한 숫자로 자기 자신이
         
       
       </description>
       
       
-      <content:encoded><![CDATA[<p>하샤드 수 구하기</p><ul><li>하샤드 수 : 자연수 N의 각 자릿수 숫자의 합을 구한 뒤, 그 합한 숫자로 자기 자신이 나누어 떨어지는 수<br />e.g. 18의 자릿수 합은 1 + 8 = 9 이고, 18은 9로 나누어 떨어지므로 하샤드 수.</li></ul>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1><p>하샤드 수 구하기</p><ul><li>하샤드 수 : 자연수 N의 각 자릿수 숫자의 합을 구한 뒤, 그 합한 숫자로 자기 자신이 나누어 떨어지는 수</li></ul><p>e.g. 18의 자릿수 합은 1 + 8 = 9 이고, 18은 9로 나누어 떨어지므로 하샤드 수.</p><h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> innerInput = input</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> innerInput != <span class="number">0</span> &#123;</span><br><span class="line">    result += innerInput%<span class="number">10</span></span><br><span class="line">    innerInput = innerInput/<span class="number">10</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> result / input == <span class="number">0</span> ? <span class="literal">true</span> : <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1><p><a href="https://hongdonghyun.github.io/2019/11/Swift-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%9D%80-%EC%88%AB%EC%9E%90%EC%9D%98-%EB%AA%A8%EB%93%A0%EC%9E%90%EB%A6%AC-%EC%88%AB%EC%9E%90-%ED%95%A9/">입력받은 숫자의 모든자리 합</a><br />해당 내용을 응용하면 금방 구현이 가능하다.</p><p>하샤드 수를 구하기 위해선 자릿수를 모두 더해줘야 하기 때문에<br />나온 결과에서 자기자신으로 나누어 떨어지는지 확인하면 된다.</p>]]></content:encoded>
       
       <comments>http://hongdonghyun.github.io/2019/11/Swift-%ED%95%98%EC%83%A4%EB%93%9C-%EC%88%98/#disqus_thread</comments>
     </item>
@@ -45,15 +45,14 @@ e.g. 18의 자릿수 합은 1 + 8 = 9 이고, 18은 9로 나누어 떨어지므�
         
         
           &lt;h1 id=&quot;문제&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#문제&quot;&gt;&lt;/a&gt; 문제&lt;/h1&gt;
-&lt;p&gt;입력받은 숫자의 모든 자리 숫자 합계를 출력하기&lt;br /&gt;
-e.g.  123 -&amp;gt; 6 ,  5678 -&amp;gt; 26&lt;/p&gt;
-
+&lt;p&gt;입력받은 숫자의 모든 자리 숫자 합계를 출력하기&lt;/p&gt;
+&lt;p&gt;e.g.  123 -&amp;gt; 6 ,  5678 -&amp;gt; 26&lt;/p&gt;
         
       
       </description>
       
       
-      <content:encoded><![CDATA[<h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1><p>입력받은 숫자의 모든 자리 숫자 합계를 출력하기<br />e.g.  123 -&gt; 6 ,  5678 -&gt; 26</p><h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> input = input</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> input != <span class="number">0</span> &#123;</span><br><span class="line">    result += input%<span class="number">10</span></span><br><span class="line">    input = input/<span class="number">10</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1><p>입력받은 정수를 10으로 나머지 연산을 하게 되면<br />가장 마지막 자릿수가 나오게 되고</p><p>그 결과를 변수에 더해준다.</p><p>남은 수들을 계속해서 구해주어야 하기 때문에<br />10으로 나누기 연산을 하게되면 몫이 나오게 되고<br />이 과정에서 소수점으로 나오는 경우가 있다.</p><p>하지만 우리는 정수형이기 때문에 소수점은 알아서 탈락하게 되기 때문에 몫이 0이 아닐때까지 계속해서 연산해주면 원하는 결과값을 얻을 수 있다.</p>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1><p>입력받은 숫자의 모든 자리 숫자 합계를 출력하기</p><p>e.g.  123 -&gt; 6 ,  5678 -&gt; 26</p><h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> input = input</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> input != <span class="number">0</span> &#123;</span><br><span class="line">    result += input%<span class="number">10</span></span><br><span class="line">    input = input/<span class="number">10</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1><p>입력받은 정수를 10으로 나머지 연산을 하게 되면<br />가장 마지막 자릿수가 나오게 되고</p><p>그 결과를 변수에 더해준다.</p><p>남은 수들을 계속해서 구해주어야 하기 때문에<br />10으로 나누기 연산을 하게되면 몫이 나오게 되고<br />이 과정에서 소수점으로 나오는 경우가 있다.</p><p>하지만 우리는 정수형이기 때문에 소수점은 알아서 탈락하게 되기 때문에 몫이 0이 아닐때까지 계속해서 연산해주면 원하는 결과값을 얻을 수 있다.</p>]]></content:encoded>
       
       <comments>http://hongdonghyun.github.io/2019/11/Swift-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%9D%80-%EC%88%AB%EC%9E%90%EC%9D%98-%EB%AA%A8%EB%93%A0%EC%9E%90%EB%A6%AC-%EC%88%AB%EC%9E%90-%ED%95%A9/#disqus_thread</comments>
     </item>
