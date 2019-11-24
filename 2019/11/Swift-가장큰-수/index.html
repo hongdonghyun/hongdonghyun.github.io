@@ -52,21 +52,18 @@
   };
 </script>
 
-  <meta name="description" content="문제  Button을 누를 때마다 Label 의 값 변경하기  +버튼 또는 -버튼을 누르면 숫자가 증가&#x2F;감소하도록 만들기 숫자가 증가할 때는 label의 텍스트 색을 파란색, 감소할 때는 빨간색으로 변경     코드 123456789101112131415161718192021222324252627282930313233343536373839404142434">
-<meta name="keywords" content="swift 기초,UIKit">
+  <meta name="description" content="문제 프로그래머스 링크  Code 12345678910import Foundationfunc solution(_ numbers:[Int]) -&amp;gt; String &amp;#123;    let result = numbers.map(&amp;#123; String($0) &amp;#125;).sorted(by: &amp;#123;$0 + $1 &amp;gt; $1 + $0&amp;#125;)">
+<meta name="keywords" content="Swift,Algorithm,프로그래머스">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Swift 과제 풀이 8">
-<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8&#x2F;index.html">
+<meta property="og:title" content="[Swift]가장큰 수">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-%EA%B0%80%EC%9E%A5%ED%81%B0-%EC%88%98&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
-<meta property="og:description" content="문제  Button을 누를 때마다 Label 의 값 변경하기  +버튼 또는 -버튼을 누르면 숫자가 증가&#x2F;감소하도록 만들기 숫자가 증가할 때는 label의 텍스트 색을 파란색, 감소할 때는 빨간색으로 변경     코드 123456789101112131415161718192021222324252627282930313233343536373839404142434">
+<meta property="og:description" content="문제 프로그래머스 링크  Code 12345678910import Foundationfunc solution(_ numbers:[Int]) -&amp;gt; String &amp;#123;    let result = numbers.map(&amp;#123; String($0) &amp;#125;).sorted(by: &amp;#123;$0 + $1 &amp;gt; $1 + $0&amp;#125;)">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8&#x2F;result1.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8&#x2F;result2.png">
-<meta property="og:updated_time" content="2019-11-21T12:58:36.847Z">
+<meta property="og:updated_time" content="2019-11-24T12:24:27.441Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8&#x2F;result1.png">
 
-<link rel="canonical" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8/">
+<link rel="canonical" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B0%80%EC%9E%A5%ED%81%B0-%EC%88%98/">
 
 
 <script id="page-configurations">
@@ -80,7 +77,7 @@
   };
 </script>
 
-  <title>Swift 과제 풀이 8 | Hong3의 개발블로그</title>
+  <title>[Swift]가장큰 수 | Hong3의 개발블로그</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106140746-2"></script>
     <script>
@@ -206,7 +203,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8/">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B0%80%EC%9E%A5%ED%81%B0-%EC%88%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
@@ -219,7 +216,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          Swift 과제 풀이 8
+          [Swift]가장큰 수
         </h2>
 
         <div class="post-meta">
@@ -230,7 +227,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2019-11-21 21:54:19 / Updated at: 21:58:36" itemprop="dateCreated datePublished" datetime="2019-11-21T21:54:19+09:00">2019-11-21</time>
+              <time title="Post created: 2019-11-24 20:35:08 / Updated at: 21:24:27" itemprop="dateCreated datePublished" datetime="2019-11-24T20:35:08+09:00">2019-11-24</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -238,14 +235,8 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
-                    <span itemprop="name">과제</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%BC%EC%A0%9C/Swift/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift</span>
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
                   </a>
                 </span>
             </span>
@@ -266,8 +257,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-과제-풀이-8/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/11/Swift-%EA%B0%80%EC%9E%A5%ED%81%B0-%EC%88%98/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-가장큰-수/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -283,19 +274,22 @@
 
       
         <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
-<ul>
-<li>Button을 누를 때마다 Label 의 값 변경하기
-<ol>
-<li>+버튼 또는 -버튼을 누르면 숫자가 증가/감소하도록 만들기</li>
-<li>숫자가 증가할 때는 label의 텍스트 색을 파란색, 감소할 때는 빨간색으로 변경</li>
-</ol>
-</li>
-</ul>
-<h1 id="코드"><a class="markdownIt-Anchor" href="#코드"></a> 코드</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> resultLabel = <span class="type">UILabel</span>()</span><br><span class="line">    <span class="keyword">let</span> subBtn = <span class="type">UIButton</span>(type: .system)</span><br><span class="line">    <span class="keyword">let</span> addBtn = <span class="type">UIButton</span>(type: .system)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        </span><br><span class="line">        resultLabel.frame = <span class="type">CGRect</span>(x: <span class="number">200</span>, y: <span class="number">300</span>, width: <span class="number">100</span>, height: <span class="number">100</span>)</span><br><span class="line">        resultLabel.text = <span class="type">String</span>(<span class="built_in">count</span>)</span><br><span class="line">        resultLabel.font = <span class="type">UIFont</span>.systemFont(ofSize: <span class="number">50</span>)</span><br><span class="line">        </span><br><span class="line">        addBtn.setTitle(<span class="string">"+"</span>, <span class="keyword">for</span>: .normal)</span><br><span class="line">        addBtn.frame = <span class="type">CGRect</span>(x: <span class="number">20</span>, y: <span class="number">400</span>, width: <span class="number">150</span>, height: <span class="number">50</span>)</span><br><span class="line">        addBtn.titleLabel?.font = <span class="type">UIFont</span>.systemFont(ofSize: <span class="number">30</span>)</span><br><span class="line">        addBtn.layer.borderWidth = <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        addBtn.addTarget(<span class="keyword">self</span>, action: #selector(actionAdd(<span class="number">_</span>:)), <span class="keyword">for</span>: .touchUpInside)</span><br><span class="line">        </span><br><span class="line">        subBtn.setTitle(<span class="string">"-"</span>, <span class="keyword">for</span>: .normal)</span><br><span class="line">        subBtn.frame = <span class="type">CGRect</span>(x: <span class="number">240</span>, y: <span class="number">400</span>, width: <span class="number">150</span>, height: <span class="number">50</span>)</span><br><span class="line">        subBtn.titleLabel?.font = <span class="type">UIFont</span>.systemFont(ofSize: <span class="number">30</span>)</span><br><span class="line">        subBtn.layer.borderWidth = <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        subBtn.addTarget(<span class="keyword">self</span>, action: #selector(actionSub(<span class="number">_</span>:)), <span class="keyword">for</span>: .touchUpInside)</span><br><span class="line">        </span><br><span class="line">        view.addSubview(addBtn)</span><br><span class="line">        view.addSubview(subBtn)</span><br><span class="line">        view.addSubview(resultLabel)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">actionAdd</span><span class="params">(<span class="number">_</span> sender: UIButton)</span></span> &#123;</span><br><span class="line">        <span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line">        resultLabel.text = <span class="type">String</span>(<span class="built_in">count</span>)</span><br><span class="line">        resultLabel.textColor = .systemBlue</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">actionSub</span><span class="params">(<span class="number">_</span> sender: UIButton)</span></span> &#123;</span><br><span class="line">        <span class="built_in">count</span> -= <span class="number">1</span></span><br><span class="line">        resultLabel.text = <span class="type">String</span>(<span class="built_in">count</span>)</span><br><span class="line">        resultLabel.textColor = .systemRed</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="스크린샷"><a class="markdownIt-Anchor" href="#스크린샷"></a> 스크린샷</h1>
-<img src="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8/result1.png" class="" title="result1">
-<img src="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8/result2.png" class="" title="result2">
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/42746#_=_" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> numbers:[Int])</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> result = numbers.<span class="built_in">map</span>(&#123; <span class="type">String</span>($<span class="number">0</span>) &#125;).sorted(by: &#123;$<span class="number">0</span> + $<span class="number">1</span> &gt; $<span class="number">1</span> + $<span class="number">0</span>&#125;)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> result[<span class="number">0</span>] == <span class="string">"0"</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"0"</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result.joined()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p>맨 처음에 도통 어떻게 풀어야할지 감을 못잡아서<br />
+한참을 헤맸다.</p>
+<p>그리고 우연히 610과 106중 누가크냐는 힌트를 받았고</p>
+<p>소팅의 규칙을 재정립해서 풀면 할 수 있을것 같았다.</p>
+<p>말이야 쉬웠지 어떻게 하는건지 찾느라 진짜 머리카락이 다 빠질뻔했다.</p>
+<p>어찌어찌 다하고 나서 제출을 했더니 마지막 케이스에서 실패를 해버렸다.</p>
+<p>보통 이런경우에는 문제가 가지고 있는 함정을 해결하지 못해 생기는 경우였다.</p>
+<p>문제에 <strong>0 또는 양의정수</strong>라는것을 확인했고<br />
+0만 들어있는 배열을 넣고 테스트 해보니 “0000” 이런식의 값이 나왔다.</p>
+<p>그래서 그 부분만 예외처리 해줬다.</p>
+<p>진짜 너무 어려운 문제였다.</p>
+
     </div>
 
     
@@ -304,25 +298,23 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/swift-%EA%B8%B0%EC%B4%88/" rel="tag"># swift 기초</a>
-              <a href="/tags/UIKit/" rel="tag"># UIKit</a>
+              <a href="/tags/Swift/" rel="tag"># Swift</a>
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+              <a href="/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/" rel="tag"># 프로그래머스</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/Swift-%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98-%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/" rel="next" title="[Swift]최대공약수,최소공배수">
-                  <i class="fa fa-chevron-left"></i> [Swift]최대공약수,최소공배수
+                <a href="/2019/11/Swift-%ED%95%98%EC%83%A4%EB%93%9C-%EC%88%98/" rel="next" title="[Swift]하샤드 수">
+                  <i class="fa fa-chevron-left"></i> [Swift]하샤드 수
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/Swift-%EC%A0%95%EC%88%98-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/" rel="prev" title="[Swift]정수 내림차순으로 배치하기">
-                  [Swift]정수 내림차순으로 배치하기 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -368,7 +360,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#문제"><span class="nav-number">1.</span> <span class="nav-text"> 문제</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#코드"><span class="nav-number">2.</span> <span class="nav-text"> 코드</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#스크린샷"><span class="nav-number">3.</span> <span class="nav-text"> 스크린샷</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#문제"><span class="nav-number">1.</span> <span class="nav-text"> 문제</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">2.</span> <span class="nav-text"> Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#풀이"><span class="nav-number">3.</span> <span class="nav-text"> 풀이</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -540,9 +532,9 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8/",
-            identifier: "2019/11/Swift-과제-풀이-8/",
-            title: "Swift 과제 풀이 8"
+            url: "http://hongdonghyun.github.io/2019/11/Swift-%EA%B0%80%EC%9E%A5%ED%81%B0-%EC%88%98/",
+            identifier: "2019/11/Swift-가장큰-수/",
+            title: "[Swift]가장큰 수"
           }
         }
       });

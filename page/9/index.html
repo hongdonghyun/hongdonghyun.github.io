@@ -202,6 +202,190 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-array-dict-set/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/Swift-array-dict-set/" class="post-title-link" itemprop="url">Swift array,dict,set</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2019-11-13 16:06:33 / Updated at: 16:11:47" itemprop="dateCreated datePublished" datetime="2019-11-13T16:06:33+09:00">2019-11-13</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/Swift-array-dict-set/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-array-dict-set/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="collection"><a class="markdownIt-Anchor" href="#collection"></a> Collection</h1>
+<h2 id="종류"><a class="markdownIt-Anchor" href="#종류"></a> 종류</h2>
+<h3 id="value-type-swift-collection"><a class="markdownIt-Anchor" href="#value-type-swift-collection"></a> Value Type (Swift Collection)</h3>
+<ul>
+<li>Array</li>
+<li>Dictionary</li>
+<li>Set</li>
+</ul>
+<h3 id="object-type-foundation-collection"><a class="markdownIt-Anchor" href="#object-type-foundation-collection"></a> Object Type (Foundation Collection)</h3>
+<ul>
+<li>NSArray, NSMutableArray</li>
+<li>NSDictionary,NSMutableDictionary</li>
+<li>NSSet, NSMutableSet</li>
+</ul>
+<h2 id="array"><a class="markdownIt-Anchor" href="#array"></a> Array</h2>
+<ul>
+<li>값이 중복될 수 있으며 순서가 보장된다.</li>
+<li>순서의 시작은 0</li>
+</ul>
+<h3 id="선언방법"><a class="markdownIt-Anchor" href="#선언방법"></a> 선언방법</h3>
+<h4 id="타입추론"><a class="markdownIt-Anchor" href="#타입추론"></a> 타입추론</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> strArray1 = [<span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"melon"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// iOS를 5번 반복</span></span><br><span class="line"><span class="keyword">let</span> strArray2 = <span class="type">Array</span>&lt;<span class="type">String</span>&gt;(repeating: <span class="string">"iOS"</span>, <span class="built_in">count</span>: <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="타입선언"><a class="markdownIt-Anchor" href="#타입선언"></a> 타입선언</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> strArray3: <span class="type">Array</span>&lt;<span class="type">String</span>&gt; = [<span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"melon"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> strArray4: [<span class="type">String</span>] = [<span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"melon"</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="method"><a class="markdownIt-Anchor" href="#method"></a> method</h3>
+<p><code>.isEmpty</code> : 값이 비어있는지 체크 -&gt; <code>Bool</code></p>
+<p><code>.startIndex</code> : 시작 인덱스 값 -&gt; <code>Int</code></p>
+<p><code>.endIndex</code> : 마지막 인덱스 값 -&gt; <code>Int</code></p>
+<p><code>.contains(value)</code> : value가 들어있는지 체크 -&gt; <code>Bool</code></p>
+<p><code>.firstIndex(of: value)</code> : 해당 value가 들어있는 첫번째 위치 -&gt; <code>Optional</code></p>
+<h3 id="배열-추가"><a class="markdownIt-Anchor" href="#배열-추가"></a> 배열 추가</h3>
+<h4 id="append"><a class="markdownIt-Anchor" href="#append"></a> append</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> alphabetArray = [<span class="string">"A"</span>]</span><br><span class="line">alphabetArray.append(<span class="string">"B"</span>)</span><br></pre></td></tr></table></figure>
+<p>배열의 가장 마지막에 값을 추가</p>
+<h4 id="insert"><a class="markdownIt-Anchor" href="#insert"></a> insert</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> alphabetArray = [<span class="string">"A"</span>]</span><br><span class="line">alphabetArray.insert(<span class="string">"S"</span>, at: <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p><code>.insert(추가하고 싶은 값, at: 추가하고 싶은 위치)</code></p>
+<h4 id="operator"><a class="markdownIt-Anchor" href="#operator"></a> operator</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> alphabetArray = [<span class="string">"A"</span>]</span><br><span class="line">alphabetArray += [<span class="string">"C"</span>]</span><br></pre></td></tr></table></figure>
+<p>배열끼리 연산자 적용이 가능하다.</p>
+<blockquote>
+<p>타입이 다르다면 당연히 에러가 난다.</p>
+</blockquote>
+<h3 id="배열-삭제"><a class="markdownIt-Anchor" href="#배열-삭제"></a> 배열 삭제</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alphabetArray = [<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span>, <span class="string">"E"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> removed = alphabetArray.remove(at: <span class="number">0</span>)</span><br><span class="line">alphabetArray.removeAll()</span><br></pre></td></tr></table></figure>
+<p>swift에서 특정위치의 값을 지우려면 다음과 같이 한다.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> indexC = alphabetArray.firstIndex(of: <span class="string">"C"</span>) &#123;</span><br><span class="line">  alphabetArray.remove(at: indexC)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="배열-조작"><a class="markdownIt-Anchor" href="#배열-조작"></a> 배열 조작</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> alphabetArray = [<span class="string">"A"</span>]</span><br><span class="line">alphabetArray = [<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span>, <span class="string">"E"</span>, <span class="string">"F"</span>]</span><br><span class="line">alphabetArray[<span class="number">2</span>...] = [<span class="string">"Q"</span>, <span class="string">"W"</span>, <span class="string">"E"</span>, <span class="string">"R"</span>]</span><br><span class="line">alphabetArray[<span class="number">2</span>...] = [<span class="string">"Q"</span>, <span class="string">"W"</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="배열-정렬"><a class="markdownIt-Anchor" href="#배열-정렬"></a> 배열 정렬</h3>
+<h4 id="sort"><a class="markdownIt-Anchor" href="#sort"></a> sort</h4>
+<p>배열의 값을 정렬함 -&gt; Void</p>
+<blockquote>
+<p>반환값 없음</p>
+</blockquote>
+<blockquote>
+<p>자기자신이 정렬됨</p>
+</blockquote>
+<h4 id="sorted"><a class="markdownIt-Anchor" href="#sorted"></a> sorted</h4>
+<p>정렬된 값을 반환하는 메서드</p>
+<blockquote>
+<p>반환값 있음!</p>
+</blockquote>
+<blockquote>
+<p>자기자신은 정렬되지 않음</p>
+</blockquote>
+<h2 id="set"><a class="markdownIt-Anchor" href="#set"></a> Set</h2>
+<p>값이 중복될 수 없으며 순서가 보장되지 않는다.</p>
+<h2 id="dictionary"><a class="markdownIt-Anchor" href="#dictionary"></a> Dictionary</h2>
+<ul>
+<li>Key : Value 쌍으로 이루어져 있다.</li>
+<li>순서가 보장되지 않는다.</li>
+<li>Key는 중복 될 수 없다.</li>
+</ul>
+<h3 id="선언방법-2"><a class="markdownIt-Anchor" href="#선언방법-2"></a> 선언방법</h3>
+<h4 id="타입선언-2"><a class="markdownIt-Anchor" href="#타입선언-2"></a> 타입선언</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> words1: <span class="type">Dictionary</span>&lt;<span class="type">String</span>, <span class="type">String</span>&gt; = [<span class="string">"A"</span>: <span class="string">"Apple"</span>, <span class="string">"B"</span>: <span class="string">"Banana"</span>, <span class="string">"C"</span>: <span class="string">"City"</span>]</span><br><span class="line"><span class="keyword">let</span> words2: [<span class="type">String</span>: <span class="type">String</span>] = [<span class="string">"A"</span>: <span class="string">"Apple"</span>, <span class="string">"B"</span>: <span class="string">"Banana"</span>, <span class="string">"C"</span>: <span class="string">"City"</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="타입추론-2"><a class="markdownIt-Anchor" href="#타입추론-2"></a> 타입추론</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dictFromLiteral1 = [<span class="string">"key 1"</span>: <span class="string">"value 1"</span>, <span class="string">"key 2"</span>: <span class="string">"value 2"</span>]</span><br><span class="line"><span class="keyword">var</span> dictFromLiteral2 = [<span class="number">1</span>: <span class="string">"value 1"</span>, <span class="number">2</span>: <span class="string">"value 2"</span>]</span><br><span class="line"><span class="keyword">var</span> dictFromLiteral3 = [<span class="string">"1"</span>: <span class="number">1</span>, <span class="string">"2"</span>: <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="method-2"><a class="markdownIt-Anchor" href="#method-2"></a> method</h3>
+<p><code>.isEmpty</code> : 값이 비어있는지 체크 -&gt; <code>Bool</code></p>
+<p><code>.keys</code> : 딕셔너리의 key값만 출력 -&gt; Array</p>
+<p><code>.values</code> : 딕셔너리의 value값만 출력 -&gt; Array</p>
+<p><code>.contains(where: { (key, value) -&gt; Bool in return key == &quot;A&quot;})</code> : key 또는 값 찾기</p>
+<h3 id="dict-추가"><a class="markdownIt-Anchor" href="#dict-추가"></a> Dict 추가</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> words: [<span class="type">String</span>: <span class="type">String</span>] = [:]</span><br><span class="line">words = [<span class="string">"A"</span>: <span class="string">"A"</span>]</span><br><span class="line">words[<span class="string">"A"</span>] = <span class="string">"Apple"</span></span><br><span class="line">words[<span class="string">"B"</span>] = <span class="string">"Banana"</span></span><br></pre></td></tr></table></figure>
+<h4 id="updatevalue"><a class="markdownIt-Anchor" href="#updatevalue"></a> updateValue</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 키가 없으면 데이터 추가 후 nil 반환,</span></span><br><span class="line"><span class="comment">// 키가 이미 있으면 데이터 업데이트 후 oldValue 반환</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> words: [<span class="type">String</span>: <span class="type">String</span>] = [:]</span><br><span class="line">words = [<span class="string">"A"</span>: <span class="string">"A"</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> oldValue = words.updateValue(<span class="string">"Apple"</span>, forKey: <span class="string">"A"</span>) &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"\(oldValue) =&gt; \(words["</span><span class="type">A</span><span class="string">"]!)"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Insert \(words["</span><span class="type">A</span><span class="string">"]!)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="dict-값-제거"><a class="markdownIt-Anchor" href="#dict-값-제거"></a> Dict 값 제거</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> words: [<span class="type">String</span>: <span class="type">String</span>] = [:]</span><br><span class="line">words = [<span class="string">"A"</span>: <span class="string">"Apple"</span>, <span class="string">"I"</span>: <span class="string">"IPhone"</span>, <span class="string">"S"</span>: <span class="string">"Steve Jobs"</span>, <span class="string">"T"</span>: <span class="string">"Timothy Cook"</span>]</span><br><span class="line">words[<span class="string">"S"</span>] = <span class="literal">nil</span></span><br></pre></td></tr></table></figure>
+<h4 id="removedvalue"><a class="markdownIt-Anchor" href="#removedvalue"></a> removedValue</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 지우려는 키가 존재하면 데이터를 지운 후 지운 데이터 반환, 없으면 nil</span><br><span class="line">if let removedValue = words.removeValue(forKey: &quot;T&quot;) &#123;</span><br><span class="line">  print(&quot;\(removedValue) removed!&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="nested중첩"><a class="markdownIt-Anchor" href="#nested중첩"></a> Nested(중첩)</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dict1 = [<span class="type">String</span>: [<span class="type">String</span>]]()</span><br><span class="line">dict1[<span class="string">"arr1"</span>] = [<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>]</span><br><span class="line">dict1[<span class="string">"arr2"</span>] = [<span class="string">"D"</span>, <span class="string">"E"</span>, <span class="string">"F"</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="dict-in-dict"><a class="markdownIt-Anchor" href="#dict-in-dict"></a> dict in dict</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dict2 = [<span class="type">String</span>: [<span class="type">String</span>: <span class="type">String</span>]]()</span><br><span class="line">dict2[<span class="string">"user"</span>] = [</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"홍동현"</span>,</span><br><span class="line">  <span class="string">"job"</span>: <span class="string">"백수"</span>,</span><br><span class="line">  <span class="string">"hobby"</span>: <span class="string">"홈페이지 뿌수기"</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h2 id="set-2"><a class="markdownIt-Anchor" href="#set-2"></a> Set</h2>
+<ul>
+<li>순서를 보장하지 않는다.</li>
+<li>유일한 값을 지님</li>
+</ul>
+<h3 id="선언방법-3"><a class="markdownIt-Anchor" href="#선언방법-3"></a> 선언방법</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fruitsSet: <span class="type">Set</span>&lt;<span class="type">String</span>&gt; = [<span class="string">"Apple"</span>, <span class="string">"Orange"</span>, <span class="string">"Melon"</span>]</span><br><span class="line"><span class="keyword">let</span> numbers: <span class="type">Set</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> emptySet = <span class="type">Set</span>&lt;<span class="type">String</span>&gt;()</span><br></pre></td></tr></table></figure>
+<h4 id="method-3"><a class="markdownIt-Anchor" href="#method-3"></a> method</h4>
+<p><code>.hashPrefix(value)</code> : 해당 값으로 시작하는지 체크 -&gt; Bool</p>
+<p><code>.contains(value)</code>: 해당 값이 요소로 존재하는지 체크 -&gt; Bool</p>
+<h3 id="값-추가"><a class="markdownIt-Anchor" href="#값-추가"></a> 값 추가</h3>
+<p><code>set.insert(value)</code> -&gt; <code>(inserted: Bool, memberAfterInsert: String)</code></p>
+<h3 id="값-비교"><a class="markdownIt-Anchor" href="#값-비교"></a> 값 비교</h3>
+<p><code>==</code> : 같은지 체크 -&gt; Bool<br />
+<code>elementsEqual(set)</code>: 같은지 체크하며 순서까지 체크한다. -&gt; Bool</p>
+<img src="/2019/11/Swift-array-dict-set/set.png" class="" title="set">
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -496,191 +680,11 @@ generate &amp;&amp; deploy 입니다.</p>
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="post-title-link" itemprop="url">hexo 댓글공간 만들기</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-
-              <time title="Post created: 2019-11-12 14:15:28" itemprop="dateCreated datePublished" datetime="2019-11-12T14:15:28+09:00">2019-11-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-19 10:12:41" itemprop="dateModified" datetime="2019-11-19T10:12:41+09:00">2019-11-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/hexo-댓글공간-만들기/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="hexo-시리즈-바로가기"><a class="markdownIt-Anchor" href="#hexo-시리즈-바로가기"></a> Hexo 시리즈 바로가기</h1>
-<ol>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo로 Github Page 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/">Hexo 테마 설정하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 댓글 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">구글 애널리틱스 연동하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 메뉴 추가하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/">블로그 방문자 카운팅</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">sitemap.xmlrobots.txt 추가하기</a></p>
-</li>
-</ol>
-<h1 id="헥소-댓글창-만들기"><a class="markdownIt-Anchor" href="#헥소-댓글창-만들기"></a> 헥소 댓글창 만들기</h1>
-<p>본 포스팅은 next 테마를 기준으로 설명합니다.</p>
-<h2 id="disqus"><a class="markdownIt-Anchor" href="#disqus"></a> Disqus</h2>
-<p><a href="https://disqus.com/" target="_blank" rel="noopener">Disqus</a>는 소셜 댓글 서비스</p>
-<p>댓글영역과 로직을 직접 구현하지 않아도 위젯 형태로 서비스를 제공함</p>
-<p>특별한 기능을 사용하지 않는다면 basic플랜(공짜)를 사용하면 된다.</p>
-<blockquote>
-<p><a href="https://www.livere.com/" target="_blank" rel="noopener">라이브리</a>라는 소셜 댓글 서비스가 있지만(국산), next 테마에서 특별히 지원하지 않기 때문에 disqus로 간단하게 댓글을 달아보도록 한다.</p>
-</blockquote>
-<h2 id="disqus-가입"><a class="markdownIt-Anchor" href="#disqus-가입"></a> Disqus 가입</h2>
-<p><a href="https://disqus.com/" target="_blank" rel="noopener">https://disqus.com/</a>로 이동하고 우측 상단에 Get Started를 누르면 회원가입을 하면 된다.</p>
-<blockquote>
-<p>너무쉬워서 스샷도 없음</p>
-</blockquote>
-<h2 id="생성"><a class="markdownIt-Anchor" href="#생성"></a> 생성</h2>
-<p><a href="https://disqus.com/" target="_blank" rel="noopener">https://disqus.com/</a>다시 메인페이지로 와서 우측 상단에 로그인이 된것을 확인하고<br />
-화면 가운데 GET STARTED를 누른다.</p>
-<img src="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_disqus1.png" class="" title="hexo_disqus1">
-<blockquote>
-<p>화면 가운데 GET STARTED 버튼을 누르면</p>
-</blockquote>
-<img src="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_disqus2.png" class="" title="hexo_disqus2">
-<blockquote>
-<p>다음과 같이 뜬다.</p>
-</blockquote>
-<p>이제 빨간색 테두리영역이 있는 부분을 눌러준다.</p>
-<img src="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_disqus3.png" class="" title="hexo_disqus3">
-<p>그럼 다음과 같이 정보를 입력하는 창이 뜨는데<br />
-정보를 맞춰 입력 해주면된다.</p>
-<p>Website Name : 사이트이름 (디스커스에서 관리할때 보인다.)</p>
-<p>Category : 해당 사이트 게시물이 올라오는 타입</p>
-<blockquote>
-<p>저는 Tech</p>
-</blockquote>
-<p>Language : 한글없어서 English</p>
-<p>설정을 다하고 넘어가면</p>
-<p>플랜을 설정하라고 하는데 밑으로 내리면 무료플랜이 있다.</p>
-<img src="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_disqus4.png" class="" title="hexo_disqus4">
-<p>Subscirbe Now버튼 클릭</p>
-<blockquote>
-<p>무료플랜이 밑에있어서 당황스러웠습니다.</p>
-</blockquote>
-<img src="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_disqus5.png" class="" title="hexo_disqus5">
-<p>그러면 디스커스를 적용할 사이트들 목록이 나오는데 여기에 Hexo가 없습니다.</p>
-<p>당황하지 마시고 밑으로 쭉 내리시면 Universal Code가 있습니다.</p>
-<p>해당 버튼 클릭 -&gt; 다른창 또 나오면 Configure 클릭</p>
-<p>이제 이 페이지를 채워 주시면 됩니다.</p>
-<img src="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_disqus6.png" class="" title="hexo_disqus6">
-<p>Website URL : 여러분의 블로그 주소를 풀로 적어주세요.</p>
-<p>다른건 안채워 주셔도 상관없습니다.</p>
-<p>다 채우셨다면 Complete Setup버튼 클릭<br />
-여기까지 하시면 디스커스 세팅이 완료 되었습니다.</p>
-<h2 id="disqus-블로그에-적용하기"><a class="markdownIt-Anchor" href="#disqus-블로그에-적용하기"></a> Disqus 블로그에 적용하기</h2>
-<p><code>블로그 디렉토리/theme/next</code>로 이동하셔서<br />
-<code>_config.yml</code>파일을 열어주세요.</p>
-<p>그다음 600번째 줄 근처에 보시면 disqus 항목이 있습니다.</p>
-<img src="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_disqus7.png" class="" title="hexo_disqus7">
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">shortname:</span> <span class="string">&lt;여기에</span> <span class="string">disqus</span> <span class="string">생성시</span> <span class="string">입력했던</span> <span class="string">Website</span> <span class="string">Name을</span> <span class="string">입력해주세요.</span> <span class="string">URL아닙니다.&gt;</span></span><br></pre></td></tr></table></figure>
-<p>수정 후 저장해주세요.</p>
-<h2 id="적용-후-반영"><a class="markdownIt-Anchor" href="#적용-후-반영"></a> 적용 후 반영</h2>
-<p>다하셨다면 <code>블로그 디렉토리</code>로 오셔서</p>
-<ol>
-<li><code>hexo clean &amp;&amp; hexo generate</code></li>
-<li><code>hexo deploy</code></li>
-<li>기다렸다가 포스팅 확인</li>
-<li>축하축하</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
 
@@ -726,7 +730,7 @@ generate &amp;&amp; deploy 입니다.</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
