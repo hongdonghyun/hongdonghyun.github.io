@@ -202,6 +202,486 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%EC%82%AC%EC%A0%84%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%92%80%EC%9D%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/%EC%82%AC%EC%A0%84%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%92%80%EC%9D%B4/" class="post-title-link" itemprop="url">사전테스트 풀이</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-11 21:52:30" itemprop="dateCreated datePublished" datetime="2019-11-11T21:52:30+09:00">2019-11-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-15 16:56:17" itemprop="dateModified" datetime="2019-11-15T16:56:17+09:00">2019-11-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">과제</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/%EC%BB%B4%ED%93%A8%ED%84%B0-%EC%9D%BC%EB%B0%98/" itemprop="url" rel="index">
+                    <span itemprop="name">컴퓨터 일반</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/%EC%82%AC%EC%A0%84%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%92%80%EC%9D%B4/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/사전테스트-풀이/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<h2 id="컴퓨터-일반"><a class="markdownIt-Anchor" href="#컴퓨터-일반"></a> 컴퓨터 일반</h2>
+<h4 id="int16이-표현할-수-있는-숫자의-범위는"><a class="markdownIt-Anchor" href="#int16이-표현할-수-있는-숫자의-범위는"></a> Int16이 표현할 수 있는 숫자의 범위는?</h4>
+<p><strong>-32768 ~ 32767</strong></p>
+<blockquote>
+<p>2^15 ~ 2^15-1</p>
+</blockquote>
+<h4 id="프로그램-vs-프로세스-차이점은"><a class="markdownIt-Anchor" href="#프로그램-vs-프로세스-차이점은"></a> 프로그램 vs 프로세스 차이점은?</h4>
+<p><strong>프로그램 : 어떤 작업을. 위해 실행할 수. 있는 파일</strong></p>
+<p><strong>프로세스 : 프로그램을 실행시키는 주체</strong></p>
+<h4 id="메모리에는-크게-4가지-부분으로-나누어-저장되는-데-그-이름과-특성"><a class="markdownIt-Anchor" href="#메모리에는-크게-4가지-부분으로-나누어-저장되는-데-그-이름과-특성"></a> 메모리에는 크게 4가지 부분으로 나누어 저장되는 데 그 이름과 특성</h4>
+<table>
+<thead>
+<tr>
+<th>CODE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATA</td>
+</tr>
+<tr>
+<td>HEAP</td>
+</tr>
+<tr>
+<td>STACK</td>
+</tr>
+</tbody>
+</table>
+<p>CODE(프로그램 명령이 위치하는곳): 함수 제어문,상수의 영역</p>
+<p>DATA: 전역,정적변수, 배열,구조체등이 저장됨<br />
+프로그램이 실행 될 때 생성되고 프로그램이 종료 되면 시스템에 반환 된다.</p>
+<p>HEAP: 동적으로 메모리 할당을 위해 존재하는 영역</p>
+<p>STACK: 프로그램이 자동으로 사용하는 임시 메모리 영역이다.</p>
+<p>지역변수, 매개변수, 리턴 값 등 잠시 사용되었다가 사라지는 데이터를 저장하는 영역이다.</p>
+<blockquote>
+<p>HEAP overflow:heap이 위에서부터 주소값을 채워져 내려오다가 stack영역을 침범하는 경우.</p>
+</blockquote>
+<blockquote>
+<p>STACK overflow:stack영역이 heap을 침범</p>
+</blockquote>
+<h4 id="비트연산자의-종류"><a class="markdownIt-Anchor" href="#비트연산자의-종류"></a> 비트연산자의 종류</h4>
+<p><strong>AND,OR,NOT</strong>등이 있다.</p>
+<ul>
+<li>0011 1100(60)</li>
+<li>0000 1101(13)</li>
+<li>0000 1000(AND)</li>
+<li>0011 1101(OR)</li>
+<li>1100 0011(NOT)</li>
+<li>1111 0010(NOT)</li>
+</ul>
+<h4 id="다음-연산0010-1101-2-에-대한-결과"><a class="markdownIt-Anchor" href="#다음-연산0010-1101-2-에-대한-결과"></a> 다음 연산(0010 1101) &gt;&gt;2 에 대한 결과</h4>
+<p><strong>1011 = 18</strong></p>
+<h4 id="프로그램을-실행했을-때-실제-동작되기까지의-과정"><a class="markdownIt-Anchor" href="#프로그램을-실행했을-때-실제-동작되기까지의-과정"></a> 프로그램을 실행했을 때 실제 동작되기까지의 과정</h4>
+<ol>
+<li>Fetch</li>
+</ol>
+<ul>
+<li>메모리에 존재하는 명령을 CPU에게 할당</li>
+</ul>
+<ol start="2">
+<li>Decode</li>
+</ol>
+<ul>
+<li>가져온 명령을 CPU가 해석</li>
+</ul>
+<ol start="3">
+<li>Execute</li>
+</ol>
+<ul>
+<li>해석된 명령어를 CPU가 실행</li>
+</ul>
+<h2 id="swift"><a class="markdownIt-Anchor" href="#swift"></a> Swift</h2>
+<h4 id="swift-네이밍-컨벤션"><a class="markdownIt-Anchor" href="#swift-네이밍-컨벤션"></a> Swift 네이밍 컨벤션</h4>
+<p>Pascal Case: 모든 단어의 첫 시작 부분을 대문자로 표기</p>
+<blockquote>
+<p>Swift 에서는 ﬁlename, class, struct, enum, protocol 및 type 에 대해 이것을 사용</p>
+</blockquote>
+<p>camelCase : 시작 부분을 제외한 각 단어의 첫 글자를 대문자로 표기</p>
+<blockquote>
+<p>Swift 에서는 변수명, 함수, 메서드 등 pascal case 이외에 모두 camel case 사용</p>
+</blockquote>
+<h4 id="클래스와-인스턴스의-차이"><a class="markdownIt-Anchor" href="#클래스와-인스턴스의-차이"></a> 클래스와 인스턴스의 차이</h4>
+<p>클래스: 객체를 구현하기 위한 설계도 혹은 틀<br />
+연관된 메서드들의 집합</p>
+<p>인스턴스: 클래스 생성에 따라 메모리에 할당된 객체</p>
+<p>OOP의 특징: 캡슐화,상속성,다형성,추상화</p>
+<h4 id="struct구조체-vs-class클래스"><a class="markdownIt-Anchor" href="#struct구조체-vs-class클래스"></a> Struct(구조체) vs Class(클래스)</h4>
+<p>Struct</p>
+<ol>
+<li>Call by value</li>
+<li>상속이 불가</li>
+<li>stack memory에 할당(속도가 빠름)</li>
+</ol>
+<p>Class</p>
+<ol>
+<li>Call by reference</li>
+<li>상속 가능</li>
+<li>heap memory에 할당(속도가 느림)</li>
+</ol>
+<h4 id="call-by-reference-vs-call-by-value"><a class="markdownIt-Anchor" href="#call-by-reference-vs-call-by-value"></a> Call by Reference vs Call by Value</h4>
+<p>Call by Value:</p>
+<p>값에 의한 호출방식은 함수 호출시 전달되는 변수의 값을 복사하여 함수의 인자로 전달한다.</p>
+<p>Call by Reference:</p>
+<p>참조에 의한 호출방식은 함수 호출시 인자로 전달되는 변수의 레퍼런스를 전달한다.</p>
+<h4 id="enum열거형에-대해서-설명하고-예시코드"><a class="markdownIt-Anchor" href="#enum열거형에-대해서-설명하고-예시코드"></a> Enum(열거형)에 대해서 설명하고 예시코드</h4>
+<ol>
+<li>
+<p>열거형은 가능한 상태들과 관련된 값들을 정해진 가짓 수로 모아둔 집합체로 정의된 타입</p>
+</li>
+<li>
+<p>내포된 열거형, 메서드, 연관값, 패턴매칭을 활용하여 계층적 구조의 데이터를 정의할 수 있다.</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">enum Movement &#123;</span><br><span class="line">    case Left</span><br><span class="line">    case Right</span><br><span class="line">    case Top</span><br><span class="line">    case Bottom</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="uikit-framework를-통해-사용할-수-있는-클래스"><a class="markdownIt-Anchor" href="#uikit-framework를-통해-사용할-수-있는-클래스"></a> UIKit Framework를 통해 사용할 수 있는 클래스</h4>
+<ul>
+<li>UIActivityItemsConfiguration</li>
+<li>UISceneSizeRestrictions</li>
+</ul>
+<h4 id="uiviewcontroller-의-lifecycle"><a class="markdownIt-Anchor" href="#uiviewcontroller-의-lifecycle"></a> UIViewController 의 LifeCycle</h4>
+<p>viewDidLoad (뷰가 로드됨) -&gt; 초기화작업</p>
+<p>viewWillAppear (뷰가 나타날것) -&gt; 다른뷰를 왔다 갔다할때 호출</p>
+<p>viewDidAppear (뷰가 나타났다) -&gt; 뷰가 화면에 나타난 직후</p>
+<p>viewWillDisappear (뷰가 사라질 것이다) -&gt; 뷰가 사라지기 직전</p>
+<p>viewDidDisappear (뷰가 사라졌다) -&gt; 뷰컨트롤러가 뷰가 제거되었음을 알려줌</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="post-title-link" itemprop="url">Hexo로 Github Page 만들기</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-11 15:06:19" itemprop="dateCreated datePublished" datetime="2019-11-11T15:06:19+09:00">2019-11-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-19 10:11:17" itemprop="dateModified" datetime="2019-11-19T10:11:17+09:00">2019-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Hexo로 Github Page 만들기/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="hexo-시리즈-바로가기"><a class="markdownIt-Anchor" href="#hexo-시리즈-바로가기"></a> Hexo 시리즈 바로가기</h1>
+<ol>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo로 Github Page 만들기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/">Hexo 테마 설정하기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 댓글 만들기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">구글 애널리틱스 연동하기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 메뉴 추가하기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/">블로그 방문자 카운팅</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">sitemap.xmlrobots.txt 추가하기</a></p>
+</li>
+</ol>
+<h1 id="hexo로-github-page-만들기"><a class="markdownIt-Anchor" href="#hexo로-github-page-만들기"></a> Hexo로 Github Page 만들기</h1>
+<h2 id="hexo"><a class="markdownIt-Anchor" href="#hexo"></a> Hexo</h2>
+<p>Node.js기반의 정적페이지 생성기</p>
+<p>사용자가 급격하게 상승중</p>
+<blockquote><p><s>오픈소스는 사용자가 많은게 짱임</s></p>
+</blockquote>
+<h2 id="시작하기전"><a class="markdownIt-Anchor" href="#시작하기전"></a> 시작하기전</h2>
+<p>github페이지를 만들어야 하기 때문에 github계정은 필수이며,</p>
+<p>간단한 터미널 명령어는 사용할 수 있어야한다.</p>
+<p>또한 <strong>깃허브페이지는 계정당 하나만 생성할 수 있다.</strong></p>
+<blockquote>
+<p>레포이름에 계정명이 들어가야하기 때문</p>
+</blockquote>
+<ol>
+<li>git</li>
+<li>github 계정</li>
+<li>터미널</li>
+<li>markdown 문법</li>
+<li>vi 혹은 emacs같은 익숙한 에디터</li>
+</ol>
+<p>해당 게시물에서는 MacOS기준으로 설명한다.</p>
+<h2 id="설치"><a class="markdownIt-Anchor" href="#설치"></a> 설치</h2>
+<h3 id="레포생성"><a class="markdownIt-Anchor" href="#레포생성"></a> 레포생성</h3>
+<img src="/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_screen1.png" class="" title="hexo_screen1">
+<p>해당 사진처럼 레포를 생성하는 과정에서</p>
+<p><strong><a href="http://hongdonghyun.github.io">hongdonghyun.github.io</a></strong>와 같이</p>
+<p>닉네임(이메일아닙니다.).github.io의 형식으로 레포를 만들어야합니다.</p>
+<blockquote>
+<p>터미널 사용을 최소화 하기위해 README.md를 생성하도록<br />
+Initialize this repository with a README 체크</p>
+</blockquote>
+<p>다 입력하셨다면 Create repository</p>
+<p>다음과 같은 결과화면</p>
+<img src="/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_screen2.png" class="" title="hexo_screen2">
+<h2 id="hexo-설치하기전"><a class="markdownIt-Anchor" href="#hexo-설치하기전"></a> Hexo 설치하기전</h2>
+<p>Hexo는 Node.js로 만들어졌기 때문에</p>
+<p>당연히 사용하려면 Node.js가 설치 되어있어야한다.</p>
+<h3 id="nodejs-설치"><a class="markdownIt-Anchor" href="#nodejs-설치"></a> Node.js 설치</h3>
+<p>Node를 깔려면 <a href="https://brew.sh/index_ko" target="_blank" rel="noopener">Homebrew</a>를 사용한다.</p>
+<p>만약 Homebrew설치가 안되어있다면 링크를 타고가서 설치하도록 한다.</p>
+<p>brew가 있다면 다음 코드를 입력하자</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>만약 설치가 안된다면 <code>sudo brew install node</code>를 해보자</p>
+</blockquote>
+<h3 id="nodejs-설치확인"><a class="markdownIt-Anchor" href="#nodejs-설치확인"></a> Node.js 설치확인</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>v12.13.0, 6.12.0등등의 버전이 나온다면 정상적으로 설치되었다.</p>
+<h2 id="hexo-설치"><a class="markdownIt-Anchor" href="#hexo-설치"></a> Hexo 설치</h2>
+<p>Hexo를 설치하려면 다음과 같이 터미널에 입력한다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>설치가 만약 안된다면 가장앞에 sudo를 붙여보자.</p>
+</blockquote>
+<h3 id="hexo-설치확인"><a class="markdownIt-Anchor" href="#hexo-설치확인"></a> Hexo 설치확인</h3>
+<p>터미널에서 <code>hexo</code>라고 치면</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Usage: hexo &lt;command&gt;</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  help     Get help on a command.</span><br><span class="line">  init     Create a new Hexo folder.</span><br><span class="line">  version  Display version information.</span><br><span class="line"></span><br><span class="line">Global Options:</span><br><span class="line">  --config  Specify config file instead of using _config.yml</span><br><span class="line">  --cwd     Specify the CWD</span><br><span class="line">  --debug   Display all verbose messages in the terminal</span><br><span class="line">  --draft   Display draft posts</span><br><span class="line">  --safe    Disable all plugins and scripts</span><br><span class="line">  --silent  Hide output on console</span><br><span class="line"></span><br><span class="line">For more help, you can use &apos;hexo help [command]&apos; for the detailed information</span><br><span class="line">or you can check the docs: http://hexo.io/docs/</span><br></pre></td></tr></table></figure>
+<p>이러한 형식의 매뉴얼이 나온다.</p>
+<p>매뉴얼이 나온다면 정상적으로 설치 되었다.</p>
+<h3 id="hexo-디렉토리-지정"><a class="markdownIt-Anchor" href="#hexo-디렉토리-지정"></a> Hexo 디렉토리 지정</h3>
+<p>Hexo설치가 완료 되었다면</p>
+<p>내 컴퓨터에서 블로그를 관리할 디렉토리를 지정해주어야 한다.</p>
+<p>앞으로 자주 접근해야하니 컴퓨터 구석탱이 찾기 어려운곳에 지정하지 말고</p>
+<p>눈에 띄는곳으로 지정하자.</p>
+<p>다음과 같이 입력해보자.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;디렉토리&gt;</span><br></pre></td></tr></table></figure>
+<p>저는 모든 개발코드를 <code>projects</code>라는 폴더 밑에서 관리하기 때문에</p>
+<p><code>cd</code>명령어로 <code>projects</code>까지 이동 후 hexo init 폴더명을 지정했습니다.</p>
+<blockquote>
+<p>폴더가 없다면 hexo init 명령어가 알아서 만들어줍니다.</p>
+</blockquote>
+<h3 id="hexo-init-결과확인"><a class="markdownIt-Anchor" href="#hexo-init-결과확인"></a> Hexo init 결과확인</h3>
+<img src="/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_screen3.png" class="" title="hexo_screen3">
+<p>위에서 지정했던 폴더로 이동하고 <code>ls</code>를 쳐보면 다음과 같이 나와야 한다.</p>
+<h3 id="hexo-server"><a class="markdownIt-Anchor" href="#hexo-server"></a> Hexo server</h3>
+<p><code>init</code>이후 해당 폴더에서 <code>hexo server</code>를 입력하면</p>
+<p><code>localhost:4000</code>에서 내 블로그를 확인할 수 있다.</p>
+<h3 id="hexo-server-결과"><a class="markdownIt-Anchor" href="#hexo-server-결과"></a> Hexo server 결과</h3>
+<img src="/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_screen4.png" class="" title="hexo_screen4">
+<h2 id="포스팅-작성"><a class="markdownIt-Anchor" href="#포스팅-작성"></a> 포스팅 작성</h2>
+<h3 id="포스팅-생성"><a class="markdownIt-Anchor" href="#포스팅-생성"></a> 포스팅 생성</h3>
+<p>터미널에서 다음과 같이 입력하자.</p>
+<p><code>hexo new 포스팅제목</code><br />
+해당 커맨드를 입력하면 <code>init에서 지정한 폴더명/source/_posts/</code>에 <code>포스팅제목.md</code>가 생긴걸 확인할 수 있다.</p>
+<h3 id="포스팅-확인"><a class="markdownIt-Anchor" href="#포스팅-확인"></a> 포스팅 확인</h3>
+<p><code>cd</code> 명령어로<code>init에서 지정한 폴더명/source/_posts/</code>로 이동한 후 파일이 존재하는지 <code>ls</code>로 확인해보자.</p>
+<img src="/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_screen5.png" class="" title="hexo_screen5">
+<blockquote>
+<p>저는 first-posting이라는 이름으로 생성했습니다.</p>
+<p>hello-world.md는 초기에 생성해주는 파일이에요.</p>
+</blockquote>
+<p>해당 파일을 에디터로 열어보게 되면</p>
+<img src="/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_screen6.png" class="" title="hexo_screen6">
+<p>다음과 같은 부분이 나타나는데<br />
+포스팅을 등록할때 해당부분을 채워주면된다.</p>
+<h2 id="배포"><a class="markdownIt-Anchor" href="#배포"></a> 배포</h2>
+<p>이제 hexo도 설치했고, 로컬컴퓨터에서 동작도 확인했고, 포스팅을 작성하는법도 알았다.</p>
+<p>남은건 이제 인터넷 세상에 블로그를 공개하는일만 남았다.</p>
+<h3 id="config"><a class="markdownIt-Anchor" href="#config"></a> config</h3>
+<p>배포를 하기위해선 아까 만들어 두었던 github page와 연동을 해줘야한다.</p>
+<p><code>블로그폴더</code> 최상단으로 이동하자.</p>
+<img src="/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_screen3.png" class="" title="hexo_screen3">
+<blockquote>
+<p>여기</p>
+</blockquote>
+<p>여기서 _config.yml을 수정해보도록 한다.</p>
+<p>수정하기에 앞서 <a href="https://hexo.io/ko/docs/configuration.html" target="_blank" rel="noopener">여기</a>를 한번 보고가면 편하다.</p>
+<p>가장 기본적인 부분만 수정해보도록 하자.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"> <span class="attr">title:</span> <span class="string">Hong3의</span> <span class="string">개발블로그</span></span><br><span class="line"> <span class="attr">subtitle:</span> <span class="string">'- dev hong3'</span></span><br><span class="line"> <span class="attr">description:</span> <span class="string">'개발을 잘하고 싶읍니다'</span></span><br><span class="line"> <span class="attr">keywords:</span> <span class="string">python,swift,hexo,django,flask,aws</span></span><br><span class="line"> <span class="attr">author:</span> <span class="string">Hong3</span></span><br><span class="line"> <span class="attr">language:</span> <span class="string">ko</span></span><br><span class="line"> <span class="attr">timezone:</span> <span class="string">'Asia/Seoul'</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment"># URL</span></span><br><span class="line"> <span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and r    oot as '/child/'</span></span><br><span class="line"> <span class="attr">url:</span> <span class="string">http://hongdonghyun.github.io</span></span><br><span class="line"> <span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"> <span class="attr">permalink:</span> <span class="string">:year/:month/:title/</span></span><br><span class="line"> <span class="attr">permalink_defaults:</span></span><br><span class="line"> <span class="attr">pretty_urls:</span></span><br><span class="line">   <span class="attr">trailing_index:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing index.html from permalinks</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>저는 이런식으로 수정했습니다.</p>
+</blockquote>
+<h3 id="deploy-config"><a class="markdownIt-Anchor" href="#deploy-config"></a> deploy config</h3>
+<p>_config.yml파일 제일밑으로가면<br />
+<code>#Deployment</code>부분이 있다.</p>
+<p>해당부분을 <code>git</code>을 사용해 <code>githubpage</code>를 띄우도록 수정한다.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">   <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">   <span class="attr">repo:</span> <span class="string">https://github.com/hongdonghyun/hongdonghyun.github.io.git</span></span><br><span class="line">   <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>repo에 들어갈 주소는 포스팅 처음에 시작했던 레포지토리에서 <code>clone or download</code>를 누르면 나오는 주소를 복사해서 넣어주면됩니다.</p>
+<img src="/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_screen2.png" class="" title="hexo_screen2">
+<h3 id="정적파일생성"><a class="markdownIt-Anchor" href="#정적파일생성"></a> 정적파일생성</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<p>hexo generate를 입력하면 정적파일들을 만들어낸다.</p>
+<h3 id="배포-2"><a class="markdownIt-Anchor" href="#배포-2"></a> 배포</h3>
+<p>배포하기전 하나의 과정이 더 남았다.<br />
+<code>hexo-deployer-git</code>라는 플러그인을 설치해 주어야만 진정으로 배포가 가능해진다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Warning이 많이 뜨지만 걱정 ㄴㄴ</p>
+</blockquote>
+<p>설치가 다되었다면</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="배포결과-확인"><a class="markdownIt-Anchor" href="#배포결과-확인"></a> 배포결과 확인</h3>
+<img src="/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_screen7.png" class="" title="hexo_screen7">
+<blockquote>
+<p>배포가 다되었다면 깃허브에서 뭔가 주루룩하고 올라와있다.</p>
+</blockquote>
+<p>배포를 하고 1분만 기다렸다가 자신의 사이트로 접속해보자.</p>
+<blockquote>
+<p>github이 바빠서 바로바로 업데이트를 못해주는 경우가 있기때문</p>
+</blockquote>
+<img src="/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_screen8.png" class="" title="hexo_screen8">
+<p>위와 같은 사이트가 나온다면 완벽하게 블로그를 생성해낸것이다.</p>
+<blockquote>
+<p>축하</p>
+</blockquote>
+<p>∂</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%20%EB%AC%B8%EB%B2%95%20%EC%A0%95%EB%A6%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -468,7 +948,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>

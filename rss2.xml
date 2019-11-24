@@ -9,8 +9,54 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>개발을 잘하고 싶읍니다</description>
-    <pubDate>Fri, 22 Nov 2019 01:50:50 GMT</pubDate>
+    <pubDate>Sun, 24 Nov 2019 11:26:48 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>[Swift]하샤드 수</title>
+      <link>http://hongdonghyun.github.io/2019/11/Swift-%ED%95%98%EC%83%A4%EB%93%9C-%EC%88%98/</link>
+      <guid>http://hongdonghyun.github.io/2019/11/Swift-%ED%95%98%EC%83%A4%EB%93%9C-%EC%88%98/</guid>
+      <pubDate>Sun, 24 Nov 2019 11:26:15 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;하샤드 수 구하기&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;하샤드 수 : 자연수 N의 각 자릿수 숫자의 합을 구한 뒤, 그 합한 숫자로 자기 자신이 나누어 떨어지는 수&lt;br /&gt;
+e.g. 18의 자릿수 합은 1 + 8 = 9 이고, 18은 9로 나누어 떨어지므로 
+        
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<p>하샤드 수 구하기</p><ul><li>하샤드 수 : 자연수 N의 각 자릿수 숫자의 합을 구한 뒤, 그 합한 숫자로 자기 자신이 나누어 떨어지는 수<br />e.g. 18의 자릿수 합은 1 + 8 = 9 이고, 18은 9로 나누어 떨어지므로 하샤드 수.</li></ul>]]></content:encoded>
+      
+      <comments>http://hongdonghyun.github.io/2019/11/Swift-%ED%95%98%EC%83%A4%EB%93%9C-%EC%88%98/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>[Swift]입력받은 숫자의 모든자리 숫자 합</title>
+      <link>http://hongdonghyun.github.io/2019/11/Swift-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%9D%80-%EC%88%AB%EC%9E%90%EC%9D%98-%EB%AA%A8%EB%93%A0%EC%9E%90%EB%A6%AC-%EC%88%AB%EC%9E%90-%ED%95%A9/</link>
+      <guid>http://hongdonghyun.github.io/2019/11/Swift-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%9D%80-%EC%88%AB%EC%9E%90%EC%9D%98-%EB%AA%A8%EB%93%A0%EC%9E%90%EB%A6%AC-%EC%88%AB%EC%9E%90-%ED%95%A9/</guid>
+      <pubDate>Sun, 24 Nov 2019 11:14:35 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h1 id=&quot;문제&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#문제&quot;&gt;&lt;/a&gt; 문제&lt;/h1&gt;
+&lt;p&gt;입력받은 숫자의 모든 자리 숫자 합계를 출력하기&lt;br /&gt;
+e.g.  123 -&amp;gt; 6 ,  5678 -&amp;gt; 26&lt;/p&gt;
+
+        
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1><p>입력받은 숫자의 모든 자리 숫자 합계를 출력하기<br />e.g.  123 -&gt; 6 ,  5678 -&gt; 26</p><h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> input = input</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> input != <span class="number">0</span> &#123;</span><br><span class="line">    result += input%<span class="number">10</span></span><br><span class="line">    input = input/<span class="number">10</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1><p>입력받은 정수를 10으로 나머지 연산을 하게 되면<br />가장 마지막 자릿수가 나오게 되고</p><p>그 결과를 변수에 더해준다.</p><p>남은 수들을 계속해서 구해주어야 하기 때문에<br />10으로 나누기 연산을 하게되면 몫이 나오게 되고<br />이 과정에서 소수점으로 나오는 경우가 있다.</p><p>하지만 우리는 정수형이기 때문에 소수점은 알아서 탈락하게 되기 때문에 몫이 0이 아닐때까지 계속해서 연산해주면 원하는 결과값을 얻을 수 있다.</p>]]></content:encoded>
+      
+      <comments>http://hongdonghyun.github.io/2019/11/Swift-%EC%9E%85%EB%A0%A5%EB%B0%9B%EC%9D%80-%EC%88%AB%EC%9E%90%EC%9D%98-%EB%AA%A8%EB%93%A0%EC%9E%90%EB%A6%AC-%EC%88%AB%EC%9E%90-%ED%95%A9/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>[Swift]송전탑</title>
@@ -187,48 +233,6 @@
       <content:encoded><![CDATA[<h1 id="swift로-풀어보기"><a class="markdownIt-Anchor" href="#swift로-풀어보기"></a> Swift로 풀어보기</h1><h2 id="insertion-sort"><a class="markdownIt-Anchor" href="#insertion-sort"></a> Insertion Sort</h2><div class="video-container"><iframe src="//www.youtube.com/embed/OGzPmgsI-pQ" frameborder="0" allowfullscreen></iframe></div><p>시간복잡도: O(n^2)</p><p>n 개의 원소를 가진 배열을 정렬할 때, i 번째를 정렬할 순서라고 가정하면,</p><p>0 부터 i-1 까지의 원소들은 정렬되어있다는 가정하에,</p><p>i 번째 원소와 i-1 번째 원소부터 0 번째 원소까지 비교하면서 i 번째 원소가 비교하는 원소보다 클 경우 서로의 위치를 바꾸고,</p><p>작을 경우 위치를 바꾸지 않고 다음 순서의 원소와 비교하면서 정렬해준다.</p><p>이 과정을 정렬하려는 배열의 마지막 원소까지 반복해준다.</p><h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">insertionSort</span><span class="params">()</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> randomArray = sequence.shuffled()</span><br><span class="line">    <span class="keyword">var</span> pivot: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">var</span> pivotValue: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...randomArray.<span class="built_in">count</span>-<span class="number">1</span> &#123;</span><br><span class="line">        pivot = i</span><br><span class="line">        pivotValue = randomArray[i]</span><br><span class="line">        <span class="keyword">while</span> pivot &gt; <span class="number">0</span> &amp;&amp; randomArray[pivot-<span class="number">1</span>] &gt; pivotValue &#123;</span><br><span class="line">            randomArray.swapAt(pivot, pivot-<span class="number">1</span>)</span><br><span class="line">            pivot -= <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> randomArray</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="개인정리"><a class="markdownIt-Anchor" href="#개인정리"></a> 개인정리</h2><p>개인적으로 버블소트와 셀렉션소트의 차이를 느꼈다면</p><p>Bubble,Selection은<br />순회와 정렬이 -&gt;(오른쪽)으로 같이 진행된다고 느낀반면,</p><p>Insertion은<br />순회는 -&gt;(오른쪽)<br />정렬은 &lt;-(왼쪽) 방향으로 진행된다고 느낀점이다.</p><blockquote><p>물론 시간복잡도는 O(n^2)임</p></blockquote><p>개인적으로 삽입정렬은 재밌었다. 신기했음<br />이런식으로도 생각할 수 있구나 라는걸 느낌</p>]]></content:encoded>
       
       <comments>http://hongdonghyun.github.io/2019/11/Swift-Insertion-Sort/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>[Swift]Selection Sort</title>
-      <link>http://hongdonghyun.github.io/2019/11/Swift-Selection-Sort/</link>
-      <guid>http://hongdonghyun.github.io/2019/11/Swift-Selection-Sort/</guid>
-      <pubDate>Wed, 20 Nov 2019 06:45:17 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;h1 id=&quot;swift로-풀어보기&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#swift로-풀어보기&quot;&gt;&lt;/a&gt; Swift로 풀어보기&lt;/h1&gt;
-&lt;h2 id=&quot;selection-sort&quot;&gt;&lt;a class=&quot;markdownIt-Anc
-        
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<h1 id="swift로-풀어보기"><a class="markdownIt-Anchor" href="#swift로-풀어보기"></a> Swift로 풀어보기</h1><h2 id="selection-sort"><a class="markdownIt-Anchor" href="#selection-sort"></a> Selection Sort</h2><div class="video-container"><iframe src="//www.youtube.com/embed/xWBP4lzkoyM" frameborder="0" allowfullscreen></iframe></div><p>시간복잡도: O(n^2)</p><p>n 개의 원소를 가진 배열을 정렬할 때, 계속해서 바꾸는 것이 아니라 비교하고 있는 값의 index 를 저장해둔다.<br />그리고 최종적으로 한 번만 바꿔준다.</p><h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sequence = <span class="number">1</span> ..&lt; <span class="number">100</span>+<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">selectionSort</span><span class="params">()</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> randomArray = sequence.shuffled()</span><br><span class="line">    <span class="keyword">var</span> value: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">var</span> location: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;randomArray.<span class="built_in">count</span> &#123;</span><br><span class="line">        value = randomArray[i]</span><br><span class="line">        location = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i+<span class="number">1</span>..&lt;randomArray.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="comment">// 제일 작은값 찾는중</span></span><br><span class="line">            <span class="keyword">if</span> value &gt; randomArray[j] &#123;</span><br><span class="line">                value = randomArray[j]</span><br><span class="line">                location = j</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 완전순회 후 변경</span></span><br><span class="line">        randomArray.swapAt(i, location)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> randomArray</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="개인정리"><a class="markdownIt-Anchor" href="#개인정리"></a> 개인정리</h2><p>for문안에 값과 위치를 저장 할 수있도록 변수를 할당한다.</p><p>그리고 중첩된 for문이 끝나면 값에 대한 조건순회가 끝났으므로 순회를 시작했던 값과 조건순회중 찾은 가장 작은값의 위치를 바꿔준다.</p><p>버블소트는 매번 위치를 수정해 주었다면<br />셀렉션소트는 한번 다 훑고 수정해준다는것이 차이점</p><p>하지만 둘다 시간복잡도는 O(n^2) 이라는점</p><blockquote><p>Bubble은 핵비효율적이었다면<br />Selection은 덜 비효율</p><blockquote><p>아무튼 비효율적임</p></blockquote></blockquote>]]></content:encoded>
-      
-      <comments>http://hongdonghyun.github.io/2019/11/Swift-Selection-Sort/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>[Swift]Bubble Sort</title>
-      <link>http://hongdonghyun.github.io/2019/11/Swift-Bubble-Sort/</link>
-      <guid>http://hongdonghyun.github.io/2019/11/Swift-Bubble-Sort/</guid>
-      <pubDate>Wed, 20 Nov 2019 06:35:49 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;h1 id=&quot;swift로-풀어보기&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#swift로-풀어보기&quot;&gt;&lt;/a&gt; Swift로 풀어보기&lt;/h1&gt;
-&lt;h2 id=&quot;bubble-sort&quot;&gt;&lt;a class=&quot;markdownIt-Anchor
-        
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<h1 id="swift로-풀어보기"><a class="markdownIt-Anchor" href="#swift로-풀어보기"></a> Swift로 풀어보기</h1><h2 id="bubble-sort"><a class="markdownIt-Anchor" href="#bubble-sort"></a> Bubble Sort</h2><div class="video-container"><iframe src="//www.youtube.com/embed/nmhjrI-aW5o" frameborder="0" allowfullscreen></iframe></div><p>시간복잡도: O(n^2)</p><p>n 개의 원소를 가진 배열을 정렬할 때, 인접한 두 개의 데이터를 비교해가면서 정렬을 진행하는 방식이다. 가장 큰 값을 배열의 맨 끝에다 이동시키면서 정렬하고자 하는 원소의 개수 만큼을 두 번 반복하게 된다.</p><h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sequence = <span class="number">1</span> ..&lt; <span class="number">100</span>+<span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">bubbleSort</span><span class="params">()</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> randomArray = sequence.shuffled()</span><br><span class="line">    <span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">0</span>..&lt;randomArray.<span class="built_in">count</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">0</span>..&lt;randomArray.<span class="built_in">count</span>-<span class="number">1</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> randomArray[j] &gt; randomArray[j+<span class="number">1</span>] &#123;</span><br><span class="line">                randomArray.swapAt(j, j+<span class="number">1</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> randomArray</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>전체 배열을 순회하면서</p><p>앞쪽값이 뒷쪽값 보다 큰 경우 서로의 위치를 바꾼다.</p><h3 id="성능향상"><a class="markdownIt-Anchor" href="#성능향상"></a> 성능향상</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">bubbleSortFlag</span><span class="params">()</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> randomArray = sequence.shuffled()</span><br><span class="line">    <span class="keyword">var</span> flag: <span class="type">Bool</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;randomArray.<span class="built_in">count</span> &#123;</span><br><span class="line">        flag = <span class="literal">false</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">0</span>..&lt;randomArray.<span class="built_in">count</span>-<span class="number">1</span>-i &#123;</span><br><span class="line">            <span class="keyword">if</span> randomArray[j] &gt; randomArray[j+<span class="number">1</span>] &#123;</span><br><span class="line">                randomArray.swapAt(j, j+<span class="number">1</span>)</span><br><span class="line">                flag = <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> flag == <span class="literal">false</span> &#123;</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> randomArray</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="개인정리"><a class="markdownIt-Anchor" href="#개인정리"></a> 개인정리</h2><p>버블소트의 특징은 한번 순회를 마치면 가장 큰 값이 배열의 가장 뒤쪽으로 가게 된다는점이다.</p><p>전체 배열을 순회하면서</p><p>앞쪽값이 뒷쪽값 보다 큰 경우 서로의 위치를 바꾼다.<br />여기까지는 똑같으나,</p><p>반복문을 계속 진행하다보면 배열의 뒤쪽부분은 큰값의 순서대로 정렬이 될것이고,<br />우리가 원하던 정렬이 이미 이루어진 상태이므로 더이상 비교를 하지 않아도 된다.</p><p><code>for j in 0..&lt;randomArray.count-1-i</code> 이러한 코드가 작성되게 된것도 비슷한 맥락이다.</p>]]></content:encoded>
-      
-      <comments>http://hongdonghyun.github.io/2019/11/Swift-Bubble-Sort/#disqus_thread</comments>
     </item>
     
   </channel>
