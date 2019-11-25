@@ -52,15 +52,15 @@
   };
 </script>
 
-  <meta name="description" content="프로그래머스 링크  Code 1234567891011121314151617181920import Foundationfunc solution(_ heights:[Int]) -&amp;gt; [Int] &amp;#123;    var resultArray: [Int] = []    for i in stride(from:heights.count-1, to:-1, by:-1)">
+  <meta name="description" content="문제 프로그래머스 링크  Code 1234567891011121314151617181920import Foundationfunc solution(_ heights:[Int]) -&amp;gt; [Int] &amp;#123;    var resultArray: [Int] = []    for i in stride(from:heights.count-1, to:-1, by:">
 <meta name="keywords" content="Swift,Algorithm,Sort,프로그래머스">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Swift]송전탑">
 <meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-%EC%86%A1%EC%A0%84%ED%83%91&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
-<meta property="og:description" content="프로그래머스 링크  Code 1234567891011121314151617181920import Foundationfunc solution(_ heights:[Int]) -&amp;gt; [Int] &amp;#123;    var resultArray: [Int] = []    for i in stride(from:heights.count-1, to:-1, by:-1)">
+<meta property="og:description" content="문제 프로그래머스 링크  Code 1234567891011121314151617181920import Foundationfunc solution(_ heights:[Int]) -&amp;gt; [Int] &amp;#123;    var resultArray: [Int] = []    for i in stride(from:heights.count-1, to:-1, by:">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-11-22T01:50:50.822Z">
+<meta property="og:updated_time" content="2019-11-25T01:23:01.804Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2019/11/Swift-%EC%86%A1%EC%A0%84%ED%83%91/">
@@ -225,10 +225,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">작성일</span>
-              
 
-              <time title="Post created: 2019-11-22 10:21:33 / Updated at: 10:50:50" itemprop="dateCreated datePublished" datetime="2019-11-22T10:21:33+09:00">2019-11-22</time>
+              <time title="Post created: 2019-11-22 10:21:33" itemprop="dateCreated datePublished" datetime="2019-11-22T10:21:33+09:00">2019-11-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-25 10:23:01" itemprop="dateModified" datetime="2019-11-25T10:23:01+09:00">2019-11-25</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -273,7 +279,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a href="https://programmers.co.kr/learn/courses/30/lessons/42588" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+        <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/42588" target="_blank" rel="noopener">프로그래머스 링크</a></p>
 <h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> heights:[Int])</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">    <span class="keyword">var</span> resultArray: [<span class="type">Int</span>] = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">stride</span>(from:heights.<span class="built_in">count</span>-<span class="number">1</span>, to:-<span class="number">1</span>, by:-<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> flag = <span class="literal">true</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">stride</span>(from:i-<span class="number">1</span>,to:-<span class="number">1</span>,by:-<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> heights[i] &lt; heights[j] &#123;</span><br><span class="line">                flag = <span class="literal">false</span></span><br><span class="line">                resultArray.insert(j+<span class="number">1</span>,at:<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> flag &#123;</span><br><span class="line">            resultArray.insert(<span class="number">0</span>,at:<span class="number">0</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> resultArray</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
@@ -357,7 +364,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">1.</span> <span class="nav-text"> Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#풀이"><span class="nav-number">2.</span> <span class="nav-text"> 풀이</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#문제"><span class="nav-number">1.</span> <span class="nav-text"> 문제</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">2.</span> <span class="nav-text"> Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#풀이"><span class="nav-number">3.</span> <span class="nav-text"> 풀이</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -373,7 +380,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
