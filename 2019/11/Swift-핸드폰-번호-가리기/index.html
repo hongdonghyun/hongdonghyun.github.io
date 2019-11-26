@@ -60,7 +60,7 @@
 <meta property="og:site_name" content="Hong3의 개발블로그">
 <meta property="og:description" content="문제 프로그래머스 링크  Code 123456func solution(_ phone_number:String) -&amp;gt; String &amp;#123;    let resultString = String(repeating: &quot;*&quot;,count: phone_number.count-4)    let index = phone_number.index(phone_numb">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-11-26T01:12:42.352Z">
+<meta property="og:updated_time" content="2019-11-26T04:27:57.517Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2019/11/Swift-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/">
@@ -227,7 +227,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2019-11-26 10:08:07 / Updated at: 10:12:42" itemprop="dateCreated datePublished" datetime="2019-11-26T10:08:07+09:00">2019-11-26</time>
+              <time title="Post created: 2019-11-26 10:08:07 / Updated at: 13:27:57" itemprop="dateCreated datePublished" datetime="2019-11-26T10:08:07+09:00">2019-11-26</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -278,8 +278,8 @@
 <h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> phone_number:String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> resultString = <span class="type">String</span>(repeating: <span class="string">"*"</span>,<span class="built_in">count</span>: phone_number.<span class="built_in">count</span>-<span class="number">4</span>)</span><br><span class="line">    <span class="keyword">let</span> index = phone_number.index(phone_number.endIndex, offsetBy: -<span class="number">4</span>)</span><br><span class="line">    <span class="keyword">let</span> mySubstring = phone_number[index...]</span><br><span class="line">    <span class="keyword">return</span> resultString + mySubstring</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
-<p>문제에 뒷자리 4자리를 제외한 나머지를 **<code>*</code>**로 치환하라는 문제였다.</p>
-<p>전체 문자열 중 뒤의 4자리를 제외한 만큼의 **<code>*</code>**이 찍힌 문자열을 만들고</p>
+<p>문제에 뒷자리 4자리를 제외한 나머지를 <strong><code>*</code></strong> 로 치환하라는 문제였다.</p>
+<p>전체 문자열 중 뒤의 4자리를 제외한 만큼의 <strong><code>*</code></strong> 이 찍힌 문자열을 만들고</p>
 <p>가장 마지막 4자리를 slicing하여 뽑아내고 합쳐서 리턴 해주면 된다.</p>
 
     </div>
