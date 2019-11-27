@@ -8,6 +8,30 @@
     </url>
 
     <url>
+        <loc>http://hongdonghyun.github.io/2019/11/Swift-%EC%86%A1%EC%A0%84%ED%83%91/</loc>
+        <lastmod>2019-11-27T07:12:29.569Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hongdonghyun.github.io/2019/11/Swift-Frame%EA%B3%BC-Bounds/</loc>
+        <lastmod>2019-11-27T06:47:10.364Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hongdonghyun.github.io/2019/11/Swift-Closure/</loc>
+        <lastmod>2019-11-27T05:26:56.003Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://hongdonghyun.github.io/2019/11/Swift-%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%ED%83%91/</loc>
         <lastmod>2019-11-27T05:07:41.481Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -42,14 +66,6 @@
     <url>
         <loc>http://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
         <lastmod>2019-11-25T02:12:54.198Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/Swift-%EC%86%A1%EC%A0%84%ED%83%91/</loc>
-        <lastmod>2019-11-25T02:08:51.712Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -274,14 +290,6 @@
     <url>
         <loc>http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-4/</loc>
         <lastmod>2019-11-15T07:54:21.407Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/Swift-Closure/</loc>
-        <lastmod>2019-11-15T07:41:11.116Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
