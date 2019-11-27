@@ -202,6 +202,231 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/OOP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/OOP/" class="post-title-link" itemprop="url">객체지향이란 도대체 무엇인가</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-15 16:57:58" itemprop="dateCreated datePublished" datetime="2019-11-15T16:57:58+09:00">2019-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-16 18:23:14" itemprop="dateModified" datetime="2019-11-16T18:23:14+09:00">2019-11-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">과제</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/OOP/" itemprop="url" rel="index">
+                    <span itemprop="name">OOP</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/OOP/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/OOP/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>객체지향이 무엇일까를 생각하면서 정리를 해보고 있습니다.</p>
+<p>이상한점이나 설명상 오류를 범하는 부분이 있다면 댓글 부탁드리겠습니다.</p>
+<h1 id="oopobject-oriented-programming"><a class="markdownIt-Anchor" href="#oopobject-oriented-programming"></a> OOP(Object Oriented Programming)</h1>
+<p><a href="https://ko.wikipedia.org/wiki/%EA%B0%9D%EC%B2%B4_%EC%A7%80%ED%96%A5_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D" target="_blank" rel="noopener">객체 지향 프로그래밍 위키백과</a></p>
+<p>위키백과에서는 객체 지향 프로그래밍을 다음과 같이 설명 하고 있다.</p>
+<p>객체 지향 프로그래밍은 컴퓨터 프로그램을 명령어의 목록으로 보는 시각에서 벗어나 여러 개의 독립된 단위, 즉 <code>객체</code>들의 모임으로 파악하고자 하는 것이다.</p>
+<h2 id="object객체"><a class="markdownIt-Anchor" href="#object객체"></a> Object(객체)</h2>
+<p><code>객체(Object)</code>라는 단어가 계속 나온다.</p>
+<p>객체 지향 프로그래밍을 이해하기전 객체(Object)가 무엇인지 제대로 이해할 필요가 있다.</p>
+<p><code>객체(Object)</code>를 가장 간단한 말로 번역해보면 <code>물건</code>이라는 뜻이다.</p>
+<p>물건이라는 단어의 포함되는것들을 찾아보자면</p>
+<p><code>모니터</code>,<code>마우스</code>,<code>빌딩</code>,<code>개구리</code>,<code>강아지</code>등이 될 수 있겠다.</p>
+<p><strong>생물(生物)</strong> 조차도 넓은의미에서 물건이라고 볼 수 있을것이다.</p>
+<blockquote>
+<p>한자로 풀어쓰면 살아 있는 물건 이라는 뜻</p>
+</blockquote>
+<p>그리고 그 모든 물건들은 <strong>쓰임새</strong>가 존재한다.</p>
+<blockquote>
+<p>개인적으로 세상에서 가장 쓸모없다고 느낀 생물체인 불가사리조차 비료로 쓰인다고 한다.</p>
+</blockquote>
+<p>모든 객체는 쓰임새가 있을것이다.</p>
+<p>한줄로 요약하자면 <strong>저마다 역할을 가지고 있는것을 객체라고 볼 수 있겠다.</strong></p>
+<p>객체라는것이 존재자체만으로도 쓰임새가 있을 수 있겠지만, 상당수의 객체는 누군가 사용을 해주어야 쓰임새를 가질 수 있다.</p>
+<p>이해를 돕기 위한 짤</p>
+<img src="/2019/11/OOP/oop_img1.jpeg" class="" title="oop_img1"> 
+<blockquote>
+<p>싸워야 할 때 싸워야 <s>객체</s> 건달이 될 수 있다.</p>
+</blockquote>
+<p>객체들이 가지고 있는 성질들을 생각나는대로 정렬해 보았다.</p>
+<ul>
+<li>객체는 저마다 맡은 역할(쓰임새)가 있다.</li>
+<li>객체는 지시를 받음으로써 자신의 역할을 수행한다.</li>
+</ul>
+<blockquote>
+<p>짤에서 보듯 건달한테 싸우라고 지시하는건 결국 최형배(하정우) 아니겠는가?</p>
+</blockquote>
+<ul>
+<li>객체는 나름대로의 특성을 가지고 있다.</li>
+</ul>
+<blockquote>
+<p>‘범죄와의전쟁’ 영화를 보면 최형배는 다리를 절고 있다.<br />
+최형배만이 가지고 있는 특성이라고 볼 수 있을것이다. (스포죄송…)</p>
+</blockquote>
+<ul>
+<li>비슷한 특성을 가진 객체들을 모아 '클래스’를 지을 수 있다.</li>
+</ul>
+<blockquote>
+<p>건달들이 모여있으면 조폭(조직폭력배)이라고 한다.</p>
+</blockquote>
+<h2 id="object-oriented객체지향"><a class="markdownIt-Anchor" href="#object-oriented객체지향"></a> Object Oriented(객체지향)</h2>
+<p><code>객체(Object)</code>라는 것을 위에서 알아보았다.</p>
+<p>그럼 지향(Oriented)은 무엇일까?</p>
+<p>국어사전에 검색해보면 <code>어떤 목표로 뜻이 쏠리어 향함.</code></p>
+<p>두 단어를 합치면</p>
+<ul>
+<li><code>객체를 향한다.</code></li>
+<li><code>객체를 추구한다.</code></li>
+</ul>
+<p>말이 이상해진다.</p>
+<p>적어도 객체지향에서의 지향은 <code>방향성</code>의 뜻보다, <code>위주</code>라는 말이 좀 더 어울린다고 생각한다.</p>
+<p>다시 합쳐보면 <code>객체 위주의</code> 정도의 뜻으로 이해할 수 있을것 같다.</p>
+<h2 id="object-oriented-programming-객체지향프로그래밍"><a class="markdownIt-Anchor" href="#object-oriented-programming-객체지향프로그래밍"></a> Object Oriented Programming (객체지향프로그래밍)</h2>
+<p>그럼 이제 모든 단어를 다시 합쳐보자.</p>
+<p>이제 어느정도 말이 된다고 생각한다.</p>
+<p><code>객체 위주의 프로그램을 작성하자</code>라고 이해할 수 있겠다.</p>
+<p>아까 객체에서 나열한대로 객체의 성질들을 코드상으로 나타내게 된다면 그것이 바로 <code>객체지향 프로그래밍</code>이 될것이다.</p>
+<p>그리고 그 객체들의 특성을 프로그래밍 언어상으로 구현하기 위해 다음과 같은 개념들이 정립 되기 시작했다.</p>
+<ul>
+<li>클래스 + 인스턴스(객체)</li>
+<li>캡슐화(Encapsulation)</li>
+<li>다형성(Polymorphism)</li>
+<li>상속성(inheritance)</li>
+<li>추상화(abstraction)</li>
+</ul>
+<h3 id="class-instance"><a class="markdownIt-Anchor" href="#class-instance"></a> Class + Instance</h3>
+<h4 id="class추상의-개념"><a class="markdownIt-Anchor" href="#class추상의-개념"></a> Class(추상의 개념)</h4>
+<p>클래스는 표현하기위한 대상(객체)의 공통적인 특징들을 서술한것이다.</p>
+<blockquote>
+<p>클래스는 분류에 대한 개념이며 실체화 된것이 아니다.</p>
+</blockquote>
+<p>이해하기 쉽게 말하자면 <strong>설계도</strong> 정도가 된다.</p>
+<h4 id="instance실체화의-개념"><a class="markdownIt-Anchor" href="#instance실체화의-개념"></a> Instance(실체화의 개념)</h4>
+<p>클래스에서 정의한것을 바탕으로</p>
+<p>실제 메모리에 할당이 된것들</p>
+<blockquote>
+<p>프로그램안에서 만들어졌다고 생각하자.</p>
+</blockquote>
+<h3 id="캡슐화encapsulation"><a class="markdownIt-Anchor" href="#캡슐화encapsulation"></a> 캡슐화(Encapsulation)</h3>
+<p>캡슐화는 일반적으로 연관이 있는 데이터들을 묶는 작업을 말한다.</p>
+<p>연관이 있는것들을 묶어서 생각을 하는건 자연스러운 일이다.</p>
+<blockquote>
+<p>네이버에 하정우를 치면 연관검색어로 김이 나오지 않는가?<br />
+연관이 있는것들을 묶는건 매우 자연스러운 일이다.</p>
+</blockquote>
+<p>객체 지향 프로그래밍에선 이렇게 연관된 변수 또는 함수들을 분류하고 묶어주는것을 말한다.</p>
+<blockquote>
+<p>필요한거만 보여주고 필요없는건 보여주지 않는 정보은닉의 개념도 포함하고 있다.</p>
+</blockquote>
+<h3 id="다형성polymorphism"><a class="markdownIt-Anchor" href="#다형성polymorphism"></a> 다형성(Polymorphism)</h3>
+<p>Polymorphism = Poly(많은,여러) + morph(형태) 라는 두개의 단어가 합쳐진 말이다.</p>
+<blockquote>
+<p>그리스어임<br />
+여러가지 형태라는 뜻을 가지고 있다.</p>
+</blockquote>
+<p>우리가 키보드를 사용할 때 수많은 키(객체)를 동작시킬 수 있는 방법은 키를 누르는것(지시)이다.</p>
+<p>하지만 똑같은 동작(키를 누르는것)을 해도 엔터(실행),ESC(취소),Sapce Bar(띄워쓰기)를 누를때 동작이 같지 않다는걸 우리는 알고있다.</p>
+<p>이러한 것을 다형성이라고 표현한다.</p>
+<blockquote>
+<p>같은명령을 각각 다른 객체에 줄 수 있다.</p>
+</blockquote>
+<h3 id="상속성inheritance"><a class="markdownIt-Anchor" href="#상속성inheritance"></a> 상속성(inheritance)</h3>
+<p>우리는 클래스가 연관되어 있는 데이터들을 묶어서 가지고 있다는것(캡슐화)을 알고 있다.</p>
+<p>이러한 클래스가 가지고 있는 특징들을 그대로 다른 클래스가 물려 받는것을 상속한다고 표현한다.</p>
+<img src="/2019/11/OOP/oop_inheritance.png" class="" title="oop_inheritance"> 
+<p><s>왕위를 멋대로 상속받는 아서스 짤</s></p>
+<h3 id="추상화abstraction"><a class="markdownIt-Anchor" href="#추상화abstraction"></a> 추상화(abstraction)</h3>
+<p>자동차를 예시로 들어 보겠다.<br />
+자동차는 흡입,압축,동력,배기라는 4행정 사이클을 통해 약 2만여개의 부품이 맞물려 움직이는 객체이다.</p>
+<p>하지만 우리가 그런걸 알 필요가 있었는가?</p>
+<p>우리는 그저 핸들,엑셀,브레이크,기어가 무슨역할을 하는지만 알면 자동차를 움직일 수 있다.</p>
+<blockquote>
+<p>운전을 잘하는거랑은 별개임</p>
+</blockquote>
+<p>이러한 것을 추상화라고 한다.</p>
+<p>객체를 사용할 때(지시) 사용자는 어떠한 원리로 그 객체가 이루어졌는지 완벽히 이해하지 않아도 그저 사용법에 맞게 사용하면 되는 것이다.</p>
+<p>미술에도 이러한 개념이 있다.<br />
+바로 추상미술이라는것이다.</p>
+<p>대상을 구체적인 형상으로 나타내는것이 아니라</p>
+<p>점,선,면,색을 통해 핵심적인 부분만 나타내어  그리는것을 말한다.</p>
+<p><strong>자세한 내부정보는 숨기고 핵심적인 기능만 간추려 보여주는것을 추상화라고 한다.</strong></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -447,198 +672,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="post-title-link" itemprop="url">Hexo about,catregory,tags등 목록 만들기</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-
-              <time title="Post created: 2019-11-15 10:17:42" itemprop="dateCreated datePublished" datetime="2019-11-15T10:17:42+09:00">2019-11-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-19 10:12:31" itemprop="dateModified" datetime="2019-11-19T10:12:31+09:00">2019-11-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/hexo-about-catregory-tags-목록-만들기/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="hexo-시리즈-바로가기"><a class="markdownIt-Anchor" href="#hexo-시리즈-바로가기"></a> Hexo 시리즈 바로가기</h1>
-<ol>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo로 Github Page 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/">Hexo 테마 설정하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 댓글 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">구글 애널리틱스 연동하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 메뉴 추가하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/">블로그 방문자 카운팅</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">sitemap.xmlrobots.txt 추가하기</a></p>
-</li>
-</ol>
-<h1 id="hexo에-메뉴-추가하기"><a class="markdownIt-Anchor" href="#hexo에-메뉴-추가하기"></a> hexo에 메뉴 추가하기</h1>
-<h2 id="포스팅을-참고하시기전에"><a class="markdownIt-Anchor" href="#포스팅을-참고하시기전에"></a> 포스팅을 참고하시기전에…</h2>
-<p>블로그에 메뉴를 어떻게 추가했냐는 문의가 생각보다 많아 포스팅 합니다.</p>
-<p>해당 포스팅은 <code>Hexo</code>, <code>next</code>테마를 기준으로 작성 되었으며 <strong>테마별로 지원이 되지 않거나 적용방법이 다를 수 있으니 테마별 공식문서를 참고해주세요</strong>.</p>
-<h2 id="메뉴-적용하기"><a class="markdownIt-Anchor" href="#메뉴-적용하기"></a> 메뉴 적용하기</h2>
-<ol>
-<li><code>블로그 최상단 디렉토리</code>에서 <code>themes/next</code>로 이동하여 <code>_config.yml</code> 파일을 에디터로 연다.</li>
-</ol>
-<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu1.png" class="" title="hexo_menu1">
-<blockquote>
-<p>여기</p>
-</blockquote>
-<ol start="2">
-<li><code>_config.yml</code>파일의 120번째줄 근처에 <code>menu</code>옵션이 존재한다.</li>
-</ol>
-<p>해당 옵션에서 본인이 사용하고 싶은 메뉴들의 주석(#)을 해제한다.</p>
-<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu2.png" class="" title="hexo_menu2">
-<p>다 하셨다면 <code>hexo clean &amp;&amp; hexo generate</code></p>
-<ol start="3">
-<li>그다음 <code>hexo server</code>로 로컬서버를 띄운 후 <code>localhost:4000</code>으로 들어가면 메뉴가 나타난다.</li>
-</ol>
-<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu3.png" class="" title="hexo_menu3">
-<p>하지만 해당메뉴를 눌러보면 사진처럼 나오고 동작하지 않는다.</p>
-<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu4.png" class="" title="hexo_menu4">
-<p>페이지가 나오지 않는 이유는 URL로 접근했지만 해당주소에 페이지가 존재하지 않아 나타나는 것이다.</p>
-<p>다시 <code>블로그 최상단 디렉토리</code>로 이동하자.</p>
-<ol start="4">
-<li>이제 커맨드창에 다음과 같이 입력한다.<br />
-<code>hexo new page &lt;만들페이지&gt;</code></li>
-</ol>
-<ul>
-<li>카테고리를 만들고 싶다면 <code>hexo new page categories</code></li>
-<li>태그를 만들고 싶다면 <code>hexo new page tags</code></li>
-</ul>
-<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu5.png" class="" title="hexo_menu5">
-<p>페이지를 만들고 다시 메뉴에 접근해보면 또 안될것이다.</p>
-<blockquote>
-<p>안되는게 정상입니다.<br />
-about은 여기까지 하면 접근됩니다.</p>
-</blockquote>
-<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu5.png" class="" title="hexo_menu5">
-<p>위의 스크린샷을 잘 보면 Hexo가 <code>source/&lt;path&gt;/index.md</code>를 만들었다고 나온다.<br />
-해당 경로로 이동하여 index.md를 열어본다.</p>
-<ol start="5">
-<li>해당<code>index.md</code>를 열어보면 다음 스크린샷 처럼 나올것이다.</li>
-</ol>
-<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu6.png" class="" title="hexo_menu6">
-<p>해당파일에 다음과 같은 한줄을 추가한다.<br />
-<code>type: categories</code></p>
-<blockquote>
-<p>tags라면 <code>type: tags</code>를 입력하면 되겠죠?</p>
-</blockquote>
-<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu7.png" class="" title="hexo_menu7">
-<p>다음처럼 입력하고 저장후 <code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</code><br />
-를 실행하고 <code>localhost:4000</code>으로 들어가 확인해보자.</p>
-<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu8.png" class="" title="hexo_menu8">
-<blockquote>
-<p>다음 스크린샷 처럼 나오면 좋겠지만…<br />
-접근은 되지만 내용물이 없을것이다.</p>
-</blockquote>
-<p>아마도 상당수가 다음 스크린샷처럼 안나올것이다.<br />
-그건 <strong>게시물마다 카테고리를 분류해주지 않았기 때문</strong>에 그렇다.</p>
-<h2 id="게시물-카테고리-분류"><a class="markdownIt-Anchor" href="#게시물-카테고리-분류"></a> 게시물 카테고리 분류</h2>
-<p>블로그의 포스팅이 존재하는 <code>블로그 최상단디렉토리/source/_posts</code>로 들어가서 자신이 작성한 게시물 아무거나 하나 열어본다.</p>
-<img src="/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_menu9.png" class="" title="hexo_menu9">
-<p>파일 최상단에 다음과 같은 내용이 꼭 있어야한다.</p>
-<blockquote>
-<p>없으면 헥소가 포스팅으로 인정안해줌 ㅇㅈ?<br />
-Hexo: 인정합니다.</p>
-</blockquote>
-<p>categories에 적당한 분류명을 적어주고 저장한다.</p>
-<p>저장하고 <code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</code>를 하고 카테고리에 가보면 이제 카테고리가 나오는것을 확인할 수 있을것이다.</p>
-<blockquote>
-<p>안되면 뭔가 세팅을 잘못했다.<br />
-<s>컴퓨터는 거짓말을 하지 않는다.</s><br />
-천천히 다시 따라해보시고<br />
-잘 모르시겠다면 댓글을 남겨주세요.</p>
-</blockquote>
-<h2 id="끝"><a class="markdownIt-Anchor" href="#끝"></a> 끝</h2>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -689,7 +722,7 @@ Hexo: 인정합니다.</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -702,7 +735,7 @@ Hexo: 인정합니다.</p>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
