@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>http://hongdonghyun.github.io/2019/11/%EC%82%AC%EC%A0%84%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%92%80%EC%9D%B4/</loc>
+        <lastmod>2019-11-28T05:44:17.772Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://hongdonghyun.github.io/2019/11/Swift-if%EC%99%80-guard/</loc>
         <lastmod>2019-11-28T03:31:14.047Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -258,14 +266,6 @@
     <url>
         <loc>http://hongdonghyun.github.io/2019/11/Swift-%ED%95%A8%EC%88%98-%ED%92%80%EC%9D%B4/</loc>
         <lastmod>2019-11-15T07:57:21.755Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/%EC%82%AC%EC%A0%84%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%92%80%EC%9D%B4/</loc>
-        <lastmod>2019-11-15T07:56:17.325Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
