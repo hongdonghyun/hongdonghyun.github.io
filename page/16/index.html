@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+<meta name="naver-site-verification" content="0561be7c378c2cd6bbee3400289c53c4d8f2d474"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/rss2.xml" title="Hong3의 개발블로그" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '복사',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="개발을 잘하고 싶읍니다">
+<meta name="keywords" content="python,swift,hexo,django,flask,aws">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hong3의 개발블로그">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;page&#x2F;16&#x2F;index.html">
+<meta property="og:site_name" content="Hong3의 개발블로그">
+<meta property="og:description" content="개발을 잘하고 싶읍니다">
+<meta property="og:locale" content="ko">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://hongdonghyun.github.io/page/16/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Hong3의 개발블로그</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106140746-2"></script>
+    <script>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-106140746-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hong3의 개발블로그</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">- dev hong3</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>태그</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%20%EB%AC%B8%EB%B2%95%20%EC%A0%95%EB%A6%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%20%EB%AC%B8%EB%B2%95%20%EC%A0%95%EB%A6%AC/" class="post-title-link" itemprop="url">마크다운 문법 정리</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-06 12:00:00" itemprop="dateCreated datePublished" datetime="2019-11-06T12:00:00+09:00">2019-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-21 14:14:41" itemprop="dateModified" datetime="2019-11-21T14:14:41+09:00">2019-11-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4/" itemprop="url" rel="index">
+                    <span itemprop="name">마크다운</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%20%EB%AC%B8%EB%B2%95%20%EC%A0%95%EB%A6%AC/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/마크다운 문법 정리/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="markdown"><a class="markdownIt-Anchor" href="#markdown"></a> MarkDown</h1>
+<h1 id="headers"><a class="markdownIt-Anchor" href="#headers"></a> Headers</h1>
+<p><code># 이후 내용작성</code></p>
+<h1 id="h1"><a class="markdownIt-Anchor" href="#h1"></a> h1</h1>
+<h2 id="h2"><a class="markdownIt-Anchor" href="#h2"></a> h2</h2>
+<h3 id="h3"><a class="markdownIt-Anchor" href="#h3"></a> h3</h3>
+<h4 id="h4"><a class="markdownIt-Anchor" href="#h4"></a> h4</h4>
+<h5 id="h5"><a class="markdownIt-Anchor" href="#h5"></a> h5</h5>
+<h6 id="h6"><a class="markdownIt-Anchor" href="#h6"></a> h6</h6>
+<h1 id="emphasis"><a class="markdownIt-Anchor" href="#emphasis"></a> Emphasis</h1>
+<h2 id="italic"><a class="markdownIt-Anchor" href="#italic"></a> Italic</h2>
+<p><code>*italic*</code></p>
+<p><em>italic</em></p>
+<h2 id="bold"><a class="markdownIt-Anchor" href="#bold"></a> Bold</h2>
+<p><code>**Bold** __Bold__</code></p>
+<p><strong>Bold</strong> <strong>Bold</strong></p>
+<h2 id="strikethrough"><a class="markdownIt-Anchor" href="#strikethrough"></a> Strikethrough</h2>
+<p><code>~~Strikethrough~~</code></p>
+<p><s>Strikethrough</s></p>
+<h2 id="combo"><a class="markdownIt-Anchor" href="#combo"></a> Combo</h2>
+<p><code>~~*__BolditalicStrikeThrough__*~~</code></p>
+<p><s><em><strong>BolditalicStrikeThrough</strong></em></s></p>
+<h2 id="underline"><a class="markdownIt-Anchor" href="#underline"></a> UnderLine</h2>
+<p><code>_UnderLine_</code></p>
+<p><em>UnderLine</em></p>
+<h1 id="list"><a class="markdownIt-Anchor" href="#list"></a> List</h1>
+<h2 id="orderedlists"><a class="markdownIt-Anchor" href="#orderedlists"></a> OrderedLists</h2>
+<ol>
+<li>순서1</li>
+<li>순서2</li>
+<li>순서3</li>
+</ol>
+<h2 id="unorderedlists"><a class="markdownIt-Anchor" href="#unorderedlists"></a> UnorderedLists</h2>
+<p><code>- or * or +</code></p>
+<ul>
+<li>순서1</li>
+<li>순서2</li>
+<li>순서3</li>
+</ul>
+<ul>
+<li>순서1</li>
+<li>순서2</li>
+<li>순서3</li>
+</ul>
+<ul>
+<li>순서1</li>
+<li>순서2</li>
+<li>순서3</li>
+</ul>
+<h2 id="combo-2"><a class="markdownIt-Anchor" href="#combo-2"></a> Combo</h2>
+<ol>
+<li>순서1</li>
+<li>순서2</li>
+</ol>
+<ul>
+<li>순서2-1</li>
+</ul>
+<ol start="3">
+<li>순서3</li>
+</ol>
+<ul>
+<li>순서3-1</li>
+<li>순서3-2</li>
+</ul>
+<ul>
+<li>바꿔치기</li>
+<li>종료</li>
+</ul>
+<h1 id="hyperlink"><a class="markdownIt-Anchor" href="#hyperlink"></a> HyperLink</h1>
+<h2 id="url"><a class="markdownIt-Anchor" href="#url"></a> URL</h2>
+<p><code>[GOOGLE](https://www.google.com &quot;Comment&quot;)</code></p>
+<p><code>[Header](Headers)</code></p>
+<p><a href="https://www.google.com" target="_blank" rel="noopener" title="Comment">GOOGLE</a><br><br />
+<a href="Headers">Header</a></p>
+<blockquote>
+<p><br>은 줄바꿈 html태그</p>
+</blockquote>
+<h2 id="image"><a class="markdownIt-Anchor" href="#image"></a> Image</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![Alt](https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png)</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Alt" /></p>
+<h3 id="link-to-the-image"><a class="markdownIt-Anchor" href="#link-to-the-image"></a> Link to the Image</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[![Alt](https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png)](https://www.google.com)</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.google.com" target="_blank" rel="noopener"><img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Alt" /></a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<h2 id="inline-code"><a class="markdownIt-Anchor" href="#inline-code"></a> Inline Code</h2>
+<p><code>inlinecode</code></p>
+<h2 id="block-code"><a class="markdownIt-Anchor" href="#block-code"></a> Block Code</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"hello world"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"hello world"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"hello world"</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="table"><a class="markdownIt-Anchor" href="#table"></a> Table</h1>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Des</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One</td>
+<td>1</td>
+<td>숫자 1</td>
+</tr>
+<tr>
+<td>Two</td>
+<td>2</td>
+<td>숫자 2</td>
+</tr>
+<tr>
+<td>Three</td>
+<td>3</td>
+<td>숫자 3</td>
+</tr>
+</tbody>
+</table>
+<h1 id="blockquote"><a class="markdownIt-Anchor" href="#blockquote"></a> BlockQuote</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; BlockQuote</span><br><span class="line">&gt;&gt; Nested BlockQuote</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>BlockQuote</p>
+<blockquote>
+<p>Nested BlockQuote</p>
+</blockquote>
+</blockquote>
+<h1 id="horizon"><a class="markdownIt-Anchor" href="#horizon"></a> horizon</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">***</span><br><span class="line">___</span><br></pre></td></tr></table></figure>
+<hr />
+<hr />
+<hr />
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hong3"
+      src="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+  <p class="site-author-name" itemprop="name">Hong3</p>
+  <div class="site-description" itemprop="description">개발을 잘하고 싶읍니다</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/rss2.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hongdonghyun" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;hongdonghyun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:hong4367@gmail.com" title="E-mail &amp;rarr; mailto:hong4367@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hong3</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+
+<span id="busuanzi_container_site_pv">
+  총 조회 <span id="busuanzi_value_site_pv"></span> 회
+</span> |
+<span id="busuanzi_container_site_uv">
+  총 방문자 <span id="busuanzi_value_site_uv"></span> 명
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hong3.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+
+</body>
+</html>
