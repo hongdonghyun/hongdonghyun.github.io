@@ -225,8 +225,20 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">작성일</span>
+              
 
-              <time title="Post created: 2019-12-02 10:02:05" itemprop="dateCreated datePublished" datetime="2019-12-02T10:02:05+09:00">2019-12-02</time>
+              <time title="Post created: 2019-12-02 10:02:05 / Updated at: 10:16:38" itemprop="dateCreated datePublished" datetime="2019-12-02T10:02:05+09:00">2019-12-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
             </span>
 
           
@@ -254,7 +266,52 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <h1 id="1번문제"><a class="markdownIt-Anchor" href="#1번문제"></a> 1번문제</h1>
+<ul>
+<li>자연수 하나를 입력받아 1년부터 그 해까지의 모든 윤년의 개수를 출력하는 함수</li>
+</ul>
+<p>Intput : 2019<br />
+Output : 윤년에 속하는 해는 총 489회입니다.</p>
+<h2 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">year</span><span class="params">(<span class="number">_</span> input: Int)</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> yearCount = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...input &#123;</span><br><span class="line">        <span class="keyword">if</span> i % <span class="number">400</span> == <span class="number">0</span> || i % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; i % <span class="number">100</span> != <span class="number">0</span> &#123;</span><br><span class="line">            yearCount += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"윤년에 속하는 해는 총 \(yearCount)회 입니다."</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="2번문제"><a class="markdownIt-Anchor" href="#2번문제"></a> 2번문제</h1>
+<ul>
+<li>주어진 문자 배열에서 중복되지 않는 문자만을 뽑아내 배열로 반환해주는 함수</li>
+</ul>
+<blockquote>
+<p>Input : [“a”, “b”, “c”, “a”, “e”, “d”, “c”]<br />
+Output : [“b”, “e” ,“d”]</p>
+</blockquote>
+<h2 id="풀이-2"><a class="markdownIt-Anchor" href="#풀이-2"></a> 풀이</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">duplicateCheck</span><span class="params">(<span class="number">_</span> charArray: [Character])</span></span> -&gt; [<span class="type">Character</span>] &#123;</span><br><span class="line">    <span class="keyword">let</span> setArray = <span class="type">Set</span>(charArray)</span><br><span class="line">    <span class="keyword">var</span> duplicate: [<span class="type">Character</span>]  = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>...charArray.<span class="built_in">count</span>-<span class="number">1</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i+<span class="number">1</span>..&lt;charArray.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> charArray[i] == charArray[j] &#123;</span><br><span class="line">                duplicate.append(charArray[i])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="type">Array</span>(setArray.subtracting(duplicate))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="3번문제"><a class="markdownIt-Anchor" href="#3번문제"></a> 3번문제</h1>
+<ul>
+<li>자연수를 입력받아 그 숫자보다 작거나 같은 모든 소수와 그 개수를 출력하는 함수를 정의</li>
+</ul>
+<blockquote>
+<p>Input : 10<br />
+Output : 10보다 작거나 같은 소수는 [2, 3, 5, 7]이고, 총 4개입니다.</p>
+</blockquote>
+<h2 id="풀이-3"><a class="markdownIt-Anchor" href="#풀이-3"></a> 풀이</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isPrime</span><span class="params">(<span class="number">_</span> i: Int)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">2</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">2</span>..&lt;i &#123;</span><br><span class="line">            <span class="keyword">if</span> i % j == <span class="number">0</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">checkPrimeNumbers</span><span class="params">(number: Int)</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> primeArray: [<span class="type">Int</span>] = []</span><br><span class="line">    <span class="keyword">if</span> number == <span class="number">1</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(primeArray)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">2</span>...number &#123;</span><br><span class="line">            <span class="keyword">if</span> isPrime(i) &#123;</span><br><span class="line">                primeArray.append(i)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(number)보다 작거나 같은 소수는\(primeArray)이고 총 \(primeArray.count)개입니다."</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="4번문제"><a class="markdownIt-Anchor" href="#4번문제"></a> 4번문제</h1>
+<ul>
+<li>구글(google), 카카오(kakao), 네이버(naver) 로그인을 위해 Site라는 이름의 Enum 타입을 만들고자 합니다.<br />
+각 case는 사용자의 아이디(String)와 비밀번호(String)를 위한 연관 값(associated value)을  가집니다.<br />
+그리고 Site 타입 내부에는 signIn()이라는 이름의 메서드를 만들어 다음과 같이 문자열을 출력하는 기능을 구현해보세요.</li>
+</ul>
+<blockquote>
+<p>Input<br />
+let google = Site.google(“<a href="mailto:google@gmail.com" target="_blank" rel="noopener">google@gmail.com</a>”, “0000”)<br />
+google.signIn()</p>
+</blockquote>
+<blockquote>
+<p>Output<br />
+구글에 로그인하였습니다. (아이디 - <a href="mailto:google@gmail.com" target="_blank" rel="noopener">google@gmail.com</a>, 비밀번호 - 0000)</p>
+</blockquote>
+<h2 id="풀이-4"><a class="markdownIt-Anchor" href="#풀이-4"></a> 풀이</h2>
+ <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">enum</span> <span class="title">Site</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> google(<span class="number">_</span> <span class="type">ID</span>: <span class="type">String</span>, <span class="number">_</span> <span class="type">PWD</span>: <span class="type">String</span>)</span><br><span class="line">    <span class="keyword">case</span> kakao(<span class="number">_</span> <span class="type">ID</span>: <span class="type">String</span>, <span class="number">_</span> <span class="type">PWD</span>: <span class="type">String</span>)</span><br><span class="line">    <span class="keyword">case</span> naver(<span class="number">_</span> <span class="type">ID</span>: <span class="type">String</span>, <span class="number">_</span> <span class="type">PWD</span>: <span class="type">String</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">signIn</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> .google(<span class="keyword">let</span> i, <span class="keyword">let</span> p):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"구글에 로그인하였습니다.(아이디 - \(i), 비밀번호 -\(p)"</span>)</span><br><span class="line">        <span class="keyword">case</span> .kakao(<span class="keyword">let</span> i, <span class="keyword">let</span> p):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"카카오에 로그인하였습니다.(아이디 - \(i), 비밀번호 -\(p)"</span>)</span><br><span class="line">        <span class="keyword">case</span> .naver(<span class="keyword">let</span> i, <span class="keyword">let</span> p):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"네이버에 로그인하였습니다.(아이디 - \(i), 비밀번호 -\(p)"</span>)</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"Error!"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> google = <span class="type">Site</span>.google(<span class="string">"hong4367@gmail.com"</span>,<span class="string">"12345"</span>)</span><br><span class="line"><span class="keyword">let</span> kakao = <span class="type">Site</span>.kakao(<span class="string">"hong4367@gmail.com"</span>,<span class="string">"12345"</span>)</span><br><span class="line"><span class="keyword">let</span> naver = <span class="type">Site</span>.naver(<span class="string">"hong4367@gmail.com"</span>,<span class="string">"12345"</span>)</span><br><span class="line"></span><br><span class="line">google.signIn()</span><br><span class="line">kakao.signIn()</span><br><span class="line">naver.signIn()</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -597,7 +654,7 @@ Y축은 아래로 내려갈수록 +가 된다.</p>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
