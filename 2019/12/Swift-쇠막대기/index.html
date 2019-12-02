@@ -52,16 +52,18 @@
   };
 </script>
 
-  <meta name="description" content="개발을 잘하고 싶읍니다">
+  <meta name="description" content="문제 프로그래머스 링크  Code 123456789101112131415161718192021import Foundationfunc solution(_ arrangement:String) -&amp;gt; Int &amp;#123;    let innerArray = Array(arrangement)    var cnt = 0    var result = 0    fo">
 <meta name="keywords" content="Swift,Algorithm,프로그래머스,쇠막대기">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Swift]쇠막대기">
 <meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;12&#x2F;Swift-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
-<meta property="og:description" content="개발을 잘하고 싶읍니다">
+<meta property="og:description" content="문제 프로그래머스 링크  Code 123456789101112131415161718192021import Foundationfunc solution(_ arrangement:String) -&amp;gt; Int &amp;#123;    let innerArray = Array(arrangement)    var cnt = 0    var result = 0    fo">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-12-02T07:53:24.324Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;12&#x2F;Swift-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0&#x2F;steel.png">
+<meta property="og:updated_time" content="2019-12-02T08:40:05.167Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;12&#x2F;Swift-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0&#x2F;steel.png">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2019/12/Swift-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0/">
 
@@ -227,7 +229,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2019-12-02 16:53:04 / Updated at: 16:53:24" itemprop="dateCreated datePublished" datetime="2019-12-02T16:53:04+09:00">2019-12-02</time>
+              <time title="Post created: 2019-12-02 16:53:04 / Updated at: 17:40:05" itemprop="dateCreated datePublished" datetime="2019-12-02T16:53:04+09:00">2019-12-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -273,7 +275,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/42585" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> arrangement:String)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> innerArray = <span class="type">Array</span>(arrangement)</span><br><span class="line">    <span class="keyword">var</span> cnt = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (index,value) <span class="keyword">in</span> innerArray.enumerated() &#123;</span><br><span class="line">        <span class="keyword">if</span> value == <span class="string">"("</span> &#123;</span><br><span class="line">            cnt += <span class="number">1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            cnt -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> innerArray[index-<span class="number">1</span>] == <span class="string">"("</span> &#123;</span><br><span class="line">                result += cnt</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                result += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p>문제의 글이 너무 많아서 겁부터 난다.</p>
+<p>해당 문제는 스택에 관련한 문제였다.</p>
+<img src="/2019/12/Swift-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0/steel.png" class="" title="steel">
+<p><strong><code>(</code></strong>  가 push</p>
+<p><strong><code>)</code></strong> 가 pop 이라고 생각하자.</p>
+<p>왼쪽부터 보면<br />
+<code>push -&gt; pop -&gt; push -&gt; push -&gt; push -&gt; push -&gt; pop</code>  여기 까지가 두번째 레이저 발사까지다.</p>
+<p>스택에 적용시켜 계산을 해보면<br />
+<code>1 -&gt; 0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 3</code></p>
+<p>여기서 문제를 다시 살펴보자<br />
+<strong>여는 괄호와 닫는 괄호의 쌍</strong> 은 레이저 발사다.</p>
+<p>레이저를 발사하면 쇠막대기가 잘린다.</p>
+<p>(  (  (  <strong>( )</strong> 레이저 발사</p>
+<blockquote>
+<p>여기까지가 두번째 레이저다.</p>
+</blockquote>
+<p>스택에 3개가 남아 있으므로 3조각이 나온다.</p>
+<p>세번째 레이저 또한 스택에 3개가 있으므로 3조각이 나온다.</p>
+<p>그 다음번은 **)**가 튀어나오니 다시 스택이 감소 된다.</p>
+<p>하지만 레이저 발사는 아니지만 하나의 조각이 튀어나오게 된다.</p>
+<p>위와같은 로직을 코드화 시키면 이 문제를 해결할 수 있다.</p>
+<blockquote>
+<p>말이야쉽다.</p>
+</blockquote>
+<p>해당 과정을 찾아내는건 어려웠지만 코드에 적용하는건 어렵지 않았다.</p>
+
     </div>
 
     
@@ -345,6 +377,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#문제"><span class="nav-number">1.</span> <span class="nav-text"> 문제</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">2.</span> <span class="nav-text"> Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#풀이"><span class="nav-number">3.</span> <span class="nav-text"> 풀이</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
