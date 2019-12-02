@@ -52,15 +52,15 @@
   };
 </script>
 
-  <meta name="description" content="프로그래머스 링크  Code 1234567891011121314151617181920212223242526272829303132333435import Foundationfunc solution(_ answers:[Int]) -&amp;gt; [Int] &amp;#123;    let man1 = [1,2,3,4,5]    let man2 = [2,1,2,3,2,4,2,5">
+  <meta name="description" content="문제 프로그래머스 링크  Code 1234567891011121314151617181920212223242526272829303132333435import Foundationfunc solution(_ answers:[Int]) -&amp;gt; [Int] &amp;#123;    let man1 = [1,2,3,4,5]    let man2 = [2,1,2,3,2,4">
 <meta name="keywords" content="Swift,Algorithm,프로그래머스,수포자">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Swift]수포자">
 <meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;Swift-%EC%88%98%ED%8F%AC%EC%9E%90&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
-<meta property="og:description" content="프로그래머스 링크  Code 1234567891011121314151617181920212223242526272829303132333435import Foundationfunc solution(_ answers:[Int]) -&amp;gt; [Int] &amp;#123;    let man1 = [1,2,3,4,5]    let man2 = [2,1,2,3,2,4,2,5">
+<meta property="og:description" content="문제 프로그래머스 링크  Code 1234567891011121314151617181920212223242526272829303132333435import Foundationfunc solution(_ answers:[Int]) -&amp;gt; [Int] &amp;#123;    let man1 = [1,2,3,4,5]    let man2 = [2,1,2,3,2,4">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-11-25T02:08:39.385Z">
+<meta property="og:updated_time" content="2019-12-02T07:48:12.533Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2019/11/Swift-%EC%88%98%ED%8F%AC%EC%9E%90/">
@@ -233,7 +233,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-25 11:08:39" itemprop="dateModified" datetime="2019-11-25T11:08:39+09:00">2019-11-25</time>
+                <time title="Updated at: 2019-12-02 16:48:12" itemprop="dateModified" datetime="2019-12-02T16:48:12+09:00">2019-12-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,7 +279,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a href="https://programmers.co.kr/learn/courses/30/lessons/42840#" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+        <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/42840#" target="_blank" rel="noopener">프로그래머스 링크</a></p>
 <h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> answers:[Int])</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">    <span class="keyword">let</span> man1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">    <span class="keyword">let</span> man2 = [<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">5</span>]</span><br><span class="line">    <span class="keyword">let</span> man3 = [<span class="number">3</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">5</span>]</span><br><span class="line">    <span class="keyword">var</span> scores: [<span class="type">Int</span>:<span class="type">Int</span>] = [<span class="number">1</span>:<span class="number">0</span>,<span class="number">2</span>:<span class="number">0</span>,<span class="number">3</span>:<span class="number">0</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;answers.<span class="built_in">count</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> man1[i % <span class="number">5</span>] == answers[i] &#123;</span><br><span class="line">            scores[<span class="number">1</span>] = (scores[<span class="number">1</span>] ?? <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> man2[i % <span class="number">8</span>] == answers[i] &#123;</span><br><span class="line">            scores[<span class="number">2</span>] = (scores[<span class="number">2</span>] ?? <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> man3[i % <span class="number">10</span>] == answers[i] &#123;</span><br><span class="line">            scores[<span class="number">3</span>] = (scores[<span class="number">3</span>] ?? <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> <span class="built_in">max</span> = scores.values.<span class="built_in">max</span>()</span><br><span class="line">    <span class="keyword">var</span> returnArray: [<span class="type">Int</span>] = scores.values</span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> maxVal = <span class="built_in">max</span>, maxVal != <span class="number">0</span> <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> scores.keys.sorted()</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> scores &#123;</span><br><span class="line">        <span class="keyword">if</span> maxVal == i.value &#123;</span><br><span class="line">            returnArray.append(i.key)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> returnArray.sorted()</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
@@ -356,7 +357,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">1.</span> <span class="nav-text"> Code</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#문제"><span class="nav-number">1.</span> <span class="nav-text"> 문제</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">2.</span> <span class="nav-text"> Code</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -372,7 +373,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -385,7 +386,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
