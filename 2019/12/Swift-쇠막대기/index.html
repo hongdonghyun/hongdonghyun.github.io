@@ -53,7 +53,7 @@
 </script>
 
   <meta name="description" content="문제 프로그래머스 링크  Code 123456789101112131415161718192021import Foundationfunc solution(_ arrangement:String) -&amp;gt; Int &amp;#123;    let innerArray = Array(arrangement)    var cnt = 0    var result = 0    fo">
-<meta name="keywords" content="Swift,Algorithm,프로그래머스,쇠막대기">
+<meta name="keywords" content="Swift,Algorithm,프로그래머스,Stack,쇠막대기">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Swift]쇠막대기">
 <meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;12&#x2F;Swift-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0&#x2F;index.html">
@@ -61,7 +61,7 @@
 <meta property="og:description" content="문제 프로그래머스 링크  Code 123456789101112131415161718192021import Foundationfunc solution(_ arrangement:String) -&amp;gt; Int &amp;#123;    let innerArray = Array(arrangement)    var cnt = 0    var result = 0    fo">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;12&#x2F;Swift-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0&#x2F;steel.png">
-<meta property="og:updated_time" content="2019-12-02T08:40:05.167Z">
+<meta property="og:updated_time" content="2019-12-02T08:42:59.585Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;12&#x2F;Swift-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0&#x2F;steel.png">
 
@@ -229,7 +229,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2019-12-02 16:53:04 / Updated at: 17:40:05" itemprop="dateCreated datePublished" datetime="2019-12-02T16:53:04+09:00">2019-12-02</time>
+              <time title="Post created: 2019-12-02 16:53:04 / Updated at: 17:42:59" itemprop="dateCreated datePublished" datetime="2019-12-02T16:53:04+09:00">2019-12-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -286,7 +286,8 @@
 <p><strong><code>(</code></strong>  가 push</p>
 <p><strong><code>)</code></strong> 가 pop 이라고 생각하자.</p>
 <p>왼쪽부터 보면<br />
-<code>push -&gt; pop -&gt; push -&gt; push -&gt; push -&gt; push -&gt; pop</code>  여기 까지가 두번째 레이저 발사까지다.</p>
+<code>push -&gt; pop -&gt; push -&gt; push -&gt; push -&gt; push -&gt; pop</code><br />
+여기 까지가 두번째 레이저 발사까지다.</p>
 <p>스택에 적용시켜 계산을 해보면<br />
 <code>1 -&gt; 0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 3</code></p>
 <p>여기서 문제를 다시 살펴보자<br />
@@ -296,10 +297,10 @@
 <blockquote>
 <p>여기까지가 두번째 레이저다.</p>
 </blockquote>
-<p>스택에 3개가 남아 있으므로 3조각이 나온다.</p>
-<p>세번째 레이저 또한 스택에 3개가 있으므로 3조각이 나온다.</p>
-<p>그 다음번은 **)**가 튀어나오니 다시 스택이 감소 된다.</p>
-<p>하지만 레이저 발사는 아니지만 하나의 조각이 튀어나오게 된다.</p>
+<p>스택에 3개가 남아 있으므로 3조각이 나온다.<br />
+세번째 레이저 또한 스택에 3개가 있으므로 3조각이 나온다.</p>
+<p>그 다음번은 <strong>)</strong> 가 튀어나오니 다시 스택이 감소 된다.<br />
+하지만 레이저 발사는 아니지만 하나의 조각이 튀어나오게 된다.</p>
 <p>위와같은 로직을 코드화 시키면 이 문제를 해결할 수 있다.</p>
 <blockquote>
 <p>말이야쉽다.</p>
@@ -317,6 +318,7 @@
               <a href="/tags/Swift/" rel="tag"># Swift</a>
               <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
               <a href="/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/" rel="tag"># 프로그래머스</a>
+              <a href="/tags/Stack/" rel="tag"># Stack</a>
               <a href="/tags/%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0/" rel="tag"># 쇠막대기</a>
           </div>
 
@@ -406,7 +408,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
