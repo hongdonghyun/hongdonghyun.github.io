@@ -60,7 +60,7 @@
 <meta property="og:site_name" content="Hong3의 개발블로그">
 <meta property="og:description" content="Memory Management  RC (Reference Counting)  메모리를 할당하거나 메모리 포인터를 참조 할 때 레퍼런스 카운트를 증가 사용을 완료 하면 레퍼런스 카운트를 감소 RC가 0이 되면 메모리에서 해제된다.   MRC (Manual Reference Counting)  Objective-C MRR (Manual Retain-Rele">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-12-09T11:06:11.093Z">
+<meta property="og:updated_time" content="2019-12-09T11:11:27.790Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2019/12/Swift-%EB%A9%94%EB%AA%A8%EB%A6%AC/">
@@ -227,7 +227,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2019-12-09 13:26:23 / Updated at: 20:06:11" itemprop="dateCreated datePublished" datetime="2019-12-09T13:26:23+09:00">2019-12-09</time>
+              <time title="Post created: 2019-12-09 13:26:23 / Updated at: 20:11:27" itemprop="dateCreated datePublished" datetime="2019-12-09T13:26:23+09:00">2019-12-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -351,7 +351,7 @@
 <li>클래스 인스턴스에 <code>nil</code>을 할당했지만 서로를 참조하면서 증가시킨 RC가 남아있어 메모리에서 해제될 수가 없다.</li>
 </ol>
 <p>위와 같은경우는 다음과 같은 release순서를 통해 메모리에서 해제 시킬 수 있다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hong3.pet = nil</span><br><span class="line">bokgil.owner = nil</span><br><span class="line"></span><br><span class="line">hong3 = nil</span><br><span class="line">bokgil = nil</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hong3.pet = <span class="literal">nil</span></span><br><span class="line">bokgil.owner = <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line">hong3 = <span class="literal">nil</span></span><br><span class="line">bokgil = <span class="literal">nil</span></span><br></pre></td></tr></table></figure>
 <p>서로가 참조했던 프로퍼티에 <code>nil</code>을 할당해 메모리를 해제 후<br />
 클래스 인스턴스에 <code>nil</code>을 할당하여 메모리 해제가 가능해진다.</p>
 <p><strong>지금은 코드가 간단해서 금방 했지만 코드가 길어진다면? 서비스의 크기가 커진다면?</strong><br />
