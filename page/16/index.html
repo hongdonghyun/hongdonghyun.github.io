@@ -202,6 +202,245 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/git-branch-%EC%97%B0%EC%8A%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/git-branch-%EC%97%B0%EC%8A%B5/" class="post-title-link" itemprop="url">git branch 연습</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-12 10:49:23" itemprop="dateCreated datePublished" datetime="2019-11-12T10:49:23+09:00">2019-11-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-13 12:43:19" itemprop="dateModified" datetime="2019-11-13T12:43:19+09:00">2019-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/git-branch-%EC%97%B0%EC%8A%B5/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/git-branch-연습/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="깃-연습"><a class="markdownIt-Anchor" href="#깃-연습"></a> 깃 연습</h1>
+<h2 id="git-branch"><a class="markdownIt-Anchor" href="#git-branch"></a> git branch</h2>
+<ul>
+<li>
+<p><code>git branch</code> : 해당 git 폴더에서 브랜치 목록을 보여준다.</p>
+</li>
+<li>
+<p><code>git branch &lt;브랜치이름&gt;</code> : 해당 git 폴더에서 &lt;브랜치이름&gt;의 브랜치를 생성한다.</p>
+</li>
+<li>
+<p><code>git checkout &lt;이동할 브랜치 이름&gt;</code> : 해당 git 폴더에서 &lt;이동할 브랜치이름&gt;을 입력하면 브랜치가 이동한다.</p>
+</li>
+<li>
+<p><code>git checkout -b &lt;브랜치이름&gt;</code> : 해당 브랜치를 생성하고 이동한다.</p>
+</li>
+</ul>
+<blockquote>
+<p>Switched to branch &lt;이동할 브랜치이름&gt;이 shell출력으로 나타난다.</p>
+<blockquote>
+<p>git branch를 다시입력하면 브랜치가 변경된걸 확인할 수 있다.</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><code>git branch -D &lt;삭제할 브랜치 이름&gt;</code> : 해당 브랜치를 삭제</li>
+</ul>
+<blockquote>
+<p>Deleted branch &lt;브랜치이름&gt;.이 shell출력으로 나타난다.</p>
+</blockquote>
+<ul>
+<li>
+<p><code>git diff &lt;브랜치이름&gt;</code> : 현재 브랜치와 입력한 브랜치의 코드 차이점을 보여준다</p>
+</li>
+<li>
+<p><code>git merge &lt;브랜치이름&gt;</code> : 현재 브랜치에 입력한 브랜치를 합친다.</p>
+</li>
+</ul>
+<h2 id="협업-연습git-flow"><a class="markdownIt-Anchor" href="#협업-연습git-flow"></a> 협업 연습(Git flow)</h2>
+<p><a href="http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html" target="_blank" rel="noopener">우아한형제들 기술 블로그</a></p>
+<h2 id="시나리오"><a class="markdownIt-Anchor" href="#시나리오"></a> 시나리오</h2>
+<p>Fork and merge 시나리오</p>
+<p><strong>팀장의 경우</strong></p>
+<ol>
+<li>
+<p>create-repo (public/init <a href="http://README.md" target="_blank" rel="noopener">README.md</a>)</p>
+</li>
+<li>
+<p>repo 주소 복사</p>
+</li>
+<li>
+<p>내컴퓨터에 clone</p>
+</li>
+<li>
+<p>git flow init</p>
+</li>
+<li>
+<p>git branch</p>
+</li>
+</ol>
+<blockquote>
+<p>develop 브랜치 생성 확인</p>
+</blockquote>
+<ol start="6">
+<li>
+<p><a href="http://README.md" target="_blank" rel="noopener">README.md</a> 수정</p>
+</li>
+<li>
+<p>add -&gt; commit -&gt; push(git push -u옵션)</p>
+</li>
+<li>
+<p>팀원이 14.까지 끝냈다면 pull request가 생긴다.</p>
+</li>
+<li>
+<p>내용을 확인하고 confirm ,reject여부를 결정</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>reject의 경우</p>
+<ol>
+<li>팀원은 다시 내용을 수정해서 add -&gt; commit -&gt; push를 한다.</li>
+<li>github pull request에서 변경내역이 확인 가능하다.</li>
+</ol>
+</li>
+<li>
+<p>confirm의 경우</p>
+</li>
+</ul>
+<ol>
+<li>merge를 진행</li>
+<li>결과 확인</li>
+</ol>
+<p><strong>팀원의 경우</strong></p>
+<ol>
+<li>팀장의 repo를 Fork</li>
+</ol>
+<blockquote>
+<p>팀원 계정에 팀장의 repo를 복사하여 생긴다.</p>
+</blockquote>
+<ol start="2">
+<li>
+<p>1.에서 fork한 repo의 주소를 복사</p>
+</li>
+<li>
+<p>팀장의 repo에 가서 Issue 생성</p>
+</li>
+</ol>
+<blockquote>
+<p>Issue는 제안/신고/건의등을 하는공간</p>
+</blockquote>
+<ol start="4">
+<li>
+<p>Issue를 적고 Issue number 확인</p>
+</li>
+<li>
+<p>내 컴퓨터에 git clone</p>
+</li>
+<li>
+<p>git flow init -&gt; enter</p>
+</li>
+<li>
+<p>git pull origin develop</p>
+</li>
+<li>
+<p>git flow feature start &lt;기능명&gt;</p>
+</li>
+<li>
+<p>기능작성</p>
+</li>
+<li>
+<p>add -&gt; commit</p>
+</li>
+<li>
+<p>git flow feature finish &lt;기능명&gt;</p>
+</li>
+<li>
+<p>git push origin develop</p>
+</li>
+<li>
+<p>github에서 pull request를 날린다.</p>
+</li>
+</ol>
+<blockquote>
+<p>팀원의 develop -&gt; 팀장의 develop으로 보낸다.</p>
+</blockquote>
+<ol start="14">
+<li>pull request memo</li>
+</ol>
+<blockquote>
+<p>solved: #Issue number</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -462,177 +701,6 @@ hexo generate: 설정한 테마의 파일들을 생성</p>
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%ED%95%A8%EC%88%98-%EC%A1%B0%EA%B1%B4%EB%AC%B8-%EB%B0%98%EB%B3%B5%EB%AC%B8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/Swift-%ED%95%A8%EC%88%98-%EC%A1%B0%EA%B1%B4%EB%AC%B8-%EB%B0%98%EB%B3%B5%EB%AC%B8/" class="post-title-link" itemprop="url">Swift 함수,조건문,반복문</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-
-              <time title="Post created: 2019-11-11 22:02:56" itemprop="dateCreated datePublished" datetime="2019-11-11T22:02:56+09:00">2019-11-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-13 12:40:33" itemprop="dateModified" datetime="2019-11-13T12:40:33+09:00">2019-11-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Swift/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/Swift-%ED%95%A8%EC%88%98-%EC%A1%B0%EA%B1%B4%EB%AC%B8-%EB%B0%98%EB%B3%B5%EB%AC%B8/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-함수-조건문-반복문/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="함수조건반복문"><a class="markdownIt-Anchor" href="#함수조건반복문"></a> 함수,조건,반복문</h1>
-<h3 id="함수"><a class="markdownIt-Anchor" href="#함수"></a> 함수</h3>
-<ul>
-<li>기본적인 함수의 형태</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> &lt;함수이름&gt;<span class="params">(매개변수<span class="number">1</span>:매개변수<span class="number">1</span>타입, 매개변수<span class="number">2</span>:매개변수<span class="number">2</span>타입)</span></span> -&gt; 반환타입 &#123;</span><br><span class="line">	logic</span><br><span class="line">	<span class="keyword">return</span> 반환값</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>매개변수가 없는경우</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 매개변수 받는 부분이 비어있다.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> &lt;함수이름&gt;<span class="params">()</span></span> -&gt; 반환타입 &#123;</span><br><span class="line">	logic</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>반환값이 없는경우</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 반환타입이 Void</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> &lt;함수이름&gt;<span class="params">()</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">	logic</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>매개변수와 반환값이 없는경우</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 합쳐버림</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> &lt;함수이름&gt;<span class="params">()</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">	logic</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>매개변수의 입력타입은 무조건 입력해야한다.</p>
-<p>다만 입력값의 타입을 도저히 모를경우에는 Any를 넣고 TypeCasting후 사용</p>
-<p>반환값의 경우에도 마찬가지이다.</p>
-<p>반환되는 값이 여러개 이거나 타입이 다를경우 반환타입에 Any를 넣어서 사용한다.</p>
-</blockquote>
-<h3 id="함수-고급"><a class="markdownIt-Anchor" href="#함수-고급"></a> 함수 고급</h3>
-<ul>
-<li>기본값을 가지는 매개변수</li>
-</ul>
-<p>기본값이 있는 매개변수는 매개변수 목록중 <strong>가장 뒤</strong>에 위치한다.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">greeting</span><span class="params">(friend: String, me: String = <span class="string">"hong3"</span>)</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"hello \(friend)! I'm \(me)"</span>)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>전달인자 레이블</li>
-</ul>
-<blockquote>
-<p>함수를 호출할 때 매개변수의 역할을 명확하게 하거나, 함수 사용자 입장에서 표현하고자 할 때 사용한다.</p>
-</blockquote>
-<p>ex)</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">greeting</span><span class="params">(friend: String, me: String = <span class="string">"hong3"</span>)</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"hello \(friend)! I'm \(me)"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment">// 전달인자 레이블 사용</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">greeting</span><span class="params">(to friend: String, from me: String = <span class="string">"hong3"</span>)</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"hello \(friend)! I'm \(me)"</span>)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>함수명이 중복되었지만 전달인자 레이블을 사용하여 다른 함수로 취급된다.</p>
-</blockquote>
-<blockquote>
-<p>argument부분에서 to,from을 사용하여 매개변수를 전달하고 함수 내부에서 friend,me를 사용하게 된다.</p>
-</blockquote>
-<ul>
-<li>가변 매개변수</li>
-</ul>
-<p>argument의 갯수를 알기 어려울 때 사용</p>
-<p>가변매개변수는 함수당 하나만 가질 수 있고 목록중 가장 뒤에 위치하는것이 좋다.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> &lt;함수이름&gt;<span class="params">(매개변수<span class="number">1</span>:타입,매개변수<span class="number">2</span>:타입...)</span></span> -&gt; 반환타입 &#123;</span><br><span class="line">    logic</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="조건문"><a class="markdownIt-Anchor" href="#조건문"></a> 조건문</h3>
-<p>if-else,switch</p>
-<h4 id="if-else"><a class="markdownIt-Anchor" href="#if-else"></a> if-else</h4>
-<p>조건문의 조건에는 <strong>항상 Bool타입</strong>이 들어와야한다.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> condition &#123;</span><br><span class="line">    logic</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> condition &#123;</span><br><span class="line">    logic</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    logic</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="guard-statement"><a class="markdownIt-Anchor" href="#guard-statement"></a> guard statement</h4>
-<p>조건에 맞지 않으면 바로 종료.<br />
-들여쓰기 중첩 방지</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">guard</span> condition <span class="keyword">else</span> &#123;</span><br><span class="line"> logic</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="switch"><a class="markdownIt-Anchor" href="#switch"></a> switch</h4>
-<p>Swift switch문은 가능한 사례들을 모두 적어야한다.</p>
-<p>if문은 콤마(,)가 And(&amp;&amp;)연산인 것과 반대로 switch문은 콤마(,)가 Or(||) 연산</p>
-<p>대부분의 타입들을 사용할 수 있다.</p>
-<p>명시적인 break문이 없어도 case에 빠지게 되면 break가 걸린다.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> someInteger = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> someInteger &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"zero"</span>)</span><br><span class="line">        <span class="keyword">fallthrough</span> <span class="comment">// break가 걸리지않고 다음case 탐색</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>..&lt;<span class="number">100</span>: <span class="comment">//1부터 100미만</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"1~99"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="number">100</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"100"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="number">101</span>...<span class="type">Int</span>.<span class="built_in">max</span>: <span class="comment">//101이상 Int.max이하</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"over 100"</span>)</span><br><span class="line"><span class="keyword">default</span>: <span class="comment">//어느조건에도 해당되지 않을때</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Unknown value"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> anotherPoint = (<span class="number">1</span>, -<span class="number">1</span>)</span><br><span class="line"><span class="keyword">switch</span> anotherPoint &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> (x, y) <span class="keyword">where</span> x == y:</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"(\(x), \(y)) is on the line x == y"</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> (x, y) <span class="keyword">where</span> x == -y:</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"(\(x), \(y)) is on the line x == -y"</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> (x, y):</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"(\(x), \(y)) is just some arbitrary point"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>switch문 안에서 쓰는 조건문 where</p>
-</blockquote>
-<h3 id="반복문"><a class="markdownIt-Anchor" href="#반복문"></a> 반복문</h3>
-<p>for-in, while, repeat-while</p>
-<h4 id="for-in"><a class="markdownIt-Anchor" href="#for-in"></a> for-in</h4>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> integer <span class="keyword">in</span> integers &#123;</span><br><span class="line">    logic</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 딕셔너리타입 for문사용 시</span></span><br><span class="line"><span class="keyword">for</span> (key,value) <span class="keyword">in</span> <span class="type">Dictionary</span> &#123;</span><br><span class="line">    logic</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="while"><a class="markdownIt-Anchor" href="#while"></a> while</h4>
-<p>while문의 조건부분에는 무조건 <strong>Bool</strong>타입이 들어와야한다.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> condition &#123;</span><br><span class="line">    logic</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="repeat-while"><a class="markdownIt-Anchor" href="#repeat-while"></a> repeat-while</h4>
-<p>다른언어의 do-while과 유사</p>
-<p>do-while로 사용하지 않은 이유는<br />
-기존swift에서 do가 예약어로 사용되기 때문</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">repeat</span> &#123;</span><br><span class="line">    logic <span class="comment">//1. 로직이 먼저 실행된다.</span></span><br><span class="line">&#125; <span class="keyword">while</span> condition <span class="comment">//2. 로직 실행 후 조건검사를 진행한다.</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -683,7 +751,7 @@ hexo generate: 설정한 테마의 파일들을 생성</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-count">57</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -696,7 +764,7 @@ hexo generate: 설정한 테마의 파일들을 생성</p>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
