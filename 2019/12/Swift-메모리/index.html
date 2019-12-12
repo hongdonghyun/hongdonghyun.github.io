@@ -53,14 +53,14 @@
 </script>
 
   <meta name="description" content="Memory Management  RC (Reference Counting)  메모리를 할당하거나 메모리 포인터를 참조 할 때 레퍼런스 카운트를 증가 사용을 완료 하면 레퍼런스 카운트를 감소 RC가 0이 되면 메모리에서 해제된다.   MRC (Manual Reference Counting)  Objective-C MRR (Manual Retain-Rele">
-<meta name="keywords" content="Swift,Swift기초,Memory Management,ARC">
+<meta name="keywords" content="Swift기초,Swift,Memory Management,ARC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift 메모리">
 <meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;12&#x2F;Swift-%EB%A9%94%EB%AA%A8%EB%A6%AC&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
 <meta property="og:description" content="Memory Management  RC (Reference Counting)  메모리를 할당하거나 메모리 포인터를 참조 할 때 레퍼런스 카운트를 증가 사용을 완료 하면 레퍼런스 카운트를 감소 RC가 0이 되면 메모리에서 해제된다.   MRC (Manual Reference Counting)  Objective-C MRR (Manual Retain-Rele">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-12-12T13:24:25.603Z">
+<meta property="og:updated_time" content="2019-12-12T13:28:26.699Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2019/12/Swift-%EB%A9%94%EB%AA%A8%EB%A6%AC/">
@@ -233,7 +233,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-12-12 22:24:25" itemprop="dateModified" datetime="2019-12-12T22:24:25+09:00">2019-12-12</time>
+                <time title="Updated at: 2019-12-12 22:28:26" itemprop="dateModified" datetime="2019-12-12T22:28:26+09:00">2019-12-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -340,6 +340,7 @@
 <li>클래스 인스턴스가 메모리에서 해제되면 클래스가 가지고 있는 정보들(프로퍼티를 포함한)이 메모리에서 해제된다.</li>
 </ul>
 <h3 id="strong"><a class="markdownIt-Anchor" href="#strong"></a> Strong</h3>
+<p>[순환 참조](# Strong-Reference-Cycles)</p>
 <ul>
 <li>
 <p>강한 참조 (Strong) : 기본값. 참조될 때마다 참조 카운트 1 증가</p>
@@ -388,8 +389,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Swift/" rel="tag"># Swift</a>
               <a href="/tags/Swift%EA%B8%B0%EC%B4%88/" rel="tag"># Swift기초</a>
+              <a href="/tags/Swift/" rel="tag"># Swift</a>
               <a href="/tags/Memory-Management/" rel="tag"># Memory Management</a>
               <a href="/tags/ARC/" rel="tag"># ARC</a>
           </div>
