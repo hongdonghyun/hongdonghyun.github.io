@@ -53,14 +53,14 @@
 </script>
 
   <meta name="description" content="Memory Management  RC (Reference Counting)  메모리를 할당하거나 메모리 포인터를 참조 할 때 레퍼런스 카운트를 증가 사용을 완료 하면 레퍼런스 카운트를 감소 RC가 0이 되면 메모리에서 해제된다.   MRC (Manual Reference Counting)  Objective-C MRR (Manual Retain-Rele">
-<meta name="keywords" content="Swift기초,Swift,Memory Management,ARC">
+<meta name="keywords" content="Swift,Swift기초,Memory Management,ARC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift 메모리">
 <meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;12&#x2F;Swift-%EB%A9%94%EB%AA%A8%EB%A6%AC&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
 <meta property="og:description" content="Memory Management  RC (Reference Counting)  메모리를 할당하거나 메모리 포인터를 참조 할 때 레퍼런스 카운트를 증가 사용을 완료 하면 레퍼런스 카운트를 감소 RC가 0이 되면 메모리에서 해제된다.   MRC (Manual Reference Counting)  Objective-C MRR (Manual Retain-Rele">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-12-09T11:11:27.790Z">
+<meta property="og:updated_time" content="2019-12-12T13:24:25.603Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2019/12/Swift-%EB%A9%94%EB%AA%A8%EB%A6%AC/">
@@ -225,10 +225,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">작성일</span>
-              
 
-              <time title="Post created: 2019-12-09 13:26:23 / Updated at: 20:11:27" itemprop="dateCreated datePublished" datetime="2019-12-09T13:26:23+09:00">2019-12-09</time>
+              <time title="Post created: 2019-12-09 13:26:23" itemprop="dateCreated datePublished" datetime="2019-12-09T13:26:23+09:00">2019-12-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-12-12 22:24:25" itemprop="dateModified" datetime="2019-12-12T22:24:25+09:00">2019-12-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -334,13 +340,17 @@
 <li>클래스 인스턴스가 메모리에서 해제되면 클래스가 가지고 있는 정보들(프로퍼티를 포함한)이 메모리에서 해제된다.</li>
 </ul>
 <h3 id="strong"><a class="markdownIt-Anchor" href="#strong"></a> Strong</h3>
-<p>강한 참조 (Strong) : 기본값. 참조될 때마다 참조 카운트 1 증가</p>
-<blockquote>
-<p>객체에 접근 가능한 모든 연결을 끊었음에도 [순환 참조](#Strong Reference Cycles)로 인해<br />
-활성화된 참조 카운트가 남아 있어 메모리 누수(Memory Leak)가 발생하는 현상이 발생할 수 있다.</p>
-</blockquote>
 <ul>
-<li>앱의 실행이 느려지거나 오동작 또는 오류를 발생시키는 원인이 됨</li>
+<li>
+<p>강한 참조 (Strong) : 기본값. 참조될 때마다 참조 카운트 1 증가</p>
+<ul>
+<li>객체에 접근 가능한 모든 연결을 끊었음에도 [순환 참조](# Strong-Reference-Cycles)로 인해<br />
+활성화된 참조 카운트가 남아 있어 메모리 누수(Memory Leak)가 발생하는 현상이 발생할 수 있다.</li>
+</ul>
+</li>
+<li>
+<p>앱의 실행이 느려지거나 오동작 또는 오류를 발생시키는 원인이 됨</p>
+</li>
 </ul>
 <h3 id="strong-reference-cycles"><a class="markdownIt-Anchor" href="#strong-reference-cycles"></a> Strong Reference Cycles</h3>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> pet: <span class="type">Dog?</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> owner: <span class="type">Person?</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hong3: <span class="type">Person!</span> = <span class="type">Person</span>() <span class="comment">// Person RC 1</span></span><br><span class="line"><span class="keyword">var</span> bokgil: <span class="type">Dog!</span> = <span class="type">Dog</span>() <span class="comment">// Dog RC 1</span></span><br><span class="line"></span><br><span class="line">hong3.pet = bokgil <span class="comment">// Dog RC 2</span></span><br><span class="line">bokgil.owner = hong3 <span class="comment">// Person RC 2</span></span><br><span class="line"></span><br><span class="line">hong3 = <span class="literal">nil</span> <span class="comment">// Person RC 1</span></span><br><span class="line">bokgil = <span class="literal">nil</span> <span class="comment">// Dog RC 1</span></span><br></pre></td></tr></table></figure>
@@ -378,8 +388,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Swift%EA%B8%B0%EC%B4%88/" rel="tag"># Swift기초</a>
               <a href="/tags/Swift/" rel="tag"># Swift</a>
+              <a href="/tags/Swift%EA%B8%B0%EC%B4%88/" rel="tag"># Swift기초</a>
               <a href="/tags/Memory-Management/" rel="tag"># Memory Management</a>
               <a href="/tags/ARC/" rel="tag"># ARC</a>
           </div>
