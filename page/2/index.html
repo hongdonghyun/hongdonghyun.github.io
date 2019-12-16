@@ -202,6 +202,195 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EB%A9%94%EB%AA%A8%EB%A6%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/Swift-%EB%A9%94%EB%AA%A8%EB%A6%AC/" class="post-title-link" itemprop="url">Swift 메모리</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-12-09 13:26:23" itemprop="dateCreated datePublished" datetime="2019-12-09T13:26:23+09:00">2019-12-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-12-12 22:31:46" itemprop="dateModified" datetime="2019-12-12T22:31:46+09:00">2019-12-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/12/Swift-%EB%A9%94%EB%AA%A8%EB%A6%AC/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-메모리/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="memory-management"><a class="markdownIt-Anchor" href="#memory-management"></a> Memory Management</h1>
+<h2 id="rc-reference-counting"><a class="markdownIt-Anchor" href="#rc-reference-counting"></a> RC (Reference Counting)</h2>
+<ul>
+<li>메모리를 할당하거나 메모리 포인터를 참조 할 때 레퍼런스 카운트를 증가</li>
+<li>사용을 완료 하면 레퍼런스 카운트를 감소</li>
+<li>RC가 0이 되면 메모리에서 해제된다.</li>
+</ul>
+<h2 id="mrc-manual-reference-counting"><a class="markdownIt-Anchor" href="#mrc-manual-reference-counting"></a> MRC (Manual Reference Counting)</h2>
+<ul>
+<li>Objective-C</li>
+<li>MRR (Manual Retain-Release) 또는 MRC (Manual Referece Counting)</li>
+<li>RC(Reference Counting)를 통해 메모리를 수동으로 관리하는 방식 retain / release / autorelease 등의 메모리 관리 코드를 직접 호출 개발자가 명시적으로 RC 를 증가시키고 감소시키는 작업 수행</li>
+</ul>
+<blockquote>
+<p>사용자가 직접해야한다.</p>
+<blockquote>
+<p>카운트 할당과 해제는 균형이 맞아야 함</p>
+<blockquote>
+<p>alloc , retain 이 많을 경우는 Memory Leak 발생</p>
+<blockquote>
+<p>release 가 많을 경우 Dangling Pointer (허상, 고아) 발생</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="arc"><a class="markdownIt-Anchor" href="#arc"></a> ARC</h2>
+<ul>
+<li>RC 자동 관리 방식 (WWDC 2011 발표)</li>
+<li>컴파일러가 개발자를 대신하여 메모리 관리 코드를 적절한 위치에 자동으로 삽입</li>
+<li>GC 처럼 런타임이 아닌 <strong>컴파일 단에서 처리</strong> (Heap 에 대한 스캔 불필요 / 앱 일시 정지 현상 없음)</li>
+<li>메모리 관리 이슈를 줄이고 개발자가 코딩 자체에 집중할 수 있도록 함</li>
+<li>ARC 는 클래스의 인스턴스에만 적용 (Class - Reference 타입 , Struct / Enum - Value 타입) 활성화된 참조카운트가 하나라도 있을 경우 메모리에서 해제 되지 않음<br />
+참조 타입</li>
+<li>강한 참조 (Strong) : 기본값. 참조될 때마다 참조 카운트 1 증가</li>
+<li>약한 참조 (Weak), 미소유 참조 (Unowned) : 참조 카운트를 증가시키지 않음 강한 순환 참조 (Strong Reference Cycles) 에 대한 주의 필요</li>
+</ul>
+<h3 id="증가가-일어나는-경우"><a class="markdownIt-Anchor" href="#증가가-일어나는-경우"></a> 증가가 일어나는 경우</h3>
+<ul>
+<li>인스턴스를 생성하고 변수에 할당하는 순간, 변수는 인스턴스를 참조하게 된다.</li>
+<li>클래스 타입은 참조에 의한 전달이 일어나므로 해당 변수를 다른 변수에 할당하면 모두 같은 인스턴스를 참조하게 되어 참조 횟수가 증가</li>
+</ul>
+<h3 id="감소가-일어나는-경우"><a class="markdownIt-Anchor" href="#감소가-일어나는-경우"></a> 감소가 일어나는 경우</h3>
+<ol>
+<li>변수의 생명주기가 끝났을 때</li>
+</ol>
+<ul>
+<li>함수나 클로저등의 <code>{}</code> 스코프를 벗어나면 해당 함수 또는 클로저의 변수들은 더이상 사용될 수 없으므로 RC가 감소하게 되고 메모리에서 해제 된다.</li>
+</ul>
+<ol start="2">
+<li>nil이 할당될 때</li>
+</ol>
+<ul>
+<li>nil은 가르키는 값이 없다는 것을 표현하기 때문에 nil이 할당되면 RC가 감소하며 메모리에서 해제된다.</li>
+</ul>
+<ol start="3">
+<li>접근한 클래스의 인스턴스가 메모리에서 해제되는 경우(deinit)</li>
+</ol>
+<ul>
+<li>클래스 인스턴스가 메모리에서 해제되면 클래스가 가지고 있는 정보들(프로퍼티를 포함한)이 메모리에서 해제된다.</li>
+</ul>
+<h3 id="strong"><a class="markdownIt-Anchor" href="#strong"></a> Strong</h3>
+<ul>
+<li>
+<p>강한 참조 (Strong) : 기본값. 참조될 때마다 참조 카운트 1 증가</p>
+<ul>
+<li>객체에 접근 가능한 모든 연결을 끊었음에도 <a href="#strong-reference-cycles">순환 참조</a>로 인해<br />
+활성화된 참조 카운트가 남아 있어 메모리 누수(Memory Leak)가 발생하는 현상이 발생할 수 있다.</li>
+</ul>
+</li>
+<li>
+<p>앱의 실행이 느려지거나 오동작 또는 오류를 발생시키는 원인이 됨</p>
+</li>
+</ul>
+<h3 id="strong-reference-cycles"><a class="markdownIt-Anchor" href="#strong-reference-cycles"></a> Strong Reference Cycles</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> pet: <span class="type">Dog?</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> owner: <span class="type">Person?</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hong3: <span class="type">Person!</span> = <span class="type">Person</span>() <span class="comment">// Person RC 1</span></span><br><span class="line"><span class="keyword">var</span> bokgil: <span class="type">Dog!</span> = <span class="type">Dog</span>() <span class="comment">// Dog RC 1</span></span><br><span class="line"></span><br><span class="line">hong3.pet = bokgil <span class="comment">// Dog RC 2</span></span><br><span class="line">bokgil.owner = hong3 <span class="comment">// Person RC 2</span></span><br><span class="line"></span><br><span class="line">hong3 = <span class="literal">nil</span> <span class="comment">// Person RC 1</span></span><br><span class="line">bokgil = <span class="literal">nil</span> <span class="comment">// Dog RC 1</span></span><br></pre></td></tr></table></figure>
+<p>해당 예시의 경우</p>
+<ol>
+<li><code>Person</code>,<code>Dog</code> 클래스를 인스턴스화 시키면서 RC가 1증가</li>
+<li><code>hong3</code>,<code>bokgil</code>변수가 서로를 참조하게 되면서 RC가 1증가하여 총 2RC가 되었다.</li>
+<li>클래스 인스턴스에 <code>nil</code>을 할당했지만 서로를 참조하면서 증가시킨 RC가 남아있어 메모리에서 해제될 수가 없다.</li>
+</ol>
+<p>위와 같은경우는 다음과 같은 release순서를 통해 메모리에서 해제 시킬 수 있다.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hong3.pet = <span class="literal">nil</span></span><br><span class="line">bokgil.owner = <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line">hong3 = <span class="literal">nil</span></span><br><span class="line">bokgil = <span class="literal">nil</span></span><br></pre></td></tr></table></figure>
+<p>서로가 참조했던 프로퍼티에 <code>nil</code>을 할당해 메모리를 해제 후<br />
+클래스 인스턴스에 <code>nil</code>을 할당하여 메모리 해제가 가능해진다.</p>
+<p><strong>지금은 코드가 간단해서 금방 했지만 코드가 길어진다면? 서비스의 크기가 커진다면?</strong><br />
+이러한 문제를 해결하기위해 <code>Weak</code>,<code>Unowned</code>등의 예약어를 제공한다.</p>
+<h3 id="weak약한-참조unowned미소유-참조"><a class="markdownIt-Anchor" href="#weak약한-참조unowned미소유-참조"></a> Weak(약한 참조),Unowned(미소유 참조)</h3>
+<p>접근 객체에 대하여 레퍼런스 카운트를 증가시키지 않는다.</p>
+<ul>
+<li>Weak: 참조하던 객체 해제 시 nil 값으로 변경 -&gt; Optional</li>
+<li>Unowned: 접근 객체에 값이 항상 있다는것을 가정, 참조 객체 해제 시에도 기존 포인터 주소 유지</li>
+</ul>
+<blockquote>
+<p>약한 참조와 달리 언래핑의 필요가 없음</p>
+<blockquote>
+<p>미소유 참조의 경우 항상 인스턴스가 참조 하고 있다는 확신이 있을때만 사용해야한다.<br />
+그렇지 않다면 크래시가 일어나도 앱이 꺼지는 충격적인 사태가 발생할 것이다.</p>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%ED%81%B4%EB%9E%98%EC%8A%A4-%EA%B5%AC%EC%A1%B0%EC%B2%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -469,125 +658,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-10/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-10/" class="post-title-link" itemprop="url">Swift 과제 풀이 10</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2019-12-05 20:25:48 / Updated at: 20:32:06" itemprop="dateCreated datePublished" datetime="2019-12-05T20:25:48+09:00">2019-12-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
-                    <span itemprop="name">과제</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%BC%EC%A0%9C/Swift/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/12/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-10/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-과제-풀이-10/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1번"><a class="markdownIt-Anchor" href="#1번"></a> 1번</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">addTwoValues</span><span class="params">(a: Int, b: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> task1: <span class="type">Any</span> = addTwoValues(a: <span class="number">2</span>, b: <span class="number">3</span>)</span><br><span class="line">위와 같이 정의된 변수 task1이 있을 때 다음의 더하기 연산이 제대로 동작하도록 할 것</span><br><span class="line">task1 + task1</span><br></pre></td></tr></table></figure>
-<h2 id="1번-풀이"><a class="markdownIt-Anchor" href="#1번-풀이"></a> 1번 풀이</h2>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">addTwoValues</span><span class="params">(a: Int, b: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> task1: <span class="type">Any</span> = addTwoValues(a: <span class="number">2</span>, b: <span class="number">3</span>)</span><br><span class="line">((task1 <span class="keyword">as</span>? <span class="type">Int</span>) ?? <span class="number">0</span>) + (task1 <span class="keyword">as</span>! <span class="type">Int</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="2번"><a class="markdownIt-Anchor" href="#2번"></a> 2번</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">과제 1번에 이어 이번에는 위와 같이 정의된 task2 변수에 대해</span></span><br><span class="line"><span class="comment">두 변수의 더하기 연산이 제대로 동작하도록 할 것</span></span><br><span class="line"><span class="comment">(addTwoValues의 각 파라미터에는 원하는 값 입력)</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-<h2 id="2번-풀이"><a class="markdownIt-Anchor" href="#2번-풀이"></a> 2번 풀이</h2>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> task2: <span class="type">Any</span> = addTwoValues</span><br><span class="line"><span class="comment">//(task2 as! (Int,Int) -&gt; Int) (1,2) + (task2 as! (Int,Int) -&gt; Int) (1,2)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> task = task2 <span class="keyword">as</span>? (<span class="type">Int</span>, <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    task(<span class="number">1</span>,<span class="number">2</span>) + task(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="3번"><a class="markdownIt-Anchor" href="#3번"></a> 3번</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> class Car &#123;&#125;</span></span><br><span class="line"><span class="comment"> let values: [Any] = [</span></span><br><span class="line"><span class="comment">   0,</span></span><br><span class="line"><span class="comment">   0.0,</span></span><br><span class="line"><span class="comment">   (2.0, Double.pi),</span></span><br><span class="line"><span class="comment">   Car(),</span></span><br><span class="line"><span class="comment">   &#123; (str: String) -&gt; Int in str.count &#125;</span></span><br><span class="line"><span class="comment"> ]</span></span><br><span class="line"><span class="comment"> 위 values 변수의 각 값을 switch 문과 타입캐스팅을 이용해 출력하기</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h2 id="3번풀이"><a class="markdownIt-Anchor" href="#3번풀이"></a> 3번풀이</h2>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;&#125;</span><br><span class="line"><span class="keyword">let</span> values: [<span class="type">Any</span>] = [</span><br><span class="line">  <span class="number">0</span>,</span><br><span class="line">  <span class="number">0.0</span>,</span><br><span class="line">  (<span class="number">2.0</span>, <span class="type">Double</span>.pi),</span><br><span class="line">  <span class="type">Car</span>(),</span><br><span class="line">  &#123; (str: <span class="type">String</span>) -&gt; <span class="type">Int</span> <span class="keyword">in</span> str.<span class="built_in">count</span> &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> values &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">switch</span> value &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> x <span class="keyword">where</span> ((x <span class="keyword">as</span>? <span class="type">Int</span>) != <span class="literal">nil</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"\(x) is Int"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> x <span class="keyword">where</span> ((x <span class="keyword">as</span>? <span class="type">Double</span>) != <span class="literal">nil</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"\(x) is Double"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> x <span class="keyword">where</span> ((x <span class="keyword">as</span>? (<span class="type">Double</span>,<span class="type">Double</span>)) != <span class="literal">nil</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"\(x) is tuple"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> x <span class="keyword">where</span> ((x <span class="keyword">as</span>? <span class="type">Car</span>) != <span class="literal">nil</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"\(x) is Car class"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> value <span class="keyword">where</span> ((value <span class="keyword">as</span>? (<span class="type">String</span>) -&gt; <span class="type">Int</span>) != <span class="literal">nil</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"\(value) is Closure"</span>)</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Error type is\(type(of: value))"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="4번"><a class="markdownIt-Anchor" href="#4번"></a> 4번</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// - Vehicle 클래스에 지정 이니셜라이져(Designated Initializer) 추가</span></span><br></pre></td></tr></table></figure>
-<h1 id="4번-풀이"><a class="markdownIt-Anchor" href="#4번-풀이"></a> 4번 풀이</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> maxSpeed: <span class="type">Int</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(name: <span class="type">String</span>, maxSpeed: <span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.name = name</span><br><span class="line">        <span class="keyword">self</span>.maxSpeed = maxSpeed</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>() &#123;</span><br><span class="line">        <span class="keyword">self</span>.name = <span class="string">"Benz"</span></span><br><span class="line">        <span class="keyword">self</span>.maxSpeed = <span class="number">100</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="5번"><a class="markdownIt-Anchor" href="#5번"></a> 5번</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// - Car 클래스에 modelYear 또는 numberOfSeat가 0 이하일 때 nil을 반환하는 Failable Initializer 추가</span></span><br></pre></td></tr></table></figure>
-<h2 id="5번-풀이"><a class="markdownIt-Anchor" href="#5번-풀이"></a> 5번 풀이</h2>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car2</span>: <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> modelYear: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">var</span> numberOfSeats: <span class="type">Int</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>?(modelYear: <span class="type">Int</span>, numberOfSeat: <span class="type">Int</span>, name: <span class="type">String</span> = <span class="string">"Benz"</span>, maxSpeed: <span class="type">Int</span> = <span class="number">300</span>) &#123;</span><br><span class="line">        <span class="keyword">guard</span> modelYear &gt; <span class="number">0</span> , numberOfSeat &gt; <span class="number">0</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">        <span class="keyword">self</span>.modelYear = modelYear</span><br><span class="line">        <span class="keyword">self</span>.numberOfSeats = numberOfSeat</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(name: name,maxSpeed: maxSpeed)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="6번"><a class="markdownIt-Anchor" href="#6번"></a> 6번</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// - Bus 클래스에 지정 이니셜라이져를 추가하고, maxSpeed를 100으로 기본 할당해주는 편의 이니셜라이져 추가\</span></span><br></pre></td></tr></table></figure>
-<h2 id="6번-풀이"><a class="markdownIt-Anchor" href="#6번-풀이"></a> 6번 풀이</h2>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bus</span>: <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> isDoubleDecker: <span class="type">Bool</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(isDoubleDecker: <span class="type">Bool</span>,name: <span class="type">String</span>, maxSpeed: <span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.isDoubleDecker = isDoubleDecker</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(name: name, maxSpeed: maxSpeed)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">convenience</span> <span class="keyword">init</span>(name: <span class="type">String</span>, isDoubleDecker:<span class="type">Bool</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.<span class="keyword">init</span>(isDoubleDecker: isDoubleDecker, name: name, maxSpeed: <span class="number">100</span>)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="3~6-실행"><a class="markdownIt-Anchor" href="#3~6-실행"></a> 3~6 실행</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> v = <span class="type">Vehicle</span>()</span><br><span class="line"><span class="keyword">let</span> v2 = <span class="type">Vehicle</span>(name: <span class="string">"audi"</span>, maxSpeed: <span class="number">50</span>)</span><br><span class="line">v.name</span><br><span class="line">v2.name</span><br><span class="line">v.maxSpeed</span><br><span class="line">v2.maxSpeed</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> <span class="built_in">c</span> = <span class="type">Car2</span>(modelYear: <span class="number">2019</span>, numberOfSeat: <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">c</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> c2 = <span class="type">Car2</span>(modelYear: <span class="number">2019</span>, numberOfSeat: <span class="number">2</span>) &#123;</span><br><span class="line">        c2.modelYear</span><br><span class="line">        c2.numberOfSeats</span><br><span class="line">        c2.name</span><br><span class="line">        c2.maxSpeed</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = <span class="type">Bus</span>(name: <span class="string">"Volvo"</span>,isDoubleDecker: <span class="literal">false</span>)</span><br><span class="line">b.name</span><br><span class="line">b.maxSpeed</span><br><span class="line">b.isDoubleDecker</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
 
@@ -633,7 +708,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
