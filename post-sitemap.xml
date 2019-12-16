@@ -9,7 +9,15 @@
 
     <url>
         <loc>http://hongdonghyun.github.io/2019/12/%EB%B0%9C%ED%91%9C-Terminal/</loc>
-        <lastmod>2019-12-16T03:36:59.902Z</lastmod>
+        <lastmod>2019-12-16T03:39:42.163Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8/</loc>
+        <lastmod>2019-12-16T03:38:10.619Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -234,14 +242,6 @@
     <url>
         <loc>http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-9/</loc>
         <lastmod>2019-11-24T13:32:15.127Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-8/</loc>
-        <lastmod>2019-11-24T13:30:56.994Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

@@ -9,7 +9,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>개발을 잘하고 싶읍니다</description>
-    <pubDate>Mon, 16 Dec 2019 03:36:59 GMT</pubDate>
+    <pubDate>Mon, 16 Dec 2019 03:39:42 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -19,8 +19,17 @@
       <pubDate>Mon, 16 Dec 2019 03:35:49 GMT</pubDate>
       <description>
       
+        
+        
+          &lt;h1 id=&quot;학원에서-발표한-자료입니다&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#학원에서-발표한-자료입니다&quot;&gt;&lt;/a&gt; 학원에서 발표한 자료입니다.&lt;/h1&gt;
+&lt;p&gt;hong3 작성&lt;/p&gt;
+&lt;iframe src=&quot;//www.sli
+        
+      
       </description>
       
+      
+      <content:encoded><![CDATA[<h1 id="학원에서-발표한-자료입니다"><a class="markdownIt-Anchor" href="#학원에서-발표한-자료입니다"></a> 학원에서 발표한 자료입니다.</h1><p>hong3 작성</p><iframe src="//www.slideshare.net/slideshow/embed_code/key/Kn7fBzRrXuR7PF" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ssuser80f1bd/fast-campus-ios-10-hong3-12" title="fast campus iOS 10기 - hong3 내용정리 12월" target="_blank">fast campus iOS 10기 - hong3 내용정리 12월</a> </strong> from <strong><a href="https://www.slideshare.net/ssuser80f1bd" target="_blank">hong 3</a></strong> </div>]]></content:encoded>
       
       <comments>http://hongdonghyun.github.io/2019/12/%EB%B0%9C%ED%91%9C-Terminal/#disqus_thread</comments>
     </item>
