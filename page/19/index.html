@@ -202,6 +202,117 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%EC%9E%90%EC%A3%BC%EC%93%B0%EB%8A%94-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D-%EB%AA%A8%EC%9D%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/%EC%9E%90%EC%A3%BC%EC%93%B0%EB%8A%94-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D-%EB%AA%A8%EC%9D%8C/" class="post-title-link" itemprop="url">자주쓰는 정규표현식 모음</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-11 21:57:57" itemprop="dateCreated datePublished" datetime="2019-11-11T21:57:57+09:00">2019-11-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-13 12:47:26" itemprop="dateModified" datetime="2019-11-13T12:47:26+09:00">2019-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Regex/" itemprop="url" rel="index">
+                    <span itemprop="name">Regex</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/%EC%9E%90%EC%A3%BC%EC%93%B0%EB%8A%94-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D-%EB%AA%A8%EC%9D%8C/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/자주쓰는-정규표현식-모음/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="자주쓰는-정규표현식-모음"><a class="markdownIt-Anchor" href="#자주쓰는-정규표현식-모음"></a> 자주쓰는 정규표현식 모음</h1>
+<h2 id="정규표현식"><a class="markdownIt-Anchor" href="#정규표현식"></a> 정규표현식</h2>
+<p>휴대폰번호 정규식이나 이메일 체크 정규식 같은것들 모음<br />
+정규식사용은 프레임워크별로 크게 다르지 않으니 적절하게 바꿔쓰면 됩니다.</p>
+<h1 id="공백체크"><a class="markdownIt-Anchor" href="#공백체크"></a> 공백체크</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;\s/g&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="숫자체크"><a class="markdownIt-Anchor" href="#숫자체크"></a> 숫자체크</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^[0-9]+$&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="아이디-비밀번호-정규식"><a class="markdownIt-Anchor" href="#아이디-비밀번호-정규식"></a> 아이디, 비밀번호 정규식</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^[a-z0-9_]&#123;4,20&#125;$&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="휴대폰번호-정규식"><a class="markdownIt-Anchor" href="#휴대폰번호-정규식"></a> 휴대폰번호 정규식</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^\d&#123;3&#125;-\d&#123;3,4&#125;-\d&#123;4&#125;$&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="휴대폰번호-체크-정규식"><a class="markdownIt-Anchor" href="#휴대폰번호-체크-정규식"></a> 휴대폰번호 체크 정규식</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^01([0|1|6|7|8|9]?)-?([0-9]&#123;3,4&#125;)-?([0-9]&#123;4&#125;)$&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="일반전화-정규식"><a class="markdownIt-Anchor" href="#일반전화-정규식"></a> 일반전화 정규식</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^\d&#123;2,3&#125;-\d&#123;3,4&#125;-\d&#123;4&#125;$&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="이메일-체크-정규식"><a class="markdownIt-Anchor" href="#이메일-체크-정규식"></a> 이메일 체크 정규식</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]&#123;2,3&#125;$&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="주민번호"><a class="markdownIt-Anchor" href="#주민번호"></a> 주민번호</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^(?:[0-9]&#123;2&#125;(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,1]))-[1-4][0-9]&#123;6&#125;$&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="한글과-영문만-가능"><a class="markdownIt-Anchor" href="#한글과-영문만-가능"></a> 한글과 영문만 가능</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(r&apos;^[가-힣a-zA-Z]+$&apos;)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%9D%98-github%EA%B3%84%EC%A0%95-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -468,288 +579,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%EC%82%AC%EC%A0%84%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%92%80%EC%9D%B4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/%EC%82%AC%EC%A0%84%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%92%80%EC%9D%B4/" class="post-title-link" itemprop="url">사전테스트 풀이</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-
-              <time title="Post created: 2019-11-11 21:52:30" itemprop="dateCreated datePublished" datetime="2019-11-11T21:52:30+09:00">2019-11-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-29 10:20:02" itemprop="dateModified" datetime="2019-11-29T10:20:02+09:00">2019-11-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
-                    <span itemprop="name">과제</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%BC%EC%A0%9C/%EC%BB%B4%ED%93%A8%ED%84%B0-%EC%9D%BC%EB%B0%98/" itemprop="url" rel="index">
-                    <span itemprop="name">컴퓨터 일반</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/%EC%82%AC%EC%A0%84%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%92%80%EC%9D%B4/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/사전테스트-풀이/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
-<h2 id="컴퓨터-일반"><a class="markdownIt-Anchor" href="#컴퓨터-일반"></a> 컴퓨터 일반</h2>
-<h4 id="int16이-표현할-수-있는-숫자의-범위는"><a class="markdownIt-Anchor" href="#int16이-표현할-수-있는-숫자의-범위는"></a> Int16이 표현할 수 있는 숫자의 범위는?</h4>
-<p><strong>-32768 ~ 32767</strong></p>
-<blockquote>
-<p>2^15 ~ 2^15-1</p>
-</blockquote>
-<h4 id="프로그램-vs-프로세스-차이점은"><a class="markdownIt-Anchor" href="#프로그램-vs-프로세스-차이점은"></a> 프로그램 vs 프로세스 차이점은?</h4>
-<p><strong>프로그램 : 어떤 작업을 위해 실행할 수 있는 파일</strong></p>
-<p><strong>프로세스 : 프로그램을 실행시키는 주체</strong></p>
-<h4 id="stack-과-queue-의-특징은"><a class="markdownIt-Anchor" href="#stack-과-queue-의-특징은"></a> Stack 과 Queue 의 특징은?</h4>
-<p>stack : LIFO(후입선출)<br />
-Queue : FIFO(선입선출)</p>
-<h4 id="메모리에는-크게-4가지-부분으로-나누어-저장되는-데-그-이름과-특성"><a class="markdownIt-Anchor" href="#메모리에는-크게-4가지-부분으로-나누어-저장되는-데-그-이름과-특성"></a> 메모리에는 크게 4가지 부분으로 나누어 저장되는 데 그 이름과 특성</h4>
-<table>
-<thead>
-<tr>
-<th>CODE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DATA</td>
-</tr>
-<tr>
-<td>HEAP</td>
-</tr>
-<tr>
-<td>STACK</td>
-</tr>
-</tbody>
-</table>
-<p>CODE : 코드자체를 구성하는 공간 (함수들의 공간)</p>
-<p>DATA : 프로그램이 종료될 때까지 쓰일 변수들(전역,정적변수)</p>
-<blockquote>
-<p>프로그램 실행시 할당되어 종료까지 특별한 변화가 없는 정적인 메모리 영역</p>
-</blockquote>
-<p>HEAP : 자유공간 -&gt; 개발자의 필요에 따라 만들고 지워지는 데이터들</p>
-<p>STACK : 매개변수,파라미터,리턴값 등 수행중 잠깐 필요한 데이터들이 저장됨</p>
-<blockquote>
-<p>HEAP overflow:heap이 위에서부터 주소값을 채워져 내려오다가 stack영역을 침범하는 경우.</p>
-</blockquote>
-<blockquote>
-<p>STACK overflow:stack영역이 heap을 침범</p>
-</blockquote>
-<h4 id="비트연산자의-종류"><a class="markdownIt-Anchor" href="#비트연산자의-종류"></a> 비트연산자의 종류</h4>
-<p><strong>AND,OR,NOT</strong>등이 있다.</p>
-<ul>
-<li>0011 1100(60)</li>
-<li>0000 1101(13)</li>
-<li>0000 1100(AND)</li>
-<li>0011 1101(OR)</li>
-<li>1100 0011(NOT)</li>
-<li>1111 0010(NOT)</li>
-</ul>
-<h4 id="ascii-란"><a class="markdownIt-Anchor" href="#ascii-란"></a> ASCII 란?</h4>
-<p>알파벳을 사용하는 문자 인코딩 타입<br />
-0~127의 범위를 가짐</p>
-<h4 id="다음-연산0010-1101-2-에-대한-결과"><a class="markdownIt-Anchor" href="#다음-연산0010-1101-2-에-대한-결과"></a> 다음 연산(0010 1101) &gt;&gt;2 에 대한 결과</h4>
-<p><code>&gt;&gt; 2</code> 오른쪽으로 두칸 밀어버림<br />
-<code>&lt;&lt; 2</code> 왼쪽으로 두칸 밀어버림</p>
-<p>45 / 4 = 11.25</p>
-<p><strong>1011 = 11</strong></p>
-<h4 id="프로그램을-실행했을-때-실제-동작되기까지의-과정"><a class="markdownIt-Anchor" href="#프로그램을-실행했을-때-실제-동작되기까지의-과정"></a> 프로그램을 실행했을 때 실제 동작되기까지의 과정</h4>
-<ol>
-<li>Fetch</li>
-</ol>
-<ul>
-<li>메모리에 존재하는 명령을 CPU에게 할당</li>
-</ul>
-<ol start="2">
-<li>Decode</li>
-</ol>
-<ul>
-<li>가져온 명령을 CPU가 해석</li>
-</ul>
-<ol start="3">
-<li>Execute</li>
-</ol>
-<ul>
-<li>해석된 명령어를 CPU가 실행</li>
-</ul>
-<h2 id="swift"><a class="markdownIt-Anchor" href="#swift"></a> Swift</h2>
-<h4 id="swift-네이밍-컨벤션"><a class="markdownIt-Anchor" href="#swift-네이밍-컨벤션"></a> Swift 네이밍 컨벤션</h4>
-<p>Pascal Case: 모든 단어의 첫 시작 부분을 대문자로 표기</p>
-<blockquote>
-<p>Swift 에서는 ﬁlename, class, struct, enum, protocol 및 type 에 대해 이것을 사용</p>
-</blockquote>
-<p>camelCase : 시작 부분을 제외한 각 단어의 첫 글자를 대문자로 표기</p>
-<blockquote>
-<p>Swift 에서는 변수명, 함수, 메서드 등 pascal case 이외에 모두 camel case 사용</p>
-</blockquote>
-<h4 id="var-와-let-의-차이점에-대해-서술하고-예시-작성"><a class="markdownIt-Anchor" href="#var-와-let-의-차이점에-대해-서술하고-예시-작성"></a> var 와 let 의 차이점에 대해 서술하고 예시 작성</h4>
-<ul>
-<li>var 변수 : 변할 수 있는 값</li>
-<li>let 상수 : 불변값</li>
-</ul>
-<h4 id="타입-추론이란-무엇인지-설명하고-그-예시-코드-작성"><a class="markdownIt-Anchor" href="#타입-추론이란-무엇인지-설명하고-그-예시-코드-작성"></a> 타입 추론이란 무엇인지 설명하고 그 예시 코드 작성</h4>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> someVariable = <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>할당될 데이터의 형식을 유추하여 변수의 타입을 지정해줌</p>
-<h4 id="swift-에서의-반복문-종류를-적고-그-중-하나를-골라-1부터-100까지-출력하는-코드-작성"><a class="markdownIt-Anchor" href="#swift-에서의-반복문-종류를-적고-그-중-하나를-골라-1부터-100까지-출력하는-코드-작성"></a> Swift 에서의 반복문 종류를 적고, 그 중 하나를 골라 1부터 100까지 출력하는 코드 작성</h4>
-<p>반복문 종류 : for, whilte, repeat-while</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...<span class="number">100</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="클래스와-인스턴스의-차이"><a class="markdownIt-Anchor" href="#클래스와-인스턴스의-차이"></a> 클래스와 인스턴스의 차이</h4>
-<p>클래스: 객체를 구현하기 위한 설계도 혹은 틀<br />
-연관된 메서드들의 집합</p>
-<p>인스턴스: 클래스 생성에 따라 메모리에 할당된 객체<br />
-OOP의 특징: 캡슐화,상속성,다형성,추상화</p>
-<ul>
-<li>
-<p>캡슐화 : 일반적으로 연관이 있는 데이터들을 묶는 작업을 말한다.</p>
-</li>
-<li>
-<p>상속성 : 클래스가 가지고 있는 특징들을 그대로 다른 클래스가 물려 받는것</p>
-</li>
-<li>
-<p>다형성 :같은명령을 각각 다른 객체에 줄 수 있다.</p>
-</li>
-<li>
-<p>추상화 : 자세한 내부정보는 숨기고 핵심적인 기능만 간추려 보여주는것</p>
-</li>
-</ul>
-<h4 id="struct구조체-vs-class클래스"><a class="markdownIt-Anchor" href="#struct구조체-vs-class클래스"></a> Struct(구조체) vs Class(클래스)</h4>
-<p>Struct</p>
-<ol>
-<li>Call by value</li>
-<li>상속이 불가</li>
-<li>stack memory에 할당(속도가 빠름)</li>
-</ol>
-<p>Class</p>
-<ol>
-<li>Call by reference</li>
-<li>상속 가능</li>
-<li>heap memory에 할당(속도가 느림)</li>
-</ol>
-<h4 id="call-by-reference-vs-call-by-value"><a class="markdownIt-Anchor" href="#call-by-reference-vs-call-by-value"></a> Call by Reference vs Call by Value</h4>
-<p>Call by Value:</p>
-<p>값에 의한 호출방식은 함수 호출시 전달되는 변수의 값을 복사하여 함수의 인자로 전달한다.</p>
-<p>Call by Reference:</p>
-<p>참조에 의한 호출방식은 함수 호출시 인자로 전달되는 변수의 레퍼런스를 전달한다.</p>
-<h4 id="array-와-dictionary-에-대해서-설명"><a class="markdownIt-Anchor" href="#array-와-dictionary-에-대해서-설명"></a> Array 와 Dictionary 에 대해서 설명</h4>
-<p>Array : 중복을 허용하여 순서가 보장되는 자료형</p>
-<p>Dictionary : key,value의 쌍으로 이루어져 있으며 순서가 보장되지 않고 key의 중복을 허용하지 않는다.</p>
-<h4 id="enum열거형에-대해서-설명하고-예시코드"><a class="markdownIt-Anchor" href="#enum열거형에-대해서-설명하고-예시코드"></a> Enum(열거형)에 대해서 설명하고 예시코드</h4>
-<ol>
-<li>
-<p>열거형은 가능한 상태들과 관련된 값들을 정해진 가짓 수로 모아둔 집합체로 정의된 타입</p>
-</li>
-<li>
-<p>내포된 열거형, 메서드, 연관값, 패턴매칭을 활용하여 계층적 구조의 데이터를 정의할 수 있다.</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">enum Movement &#123;</span><br><span class="line">    case Left</span><br><span class="line">    case Right</span><br><span class="line">    case Top</span><br><span class="line">    case Bottom</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="uikit-framework를-통해-사용할-수-있는-클래스"><a class="markdownIt-Anchor" href="#uikit-framework를-통해-사용할-수-있는-클래스"></a> UIKit Framework를 통해 사용할 수 있는 클래스</h4>
-<ul>
-<li>UIViewController</li>
-<li>UIView</li>
-<li>UILabel<br />
-등등의 UI가 붙어있는것들</li>
-</ul>
-<h4 id="uiviewcontroller-의-lifecycle"><a class="markdownIt-Anchor" href="#uiviewcontroller-의-lifecycle"></a> UIViewController 의 LifeCycle</h4>
-<p>viewDidLoad (뷰가 로드됨) -&gt; 초기화작업</p>
-<blockquote>
-<p>뷰의 컨트롤러가 메모리에 로드되고 난 후에 호출<br />
-초기 화면을 구성하는 용도로 주로 사용</p>
-</blockquote>
-<p>viewWillAppear (뷰가 나타날것이다.)</p>
-<blockquote>
-<p>다른뷰를 왔다 갔다할때 호출</p>
-</blockquote>
-<p>viewDidAppear (뷰가 나타났다.)</p>
-<blockquote>
-<p>뷰가 화면에 나타난 직후</p>
-</blockquote>
-<p>viewWillDisappear (뷰가 사라질 것이다)</p>
-<blockquote>
-<p>뷰가 사라지기 직전</p>
-</blockquote>
-<p>viewDidDisappear (뷰가 사라졌다)</p>
-<blockquote>
-<p>뷰컨트롤러가 뷰가 제거되었음을 알려줌</p>
-</blockquote>
-<h4 id="hello-world-문자열을-출력하기-위한-코드-작성"><a class="markdownIt-Anchor" href="#hello-world-문자열을-출력하기-위한-코드-작성"></a> “Hello, World!” 문자열을 출력하기 위한 코드 작성</h4>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"Hello World!"</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="2개의-정수를-입력-받아-그-숫자들을-곱한-뒤-결과값을-문자열로-반환하는-함수-작성"><a class="markdownIt-Anchor" href="#2개의-정수를-입력-받아-그-숫자들을-곱한-뒤-결과값을-문자열로-반환하는-함수-작성"></a> 2개의 정수를 입력 받아 그 숫자들을 곱한 뒤 결과값을 문자열로 반환하는 함수 작성</h4>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">multiple</span><span class="params">(<span class="number">_</span> a: Int, <span class="number">_</span> b: Int)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">String</span>(a * b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="주어진-숫자가-짝수인지-홀수인지-판단하는-switch-문-작성"><a class="markdownIt-Anchor" href="#주어진-숫자가-짝수인지-홀수인지-판단하는-switch-문-작성"></a> 주어진 숫자가 짝수인지 홀수인지 판단하는 switch 문 작성</h4>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">oddEven</span> <span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> returnString = <span class="string">""</span></span><br><span class="line">    <span class="keyword">switch</span> input % <span class="number">2</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">        returnString = <span class="string">"짝"</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">        returnString = <span class="string">"홀"</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        returnString = <span class="string">"에러"</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> returnString</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(oddEven(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -800,7 +629,7 @@ OOP의 특징: 캡슐화,상속성,다형성,추상화</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
