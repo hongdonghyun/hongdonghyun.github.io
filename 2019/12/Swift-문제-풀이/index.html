@@ -54,7 +54,7 @@
 </script>
 
   <meta name="description" content="1번문제  자연수 하나를 입력받아 1년부터 그 해까지의 모든 윤년의 개수를 출력하는 함수  Intput : 2019 Output : 윤년에 속하는 해는 총 489회입니다.  풀이 123456789func year(_ input: Int) &amp;#123;    var yearCount = 0    for i in 1...input &amp;#123;        if">
-<meta name="keywords" content="Swift기초,Swift,복기">
+<meta name="keywords" content="Swift,Swift기초,복기">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Swift]문제 풀이">
 <meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;12&#x2F;Swift-%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4&#x2F;index.html">
@@ -327,6 +327,11 @@ google.signIn()</p>
  <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">enum</span> <span class="title">Site</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> google(<span class="number">_</span> <span class="type">ID</span>: <span class="type">String</span>, <span class="number">_</span> <span class="type">PWD</span>: <span class="type">String</span>)</span><br><span class="line">    <span class="keyword">case</span> kakao(<span class="number">_</span> <span class="type">ID</span>: <span class="type">String</span>, <span class="number">_</span> <span class="type">PWD</span>: <span class="type">String</span>)</span><br><span class="line">    <span class="keyword">case</span> naver(<span class="number">_</span> <span class="type">ID</span>: <span class="type">String</span>, <span class="number">_</span> <span class="type">PWD</span>: <span class="type">String</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">signIn</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> .google(<span class="keyword">let</span> i, <span class="keyword">let</span> p):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"구글에 로그인하였습니다.(아이디 - \(i), 비밀번호 -\(p)"</span>)</span><br><span class="line">        <span class="keyword">case</span> .kakao(<span class="keyword">let</span> i, <span class="keyword">let</span> p):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"카카오에 로그인하였습니다.(아이디 - \(i), 비밀번호 -\(p)"</span>)</span><br><span class="line">        <span class="keyword">case</span> .naver(<span class="keyword">let</span> i, <span class="keyword">let</span> p):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"네이버에 로그인하였습니다.(아이디 - \(i), 비밀번호 -\(p)"</span>)</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"Error!"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> google = <span class="type">Site</span>.google(<span class="string">"hong4367@gmail.com"</span>,<span class="string">"12345"</span>)</span><br><span class="line"><span class="keyword">let</span> kakao = <span class="type">Site</span>.kakao(<span class="string">"hong4367@gmail.com"</span>,<span class="string">"12345"</span>)</span><br><span class="line"><span class="keyword">let</span> naver = <span class="type">Site</span>.naver(<span class="string">"hong4367@gmail.com"</span>,<span class="string">"12345"</span>)</span><br><span class="line"></span><br><span class="line">google.signIn()</span><br><span class="line">kakao.signIn()</span><br><span class="line">naver.signIn()</span><br></pre></td></tr></table></figure>
 
     </div>
+    <script src="https://ads-partners.coupang.com/g.js"></script>
+<script>
+	new PartnersCoupang.G({ id:86144 });
+</script>
+    
 
     
     
@@ -334,8 +339,8 @@ google.signIn()</p>
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Swift%EA%B8%B0%EC%B4%88/" rel="tag"># Swift기초</a>
               <a href="/tags/Swift/" rel="tag"># Swift</a>
+              <a href="/tags/Swift%EA%B8%B0%EC%B4%88/" rel="tag"># Swift기초</a>
               <a href="/tags/%EB%B3%B5%EA%B8%B0/" rel="tag"># 복기</a>
           </div>
 
@@ -358,11 +363,6 @@ google.signIn()</p>
           </div>
       </footer>
     
-  <script src="https://ads-partners.coupang.com/g.js"></script>
-<script>
-	new PartnersCoupang.G({ id:86144 });
-</script>
-
   </article>
   
   
