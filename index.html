@@ -233,7 +233,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-12-24 10:55:45" itemprop="dateModified" datetime="2019-12-24T10:55:45+09:00">2019-12-24</time>
+                <time title="Updated at: 2019-12-24 11:14:01" itemprop="dateModified" datetime="2019-12-24T11:14:01+09:00">2019-12-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -319,19 +319,35 @@ lazy의 특성도 가지고 있다.</p>
 <h3 id="불러오기"><a class="markdownIt-Anchor" href="#불러오기"></a> 불러오기</h3>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UserDefaults</span>.standard.object(forkey: <span class="string">"key"</span>) <span class="comment">// Object</span></span><br><span class="line"><span class="type">UserDefaults</span>.standard.integer(forkey: <span class="string">"key"</span>) <span class="comment">// 정수</span></span><br><span class="line"><span class="type">UserDefaults</span>.standard.bool(forkey: <span class="string">"key"</span>) <span class="comment">// bool</span></span><br></pre></td></tr></table></figure>
 <h2 id="layout"><a class="markdownIt-Anchor" href="#layout"></a> Layout</h2>
-<h2 id="frame-based-layout"><a class="markdownIt-Anchor" href="#frame-based-layout"></a> Frame Based Layout</h2>
+<h3 id="frame-based-layout"><a class="markdownIt-Anchor" href="#frame-based-layout"></a> Frame Based Layout</h3>
 <ol>
 <li>원점의 위치와 크기를 지정하여 UI가 그려질 영역을 계산하는 방식</li>
 <li>모든 View들에 대해 개별적인 설정과 관리가 필요</li>
 <li>유연하며 빠른 성능</li>
 <li>많은 리소스(노동)소모</li>
 </ol>
-<h2 id="autolayout"><a class="markdownIt-Anchor" href="#autolayout"></a> AutoLayout</h2>
+<h3 id="autolayout"><a class="markdownIt-Anchor" href="#autolayout"></a> AutoLayout</h3>
 <ol>
 <li>View들간에 주어진 제약조건에 따라 View의 위치와 크기를 결정하는 Layout System</li>
 <li>외부 혹은 내부의 변화(기기회전,텍스트 크기변화…등등)에 동적으로 반응하여 유저 인터페이스를 구성하는것</li>
 <li>Frame 방식에 비하면 느림</li>
 </ol>
+<h2 id="arc-automatic-reference-counting"><a class="markdownIt-Anchor" href="#arc-automatic-reference-counting"></a> ARC (Automatic Reference Counting)</h2>
+<p>컴파일 타임때 구문분석을 통해 메모리 관리 코드를 적절한 위치에 삽입</p>
+<blockquote>
+<p>런타임때는 별도의 메모리관리가 이루어 지지 않는다.</p>
+<blockquote>
+<p>GC는 런타임중 필요가 없다고 여겨지는 부분을 해제 시키는 부분에서 차이가 있다.</p>
+</blockquote>
+</blockquote>
+<h3 id="strong"><a class="markdownIt-Anchor" href="#strong"></a> Strong</h3>
+<p>강한 참조 (Strong) : 기본값. 참조될 때마다 참조 카운트 1 증가</p>
+<h3 id="weak"><a class="markdownIt-Anchor" href="#weak"></a> Weak</h3>
+<p>접근 객체에 대하여 레퍼런스 카운트를 증가시키지 않는다.<br />
+참조하던 객체 해제 시 nil 값으로 변경 -&gt; Optional</p>
+<h3 id="unowned"><a class="markdownIt-Anchor" href="#unowned"></a> Unowned</h3>
+<p>접근 객체에 대하여 레퍼런스 카운트를 증가시키지 않는다.<br />
+접근 객체에 값이 항상 있다는것을 가정, 참조 객체 해제 시에도 기존 포인터 주소 유지</p>
 
       
     </div>
