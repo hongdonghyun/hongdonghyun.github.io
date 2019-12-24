@@ -60,7 +60,7 @@
 <meta property="og:site_name" content="Hong3의 개발블로그">
 <meta property="og:description" content="Type Check  타입확인  - type(of: ) 1234let anyArr: [Any] = [1, 2.0, &quot;3&quot;]type(of: anyArr[0])  -&amp;gt; Inttype(of: anyArr[1]) -&amp;gt; Dobuletype(of: anyArr[2]) -&amp;gt; String  Any, Generic  Any 무슨 타입이든지 담을 수 있는">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-12-05T12:06:46.224Z">
+<meta property="og:updated_time" content="2019-12-24T02:16:00.030Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2019/12/Swift-TypeCasting/">
@@ -225,10 +225,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">작성일</span>
-              
 
-              <time title="Post created: 2019-12-05 21:06:01 / Updated at: 21:06:46" itemprop="dateCreated datePublished" datetime="2019-12-05T21:06:01+09:00">2019-12-05</time>
+              <time title="Post created: 2019-12-05 21:06:01" itemprop="dateCreated datePublished" datetime="2019-12-05T21:06:01+09:00">2019-12-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-12-24 11:16:00" itemprop="dateModified" datetime="2019-12-24T11:16:00+09:00">2019-12-24</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -282,7 +288,7 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Any</span></span><br><span class="line"><span class="keyword">let</span> anyArr: [<span class="type">Any</span>] = [<span class="number">1</span>, <span class="number">2.0</span>, <span class="string">"3"</span>]</span><br><span class="line">type(of: anyArr[<span class="number">0</span>])</span><br><span class="line">type(of: anyArr[<span class="number">1</span>])</span><br><span class="line">type(of: anyArr[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
 <h3 id="generic"><a class="markdownIt-Anchor" href="#generic"></a> Generic</h3>
 <p>값이 들어오는 순간 타입을 결정한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// Generic</span><br><span class="line">func printGenericInfo&lt;T&gt;(_ value: T) &#123;</span><br><span class="line">  let types = type(of: value)</span><br><span class="line">  print(&quot;&apos;\(value)&apos; of type &apos;\(types)&apos;&quot;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printGenericInfo(1)</span><br><span class="line">printGenericInfo(2.0)</span><br><span class="line">printGenericInfo(&quot;3&quot;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Generic</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printGenericInfo</span>&lt;T&gt;<span class="params">(<span class="number">_</span> value: T)</span></span> &#123;</span><br><span class="line">  <span class="keyword">let</span> types = type(of: value)</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"'\(value)' of type '\(types)'"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printGenericInfo(<span class="number">1</span>)</span><br><span class="line">printGenericInfo(<span class="number">2.0</span>)</span><br><span class="line">printGenericInfo(<span class="string">"3"</span>)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>함수 파라미터의 T는 관용적인것이며 변경해서 사용 가능하다.<br />
 단, 입력받는 모든 파라미터의 타입은 동일해야한다.</p>
