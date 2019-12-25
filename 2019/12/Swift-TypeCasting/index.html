@@ -54,14 +54,14 @@
 </script>
 
   <meta name="description" content="Type Check  타입확인  - type(of: ) 1234let anyArr: [Any] = [1, 2.0, &quot;3&quot;]type(of: anyArr[0])  -&amp;gt; Inttype(of: anyArr[1]) -&amp;gt; Dobuletype(of: anyArr[2]) -&amp;gt; String  Any, Generic  Any 무슨 타입이든지 담을 수 있는">
-<meta name="keywords" content="Swift,Swift기초,type check,typ casting">
+<meta name="keywords" content="Swift기초,Swift,type check,typ casting">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift TypeCasting">
 <meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;12&#x2F;Swift-TypeCasting&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
 <meta property="og:description" content="Type Check  타입확인  - type(of: ) 1234let anyArr: [Any] = [1, 2.0, &quot;3&quot;]type(of: anyArr[0])  -&amp;gt; Inttype(of: anyArr[1]) -&amp;gt; Dobuletype(of: anyArr[2]) -&amp;gt; String  Any, Generic  Any 무슨 타입이든지 담을 수 있는">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-12-24T07:31:40.538Z">
+<meta property="og:updated_time" content="2019-12-24T08:15:15.865Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2019/12/Swift-TypeCasting/">
@@ -234,7 +234,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-12-24 16:31:40" itemprop="dateModified" datetime="2019-12-24T16:31:40+09:00">2019-12-24</time>
+                <time title="Updated at: 2019-12-24 17:15:15" itemprop="dateModified" datetime="2019-12-24T17:15:15+09:00">2019-12-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -299,7 +299,7 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number = <span class="number">1</span></span><br><span class="line">number == <span class="number">1</span>    <span class="comment">// 값 비교</span></span><br><span class="line">number <span class="keyword">is</span> <span class="type">Int</span>  <span class="comment">// 타입 비교</span></span><br></pre></td></tr></table></figure>
 <h3 id="상속관계-조회"><a class="markdownIt-Anchor" href="#상속관계-조회"></a> 상속관계 조회</h3>
 <p><code>자식 클래스 is 부모 클래스</code> -&gt; <code>true</code><br />
-<code>부모 클래스 is 자식 클래스</code>  -&gt; <code>false</code></p>
+<code>부모 클래스 is 자식 클래스</code> -&gt; <code>false</code></p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> name: <span class="type">String</span> = <span class="string">"name"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Baby</span>: <span class="title">Human</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> age: <span class="type">Int</span> = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>: <span class="title">Human</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> school: <span class="type">String</span> = <span class="string">"school"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UniversityStudent</span>: <span class="title">Student</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> univName: <span class="type">String</span> = <span class="string">"Univ"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> student = <span class="type">Student</span>()</span><br><span class="line">student <span class="keyword">is</span> <span class="type">Human</span> -&gt; always <span class="literal">true</span></span><br><span class="line">student <span class="keyword">is</span> <span class="type">Baby</span> -&gt; always <span class="literal">false</span></span><br><span class="line">student <span class="keyword">is</span> <span class="type">Student</span> -&gt; always <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>student</code>와 <code>baby</code>는 같은 부모를 상속받은 동등관계이다.</p>
@@ -308,7 +308,7 @@
 <p>타입 캐스팅은 인스턴스의 타입을 체크하거나,<br />
 해당 인스턴스를 고유한 클래스의 계층 구조의 다른 수퍼 클래스나 서브 클래스로 처리하는 방법</p>
 <ul>
-<li>as  : 타입 변환이 확실하게 가능한 경우(업캐스팅, 자기 자신 등) 에만 사용 가능. 그 외에는 컴파일 에러</li>
+<li>as : 타입 변환이 확실하게 가능한 경우(업캐스팅, 자기 자신 등) 에만 사용 가능. 그 외에는 컴파일 에러</li>
 <li>as? : 강제 타입 변환 시도. 변환이 성공하면 Optional 값을 가지며, 실패 시에는 nil 반환</li>
 <li>as! : 강제 타입 변환 시도. 성공 시 언래핑 된 값을 가지며, 실패 시 런타임 에러 발생</li>
 </ul>
@@ -341,8 +341,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Swift/" rel="tag"># Swift</a>
               <a href="/tags/Swift%EA%B8%B0%EC%B4%88/" rel="tag"># Swift기초</a>
+              <a href="/tags/Swift/" rel="tag"># Swift</a>
               <a href="/tags/type-check/" rel="tag"># type check</a>
               <a href="/tags/typ-casting/" rel="tag"># typ casting</a>
           </div>

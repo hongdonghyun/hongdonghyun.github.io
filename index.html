@@ -234,7 +234,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-12-24 16:31:57" itemprop="dateModified" datetime="2019-12-24T16:31:57+09:00">2019-12-24</time>
+                <time title="Updated at: 2019-12-25 15:28:50" itemprop="dateModified" datetime="2019-12-25T15:28:50+09:00">2019-12-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -353,15 +353,39 @@ lazy의 특성도 가지고 있다.</p>
 <p>타입 캐스팅은 인스턴스의 타입을 체크하거나,<br />
 해당 인스턴스를 고유한 클래스의 계층 구조의 다른 수퍼 클래스나 서브 클래스로 처리하는 방법</p>
 <ul>
-<li>as  : 타입 변환이 확실하게 가능한 경우(업캐스팅, 자기 자신 등) 에만 사용 가능. 그 외에는 컴파일 에러</li>
+<li>as : 타입 변환이 확실하게 가능한 경우(업캐스팅, 자기 자신 등) 에만 사용 가능. 그 외에는 컴파일 에러</li>
 <li>as? : 강제 타입 변환 시도. 변환이 성공하면 Optional 값을 가지며, 실패 시에는 nil 반환</li>
 <li>as! : 강제 타입 변환 시도. 성공 시 언래핑 된 값을 가지며, 실패 시 런타임 에러 발생</li>
 </ul>
+<h3 id="업캐스팅"><a class="markdownIt-Anchor" href="#업캐스팅"></a> 업캐스팅</h3>
+<p>상속 관계에 있는 자식 클래스가 부모 클래스로 형 변환하는 것</p>
+<h3 id="다운캐스팅"><a class="markdownIt-Anchor" href="#다운캐스팅"></a> 다운캐스팅</h3>
+<p>형제 클래스나 다른 서브 클래스 등 수퍼 클래스에서 파생된 각종 서브 클래스로의 타입 변환 의미</p>
 <h3 id="any"><a class="markdownIt-Anchor" href="#any"></a> Any</h3>
 <p>어떠한 타입이든 담을수 있다.</p>
 <h3 id="generic"><a class="markdownIt-Anchor" href="#generic"></a> Generic</h3>
 <p>값이 들어오는순간 타입을 정한다.</p>
-
+<h2 id="initializer"><a class="markdownIt-Anchor" href="#initializer"></a> Initializer</h2>
+<p>객체를 사용하기전 객체 안 모든 저장 프로퍼티에 초기화를 필수로 진행해야한다.</p>
+<ol>
+<li>초기값을 넣거나</li>
+<li>옵셔널 타입으로 선언하거나</li>
+<li>이외의 경우 init메서드 안에서 설정한다.</li>
+</ol>
+<h3 id="designated-initializer-init"><a class="markdownIt-Anchor" href="#designated-initializer-init"></a> Designated Initializer( ==  init)</h3>
+<p>클래스에 하나이상 필요<br />
+초기화 과정에서 반드시 한번은 호출된다.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> someText: <span class="type">String</span></span><br><span class="line">    <span class="keyword">var</span> someInt: <span class="type">Int</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(text: <span class="type">String</span>, someInt: <span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.someText = text</span><br><span class="line">        <span class="keyword">self</span>.someInt = someInt</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(text: <span class="type">String</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.someText = text</span><br><span class="line">        <span class="keyword">self</span>.someInt = <span class="number">10</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(someInt: <span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.someText = <span class="string">"hello world"</span></span><br><span class="line">        <span class="keyword">self</span>.someInt = someInt</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="convenience-initializer"><a class="markdownIt-Anchor" href="#convenience-initializer"></a> Convenience Initializer</h3>
+<p>단독으로 초기화 할 수 없고<br />
+파라미터 일부만 생성을 진행하고 나머지 부분은 다른생성자에게 위임하는 생성자</p>
+<p><strong>중복코드를 제거하기 위해서 사용</strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> someText: <span class="type">String</span></span><br><span class="line">    <span class="keyword">var</span> someInt: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">var</span> someBool: <span class="type">Bool</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(text: <span class="type">String</span>, someInt: <span class="type">Int</span>, someBool: <span class="type">Bool</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.someText = text</span><br><span class="line">        <span class="keyword">self</span>.someInt = someInt</span><br><span class="line">        <span class="keyword">self</span>.someBool = someBool</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(text: <span class="type">String</span>, someBool: <span class="type">Bool</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.someText = text</span><br><span class="line">        <span class="keyword">self</span>.someBool = someBool</span><br><span class="line">        <span class="keyword">self</span>.someInt = <span class="number">10</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">convenience</span> <span class="keyword">init</span>(someBool: <span class="type">Bool</span>, someInt: <span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.<span class="keyword">init</span>(text: <span class="string">"hello world"</span>, someInt: someInt, someBool: someBool)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="failable-initializer"><a class="markdownIt-Anchor" href="#failable-initializer"></a> Failable Initializer</h3>
+<p>class, struct, enum등을 정의할 때 초기화 중 실패할 가능성이 있는경우 사용</p>
+<p>초기화 성공시 옵셔널타입을 반환<br />
+실패시에는 nil을 반환하도록 init을 작성해야한다.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">  <span class="keyword">let</span> age: <span class="type">Int</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">init</span>?(name: <span class="type">String</span>, age: <span class="type">Int</span>) &#123;</span><br><span class="line">    <span class="keyword">guard</span> age &gt; <span class="number">0</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">    <span class="keyword">self</span>.name = name</span><br><span class="line">    <span class="keyword">self</span>.age = age</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <script src="https://ads-partners.coupang.com/g.js"></script>
