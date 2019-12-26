@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+<meta name="naver-site-verification" content="0561be7c378c2cd6bbee3400289c53c4d8f2d474"/>
+<script data-ad-client="ca-pub-4844823680997120" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/rss2.xml" title="Hong3의 개발블로그" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '복사',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="1번문제  자연수 하나를 입력받아 1년부터 그 해까지의 모든 윤년의 개수를 출력하는 함수  Intput : 2019 Output : 윤년에 속하는 해는 총 489회입니다.  풀이 123456789func year(_ input: Int) &amp;#123;    var yearCount = 0    for i in 1...input &amp;#123;        if">
+<meta name="keywords" content="Swift기초,Swift,복기">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Swift]문제 풀이">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;12&#x2F;Swift-%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4&#x2F;index.html">
+<meta property="og:site_name" content="Hong3의 개발블로그">
+<meta property="og:description" content="1번문제  자연수 하나를 입력받아 1년부터 그 해까지의 모든 윤년의 개수를 출력하는 함수  Intput : 2019 Output : 윤년에 속하는 해는 총 489회입니다.  풀이 123456789func year(_ input: Int) &amp;#123;    var yearCount = 0    for i in 1...input &amp;#123;        if">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-12-02T05:07:40.225Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://hongdonghyun.github.io/2019/12/Swift-%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>[Swift]문제 풀이 | Hong3의 개발블로그</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106140746-2"></script>
+    <script>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-106140746-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script data-ad-client="ca-pub-4844823680997120" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hong3의 개발블로그</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">- dev hong3</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>태그</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          [Swift]문제 풀이
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2019-12-02 10:02:05 / Updated at: 14:07:40" itemprop="dateCreated datePublished" datetime="2019-12-02T10:02:05+09:00">2019-12-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">과제</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/12/Swift-%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-문제-풀이/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1번문제"><a class="markdownIt-Anchor" href="#1번문제"></a> 1번문제</h1>
+<ul>
+<li>자연수 하나를 입력받아 1년부터 그 해까지의 모든 윤년의 개수를 출력하는 함수</li>
+</ul>
+<p>Intput : 2019<br />
+Output : 윤년에 속하는 해는 총 489회입니다.</p>
+<h2 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">year</span><span class="params">(<span class="number">_</span> input: Int)</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> yearCount = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...input &#123;</span><br><span class="line">        <span class="keyword">if</span> i % <span class="number">400</span> == <span class="number">0</span> || i % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; i % <span class="number">100</span> != <span class="number">0</span> &#123;</span><br><span class="line">            yearCount += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"윤년에 속하는 해는 총 \(yearCount)회 입니다."</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="2번문제"><a class="markdownIt-Anchor" href="#2번문제"></a> 2번문제</h1>
+<ul>
+<li>주어진 문자 배열에서 중복되지 않는 문자만을 뽑아내 배열로 반환해주는 함수</li>
+</ul>
+<blockquote>
+<p>Input : [“a”, “b”, “c”, “a”, “e”, “d”, “c”]<br />
+Output : [“b”, “e” ,“d”]</p>
+</blockquote>
+<h2 id="풀이-2"><a class="markdownIt-Anchor" href="#풀이-2"></a> 풀이</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">duplicateCheck</span><span class="params">(<span class="number">_</span> charArray: [Character])</span></span> -&gt; [<span class="type">Character</span>] &#123;</span><br><span class="line">    <span class="keyword">let</span> setArray = <span class="type">Set</span>(charArray)</span><br><span class="line">    <span class="keyword">var</span> duplicate: [<span class="type">Character</span>]  = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>...charArray.<span class="built_in">count</span>-<span class="number">1</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i+<span class="number">1</span>..&lt;charArray.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> charArray[i] == charArray[j] &#123;</span><br><span class="line">                duplicate.append(charArray[i])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="type">Array</span>(setArray.subtracting(duplicate))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="3번문제"><a class="markdownIt-Anchor" href="#3번문제"></a> 3번문제</h1>
+<ul>
+<li>자연수를 입력받아 그 숫자보다 작거나 같은 모든 소수와 그 개수를 출력하는 함수를 정의</li>
+</ul>
+<blockquote>
+<p>Input : 10<br />
+Output : 10보다 작거나 같은 소수는 [2, 3, 5, 7]이고, 총 4개입니다.</p>
+</blockquote>
+<h2 id="풀이-3"><a class="markdownIt-Anchor" href="#풀이-3"></a> 풀이</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isPrime</span><span class="params">(<span class="number">_</span> i: Int)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">2</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">2</span>..&lt;i &#123;</span><br><span class="line">            <span class="keyword">if</span> i % j == <span class="number">0</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">checkPrimeNumbers</span><span class="params">(number: Int)</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> primeArray: [<span class="type">Int</span>] = []</span><br><span class="line">    <span class="keyword">if</span> number == <span class="number">1</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(primeArray)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">2</span>...number &#123;</span><br><span class="line">            <span class="keyword">if</span> isPrime(i) &#123;</span><br><span class="line">                primeArray.append(i)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(number)보다 작거나 같은 소수는\(primeArray)이고 총 \(primeArray.count)개입니다."</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="4번문제"><a class="markdownIt-Anchor" href="#4번문제"></a> 4번문제</h1>
+<ul>
+<li>구글(google), 카카오(kakao), 네이버(naver) 로그인을 위해 Site라는 이름의 Enum 타입을 만들고자 합니다.<br />
+각 case는 사용자의 아이디(String)와 비밀번호(String)를 위한 연관 값(associated value)을  가집니다.<br />
+그리고 Site 타입 내부에는 signIn()이라는 이름의 메서드를 만들어 다음과 같이 문자열을 출력하는 기능을 구현해보세요.</li>
+</ul>
+<blockquote>
+<p>Input<br />
+let google = Site.google(“<a href="mailto:google@gmail.com" target="_blank" rel="noopener">google@gmail.com</a>”, “0000”)<br />
+google.signIn()</p>
+</blockquote>
+<blockquote>
+<p>Output<br />
+구글에 로그인하였습니다. (아이디 - <a href="mailto:google@gmail.com" target="_blank" rel="noopener">google@gmail.com</a>, 비밀번호 - 0000)</p>
+</blockquote>
+<h2 id="풀이-4"><a class="markdownIt-Anchor" href="#풀이-4"></a> 풀이</h2>
+ <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">enum</span> <span class="title">Site</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> google(<span class="number">_</span> <span class="type">ID</span>: <span class="type">String</span>, <span class="number">_</span> <span class="type">PWD</span>: <span class="type">String</span>)</span><br><span class="line">    <span class="keyword">case</span> kakao(<span class="number">_</span> <span class="type">ID</span>: <span class="type">String</span>, <span class="number">_</span> <span class="type">PWD</span>: <span class="type">String</span>)</span><br><span class="line">    <span class="keyword">case</span> naver(<span class="number">_</span> <span class="type">ID</span>: <span class="type">String</span>, <span class="number">_</span> <span class="type">PWD</span>: <span class="type">String</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">signIn</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> .google(<span class="keyword">let</span> i, <span class="keyword">let</span> p):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"구글에 로그인하였습니다.(아이디 - \(i), 비밀번호 -\(p)"</span>)</span><br><span class="line">        <span class="keyword">case</span> .kakao(<span class="keyword">let</span> i, <span class="keyword">let</span> p):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"카카오에 로그인하였습니다.(아이디 - \(i), 비밀번호 -\(p)"</span>)</span><br><span class="line">        <span class="keyword">case</span> .naver(<span class="keyword">let</span> i, <span class="keyword">let</span> p):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"네이버에 로그인하였습니다.(아이디 - \(i), 비밀번호 -\(p)"</span>)</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"Error!"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> google = <span class="type">Site</span>.google(<span class="string">"hong4367@gmail.com"</span>,<span class="string">"12345"</span>)</span><br><span class="line"><span class="keyword">let</span> kakao = <span class="type">Site</span>.kakao(<span class="string">"hong4367@gmail.com"</span>,<span class="string">"12345"</span>)</span><br><span class="line"><span class="keyword">let</span> naver = <span class="type">Site</span>.naver(<span class="string">"hong4367@gmail.com"</span>,<span class="string">"12345"</span>)</span><br><span class="line"></span><br><span class="line">google.signIn()</span><br><span class="line">kakao.signIn()</span><br><span class="line">naver.signIn()</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Swift%EA%B8%B0%EC%B4%88/" rel="tag"># Swift기초</a>
+              <a href="/tags/Swift/" rel="tag"># Swift</a>
+              <a href="/tags/%EB%B3%B5%EA%B8%B0/" rel="tag"># 복기</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/Swift-if%EC%99%80-guard/" rel="next" title="[Swift]if와 guard">
+                  <i class="fa fa-chevron-left"></i> [Swift]if와 guard
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/12/Swift-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98-%EC%88%98/" rel="prev" title="[Swift]피보나치 수">
+                  [Swift]피보나치 수 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1번문제"><span class="nav-number">1.</span> <span class="nav-text"> 1번문제</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#풀이"><span class="nav-number">1.1.</span> <span class="nav-text"> 풀이</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2번문제"><span class="nav-number">2.</span> <span class="nav-text"> 2번문제</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#풀이-2"><span class="nav-number">2.1.</span> <span class="nav-text"> 풀이</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3번문제"><span class="nav-number">3.</span> <span class="nav-text"> 3번문제</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#풀이-3"><span class="nav-number">3.1.</span> <span class="nav-text"> 풀이</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4번문제"><span class="nav-number">4.</span> <span class="nav-text"> 4번문제</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#풀이-4"><span class="nav-number">4.1.</span> <span class="nav-text"> 풀이</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hong3"
+      src="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+  <p class="site-author-name" itemprop="name">Hong3</p>
+  <div class="site-description" itemprop="description">개발을 잘하고 싶읍니다</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/rss2.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hongdonghyun" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;hongdonghyun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:hong4367@gmail.com" title="E-mail &amp;rarr; mailto:hong4367@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hong3</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+
+<span id="busuanzi_container_site_pv">
+  총 조회 <span id="busuanzi_value_site_pv"></span> 회
+</span> |
+<span id="busuanzi_container_site_uv">
+  총 방문자 <span id="busuanzi_value_site_uv"></span> 명
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hong3.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://hongdonghyun.github.io/2019/12/Swift-%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4/",
+            identifier: "2019/12/Swift-문제-풀이/",
+            title: "[Swift]문제 풀이"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://hong3.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+<meta name="naver-site-verification" content="0561be7c378c2cd6bbee3400289c53c4d8f2d474"/>
+<script data-ad-client="ca-pub-4844823680997120" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/rss2.xml" title="Hong3의 개발블로그" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '복사',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="개발을 잘하고 싶읍니다">
+<meta name="keywords" content="python,swift,hexo,django,flask,aws">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hong3의 개발블로그">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;page&#x2F;16&#x2F;index.html">
+<meta property="og:site_name" content="Hong3의 개발블로그">
+<meta property="og:description" content="개발을 잘하고 싶읍니다">
+<meta property="og:locale" content="ko">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://hongdonghyun.github.io/page/16/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Hong3의 개발블로그</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106140746-2"></script>
+    <script>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-106140746-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script data-ad-client="ca-pub-4844823680997120" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hong3의 개발블로그</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">- dev hong3</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>태그</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/" class="post-title-link" itemprop="url">Hexo Google Analytics 연동하기</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-13 10:11:18" itemprop="dateCreated datePublished" datetime="2019-11-13T10:11:18+09:00">2019-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-19 10:12:20" itemprop="dateModified" datetime="2019-11-19T10:12:20+09:00">2019-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Hexo-Google-Analytics-연동하기/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="hexo-시리즈-바로가기"><a class="markdownIt-Anchor" href="#hexo-시리즈-바로가기"></a> Hexo 시리즈 바로가기</h1>
+<ol>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo로 Github Page 만들기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/">Hexo 테마 설정하기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 댓글 만들기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">구글 애널리틱스 연동하기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 메뉴 추가하기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/">블로그 방문자 카운팅</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">sitemap.xmlrobots.txt 추가하기</a></p>
+</li>
+</ol>
+<h1 id="구글-애널리틱스-연동하기"><a class="markdownIt-Anchor" href="#구글-애널리틱스-연동하기"></a> 구글 애널리틱스 연동하기</h1>
+<p>Hexo에 방문자 통계, 페이지 조회를 확인할 수 있는게 없는것 같다.</p>
+<p>그래서 구글 애널리틱스를 달아서 확인해보도록 하자.</p>
+<h2 id="google-analytics-가입"><a class="markdownIt-Anchor" href="#google-analytics-가입"></a> Google Analytics 가입</h2>
+<p><a href="https://analytics.google.com/analytics/web" target="_blank" rel="noopener">여기</a>로 가면 구글 로그인을 요구하게 된다.</p>
+<blockquote>
+<p>해킹아닙니다.</p>
+</blockquote>
+<p>로그인을 하고나면 구글 애널리틱스 메인화면으로 오게 된다.</p>
+<h2 id="설정"><a class="markdownIt-Anchor" href="#설정"></a> 설정</h2>
+<ol>
+<li>무료로 계정 만들기 버튼 클릭</li>
+</ol>
+<img src="/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/hexo_google1.png" class="" title="hexo_google1">
+<ol start="2">
+<li>계정이름 설정</li>
+</ol>
+ <img src="/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/hexo_google2.png" class="" title="hexo_google2">
+<ol start="3">
+<li>웹페이지에 연동할것이므로 웹을 선택</li>
+</ol>
+ <img src="/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/hexo_google3.png" class="" title="hexo_google3">
+<ol start="4">
+<li>속성 설정</li>
+</ol>
+<img src="/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/hexo_google4.png" class="" title="hexo_google4">
+<ol start="5">
+<li>약관동의</li>
+</ol>
+<blockquote>
+<p>스샷 없음</p>
+</blockquote>
+<h3 id="잠깐"><a class="markdownIt-Anchor" href="#잠깐"></a> 잠깐</h3>
+<p><strong>만약 애널리틱스 계정이 있거나 한번이라도 보고서를 만든적이 있다면 해당 화면처럼 진행이 안됩니다.</strong></p>
+<p><strong>그런경우 좌측하단 관리버튼 -&gt; 속성 만들기를 통해 진행해주세요.</strong></p>
+<h2 id="추적-id-확인"><a class="markdownIt-Anchor" href="#추적-id-확인"></a> 추적 ID 확인</h2>
+<img src="/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/hexo_google5.png" class="" title="hexo_google5">
+<blockquote>
+<p>빨간색 테두리 부분의 추적 아이디를 확인하세요.</p>
+</blockquote>
+<h2 id="적용"><a class="markdownIt-Anchor" href="#적용"></a> 적용</h2>
+<p>추적 ID를 확인한 후, 각자 블로그의 테마폴더로 이동하자.</p>
+<img src="/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/hexo_google6.png" class="" title="hexo_google6">
+<blockquote>
+<p>여기</p>
+</blockquote>
+<p><code>_config.yml</code>파일을 열어 700번째 줄 근처에 구글 애널리틱스 관련 설정이 있다.</p>
+<img src="/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/hexo_google7.png" class="" title="hexo_google7">
+<p>저기 <code>tracking_id</code>부분에 아까 발급받았던 아이디를 입력해주면 된다.</p>
+<p>ex)</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">google_analytics:</span></span><br><span class="line">   <span class="attr">tracking_id:</span> <span class="string">UA-12345</span></span><br><span class="line">   <span class="attr">localhost_ignored:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>적용을 했다면 <code>블로그 최상단 디렉토리</code>로 이동후 <code>hexo g -d</code>를 입력하면 적용이 완료된다.</p>
+<blockquote>
+<p><code>hexo g -d</code> 명령어는<br />
+generate &amp;&amp; deploy 입니다.</p>
+</blockquote>
+<h2 id="확인하기"><a class="markdownIt-Anchor" href="#확인하기"></a> 확인하기</h2>
+<p>모든내용을 정확히 따라왔다면 남은건 기다리는것이다.</p>
+<p>구글 애널리틱스는 연동주기가 24시간가량 걸리기 때문에 하루,이틀뒤에 다시 확인해보면 결과를 알 수 있다.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%ED%95%A8%EC%88%98-%ED%92%80%EC%9D%B42/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/Swift-%ED%95%A8%EC%88%98-%ED%92%80%EC%9D%B42/" class="post-title-link" itemprop="url">Swift 함수 풀이2</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-12 18:01:58" itemprop="dateCreated datePublished" datetime="2019-11-12T18:01:58+09:00">2019-11-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-15 16:55:23" itemprop="dateModified" datetime="2019-11-15T16:55:23+09:00">2019-11-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">과제</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/Swift-%ED%95%A8%EC%88%98-%ED%92%80%EC%9D%B42/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-함수-풀이2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="과제풀이"><a class="markdownIt-Anchor" href="#과제풀이"></a> 과제풀이</h2>
+<h4 id="학점을-입력받아-각각의-등급을-반환해주는-함수"><a class="markdownIt-Anchor" href="#학점을-입력받아-각각의-등급을-반환해주는-함수"></a> 학점을 입력받아 각각의 등급을 반환해주는 함수</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">scoreToGrade</span><span class="params">(<span class="number">_</span> score: Double)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> score &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4.5</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"A+"</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">4.0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"A"</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">3.5</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"B+"</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">3.0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"B"</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">2.5</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"C+"</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">2.0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"D"</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>...<span class="number">2.0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"F"</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Error"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">scoreToGrade(<span class="number">4.4</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="특정-달을-숫자로-입력-받아서-문자열로-반환하는-함수"><a class="markdownIt-Anchor" href="#특정-달을-숫자로-입력-받아서-문자열로-반환하는-함수"></a> 특정 달을 숫자로 입력 받아서 문자열로 반환하는 함수</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">intToMonth</span><span class="params">(<span class="number">_</span> month: Int)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> month &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>...<span class="number">12</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="type">String</span>(month)+<span class="string">"월"</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Error"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">intToMonth(<span class="number">12</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="세-수를-입력받아-세-수의-곱이-양수이면-true-그렇지-않으면-false-를-반환하는-함수-switch-where-clause-를-이용해-풀어볼-수-있으면-해보기"><a class="markdownIt-Anchor" href="#세-수를-입력받아-세-수의-곱이-양수이면-true-그렇지-않으면-false-를-반환하는-함수-switch-where-clause-를-이용해-풀어볼-수-있으면-해보기"></a> 세 수를 입력받아 세 수의 곱이 양수이면 true, 그렇지 않으면 false 를 반환하는 함수 (switch where clause 를 이용해 풀어볼 수 있으면 해보기)</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">threeMultiple</span><span class="params">(<span class="number">_</span> numbers: <span class="params">(Int, Int, Int)</span></span></span>) -&gt; <span class="type">Any</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> numbers &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">let</span> (x, y, z) <span class="keyword">where</span> x * y * z &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">let</span> (x, y, z) <span class="keyword">where</span> x * y * z &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"error"</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">threeMultiple((<span class="number">1</span>,<span class="number">2</span>,-<span class="number">99</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="반복문for-while-repeat-while을-이용해-아래-문제들을-구현해보세요"><a class="markdownIt-Anchor" href="#반복문for-while-repeat-while을-이용해-아래-문제들을-구현해보세요"></a> 반복문(for , while , repeat - while)을 이용해 아래 문제들을 구현해보세요.</h2>
+<h4 id="자연수-하나를-입력받아-그-수의-factorial-을-구하는-함수"><a class="markdownIt-Anchor" href="#자연수-하나를-입력받아-그-수의-factorial-을-구하는-함수"></a> 자연수 하나를 입력받아 그 수의 Factorial 을 구하는 함수</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">factorial</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> input == <span class="number">1</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> input * factorial(input - <span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">factorial(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="자연수-두-개를-입력받아-첫-번째-수를-두-번째-수만큼-제곱하여-반환하는-함수"><a class="markdownIt-Anchor" href="#자연수-두-개를-입력받아-첫-번째-수를-두-번째-수만큼-제곱하여-반환하는-함수"></a> 자연수 두 개를 입력받아 첫 번째 수를 두 번째 수만큼 제곱하여 반환하는 함수</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">mc</span><span class="params">(one:Int, two:Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> result = one</span><br><span class="line">    <span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">2</span>...two &#123;</span><br><span class="line">        result *= one</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mc(one:<span class="number">2</span>,two:<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="자연수-하나를-입력받아-각-자리수-숫자들의-합을-반환해주는-함수"><a class="markdownIt-Anchor" href="#자연수-하나를-입력받아-각-자리수-숫자들의-합을-반환해주는-함수"></a> 자연수 하나를 입력받아 각 자리수 숫자들의 합을 반환해주는 함수</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">countSum</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> char <span class="keyword">in</span> <span class="type">String</span>(input) &#123;</span><br><span class="line">        result += <span class="type">Int</span>(<span class="type">String</span>(char))!</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">countSum(<span class="number">1234</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="자연수-하나를-입력받아-1부터-해당-숫자-사이의-모든-숫자의-합을-구해-반환하는-함수를-만들되-그-합이-2000-을-넘는-순간-더하기를-멈추고-바로-반환하는-함수"><a class="markdownIt-Anchor" href="#자연수-하나를-입력받아-1부터-해당-숫자-사이의-모든-숫자의-합을-구해-반환하는-함수를-만들되-그-합이-2000-을-넘는-순간-더하기를-멈추고-바로-반환하는-함수"></a> 자연수 하나를 입력받아 1부터 해당 숫자 사이의 모든 숫자의 합을 구해 반환하는 함수를 만들되, 그 합이 2000 을 넘는 순간 더하기를 멈추고 바로 반환하는 함수</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">addOver</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> result: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> number <span class="keyword">in</span> <span class="number">1</span>...input &#123;</span><br><span class="line">        <span class="keyword">if</span> result &gt; <span class="number">2000</span> &#123;</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            result += number</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">addOver(<span class="number">2000</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="1-~-50-사이의-숫자-중에서-20-~-30-사이의-숫자만-제외하고-그-나머지를-모두-더해-출력하는-함수"><a class="markdownIt-Anchor" href="#1-~-50-사이의-숫자-중에서-20-~-30-사이의-숫자만-제외하고-그-나머지를-모두-더해-출력하는-함수"></a> 1 ~ 50 사이의 숫자 중에서 20 ~ 30 사이의 숫자만 제외하고 그 나머지를 모두 더해 출력하는 함수</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">rangeSum</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> number <span class="keyword">in</span> <span class="number">1</span>...input &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">20</span>...<span class="number">30</span>).<span class="built_in">contains</span>(number) &#123;</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            result += number</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">rangeSum(<span class="number">50</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="문자열-두-개를-입력받아-두-문자열이-같은지-여부를-판단해주는-함수"><a class="markdownIt-Anchor" href="#문자열-두-개를-입력받아-두-문자열이-같은지-여부를-판단해주는-함수"></a> 문자열 두 개를 입력받아 두 문자열이 같은지 여부를 판단해주는 함수</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">stringCompare</span><span class="params">(string1: String, string2: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> string1 == string2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">stringCompare(string1: <span class="string">"123"</span>, string2: <span class="string">"123"</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="자연수를-입력받아-그-수의-약수를-모두-출력하는-함수"><a class="markdownIt-Anchor" href="#자연수를-입력받아-그-수의-약수를-모두-출력하는-함수"></a> 자연수를 입력받아 그 수의 약수를 모두 출력하는 함수</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// input의 약수 i를 찾으면</span></span><br><span class="line"><span class="comment">// input/i 도 약수</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">intFactor</span><span class="params">(input: Int)</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> i = <span class="number">1</span></span><br><span class="line">    <span class="keyword">var</span> resultArray = <span class="type">Array</span>&lt;<span class="type">Int</span>&gt;()</span><br><span class="line">    <span class="keyword">while</span> i * i &lt;= input &#123;</span><br><span class="line">        <span class="keyword">if</span> input % i == <span class="number">0</span> &#123;</span><br><span class="line">            resultArray.append(i)</span><br><span class="line">            <span class="keyword">if</span> i != input/i &#123;</span><br><span class="line">                resultArray.append(input/i)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> resultArray</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">intFactor(input: <span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="100-이하의-자연수-중-3과-5의-공배수를-모두-출력하는-함수"><a class="markdownIt-Anchor" href="#100-이하의-자연수-중-3과-5의-공배수를-모두-출력하는-함수"></a> 100 이하의 자연수 중 3과 5의 공배수를 모두 출력하는 함수</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">commonMultiple</span><span class="params">()</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> resultArray = <span class="type">Array</span>&lt;<span class="type">Int</span>&gt;()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...<span class="number">100</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (i % <span class="number">3</span> == <span class="number">0</span>) &amp;&amp; (i % <span class="number">5</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            resultArray.append(i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> resultArray</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">commonMultiple()</span><br></pre></td></tr></table></figure>
+<h4 id="두-개의-자연수를-입력받아-두-수를-하나의-숫자로-이어서-합친-결과를-정수로-반환하는-함수"><a class="markdownIt-Anchor" href="#두-개의-자연수를-입력받아-두-수를-하나의-숫자로-이어서-합친-결과를-정수로-반환하는-함수"></a> 두 개의 자연수를 입력받아 두 수를 하나의 숫자로 이어서 합친 결과를 정수로 반환하는 함수</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">intToStr</span><span class="params">(input1: Int, input2: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="type">String</span>(input1) + <span class="type">String</span>(input2)</span><br><span class="line">    <span class="keyword">return</span> <span class="type">Int</span>(result)!</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">intToStr(input1: <span class="number">6</span>, input2: <span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="2-이상의-자연수를-입력받아-소수인지-아닌지를-판별하는-함수"><a class="markdownIt-Anchor" href="#2-이상의-자연수를-입력받아-소수인지-아닌지를-판별하는-함수"></a> 2 이상의 자연수를 입력받아, 소수인지 아닌지를 판별하는 함수</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sosu</span><span class="params">(input1: Int)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">2</span>...input1 &#123;</span><br><span class="line">        <span class="keyword">if</span> input1 % <span class="number">2</span> == <span class="number">0</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sosu(input1: <span class="number">7</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="자연수-하나를-입력받아-피보나치-수열-중에서-입력받은-수에-해당하는-자리의-숫자를-반환하는-함수"><a class="markdownIt-Anchor" href="#자연수-하나를-입력받아-피보나치-수열-중에서-입력받은-수에-해당하는-자리의-숫자를-반환하는-함수"></a> 자연수 하나를 입력받아 피보나치 수열 중에서 입력받은 수에 해당하는 자리의 숫자를 반환하는 함수</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">fibonacci</span><span class="params">(<span class="number">_</span> num: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> resultArray = [<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">var</span> one = resultArray[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">var</span> two = resultArray[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">var</span> result: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">while</span> resultArray.<span class="built_in">count</span> &lt; num &#123;</span><br><span class="line">        result = one + two</span><br><span class="line">        one = two</span><br><span class="line">        two = result</span><br><span class="line">        resultArray.append(result)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> resultArray[num-<span class="number">1</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fibonacci(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="정수를-입력받아-윤년2월-29일이-있는-해인지-아닌지-판단하는-함수"><a class="markdownIt-Anchor" href="#정수를-입력받아-윤년2월-29일이-있는-해인지-아닌지-판단하는-함수"></a> 정수를 입력받아 윤년(2월 29일이 있는 해)인지 아닌지 판단하는 함수</h4>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">leapYear</span><span class="params">(input1: Int)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> input1 % <span class="number">400</span> == <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> input1 % <span class="number">100</span> == <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> input1 % <span class="number">4</span> == <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">leapYear(input1: <span class="number">200</span>)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="post-title-link" itemprop="url">hexo 댓글공간 만들기</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-12 14:15:28" itemprop="dateCreated datePublished" datetime="2019-11-12T14:15:28+09:00">2019-11-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-19 10:12:41" itemprop="dateModified" datetime="2019-11-19T10:12:41+09:00">2019-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/hexo-댓글공간-만들기/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="hexo-시리즈-바로가기"><a class="markdownIt-Anchor" href="#hexo-시리즈-바로가기"></a> Hexo 시리즈 바로가기</h1>
+<ol>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo로 Github Page 만들기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/">Hexo 테마 설정하기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 댓글 만들기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">구글 애널리틱스 연동하기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 메뉴 추가하기</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/">블로그 방문자 카운팅</a></p>
+</li>
+<li>
+<p><a href="https://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">sitemap.xmlrobots.txt 추가하기</a></p>
+</li>
+</ol>
+<h1 id="헥소-댓글창-만들기"><a class="markdownIt-Anchor" href="#헥소-댓글창-만들기"></a> 헥소 댓글창 만들기</h1>
+<p>본 포스팅은 next 테마를 기준으로 설명합니다.</p>
+<h2 id="disqus"><a class="markdownIt-Anchor" href="#disqus"></a> Disqus</h2>
+<p><a href="https://disqus.com/" target="_blank" rel="noopener">Disqus</a>는 소셜 댓글 서비스</p>
+<p>댓글영역과 로직을 직접 구현하지 않아도 위젯 형태로 서비스를 제공함</p>
+<p>특별한 기능을 사용하지 않는다면 basic플랜(공짜)를 사용하면 된다.</p>
+<blockquote>
+<p><a href="https://www.livere.com/" target="_blank" rel="noopener">라이브리</a>라는 소셜 댓글 서비스가 있지만(국산), next 테마에서 특별히 지원하지 않기 때문에 disqus로 간단하게 댓글을 달아보도록 한다.</p>
+</blockquote>
+<h2 id="disqus-가입"><a class="markdownIt-Anchor" href="#disqus-가입"></a> Disqus 가입</h2>
+<p><a href="https://disqus.com/" target="_blank" rel="noopener">https://disqus.com/</a>로 이동하고 우측 상단에 Get Started를 누르면 회원가입을 하면 된다.</p>
+<blockquote>
+<p>너무쉬워서 스샷도 없음</p>
+</blockquote>
+<h2 id="생성"><a class="markdownIt-Anchor" href="#생성"></a> 생성</h2>
+<p><a href="https://disqus.com/" target="_blank" rel="noopener">https://disqus.com/</a>다시 메인페이지로 와서 우측 상단에 로그인이 된것을 확인하고<br />
+화면 가운데 GET STARTED를 누른다.</p>
+<img src="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_disqus1.png" class="" title="hexo_disqus1">
+<blockquote>
+<p>화면 가운데 GET STARTED 버튼을 누르면</p>
+</blockquote>
+<img src="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_disqus2.png" class="" title="hexo_disqus2">
+<blockquote>
+<p>다음과 같이 뜬다.</p>
+</blockquote>
+<p>이제 빨간색 테두리영역이 있는 부분을 눌러준다.</p>
+<img src="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_disqus3.png" class="" title="hexo_disqus3">
+<p>그럼 다음과 같이 정보를 입력하는 창이 뜨는데<br />
+정보를 맞춰 입력 해주면된다.</p>
+<p>Website Name : 사이트이름 (디스커스에서 관리할때 보인다.)</p>
+<p>Category : 해당 사이트 게시물이 올라오는 타입</p>
+<blockquote>
+<p>저는 Tech</p>
+</blockquote>
+<p>Language : 한글없어서 English</p>
+<p>설정을 다하고 넘어가면</p>
+<p>플랜을 설정하라고 하는데 밑으로 내리면 무료플랜이 있다.</p>
+<img src="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_disqus4.png" class="" title="hexo_disqus4">
+<p>Subscirbe Now버튼 클릭</p>
+<blockquote>
+<p>무료플랜이 밑에있어서 당황스러웠습니다.</p>
+</blockquote>
+<img src="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_disqus5.png" class="" title="hexo_disqus5">
+<p>그러면 디스커스를 적용할 사이트들 목록이 나오는데 여기에 Hexo가 없습니다.</p>
+<p>당황하지 마시고 밑으로 쭉 내리시면 Universal Code가 있습니다.</p>
+<p>해당 버튼 클릭 -&gt; 다른창 또 나오면 Configure 클릭</p>
+<p>이제 이 페이지를 채워 주시면 됩니다.</p>
+<img src="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_disqus6.png" class="" title="hexo_disqus6">
+<p>Website URL : 여러분의 블로그 주소를 풀로 적어주세요.</p>
+<p>다른건 안채워 주셔도 상관없습니다.</p>
+<p>다 채우셨다면 Complete Setup버튼 클릭<br />
+여기까지 하시면 디스커스 세팅이 완료 되었습니다.</p>
+<h2 id="disqus-블로그에-적용하기"><a class="markdownIt-Anchor" href="#disqus-블로그에-적용하기"></a> Disqus 블로그에 적용하기</h2>
+<p><code>블로그 디렉토리/theme/next</code>로 이동하셔서<br />
+<code>_config.yml</code>파일을 열어주세요.</p>
+<p>그다음 600번째 줄 근처에 보시면 disqus 항목이 있습니다.</p>
+<img src="/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/hexo_disqus7.png" class="" title="hexo_disqus7">
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">shortname:</span> <span class="string">&lt;여기에</span> <span class="string">disqus</span> <span class="string">생성시</span> <span class="string">입력했던</span> <span class="string">Website</span> <span class="string">Name을</span> <span class="string">입력해주세요.</span> <span class="string">URL아닙니다.&gt;</span></span><br></pre></td></tr></table></figure>
+<p>수정 후 저장해주세요.</p>
+<h2 id="적용-후-반영"><a class="markdownIt-Anchor" href="#적용-후-반영"></a> 적용 후 반영</h2>
+<p>다하셨다면 <code>블로그 디렉토리</code>로 오셔서</p>
+<ol>
+<li><code>hexo clean &amp;&amp; hexo generate</code></li>
+<li><code>hexo deploy</code></li>
+<li>기다렸다가 포스팅 확인</li>
+<li>축하축하</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hong3"
+      src="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+  <p class="site-author-name" itemprop="name">Hong3</p>
+  <div class="site-description" itemprop="description">개발을 잘하고 싶읍니다</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/rss2.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hongdonghyun" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;hongdonghyun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:hong4367@gmail.com" title="E-mail &amp;rarr; mailto:hong4367@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hong3</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+
+<span id="busuanzi_container_site_pv">
+  총 조회 <span id="busuanzi_value_site_pv"></span> 회
+</span> |
+<span id="busuanzi_container_site_uv">
+  총 방문자 <span id="busuanzi_value_site_uv"></span> 명
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hong3.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+
+</body>
+</html>

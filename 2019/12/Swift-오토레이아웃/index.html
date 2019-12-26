@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+<meta name="naver-site-verification" content="0561be7c378c2cd6bbee3400289c53c4d8f2d474"/>
+<script data-ad-client="ca-pub-4844823680997120" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/rss2.xml" title="Hong3의 개발블로그" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '복사',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Frame Based Layout 프레임 기반의 프로프래밍 방식  원점의 위치와 크기를 통해 영역 계산 가장 유연하며 빠른 성능 모든 뷰에 대해 개별적 설정,관리가 필요 동적인 변화에 대한 설계,디버그,유지보수등에 많은 시간을 투자   Frame Based Layout for Programmatically 123456789101112131415161718">
+<meta name="keywords" content="Swift기초,Swift,AutoLayout,Frame Based Layout">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift 오토레이아웃">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;12&#x2F;Swift-%EC%98%A4%ED%86%A0%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83&#x2F;index.html">
+<meta property="og:site_name" content="Hong3의 개발블로그">
+<meta property="og:description" content="Frame Based Layout 프레임 기반의 프로프래밍 방식  원점의 위치와 크기를 통해 영역 계산 가장 유연하며 빠른 성능 모든 뷰에 대해 개별적 설정,관리가 필요 동적인 변화에 대한 설계,디버그,유지보수등에 많은 시간을 투자   Frame Based Layout for Programmatically 123456789101112131415161718">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-12-13T04:21:41.500Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://hongdonghyun.github.io/2019/12/Swift-%EC%98%A4%ED%86%A0%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Swift 오토레이아웃 | Hong3의 개발블로그</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106140746-2"></script>
+    <script>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-106140746-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script data-ad-client="ca-pub-4844823680997120" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hong3의 개발블로그</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">- dev hong3</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>태그</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EC%98%A4%ED%86%A0%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          Swift 오토레이아웃
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-12-12 21:39:59" itemprop="dateCreated datePublished" datetime="2019-12-12T21:39:59+09:00">2019-12-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-12-13 13:21:41" itemprop="dateModified" datetime="2019-12-13T13:21:41+09:00">2019-12-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/12/Swift-%EC%98%A4%ED%86%A0%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-오토레이아웃/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="frame-based-layout"><a class="markdownIt-Anchor" href="#frame-based-layout"></a> Frame Based Layout</h1>
+<p>프레임 기반의 프로프래밍 방식</p>
+<ul>
+<li>원점의 위치와 크기를 통해 영역 계산</li>
+<li>가장 유연하며 빠른 성능</li>
+<li>모든 뷰에 대해 개별적 설정,관리가 필요</li>
+<li>동적인 변화에 대한 설계,디버그,유지보수등에 많은 시간을 투자</li>
+</ul>
+<h2 id="frame-based-layout-for-programmatically"><a class="markdownIt-Anchor" href="#frame-based-layout-for-programmatically"></a> Frame Based Layout for Programmatically</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> redView = <span class="type">UIView</span>()</span><br><span class="line">    <span class="keyword">let</span> blueView = <span class="type">UIView</span>()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        redView.backgroundColor = .systemRed</span><br><span class="line">        view.addSubview(redView)</span><br><span class="line">        blueView.backgroundColor = .systemIndigo</span><br><span class="line">        view.addSubview(blueView)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewSafeAreaInsetsDidChange</span><span class="params">()</span></span> &#123;</span><br><span class="line">        setUpViewFrame()</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">setUpViewFrame</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">let</span> safeArea = view.safeAreaInsets</span><br><span class="line">        <span class="keyword">let</span> margin: <span class="type">CGFloat</span> = <span class="number">20</span></span><br><span class="line">        <span class="keyword">let</span> padding: <span class="type">CGFloat</span> = <span class="number">10</span></span><br><span class="line">        <span class="keyword">let</span> yOffset = safeArea.top + margin</span><br><span class="line">        <span class="keyword">let</span> safeAreaWidthOffset = safeArea.<span class="keyword">left</span> + safeArea.<span class="keyword">right</span></span><br><span class="line">        <span class="keyword">let</span> viewWidth = (view.frame.width - padding - safeAreaWidthOffset) / <span class="number">2</span> - margin</span><br><span class="line">        <span class="keyword">let</span> viewHeight = view.frame.height - yOffset - (safeArea.bottom + margin)</span><br><span class="line">        </span><br><span class="line">        redView.frame = <span class="type">CGRect</span>(</span><br><span class="line">            x: safeArea.<span class="keyword">left</span> + margin,</span><br><span class="line">            y: yOffset,</span><br><span class="line">            width: viewWidth,</span><br><span class="line">            height: viewHeight</span><br><span class="line">        )</span><br><span class="line">        blueView.frame = <span class="type">CGRect</span>(x: redView.frame.maxX + padding, y: yOffset, width: redView.bounds.width, height: redView.bounds.height)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="viewsafeareainsetsdidchange"><a class="markdownIt-Anchor" href="#viewsafeareainsetsdidchange"></a> ViewSafeAreaInsetsDidChange</h2>
+<ul>
+<li>뷰가 로드 될때 SafeArea의 크기를 얻는곳</li>
+<li>해당 시점에 레이아웃을 그려줘야 safeArea의 크기를 얻을 수있으므로 해당타이밍에 UI를 그리는 부분을 수행해 주었다.</li>
+</ul>
+<h1 id="autolayout"><a class="markdownIt-Anchor" href="#autolayout"></a> AutoLayout</h1>
+<p>제약 조건을 이용해 유저 인터페이스 정의<br />
+View간의 관계 설정을 통한 크기와 위치 계산<br />
+내/외부 변경사항에 동적으로 반응<br />
+Frame 기반에 비해 느린 성능</p>
+<ul>
+<li>뷰에 주어진 제약조건에 따라 뷰의 크기와 위치를 동적으로 계산해 배치하는 것</li>
+<li>외부 또는 내부의 변화에 동적으로 반응하여 유저 인터페이스 구성</li>
+</ul>
+<h2 id="외적-변화-요소"><a class="markdownIt-Anchor" href="#외적-변화-요소"></a> 외적 변화 요소</h2>
+<ul>
+<li>서로 다른 기기 및 스크린 크기</li>
+<li>기기 회전</li>
+<li>iPad / iPhone등에서 split View</li>
+</ul>
+<h2 id="내적-변화-요소"><a class="markdownIt-Anchor" href="#내적-변화-요소"></a> 내적 변화 요소</h2>
+<ul>
+<li>앱에서 보여지는 컨텐츠의 변화</li>
+<li>국제화 지원 (언어별 지원) -&gt; 글자의 길이가 변하거나, 날짜등</li>
+<li>Dynamic Type지원 (글꼴 크기)</li>
+</ul>
+<h2 id="autolayout-for-programmatically"><a class="markdownIt-Anchor" href="#autolayout-for-programmatically"></a> AutoLayout for Programmatically</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> blackView = <span class="type">UIView</span>()</span><br><span class="line">    <span class="keyword">let</span> greenView = <span class="type">UIView</span>()</span><br><span class="line">    <span class="keyword">let</span> yellowView = <span class="type">UIView</span>()</span><br><span class="line">    <span class="keyword">let</span> cyanView = <span class="type">UIView</span>()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line"><span class="comment">//      setUpViewAutoLayout()</span></span><br><span class="line">        setUpViewAutoLayoutPractice()</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">setUpViewAutoLayout</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">let</span> layoutGuide = view.safeAreaLayoutGuide</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> margin: <span class="type">CGFloat</span> = <span class="number">20</span></span><br><span class="line">        </span><br><span class="line">        redView.translatesAutoresizingMaskIntoConstraints = <span class="literal">false</span></span><br><span class="line">        </span><br><span class="line">        redView.topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        redView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor,constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        redView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor,constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        redView.trailingAnchor.constraint(equalTo: blueView.leadingAnchor,constant: -<span class="number">10</span>).isActive = <span class="literal">true</span></span><br><span class="line">        </span><br><span class="line">        redView.widthAnchor.constraint(equalTo: blueView.widthAnchor, multiplier: <span class="number">1</span>).isActive = <span class="literal">true</span></span><br><span class="line">        </span><br><span class="line">        blueView.translatesAutoresizingMaskIntoConstraints = <span class="literal">false</span></span><br><span class="line">        </span><br><span class="line">        blueView.topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        blueView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        blueView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">autoSize</span><span class="params">(origin: UIView, target: UIView)</span></span> &#123;</span><br><span class="line">        target.widthAnchor.constraint(equalTo: origin.widthAnchor, multiplier: <span class="number">1</span>).isActive = <span class="literal">true</span></span><br><span class="line">        target.heightAnchor.constraint(equalTo: origin.heightAnchor, multiplier: <span class="number">1</span>).isActive = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">setUpViewAutoLayoutPractice</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">let</span> views: [<span class="type">UIView</span>: <span class="type">UIColor</span>] = [blackView: .black, greenView: .green, yellowView: .systemYellow, cyanView: .cyan]</span><br><span class="line">        <span class="keyword">let</span> margin: <span class="type">CGFloat</span> = <span class="number">10</span></span><br><span class="line">        <span class="keyword">let</span> layoutGuide = view.safeAreaLayoutGuide</span><br><span class="line">                </span><br><span class="line">        <span class="keyword">for</span> key <span class="keyword">in</span> views.keys &#123;</span><br><span class="line">            key.backgroundColor = views[key]</span><br><span class="line">            view.addSubview(key)</span><br><span class="line">            key.translatesAutoresizingMaskIntoConstraints = <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 좌상</span></span><br><span class="line">        blackView.topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        blackView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        blackView.bottomAnchor.constraint(equalTo: yellowView.topAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//우상</span></span><br><span class="line">        greenView.topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        greenView.leadingAnchor.constraint(equalTo: blackView.trailingAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        greenView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        greenView.bottomAnchor.constraint(equalTo: cyanView.topAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//좌하</span></span><br><span class="line">        yellowView.topAnchor.constraint(equalTo: blackView.bottomAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        yellowView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        yellowView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//우하</span></span><br><span class="line">        cyanView.leadingAnchor.constraint(equalTo: yellowView.trailingAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        cyanView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        cyanView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        </span><br><span class="line">        autoSize(origin: blackView, target: greenView)</span><br><span class="line">        autoSize(origin: blackView, target: yellowView)</span><br><span class="line">        autoSize(origin: blackView, target: cyanView)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="리뷰"><a class="markdownIt-Anchor" href="#리뷰"></a> 리뷰</h2>
+<p>처음에는 오토레이아웃이 마음처럼 되지 않아 힘들었다.</p>
+<p><code>setUpViewAutoLayout</code>함수는 두개의 <code>UIView</code>를 수평으로 두개를 그리는 함수이다.<br />
+<code>setUpViewAutoLayoutPractice</code>함수는 4개의 <code>UIView</code>를 동등한 크기를 잡아 4분면으로 뿌려주는 함수를 연습했다.</p>
+<p>그저 4개의 뷰를 뿌려주기만 하는 코드인데 상당히 길어져 나름대로 중복코드를 제거해보려고 했지만<br />
+막상 뷰를 그리는부분은 최적화를 하기가 힘들어서 손을 대지못했다.</p>
+<p>언젠가 현업에 가게된다면 해당 부분은 조금 더 고민을 해볼 여지가 있는문제로 남았다.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Swift%EA%B8%B0%EC%B4%88/" rel="tag"># Swift기초</a>
+              <a href="/tags/Swift/" rel="tag"># Swift</a>
+              <a href="/tags/AutoLayout/" rel="tag"># AutoLayout</a>
+              <a href="/tags/Frame-Based-Layout/" rel="tag"># Frame Based Layout</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/12/Swift-%EC%88%AB%EC%9E%90%EC%95%BC%EA%B5%AC/" rel="next" title="[Swift]숫자야구">
+                  <i class="fa fa-chevron-left"></i> [Swift]숫자야구
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/12/Swift-UITableView/" rel="prev" title="Swift UITableView">
+                  Swift UITableView <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#frame-based-layout"><span class="nav-number">1.</span> <span class="nav-text"> Frame Based Layout</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#frame-based-layout-for-programmatically"><span class="nav-number">1.1.</span> <span class="nav-text"> Frame Based Layout for Programmatically</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#viewsafeareainsetsdidchange"><span class="nav-number">1.2.</span> <span class="nav-text"> ViewSafeAreaInsetsDidChange</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#autolayout"><span class="nav-number">2.</span> <span class="nav-text"> AutoLayout</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#외적-변화-요소"><span class="nav-number">2.1.</span> <span class="nav-text"> 외적 변화 요소</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#내적-변화-요소"><span class="nav-number">2.2.</span> <span class="nav-text"> 내적 변화 요소</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#autolayout-for-programmatically"><span class="nav-number">2.3.</span> <span class="nav-text"> AutoLayout for Programmatically</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#리뷰"><span class="nav-number">2.4.</span> <span class="nav-text"> 리뷰</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hong3"
+      src="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+  <p class="site-author-name" itemprop="name">Hong3</p>
+  <div class="site-description" itemprop="description">개발을 잘하고 싶읍니다</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/rss2.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hongdonghyun" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;hongdonghyun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:hong4367@gmail.com" title="E-mail &amp;rarr; mailto:hong4367@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hong3</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+
+<span id="busuanzi_container_site_pv">
+  총 조회 <span id="busuanzi_value_site_pv"></span> 회
+</span> |
+<span id="busuanzi_container_site_uv">
+  총 방문자 <span id="busuanzi_value_site_uv"></span> 명
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hong3.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://hongdonghyun.github.io/2019/12/Swift-%EC%98%A4%ED%86%A0%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83/",
+            identifier: "2019/12/Swift-오토레이아웃/",
+            title: "Swift 오토레이아웃"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://hong3.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+</script>
+
+</body>
+</html>

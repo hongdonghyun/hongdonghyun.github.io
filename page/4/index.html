@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+<meta name="naver-site-verification" content="0561be7c378c2cd6bbee3400289c53c4d8f2d474"/>
+<script data-ad-client="ca-pub-4844823680997120" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/rss2.xml" title="Hong3의 개발블로그" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '복사',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="개발을 잘하고 싶읍니다">
+<meta name="keywords" content="python,swift,hexo,django,flask,aws">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hong3의 개발블로그">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;page&#x2F;4&#x2F;index.html">
+<meta property="og:site_name" content="Hong3의 개발블로그">
+<meta property="og:description" content="개발을 잘하고 싶읍니다">
+<meta property="og:locale" content="ko">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://hongdonghyun.github.io/page/4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Hong3의 개발블로그</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106140746-2"></script>
+    <script>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-106140746-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script data-ad-client="ca-pub-4844823680997120" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hong3의 개발블로그</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">- dev hong3</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>태그</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EC%98%88%EC%82%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/Swift-%EC%98%88%EC%82%B0/" class="post-title-link" itemprop="url">[Swift]예산</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2019-12-04 15:05:38 / Updated at: 15:12:12" itemprop="dateCreated datePublished" datetime="2019-12-04T15:05:38+09:00">2019-12-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/12/Swift-%EC%98%88%EC%82%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-예산/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/12982" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> d:[Int], <span class="number">_</span> budget:Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span>, <span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> d.sorted() &#123;</span><br><span class="line">        result += i</span><br><span class="line">        <span class="keyword">if</span> result &lt;= budget &#123;</span><br><span class="line">            <span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">count</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p>문제의 입출력 예시를 그대로 보고 풀려고하면 상당히 어려워 진다.</p>
+<p>해당 문제는 수학적으로 접근해야할 필요가 있다.</p>
+<p>문제의 핵심은 최대한 많은부서에 물품을 지원해라는 것이다.</p>
+<p>입력값 d는 부서별 요구 금액이다.</p>
+<p>최대한 많은부서에 물품을 지원하려면 요구금액이 가장 작은순서대로 예산을 소모하면 가장 많은 부서들을 지원해줄 수 있다.</p>
+<p>그렇다면 신청금액은 오름차순으로 정렬하여 예산에 맞추어 지원을 해주면 된다.</p>
+<p>생각의 흐름을 코드로 나타내는건 그다지 어렵지 않았다.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EC%B2%B4%EC%9C%A1%EB%B3%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/Swift-%EC%B2%B4%EC%9C%A1%EB%B3%B5/" class="post-title-link" itemprop="url">[Swift]체육복</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2019-12-03 10:20:37 / Updated at: 12:31:27" itemprop="dateCreated datePublished" datetime="2019-12-03T10:20:37+09:00">2019-12-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/12/Swift-%EC%B2%B4%EC%9C%A1%EB%B3%B5/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-체육복/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/42862" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> n: Int, <span class="number">_</span> lost: [Int], <span class="number">_</span> reserve: [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> students = <span class="type">Array</span>(repeating: <span class="number">0</span>, <span class="built_in">count</span>: n)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> lost &#123; students[i-<span class="number">1</span>] -= <span class="number">1</span> &#125;</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> reserve &#123; students[j-<span class="number">1</span>] += <span class="number">1</span> &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (index, k) <span class="keyword">in</span> students.enumerated() &#123;</span><br><span class="line">        <span class="keyword">if</span> k == -<span class="number">1</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (index &gt; <span class="number">0</span> &amp;&amp; students[index-<span class="number">1</span>] == <span class="number">1</span>) &#123;</span><br><span class="line">                students[index-<span class="number">1</span>] -= <span class="number">1</span></span><br><span class="line">                students[index] += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (index &lt; students.<span class="built_in">count</span> - <span class="number">1</span>) &amp;&amp; students[index + <span class="number">1</span>] == <span class="number">1</span> &#123;</span><br><span class="line">                students[index + <span class="number">1</span>] -= <span class="number">1</span></span><br><span class="line">                students[index] += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> students.<span class="built_in">filter</span>&#123;$<span class="number">0</span> &gt;= <span class="number">0</span>&#125;.<span class="built_in">count</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p>매개변수</p>
+<ul>
+<li>전체학생 수 n,</li>
+<li>체육복 도난당한 학생배열 lost</li>
+<li>여벌의 체육복이 있는 학생 배열 reserve</li>
+</ul>
+<p>먼저 학생들의 배열을 한데 뭉쳐서 줄을 세울 필요가 있다.</p>
+<p><s>(그래야 보기가 좋음)</s></p>
+<p>체육복이 있는 학생은 0<br />
+여벌이 있는학생은 1<br />
+도난당한 학생은 -1 로 만들어준다.</p>
+<p>그 후 전체 학생들의 목록을 순회하면서<br />
+-1인 학생의 앞뒤로 1이 있는지 체크하여 빌려주게 하면 된다.</p>
+<blockquote>
+<p>배열의 제일 앞 학생과 뒤의학생의 경우를 조심하자.</p>
+</blockquote>
+<p>그리고 문제에 함정이 하나있다.<br />
+여벌의 체육복이 있는 학생도 도난을 당할 수 있다는 건데,</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lost = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">reserve = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+<p>이런식으로 여유분 목록과 잃어버린 사람의 목록에 같이 들어 있을수가 있다.</p>
+<p>해당 부분을 잘 고민해서 풀면 쉽게 풀수 있다.</p>
+<blockquote>
+<p>물론 난 오래걸림</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/Swift-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0/" class="post-title-link" itemprop="url">[Swift]쇠막대기</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2019-12-02 16:53:04 / Updated at: 17:42:59" itemprop="dateCreated datePublished" datetime="2019-12-02T16:53:04+09:00">2019-12-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/12/Swift-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-쇠막대기/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/42585" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> arrangement:String)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> innerArray = <span class="type">Array</span>(arrangement)</span><br><span class="line">    <span class="keyword">var</span> cnt = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (index,value) <span class="keyword">in</span> innerArray.enumerated() &#123;</span><br><span class="line">        <span class="keyword">if</span> value == <span class="string">"("</span> &#123;</span><br><span class="line">            cnt += <span class="number">1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            cnt -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> innerArray[index-<span class="number">1</span>] == <span class="string">"("</span> &#123;</span><br><span class="line">                result += cnt</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                result += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p>문제의 글이 너무 많아서 겁부터 난다.</p>
+<p>해당 문제는 스택에 관련한 문제였다.</p>
+<img src="/2019/12/Swift-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0/steel.png" class="" title="steel">
+<p><strong><code>(</code></strong>  가 push</p>
+<p><strong><code>)</code></strong> 가 pop 이라고 생각하자.</p>
+<p>왼쪽부터 보면<br />
+<code>push -&gt; pop -&gt; push -&gt; push -&gt; push -&gt; push -&gt; pop</code><br />
+여기 까지가 두번째 레이저 발사까지다.</p>
+<p>스택에 적용시켜 계산을 해보면<br />
+<code>1 -&gt; 0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 3</code></p>
+<p>여기서 문제를 다시 살펴보자<br />
+<strong>여는 괄호와 닫는 괄호의 쌍</strong> 은 레이저 발사다.</p>
+<p>레이저를 발사하면 쇠막대기가 잘린다.</p>
+<p>(  (  (  <strong>( )</strong> 레이저 발사</p>
+<blockquote>
+<p>여기까지가 두번째 레이저다.</p>
+</blockquote>
+<p>스택에 3개가 남아 있으므로 3조각이 나온다.<br />
+세번째 레이저 또한 스택에 3개가 있으므로 3조각이 나온다.</p>
+<p>그 다음번은 <strong>)</strong> 가 튀어나오니 다시 스택이 감소 된다.<br />
+하지만 레이저 발사는 아니지만 하나의 조각이 튀어나오게 된다.</p>
+<p>위와같은 로직을 코드화 시키면 이 문제를 해결할 수 있다.</p>
+<blockquote>
+<p>말이야쉽다.</p>
+</blockquote>
+<p>해당 과정을 찾아내는건 어려웠지만 코드에 적용하는건 어렵지 않았다.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hong3"
+      src="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+  <p class="site-author-name" itemprop="name">Hong3</p>
+  <div class="site-description" itemprop="description">개발을 잘하고 싶읍니다</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/rss2.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hongdonghyun" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;hongdonghyun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:hong4367@gmail.com" title="E-mail &amp;rarr; mailto:hong4367@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hong3</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+
+<span id="busuanzi_container_site_pv">
+  총 조회 <span id="busuanzi_value_site_pv"></span> 회
+</span> |
+<span id="busuanzi_container_site_uv">
+  총 방문자 <span id="busuanzi_value_site_uv"></span> 명
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hong3.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+
+</body>
+</html>

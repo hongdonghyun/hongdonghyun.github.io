@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+<meta name="naver-site-verification" content="0561be7c378c2cd6bbee3400289c53c4d8f2d474"/>
+<script data-ad-client="ca-pub-4844823680997120" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/rss2.xml" title="Hong3의 개발블로그" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '복사',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="객체지향이 무엇일까를 생각하면서 정리를 해보고 있습니다. 이상한점이나 설명상 오류를 범하는 부분이 있다면 댓글 부탁드리겠습니다.  OOP(Object Oriented Programming) 객체 지향 프로그래밍 위키백과 위키백과에서는 객체 지향 프로그래밍을 다음과 같이 설명 하고 있다. 객체 지향 프로그래밍은 컴퓨터 프로그램을 명령어의 목록으로 보는 시각에">
+<meta name="keywords" content="Swift기초,프로그래밍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="객체지향이란 도대체 무엇인가">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;OOP&#x2F;index.html">
+<meta property="og:site_name" content="Hong3의 개발블로그">
+<meta property="og:description" content="객체지향이 무엇일까를 생각하면서 정리를 해보고 있습니다. 이상한점이나 설명상 오류를 범하는 부분이 있다면 댓글 부탁드리겠습니다.  OOP(Object Oriented Programming) 객체 지향 프로그래밍 위키백과 위키백과에서는 객체 지향 프로그래밍을 다음과 같이 설명 하고 있다. 객체 지향 프로그래밍은 컴퓨터 프로그램을 명령어의 목록으로 보는 시각에">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;OOP&#x2F;oop_img1.jpeg">
+<meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;OOP&#x2F;oop_inheritance.png">
+<meta property="og:updated_time" content="2019-11-16T09:23:14.594Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;11&#x2F;OOP&#x2F;oop_img1.jpeg">
+
+<link rel="canonical" href="http://hongdonghyun.github.io/2019/11/OOP/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>객체지향이란 도대체 무엇인가 | Hong3의 개발블로그</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106140746-2"></script>
+    <script>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-106140746-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script data-ad-client="ca-pub-4844823680997120" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hong3의 개발블로그</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">- dev hong3</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>태그</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/OOP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          객체지향이란 도대체 무엇인가
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-15 16:57:58" itemprop="dateCreated datePublished" datetime="2019-11-15T16:57:58+09:00">2019-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-16 18:23:14" itemprop="dateModified" datetime="2019-11-16T18:23:14+09:00">2019-11-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
+                    <span itemprop="name">과제</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/OOP/" itemprop="url" rel="index">
+                    <span itemprop="name">OOP</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/OOP/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/OOP/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>객체지향이 무엇일까를 생각하면서 정리를 해보고 있습니다.</p>
+<p>이상한점이나 설명상 오류를 범하는 부분이 있다면 댓글 부탁드리겠습니다.</p>
+<h1 id="oopobject-oriented-programming"><a class="markdownIt-Anchor" href="#oopobject-oriented-programming"></a> OOP(Object Oriented Programming)</h1>
+<p><a href="https://ko.wikipedia.org/wiki/%EA%B0%9D%EC%B2%B4_%EC%A7%80%ED%96%A5_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D" target="_blank" rel="noopener">객체 지향 프로그래밍 위키백과</a></p>
+<p>위키백과에서는 객체 지향 프로그래밍을 다음과 같이 설명 하고 있다.</p>
+<p>객체 지향 프로그래밍은 컴퓨터 프로그램을 명령어의 목록으로 보는 시각에서 벗어나 여러 개의 독립된 단위, 즉 <code>객체</code>들의 모임으로 파악하고자 하는 것이다.</p>
+<h2 id="object객체"><a class="markdownIt-Anchor" href="#object객체"></a> Object(객체)</h2>
+<p><code>객체(Object)</code>라는 단어가 계속 나온다.</p>
+<p>객체 지향 프로그래밍을 이해하기전 객체(Object)가 무엇인지 제대로 이해할 필요가 있다.</p>
+<p><code>객체(Object)</code>를 가장 간단한 말로 번역해보면 <code>물건</code>이라는 뜻이다.</p>
+<p>물건이라는 단어의 포함되는것들을 찾아보자면</p>
+<p><code>모니터</code>,<code>마우스</code>,<code>빌딩</code>,<code>개구리</code>,<code>강아지</code>등이 될 수 있겠다.</p>
+<p><strong>생물(生物)</strong> 조차도 넓은의미에서 물건이라고 볼 수 있을것이다.</p>
+<blockquote>
+<p>한자로 풀어쓰면 살아 있는 물건 이라는 뜻</p>
+</blockquote>
+<p>그리고 그 모든 물건들은 <strong>쓰임새</strong>가 존재한다.</p>
+<blockquote>
+<p>개인적으로 세상에서 가장 쓸모없다고 느낀 생물체인 불가사리조차 비료로 쓰인다고 한다.</p>
+</blockquote>
+<p>모든 객체는 쓰임새가 있을것이다.</p>
+<p>한줄로 요약하자면 <strong>저마다 역할을 가지고 있는것을 객체라고 볼 수 있겠다.</strong></p>
+<p>객체라는것이 존재자체만으로도 쓰임새가 있을 수 있겠지만, 상당수의 객체는 누군가 사용을 해주어야 쓰임새를 가질 수 있다.</p>
+<p>이해를 돕기 위한 짤</p>
+<img src="/2019/11/OOP/oop_img1.jpeg" class="" title="oop_img1"> 
+<blockquote>
+<p>싸워야 할 때 싸워야 <s>객체</s> 건달이 될 수 있다.</p>
+</blockquote>
+<p>객체들이 가지고 있는 성질들을 생각나는대로 정렬해 보았다.</p>
+<ul>
+<li>객체는 저마다 맡은 역할(쓰임새)가 있다.</li>
+<li>객체는 지시를 받음으로써 자신의 역할을 수행한다.</li>
+</ul>
+<blockquote>
+<p>짤에서 보듯 건달한테 싸우라고 지시하는건 결국 최형배(하정우) 아니겠는가?</p>
+</blockquote>
+<ul>
+<li>객체는 나름대로의 특성을 가지고 있다.</li>
+</ul>
+<blockquote>
+<p>‘범죄와의전쟁’ 영화를 보면 최형배는 다리를 절고 있다.<br />
+최형배만이 가지고 있는 특성이라고 볼 수 있을것이다. (스포죄송…)</p>
+</blockquote>
+<ul>
+<li>비슷한 특성을 가진 객체들을 모아 '클래스’를 지을 수 있다.</li>
+</ul>
+<blockquote>
+<p>건달들이 모여있으면 조폭(조직폭력배)이라고 한다.</p>
+</blockquote>
+<h2 id="object-oriented객체지향"><a class="markdownIt-Anchor" href="#object-oriented객체지향"></a> Object Oriented(객체지향)</h2>
+<p><code>객체(Object)</code>라는 것을 위에서 알아보았다.</p>
+<p>그럼 지향(Oriented)은 무엇일까?</p>
+<p>국어사전에 검색해보면 <code>어떤 목표로 뜻이 쏠리어 향함.</code></p>
+<p>두 단어를 합치면</p>
+<ul>
+<li><code>객체를 향한다.</code></li>
+<li><code>객체를 추구한다.</code></li>
+</ul>
+<p>말이 이상해진다.</p>
+<p>적어도 객체지향에서의 지향은 <code>방향성</code>의 뜻보다, <code>위주</code>라는 말이 좀 더 어울린다고 생각한다.</p>
+<p>다시 합쳐보면 <code>객체 위주의</code> 정도의 뜻으로 이해할 수 있을것 같다.</p>
+<h2 id="object-oriented-programming-객체지향프로그래밍"><a class="markdownIt-Anchor" href="#object-oriented-programming-객체지향프로그래밍"></a> Object Oriented Programming (객체지향프로그래밍)</h2>
+<p>그럼 이제 모든 단어를 다시 합쳐보자.</p>
+<p>이제 어느정도 말이 된다고 생각한다.</p>
+<p><code>객체 위주의 프로그램을 작성하자</code>라고 이해할 수 있겠다.</p>
+<p>아까 객체에서 나열한대로 객체의 성질들을 코드상으로 나타내게 된다면 그것이 바로 <code>객체지향 프로그래밍</code>이 될것이다.</p>
+<p>그리고 그 객체들의 특성을 프로그래밍 언어상으로 구현하기 위해 다음과 같은 개념들이 정립 되기 시작했다.</p>
+<ul>
+<li>클래스 + 인스턴스(객체)</li>
+<li>캡슐화(Encapsulation)</li>
+<li>다형성(Polymorphism)</li>
+<li>상속성(inheritance)</li>
+<li>추상화(abstraction)</li>
+</ul>
+<h3 id="class-instance"><a class="markdownIt-Anchor" href="#class-instance"></a> Class + Instance</h3>
+<h4 id="class추상의-개념"><a class="markdownIt-Anchor" href="#class추상의-개념"></a> Class(추상의 개념)</h4>
+<p>클래스는 표현하기위한 대상(객체)의 공통적인 특징들을 서술한것이다.</p>
+<blockquote>
+<p>클래스는 분류에 대한 개념이며 실체화 된것이 아니다.</p>
+</blockquote>
+<p>이해하기 쉽게 말하자면 <strong>설계도</strong> 정도가 된다.</p>
+<h4 id="instance실체화의-개념"><a class="markdownIt-Anchor" href="#instance실체화의-개념"></a> Instance(실체화의 개념)</h4>
+<p>클래스에서 정의한것을 바탕으로</p>
+<p>실제 메모리에 할당이 된것들</p>
+<blockquote>
+<p>프로그램안에서 만들어졌다고 생각하자.</p>
+</blockquote>
+<h3 id="캡슐화encapsulation"><a class="markdownIt-Anchor" href="#캡슐화encapsulation"></a> 캡슐화(Encapsulation)</h3>
+<p>캡슐화는 일반적으로 연관이 있는 데이터들을 묶는 작업을 말한다.</p>
+<p>연관이 있는것들을 묶어서 생각을 하는건 자연스러운 일이다.</p>
+<blockquote>
+<p>네이버에 하정우를 치면 연관검색어로 김이 나오지 않는가?<br />
+연관이 있는것들을 묶는건 매우 자연스러운 일이다.</p>
+</blockquote>
+<p>객체 지향 프로그래밍에선 이렇게 연관된 변수 또는 함수들을 분류하고 묶어주는것을 말한다.</p>
+<blockquote>
+<p>필요한거만 보여주고 필요없는건 보여주지 않는 정보은닉의 개념도 포함하고 있다.</p>
+</blockquote>
+<h3 id="다형성polymorphism"><a class="markdownIt-Anchor" href="#다형성polymorphism"></a> 다형성(Polymorphism)</h3>
+<p>Polymorphism = Poly(많은,여러) + morph(형태) 라는 두개의 단어가 합쳐진 말이다.</p>
+<blockquote>
+<p>그리스어임<br />
+여러가지 형태라는 뜻을 가지고 있다.</p>
+</blockquote>
+<p>우리가 키보드를 사용할 때 수많은 키(객체)를 동작시킬 수 있는 방법은 키를 누르는것(지시)이다.</p>
+<p>하지만 똑같은 동작(키를 누르는것)을 해도 엔터(실행),ESC(취소),Sapce Bar(띄워쓰기)를 누를때 동작이 같지 않다는걸 우리는 알고있다.</p>
+<p>이러한 것을 다형성이라고 표현한다.</p>
+<blockquote>
+<p>같은명령을 각각 다른 객체에 줄 수 있다.</p>
+</blockquote>
+<h3 id="상속성inheritance"><a class="markdownIt-Anchor" href="#상속성inheritance"></a> 상속성(inheritance)</h3>
+<p>우리는 클래스가 연관되어 있는 데이터들을 묶어서 가지고 있다는것(캡슐화)을 알고 있다.</p>
+<p>이러한 클래스가 가지고 있는 특징들을 그대로 다른 클래스가 물려 받는것을 상속한다고 표현한다.</p>
+<img src="/2019/11/OOP/oop_inheritance.png" class="" title="oop_inheritance"> 
+<p><s>왕위를 멋대로 상속받는 아서스 짤</s></p>
+<h3 id="추상화abstraction"><a class="markdownIt-Anchor" href="#추상화abstraction"></a> 추상화(abstraction)</h3>
+<p>자동차를 예시로 들어 보겠다.<br />
+자동차는 흡입,압축,동력,배기라는 4행정 사이클을 통해 약 2만여개의 부품이 맞물려 움직이는 객체이다.</p>
+<p>하지만 우리가 그런걸 알 필요가 있었는가?</p>
+<p>우리는 그저 핸들,엑셀,브레이크,기어가 무슨역할을 하는지만 알면 자동차를 움직일 수 있다.</p>
+<blockquote>
+<p>운전을 잘하는거랑은 별개임</p>
+</blockquote>
+<p>이러한 것을 추상화라고 한다.</p>
+<p>객체를 사용할 때(지시) 사용자는 어떠한 원리로 그 객체가 이루어졌는지 완벽히 이해하지 않아도 그저 사용법에 맞게 사용하면 되는 것이다.</p>
+<p>미술에도 이러한 개념이 있다.<br />
+바로 추상미술이라는것이다.</p>
+<p>대상을 구체적인 형상으로 나타내는것이 아니라</p>
+<p>점,선,면,색을 통해 핵심적인 부분만 나타내어  그리는것을 말한다.</p>
+<p><strong>자세한 내부정보는 숨기고 핵심적인 기능만 간추려 보여주는것을 추상화라고 한다.</strong></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Swift%EA%B8%B0%EC%B4%88/" rel="tag"># Swift기초</a>
+              <a href="/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" rel="tag"># 프로그래밍</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-5/" rel="next" title="Swift 과제 풀이 5">
+                  <i class="fa fa-chevron-left"></i> Swift 과제 풀이 5
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/" rel="prev" title="블로그 방문자 카운팅하기">
+                  블로그 방문자 카운팅하기 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#oopobject-oriented-programming"><span class="nav-number">1.</span> <span class="nav-text"> OOP(Object Oriented Programming)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#object객체"><span class="nav-number">1.1.</span> <span class="nav-text"> Object(객체)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#object-oriented객체지향"><span class="nav-number">1.2.</span> <span class="nav-text"> Object Oriented(객체지향)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#object-oriented-programming-객체지향프로그래밍"><span class="nav-number">1.3.</span> <span class="nav-text"> Object Oriented Programming (객체지향프로그래밍)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#class-instance"><span class="nav-number">1.3.1.</span> <span class="nav-text"> Class + Instance</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#class추상의-개념"><span class="nav-number">1.3.1.1.</span> <span class="nav-text"> Class(추상의 개념)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instance실체화의-개념"><span class="nav-number">1.3.1.2.</span> <span class="nav-text"> Instance(실체화의 개념)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#캡슐화encapsulation"><span class="nav-number">1.3.2.</span> <span class="nav-text"> 캡슐화(Encapsulation)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#다형성polymorphism"><span class="nav-number">1.3.3.</span> <span class="nav-text"> 다형성(Polymorphism)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#상속성inheritance"><span class="nav-number">1.3.4.</span> <span class="nav-text"> 상속성(inheritance)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#추상화abstraction"><span class="nav-number">1.3.5.</span> <span class="nav-text"> 추상화(abstraction)</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hong3"
+      src="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+  <p class="site-author-name" itemprop="name">Hong3</p>
+  <div class="site-description" itemprop="description">개발을 잘하고 싶읍니다</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/rss2.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hongdonghyun" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;hongdonghyun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:hong4367@gmail.com" title="E-mail &amp;rarr; mailto:hong4367@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hong3</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+
+<span id="busuanzi_container_site_pv">
+  총 조회 <span id="busuanzi_value_site_pv"></span> 회
+</span> |
+<span id="busuanzi_container_site_uv">
+  총 방문자 <span id="busuanzi_value_site_uv"></span> 명
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hong3.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://hongdonghyun.github.io/2019/11/OOP/",
+            identifier: "2019/11/OOP/",
+            title: "객체지향이란 도대체 무엇인가"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://hong3.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+</script>
+
+</body>
+</html>
