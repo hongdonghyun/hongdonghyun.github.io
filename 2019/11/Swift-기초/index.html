@@ -390,6 +390,18 @@ Float 4Byte</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">returnTrue</span><span class="params">()</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"function called"</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 아래 3개의 케이스에서 returnTrue 메서드는 각각 몇 번씩 호출될까?</span></span><br><span class="line"><span class="comment">// 우선순위 : &amp;&amp; &gt; ||</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\n---------- [ Case 1 ] ----------\n"</span>)</span><br><span class="line">returnTrue() &amp;&amp; returnTrue() &amp;&amp; <span class="literal">false</span> || <span class="literal">true</span> &amp;&amp; returnTrue()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\n---------- [ Case 2 ] ----------\n"</span>)</span><br><span class="line">returnTrue() &amp;&amp; <span class="literal">false</span> &amp;&amp; returnTrue() || returnTrue()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\n---------- [ Case 3 ] ----------\n"</span>)</span><br><span class="line">returnTrue() || returnTrue() &amp;&amp; returnTrue() || <span class="literal">false</span> &amp;&amp; returnTrue()</span><br></pre></td></tr></table></figure>
 
     </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 
     
     
