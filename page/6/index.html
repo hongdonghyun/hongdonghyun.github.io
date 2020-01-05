@@ -205,6 +205,137 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-if%EC%99%80-guard/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/Swift-if%EC%99%80-guard/" class="post-title-link" itemprop="url">[Swift]if와 guard</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2019-11-28 10:21:03 / Updated at: 12:31:14" itemprop="dateCreated datePublished" datetime="2019-11-28T10:21:03+09:00">2019-11-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/Swift-if%EC%99%80-guard/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-if와-guard/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="if와-guard"><a class="markdownIt-Anchor" href="#if와-guard"></a> if와 guard</h1>
+<p>swift를 처음 배울때 <code>Optional</code>이라는 개념에서 신기했었는데,</p>
+<p><code>Optional</code>이라는것을 풀어주기 위해 <code>Optional Binding</code>이라는걸 배우고,<br />
+이 과정에서 <code>if</code>와 ,<code>guard</code> 로 풀 수 있다는걸 배웠다.</p>
+<p><code>if</code>는 많은 언어에서 사용하는 조건문이라 익숙했지만,<br />
+<code>guard</code>는 처음보는 예약어라 무슨일을 하는건지 궁금해서 찾아보고 포스팅 하게 되었다.</p>
+<h1 id="if"><a class="markdownIt-Anchor" href="#if"></a> if</h1>
+<p>if문은 대부분의 사람들이 많은 경험과 학습을 통해<br />
+자연스럽게 인지할 수 있다.</p>
+<p>if를 한글로 번역해 보면 <code>만약</code>이라는 뜻을 가지고 있다.</p>
+<p><code>입력받은 두 수가 양의정수 일때만 곱해주는 함수</code></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">multiple</span><span class="params">(<span class="number">_</span> a: Int, <span class="number">_</span> b: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> a &gt; <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> b &gt; <span class="number">0</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> a * b</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이런식으로 코드를 작성할 수 있겠다.</p>
+<h1 id="guard"><a class="markdownIt-Anchor" href="#guard"></a> guard</h1>
+<p>다음으로 guard문을 살펴보자.</p>
+<p>적어도 나는 guard라는 문법이 생소했다.</p>
+<p>그래서 swift를 제일 처음 접했을때 Optional Binding이 뭔지도 모르겠는데 그걸 guard let 어쩌고 해서 쓰는 코드를 보고 난감했던 기억이 난다.</p>
+<p>guard를 한글로 번역해보면 <code>방어</code>,<code>방어하다</code> 정도가 된다.</p>
+<p>무언가를 막는다는 뜻으로 이해가 될 것 같다.</p>
+<p>그렇다면 무엇을 막을까?</p>
+<p>if문에서 썼던 코드를 guard로 바꾸어 보자</p>
+<p><code>입력받은 두 수가 양의정수 일때만 곱해주는 함수</code></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">multiple</span><span class="params">(<span class="number">_</span> a: Int, <span class="number">_</span> b: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">guard</span> a &gt; <span class="number">0</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> -<span class="number">1</span> &#125;</span><br><span class="line">    <span class="keyword">guard</span> b &gt; <span class="number">0</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> -<span class="number">1</span> &#125;</span><br><span class="line">    <span class="keyword">return</span> a * b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>if문의 코드와 비교해보자<br />
+극적인 효과를 위해 if문을 늘여 쓰긴 했지만<br />
+한눈에봐도 guard문이 더 간결해진것을 확인할 수 있다.</p>
+<h1 id="언제-무엇을-써야할까"><a class="markdownIt-Anchor" href="#언제-무엇을-써야할까"></a> 언제 무엇을 써야할까?</h1>
+<p>그렇다면 언제 써야할까?</p>
+<p>if문의 depth가 깊어질때나</p>
+<p>조건을 통과하지 못하면 더이상 실행될 필요가 없을때 <code>guard</code>문을 쓰면 좋겠다는 생각이 들었다.</p>
+<blockquote>
+<p>물론 if문으로도 가능하다.<br />
+하지만 가독성을 해칠위험성이 있다.</p>
+</blockquote>
+<p>guard문은 조건을 만족하지 않는 순간 더이상 아래에있는 코드를 실행하지 않는다.</p>
+<p>if문에 비해 조건검사가 좀 더 명료해지며 간결해진다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-Frame%EA%B3%BC-Bounds/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -504,114 +635,11 @@ Y축은 아래로 내려갈수록 +가 된다.</p>
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/Swift-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/" class="post-title-link" itemprop="url">[Swift]핸드폰 번호 가리기</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2019-11-26 10:08:07 / Updated at: 13:27:57" itemprop="dateCreated datePublished" datetime="2019-11-26T10:08:07+09:00">2019-11-26</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/Swift-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-핸드폰-번호-가리기/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
-<p><a href="https://programmers.co.kr/learn/courses/30/lessons/12948" target="_blank" rel="noopener">프로그래머스 링크</a></p>
-<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> phone_number:String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> resultString = <span class="type">String</span>(repeating: <span class="string">"*"</span>,<span class="built_in">count</span>: phone_number.<span class="built_in">count</span>-<span class="number">4</span>)</span><br><span class="line">    <span class="keyword">let</span> index = phone_number.index(phone_number.endIndex, offsetBy: -<span class="number">4</span>)</span><br><span class="line">    <span class="keyword">let</span> mySubstring = phone_number[index...]</span><br><span class="line">    <span class="keyword">return</span> resultString + mySubstring</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
-<p>문제에 뒷자리 4자리를 제외한 나머지를 <strong><code>*</code></strong> 로 치환하라는 문제였다.</p>
-<p>전체 문자열 중 뒤의 4자리를 제외한 만큼의 <strong><code>*</code></strong> 이 찍힌 문자열을 만들고</p>
-<p>가장 마지막 4자리를 slicing하여 뽑아내고 합쳐서 리턴 해주면 된다.</p>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
 
@@ -657,20 +685,20 @@ Y축은 아래로 내려갈수록 +가 된다.</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">61</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -708,7 +736,7 @@ Y축은 아래로 내려갈수록 +가 된다.</p>
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

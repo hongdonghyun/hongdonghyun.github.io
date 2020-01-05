@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+<meta name="naver-site-verification" content="0561be7c378c2cd6bbee3400289c53c4d8f2d474"/>
+<script data-ad-client="ca-pub-4844823680997120" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/rss2.xml" title="Hong3의 개발블로그" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '복사',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="트위치 최근 트위치에 채널 포인트라는 제도가 생겼다.   포인트를 소모하여 보상을 얻을 수 있다. 시간제한이 있는 구독자 전용 이모티콘이나 채팅에 하이라이팅 효과를 먹일수 있다.  채널 포인트를 획득하는 방법은 이것저것 있지만 방송을 계속 시청하거나 15분 간격으로 나오는 버튼을 누르면 50포인트를 얻을 수 있다.   저 버튼이다.  해당버튼을 누르지 않">
+<meta name="keywords" content="Twitch,트위치,javascript,electron,트위치 채널포인트,자동클릭">
+<meta property="og:type" content="article">
+<meta property="og:title" content="트위치 채널 포인트 자동클릭">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;01&#x2F;%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD&#x2F;index.html">
+<meta property="og:site_name" content="Hong3의 개발블로그">
+<meta property="og:description" content="트위치 최근 트위치에 채널 포인트라는 제도가 생겼다.   포인트를 소모하여 보상을 얻을 수 있다. 시간제한이 있는 구독자 전용 이모티콘이나 채팅에 하이라이팅 효과를 먹일수 있다.  채널 포인트를 획득하는 방법은 이것저것 있지만 방송을 계속 시청하거나 15분 간격으로 나오는 버튼을 누르면 50포인트를 얻을 수 있다.   저 버튼이다.  해당버튼을 누르지 않">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;01&#x2F;%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD&#x2F;channel_point.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;01&#x2F;%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD&#x2F;channel_point2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;01&#x2F;%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD&#x2F;channel_point3.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;01&#x2F;%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD&#x2F;channel_point4.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;01&#x2F;%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD&#x2F;channel_point5.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;01&#x2F;%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD&#x2F;channel_point6.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;01&#x2F;%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD&#x2F;channel_point7.png">
+<meta property="og:updated_time" content="2020-01-05T14:02:26.638Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;01&#x2F;%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD&#x2F;channel_point.png">
+
+<link rel="canonical" href="http://hongdonghyun.github.io/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>트위치 채널 포인트 자동클릭 | Hong3의 개발블로그</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106140746-2"></script>
+    <script>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-106140746-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script data-ad-client="ca-pub-4844823680997120" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hong3의 개발블로그</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">- dev hong3</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>태그</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          트위치 채널 포인트 자동클릭
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2020-01-05 22:20:07 / Updated at: 23:02:26" itemprop="dateCreated datePublished" datetime="2020-01-05T22:20:07+09:00">2020-01-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/트위치-채널-포인트-자동클릭/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="트위치"><a class="markdownIt-Anchor" href="#트위치"></a> 트위치</h2>
+<p>최근 트위치에 채널 포인트라는 제도가 생겼다.</p>
+<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point.png" class="" title="channel_point">
+<blockquote>
+<p>포인트를 소모하여 보상을 얻을 수 있다.<br />
+시간제한이 있는 구독자 전용 이모티콘이나 채팅에 하이라이팅 효과를 먹일수 있다.</p>
+</blockquote>
+<p>채널 포인트를 획득하는 방법은 이것저것 있지만 방송을 계속 시청하거나 15분 간격으로 나오는 버튼을 누르면 50포인트를 얻을 수 있다.</p>
+<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point2.png" class="" title="channel_point2">
+<blockquote>
+<p>저 버튼이다.</p>
+</blockquote>
+<p>해당버튼을 누르지 않아도 계속시청하면 많은 포인트를 쌓을 수 있지만<br />
+생각보다 저 버튼이 거슬린다.</p>
+<p>그래서 저 버튼을 자동으로 누르게 할수는 없을까 고민을 하다가 트위치가 <a href="https://electronjs.org/" target="_blank" rel="noopener">Electron</a>으로 만들었다는걸 어디서 들은것 같아 시도해보았다.</p>
+<blockquote>
+<p>Electron은<br />
+html,javascript로 데스크탑 앱을 만드는 오픈소스<br />
+슬랙, 디스코드등이 이걸로 만들어졌음</p>
+</blockquote>
+<p>웹의 언어를 기반으로 만들었으니 개발자도구를 열어서 내부구현을 확인할 수 있지 않을까 라는 생각으로 시도했고</p>
+<p>내 생각은 적중했다.<br />
+Mac에서는 cmd + alt + i<br />
+Windows에서는 F12를 누르면 개발자도구가 뙇 하고 열린다.</p>
+<blockquote>
+<p>브라우저에서 보는것도 동일하다.<br />
+일렉트론은 크롬 개발자도구를 기본 내장한다고 한다.</p>
+<blockquote>
+<p>슬랙에서도 시도해보았으나 안열림<br />
+다른툴을 쓰면 열 수 있다고 하는데 그렇게까지 하고 싶진 않았다.</p>
+</blockquote>
+</blockquote>
+<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point3.png" class="" title="channel_point3">
+<blockquote>
+<p><a href="https://www.twitch.tv/hanryang1125" target="_blank" rel="noopener">풍월량</a>님 방송입니다.<br />
+문제 되면 글내림</p>
+</blockquote>
+<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point4.png" class="" title="channel_point4">
+<blockquote>
+<p>이제 이 버튼을 찾아 클릭하게 만들어주면 된다.</p>
+</blockquote>
+<p>요소검사기를 통해 저 버튼을 누르면</p>
+<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point5.png" class="" title="channel_point5">
+<p>이렇게 html코드를 친절히 확인할 수 있다.</p>
+<p>저 버튼은 15분에 한번씩 뜨지만 난 저 버튼을 이제 10초에 한번씩 누르게 만들것이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pointClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementsByClassName(<span class="string">"claimable-bonus__icon tw-flex"</span>)[<span class="number">0</span>].click()</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"성공"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">catch</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;    </span><br><span class="line">setInterval(pointClick,<span class="number">10000</span>)</span><br></pre></td></tr></table></figure>
+<p>setInerval을 통해 10초에 한번씩 함수를 실행하게 만들고</p>
+<p>함수 구현부분에서 클릭해야할 요소를 <code>getElementClassName</code>을 통해 찾아내고 클릭하게 만든다.</p>
+<p>당연히 저 버튼이 없는데 버튼을 클릭하려고 시도할것이고 그렇게 되면 에러가 쌓인다.<br />
+try-catch문을 통해 에러 메시지가 쌓이지 않도록 처리해주었다.</p>
+<p>이제 저 코드를 콘솔창에서 실행 시켜주면 끝난다.</p>
+<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point6.png" class="" title="channel_point6">
+<p>이렇게 입력해주고 엔터를 누른후 10초 기다리면</p>
+<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point7.png" class="" title="channel_point7">
+<p>성공이다.</p>
+<h2 id="문제점"><a class="markdownIt-Anchor" href="#문제점"></a> 문제점</h2>
+<p>이유는 알 수 없으나 개발자도구를 켜놓은 상태로 트위치를 사용하다보면 크래쉬 나면서 꺼지기도 한다.</p>
+<p>당연하지만 트위치 데스크탑 앱이나 브라우저를 껏다키면 해당부분도 없어지니 매번 킬때마다 다시 입력해줘야한다.</p>
+<p>나중에 이걸 크롬 익스텐션으로도 한번 만들어 보아야겠다.</p>
+
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Twitch/" rel="tag"># Twitch</a>
+              <a href="/tags/%ED%8A%B8%EC%9C%84%EC%B9%98/" rel="tag"># 트위치</a>
+              <a href="/tags/javascript/" rel="tag"># javascript</a>
+              <a href="/tags/electron/" rel="tag"># electron</a>
+              <a href="/tags/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90%ED%8F%AC%EC%9D%B8%ED%8A%B8/" rel="tag"># 트위치 채널포인트</a>
+              <a href="/tags/%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/" rel="tag"># 자동클릭</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/12/Swift-%EC%8B%9C%ED%97%98%EA%B3%B5%EB%B6%80/" rel="next" title="Swift 시험공부">
+                  <i class="fa fa-chevron-left"></i> Swift 시험공부
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#트위치"><span class="nav-number">1.</span> <span class="nav-text"> 트위치</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#문제점"><span class="nav-number">2.</span> <span class="nav-text"> 문제점</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hong3"
+      src="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+  <p class="site-author-name" itemprop="name">Hong3</p>
+  <div class="site-description" itemprop="description">개발을 잘하고 싶읍니다</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">61</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/rss2.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hongdonghyun" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;hongdonghyun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:hong4367@gmail.com" title="E-mail &amp;rarr; mailto:hong4367@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hong3</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+
+<span id="busuanzi_container_site_pv">
+  총 조회 <span id="busuanzi_value_site_pv"></span> 회
+</span> |
+<span id="busuanzi_container_site_uv">
+  총 방문자 <span id="busuanzi_value_site_uv"></span> 명
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hong3.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://hongdonghyun.github.io/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/",
+            identifier: "2020/01/트위치-채널-포인트-자동클릭/",
+            title: "트위치 채널 포인트 자동클릭"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://hong3.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+</script>
+
+</body>
+</html>
