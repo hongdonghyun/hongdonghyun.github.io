@@ -8,32 +8,8 @@
     </url>
 
     <url>
-        <loc>http://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/</loc>
-        <lastmod>2020-01-06T08:45:45.386Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/</loc>
-        <lastmod>2020-01-06T08:45:37.642Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/</loc>
-        <lastmod>2020-01-06T08:45:28.286Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
-        <lastmod>2020-01-06T08:45:17.226Z</lastmod>
+        <lastmod>2020-01-06T08:48:28.460Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -41,7 +17,31 @@
 
     <url>
         <loc>http://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
-        <lastmod>2020-01-06T08:45:06.507Z</lastmod>
+        <lastmod>2020-01-06T08:48:12.153Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
+        <lastmod>2020-01-06T08:48:02.646Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/</loc>
+        <lastmod>2020-01-06T08:47:45.605Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/</loc>
+        <lastmod>2020-01-06T08:47:37.487Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -49,7 +49,7 @@
 
     <url>
         <loc>http://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
-        <lastmod>2020-01-06T08:44:04.660Z</lastmod>
+        <lastmod>2020-01-06T08:47:28.327Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
