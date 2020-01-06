@@ -205,6 +205,118 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%ED%94%84%EB%A6%B0%ED%84%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/Swift-%ED%94%84%EB%A6%B0%ED%84%B0/" class="post-title-link" itemprop="url">[Swift]프린터</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2019-12-17 22:47:30 / Updated at: 23:04:53" itemprop="dateCreated datePublished" datetime="2019-12-17T22:47:30+09:00">2019-12-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/12/Swift-%ED%94%84%EB%A6%B0%ED%84%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-프린터/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/42587" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> priorities:[Int], <span class="number">_</span> location:Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> _return: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> indexingArray: [[<span class="type">Int</span>]] = [], resultArray: [[<span class="type">Int</span>]] = []</span><br><span class="line">    <span class="keyword">for</span> (index, p) <span class="keyword">in</span> priorities.enumerated() &#123; indexingArray.append([p,index]) &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> !indexingArray.isEmpty &#123;</span><br><span class="line">        <span class="keyword">let</span> firstPop = indexingArray.remove(at: <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">var</span> <span class="type">PArray</span>: [<span class="type">Int</span>] = []</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> indexingArray &#123; <span class="type">PArray</span>.append(i[<span class="number">0</span>]) &#125;</span><br><span class="line">        <span class="keyword">let</span> maxP = !<span class="type">PArray</span>.isEmpty ? <span class="type">PArray</span>.<span class="built_in">max</span>()! : firstPop[<span class="number">0</span>]</span><br><span class="line">        firstPop[<span class="number">0</span>] &gt;= maxP ? resultArray.append(firstPop) : indexingArray.append(firstPop)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (index, result) <span class="keyword">in</span> resultArray.enumerated() &#123;</span><br><span class="line">        <span class="keyword">if</span> result[<span class="number">1</span>] == location &#123;</span><br><span class="line">            _return = index + <span class="number">1</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _return</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p>큐를 사용하는 문제다.<br />
+문제가 큐라는것을 알았지만 정작 풀때 어떻게 써야할지 몰라 고민을 많이 했던 문제다.</p>
+<p>입력으로 들어온 배열은 순회하면서 가장큰값이 앞으로 나오고 작은값은 뒤로가게 해서<br />
+주어진 location과 같은 값을 출력하는 문제다.</p>
+<p>1.주어진 배열을 먼저 index값을 포함하여 이중배열로 만든다.<br />
+2. 2중배열에 값이 없을때 까지 순회를 돈다.<br />
+3. 2중배열의 가장 첫번째 값을 꺼낸다. (Dequeue)<br />
+4. 2중배열의 우선순위 값만 다시 배열로 만든다.<br />
+5. 우선순위 배열의 가장 큰 값을 꺼낸다.<br />
+6. POP한 우선순위와 우선순위배열의 가장 큰값과 비교하여 POP 크다면 새로운 배열에 append 아니라면 이중배열의 가장뒤쪽으로 보낸다 (Enqueue)<br />
+7. 1 ~ 6 과정을 이중배열이 없을때 까지 반복<br />
+8. 결과배열을 순회하여 index값과 location을 비교하여 같은경우 index에 +1한 값을 출력해주면 된다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-UITableView/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -495,143 +607,6 @@ Frame 기반에 비해 느린 성능</p>
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EC%88%AB%EC%9E%90%EC%95%BC%EA%B5%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/Swift-%EC%88%AB%EC%9E%90%EC%95%BC%EA%B5%AC/" class="post-title-link" itemprop="url">[Swift]숫자야구</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-
-              <time title="Post created: 2019-12-10 10:55:56" itemprop="dateCreated datePublished" datetime="2019-12-10T10:55:56+09:00">2019-12-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-12-13 12:35:24" itemprop="dateModified" datetime="2019-12-13T12:35:24+09:00">2019-12-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/12/Swift-%EC%88%AB%EC%9E%90%EC%95%BC%EA%B5%AC/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-숫자야구/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
-<p><a href="https://programmers.co.kr/learn/courses/30/lessons/42841" target="_blank" rel="noopener">프로그래머스 링크</a></p>
-<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> baseball:[[Int]])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> answer = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">123</span>...<span class="number">987</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> itos = <span class="type">String</span>(i)</span><br><span class="line">        <span class="keyword">var</span> flag = <span class="literal">true</span></span><br><span class="line">        <span class="keyword">if</span> itos[itos.startIndex] == itos[itos.index(after: itos.startIndex)] || itos[itos.startIndex] == itos[itos.index(before: itos.endIndex)] || itos[itos.index(after: itos.startIndex)] == itos[itos.index(before: itos.endIndex)] &#123; <span class="keyword">continue</span> &#125;</span><br><span class="line">        <span class="keyword">if</span> itos.<span class="built_in">contains</span>(<span class="string">"0"</span>) &#123;</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> b <span class="keyword">in</span> baseball &#123;</span><br><span class="line">            <span class="keyword">var</span> strike = <span class="number">0</span>, ball = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">0</span>...<span class="number">2</span> &#123;</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="number">0</span>...<span class="number">2</span> &#123;</span><br><span class="line">                    <span class="keyword">let</span> checkBaseball = <span class="type">String</span>(b[<span class="number">0</span>])</span><br><span class="line">                    <span class="keyword">let</span> jIndex = checkBaseball.index(checkBaseball.startIndex, offsetBy: j)</span><br><span class="line">                    <span class="keyword">let</span> kIndex = checkBaseball.index(checkBaseball.startIndex, offsetBy: k)</span><br><span class="line">                    </span><br><span class="line">                    <span class="comment">// 스트라이크</span></span><br><span class="line">                    <span class="keyword">if</span> j == k &amp;&amp; itos[jIndex] == checkBaseball[kIndex] &#123;</span><br><span class="line">                        strike += <span class="number">1</span></span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">// 볼                    </span></span><br><span class="line">                    <span class="keyword">if</span> j != k &amp;&amp; itos[jIndex] == checkBaseball[kIndex] &#123;</span><br><span class="line">                        ball += <span class="number">1</span></span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> strike != b[<span class="number">1</span>] || ball != b[<span class="number">2</span>] &#123;</span><br><span class="line">                flag = <span class="literal">false</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> flag &#123;</span><br><span class="line">            answer += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
-<p>해당문제는 완전탐색 카테고리에 있는 문제다.<br />
-뭔가 탐색에 더 나은방법이 있을까 해서 고민했지만 정말로 완전탐색을 해야하는 문제였다.</p>
-<p>문제의 조건에 다음과 같은문구가 있다.</p>
-<p><code>각자 서로 다른 1~9까지 3자리 임의의 숫자를 정한 뒤 서로에게 3자리의 숫자를 불러서 결과를 확인합니다.</code></p>
-<p><strong>서로 다른 1~9까지의 3자리 임의의 숫자</strong></p>
-<p>이말은 서로 정한 숫자가 중복되지 않고 0을 포함하지 않는다는 말이 된다.</p>
-<p>또한, 3자리의 임의의 숫자중 가장 큰 수는 999다.<br />
-범위는 100~999이 될 수 있겠다.</p>
-<p>조금 더 생각해보면 0과 숫자가 중복이 되지 않는다고 한다.<br />
-그렇다면 범위를 123 ~ 987까지 줄일수 있다.</p>
-<blockquote>
-<p>987인 경우는 999가 가장 큰 상황에서 중복을 허용하지 않는다는 전제조건이 있었으니<br />
-987이 가장큰 수가된다.</p>
-</blockquote>
-<p>그럼 123 ~ 987까지 전체 순회를 돌면서</p>
-<p>주어진 경우의 수들에 모두 맞는 숫자를 뽑아내면 된다.</p>
-<blockquote>
-<p>항상 말은 쉽다.</p>
-</blockquote>
-<h1 id="순서"><a class="markdownIt-Anchor" href="#순서"></a> 순서</h1>
-<ol>
-<li>가장 바깥의 순회는 123 ~ 987을 돈다.</li>
-<li>숫자의 중복,0 포함의 경우는 순회를 건너뛴다.</li>
-<li>주어진 경우의수를 순회한다.</li>
-<li>바깥의 수와 주어진 수의 자릿수를 비교한다. (0:0,0:1,0:2,1:0,1:1,1:2) 이런순서로</li>
-<li>자릿수가 같으면서 값이 같으면 스트라이크</li>
-<li>자릿수가 다르지만 값이 같다면 볼</li>
-<li>주어진 스트라이크,볼 카운트를 직접센 카운트와 비교</li>
-<li>카운트(스트라이크,볼)가 하나라도 다르면 그건 다음번 수가 될 수 없다.</li>
-<li>이런식으로 뽑아낸 모든 숫자들의 갯수를 리턴하면 된다.</li>
-</ol>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -682,7 +657,7 @@ Frame 기반에 비해 느린 성능</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-count">62</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -695,7 +670,7 @@ Frame 기반에 비해 느린 성능</p>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">61</span>
+        <span class="site-state-item-count">62</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
