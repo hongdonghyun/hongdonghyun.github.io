@@ -68,7 +68,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;01&#x2F;%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD&#x2F;channel_point5.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;01&#x2F;%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD&#x2F;channel_point6.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;01&#x2F;%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD&#x2F;channel_point7.png">
-<meta property="og:updated_time" content="2020-01-06T01:18:57.809Z">
+<meta property="og:updated_time" content="2020-01-06T01:22:04.210Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;01&#x2F;%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD&#x2F;channel_point.png">
 
@@ -244,7 +244,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2020-01-06 10:18:57" itemprop="dateModified" datetime="2020-01-06T10:18:57+09:00">2020-01-06</time>
+                <time title="Updated at: 2020-01-06 10:22:04" itemprop="dateModified" datetime="2020-01-06T10:22:04+09:00">2020-01-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -315,7 +315,7 @@ html,javascript로 데스크탑 앱을 만드는 오픈소스<br />
 Mac에서는 cmd + alt + i<br />
 Windows에서는 F12를 누르면 개발자도구가 뙇 하고 열린다.</p>
 <blockquote>
-<p>브라우저에서 보는것도 동일하다.<br />
+<p>(크롬기준) 브라우저에서도 동일하다.<br />
 일렉트론은 크롬 개발자도구를 기본 내장한다고 한다.</p>
 <blockquote>
 <p>슬랙에서도 시도해보았으나 안열림<br />
@@ -334,12 +334,13 @@ Windows에서는 F12를 누르면 개발자도구가 뙇 하고 열린다.</p>
 <p>요소검사기를 통해 저 버튼을 누르면</p>
 <img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point5.png" class="" title="channel_point5">
 <p>이렇게 html코드를 친절히 확인할 수 있다.</p>
-<p>저 버튼은 15분에 한번씩 뜨지만 난 저 버튼을 이제 10초에 한번씩 누르게 만들것이다.</p>
+<p>저 버튼은 15분에 한번씩 뜨지만 난 버튼을 이제 10초에 한번씩 누르게 만들것이다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pointClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementsByClassName(<span class="string">"claimable-bonus__icon tw-flex"</span>)[<span class="number">0</span>].click()</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"성공"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">catch</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;    </span><br><span class="line">setInterval(pointClick,<span class="number">10000</span>)</span><br></pre></td></tr></table></figure>
 <p>setInerval을 통해 10초에 한번씩 함수를 실행하게 만들고</p>
 <p>함수 구현부분에서 클릭해야할 요소를 <code>getElementClassName</code>을 통해 찾아내고 클릭하게 만든다.</p>
-<p>당연히 저 버튼이 없는데 버튼을 클릭하려고 시도할것이고 그렇게 되면 에러가 쌓인다.<br />
-try-catch문을 통해 에러 메시지가 쌓이지 않도록 처리해주었다.</p>
+<p>당연히 10초에 한번씩 함수가 동작하게 만들었으니<br />
+버튼이 없는데 버튼을 클릭하려고 시도할것이고 그렇게 되면 에러가 쌓인다.</p>
+<p>try-catch문을 통해 에러 메시지가 쌓이지 않도록 처리해주었다.</p>
 <p>이제 저 코드를 콘솔창에서 실행 시켜주면 끝난다.</p>
 <img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point6.png" class="" title="channel_point6">
 <p>이렇게 입력해주고 엔터를 누른후 10초 기다리면</p>
