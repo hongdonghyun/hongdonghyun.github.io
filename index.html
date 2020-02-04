@@ -230,7 +230,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2020-02-04 20:32:12 / Updated at: 20:48:52" itemprop="dateCreated datePublished" datetime="2020-02-04T20:32:12+09:00">2020-02-04</time>
+              <time title="Post created: 2020-02-04 20:32:12 / Updated at: 20:51:34" itemprop="dateCreated datePublished" datetime="2020-02-04T20:32:12+09:00">2020-02-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -282,7 +282,7 @@ git에 포함되지 않아야하는 <code>폴더</code>,<code>파일</code>들�
 <p>해당 내용을 바탕으로 스크립트를 만들고 싶었다.<br />
 <code>git</code>자체에 명령을 추가하는 방식도 있지만 좀 더 범용적이게 <code>shell function</code>으로 만들려고 했다.</p>
 <h3 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function gi() &#123;</span><br><span class="line">    status_code=$(curl -s -o /dev/null -w "%&#123;http_code&#125;" https://gitignore.io/api)</span><br><span class="line">    if [ $status_code == '200' ]; then</span><br><span class="line">        curl -sLw '\n' https://www.gitignore.io/api/$@ &gt; .gitignore ;</span><br><span class="line">        echo 'create .gitignore'</span><br><span class="line">    else</span><br><span class="line">        echo 'create fail\n reason: request failed';</span><br><span class="line">    fi</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gi</span></span>() &#123;</span><br><span class="line">    status_code=$(curl -s -o /dev/null -w <span class="string">"%&#123;http_code&#125;"</span> https://gitignore.io/api)</span><br><span class="line">    <span class="keyword">if</span> [ <span class="variable">$status_code</span> = <span class="string">'200'</span> ]; <span class="keyword">then</span></span><br><span class="line">        curl -sLw <span class="string">'\n'</span> https://www.gitignore.io/api/<span class="variable">$@</span> &gt; .gitignore ;</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">'create .gitignore'</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">'create fail\n reason: request failed'</span>;</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="사용법"><a class="markdownIt-Anchor" href="#사용법"></a> 사용법</h3>
 <p>사용법은 다음과 같다.</p>
 <ol>
