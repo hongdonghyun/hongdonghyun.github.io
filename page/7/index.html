@@ -205,6 +205,114 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98-%EC%88%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/Swift-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98-%EC%88%98/" class="post-title-link" itemprop="url">[Swift]피보나치 수</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2019-12-02 16:47:08 / Updated at: 16:53:25" itemprop="dateCreated datePublished" datetime="2019-12-02T16:47:08+09:00">2019-12-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/12/Swift-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98-%EC%88%98/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-피보나치-수/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/12945?language=swift" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> n:Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> f1 = <span class="number">0</span>, f2 = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">2</span>...n &#123;</span><br><span class="line">        <span class="keyword">var</span> temp = (f1 + f2) % <span class="number">1234567</span></span><br><span class="line">        f1 = f2</span><br><span class="line">        f2 = temp</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f2</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p>해당 문제는 재귀로 풀면 안된다.</p>
+<p><s>(적어도 나는 그렇게 생각한다.)</s></p>
+<p><a href="https://ko.wikipedia.org/wiki/%EB%A9%94%EB%AA%A8%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98" target="_blank" rel="noopener">메모이제이션</a> 방식을 사용하여 풀어야 한다.</p>
+<p>왜냐하면 문제의 제한 사항에서</p>
+<p><strong>n은 1이상, 100000이하인 자연수입니다.</strong></p>
+<p>이라는 조건이 붙었기 때문에 재귀로 푸는순간 100% 터진다.</p>
+<p>해당 부분만 알아낸다면 문제 자체의 난이도는 높지 않으니 금방 풀 수 있고,<br />
+어렵다면 코드도 올려놨으니 금방 이해할 수 있다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -478,164 +586,6 @@ google.signIn()</p>
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-Frame%EA%B3%BC-Bounds/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/Swift-Frame%EA%B3%BC-Bounds/" class="post-title-link" itemprop="url">Swift Frame과 Bounds</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2019-11-27 14:24:54 / Updated at: 17:14:13" itemprop="dateCreated datePublished" datetime="2019-11-27T14:24:54+09:00">2019-11-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Swift/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/Swift-Frame%EA%B3%BC-Bounds/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-Frame과-Bounds/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="framebound의-구성"><a class="markdownIt-Anchor" href="#framebound의-구성"></a> Frame,Bound의 구성</h1>
-<img src="/2019/11/Swift-Frame%EA%B3%BC-Bounds/frame,bounds_1.png" class="" title="asset_img frame,bounds_1">
-<blockquote>
-<p>UIView안에 있는 내용</p>
-</blockquote>
-<p><code>frame</code>과 <code>bounds</code>는 <code>CGRect</code> 타입으로 되어있다.</p>
-<img src="/2019/11/Swift-Frame%EA%B3%BC-Bounds/frame,bounds_2.png" class="" title="asset_img frame,bounds_2">
-<blockquote>
-<p>CGRect는 <code>origin</code>과 <code>size</code>를 가지며<br />
-각각 CGPoint와 CGSize를 가진다.</p>
-</blockquote>
-<img src="/2019/11/Swift-Frame%EA%B3%BC-Bounds/frame,bounds_3.png" class="" title="asset_img frame,bounds_3">
-<blockquote>
-<p>CGPoint</p>
-</blockquote>
-<img src="/2019/11/Swift-Frame%EA%B3%BC-Bounds/frame,bounds_4.png" class="" title="asset_img frame,bounds_4">
-<blockquote>
-<p>CGSize</p>
-</blockquote>
-<p>결국 <code>frame</code>과 <code>bounds</code>는 x,y좌표 width(너비),height(높이)를 가지고 있다.</p>
-<h1 id="xy좌표계"><a class="markdownIt-Anchor" href="#xy좌표계"></a> X,Y좌표계</h1>
-<p>Swift에서의 X,Y의 좌표계는 일반적인 좌표계랑 약간 다르다.</p>
-<p>휴대폰 화면을 기준으로 좌측상단이 (X,Y:0,0)이다.</p>
-<p>그리고 X축은 오른쪽으로 갈수록 +가 되고<br />
-Y축은 아래로 내려갈수록 +가 된다.</p>
-<h1 id="frame"><a class="markdownIt-Anchor" href="#frame"></a> Frame</h1>
-<p><a href="https://developer.apple.com/documentation/uikit/uiview/1622621-frame" target="_blank" rel="noopener">공식문서</a></p>
-<img src="/2019/11/Swift-Frame%EA%B3%BC-Bounds/frame1.png" class="" title="asset_img frame1">
-<p>킹글 번역기 : 수퍼 뷰의 좌표계에서 보기의 위치와 크기를 설명하는 프레임 사각형입니다.</p>
-<p>수-퍼 뷰 -&gt; 상위뷰 -&gt; Frame을 그린 뷰<br />
-슈퍼뷰의 좌표계 안에서 위치(x,y),크기(width,height)</p>
-<img src="/2019/11/Swift-Frame%EA%B3%BC-Bounds/frame_run1.png" class="" title="frame_run1">
-<blockquote>
-<p>greenView는 x,y값을 0,0으로 주었지만 redView안에있다.<br />
-슈퍼뷰의 좌표계 안에서 그려진것을 확인할 수 있었다.</p>
-</blockquote>
-<img src="/2019/11/Swift-Frame%EA%B3%BC-Bounds/frame_run2.png" class="" title="frame_run2">
-<blockquote>
-<p>가운데로 가자</p>
-</blockquote>
-<p><strong>위,아래 사진을 보며 움직임의 차이점을 보자</strong></p>
-<h1 id="bounds"><a class="markdownIt-Anchor" href="#bounds"></a> Bounds</h1>
-<p><a href="https://developer.apple.com/documentation/uikit/uiview/1622580-bounds" target="_blank" rel="noopener">공식문서</a></p>
-
-<p>킹글 번역기 : 경계 좌표 : 자체 좌표계에서 뷰의 위치와 크기를 설명합니다</p>
-<p>뷰의 위치(x,y)와 크기(width,height)를 자기 자신의 좌표계를 사용한다.</p>
-<img src="/2019/11/Swift-Frame%EA%B3%BC-Bounds/bounds_run1.png" class="" title="bounds_run1">
-<img src="/2019/11/Swift-Frame%EA%B3%BC-Bounds/bounds_run2.png" class="" title="bounds_run2">
-<blockquote>
-<p>위 사진은 위치가 바뀌었지만 x,y좌표가 0,0이다.<br />
-상위뷰와 상관없이 자기 자신의 좌표를 사용하기 때문이다.</p>
-</blockquote>
-<img src="/2019/11/Swift-Frame%EA%B3%BC-Bounds/bounds_run3.gif" class="" title="bounds_run3">
-<blockquote>
-<p>코드작성을 도와주신 <a href="https://github.com/vkcldhkd" target="_blank" rel="noopener">성현</a>님 감사합니다.</p>
-</blockquote>
-<p>해당 움짤을 보면 녹색의 뷰가 움직이지만<br />
-실제 코드상에서는 빨간뷰의 bounds값을 바꿔주었다.</p>
-<p>bounds값을 변경하는것은 빨간색뷰를 해당위치로 옮겨서 View를 다시 그리라는 것이므로</p>
-<p>실제로는 녹색뷰는 가만히 있고 빨간색뷰가 슬금슬금 움직여서 움직이는것 처럼 보이는것이다.</p>
-<h2 id="정리"><a class="markdownIt-Anchor" href="#정리"></a> 정리</h2>
-<p>Frame = 슈퍼뷰(상위뷰)의 좌표계에서 위치와 크기를 나타낸다.</p>
-<p>Bounds = 자기자신의 좌표계에서 위치와 크기를 나타낸다.</p>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -686,7 +636,7 @@ Y축은 아래로 내려갈수록 +가 된다.</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -699,7 +649,7 @@ Y축은 아래로 내려갈수록 +가 된다.</p>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">64</span>
+        <span class="site-state-item-count">67</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>

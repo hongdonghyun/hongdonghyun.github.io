@@ -205,6 +205,141 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/02/gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="post-title-link" itemprop="url">gitignore 스크립트 만들기</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2020-02-04 20:32:12 / Updated at: 20:48:52" itemprop="dateCreated datePublished" datetime="2020-02-04T20:32:12+09:00">2020-02-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/02/gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/gitignore-스크립트-만들기/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="gitignore"><a class="markdownIt-Anchor" href="#gitignore"></a> gitignore</h1>
+<h2 id="gitignore란"><a class="markdownIt-Anchor" href="#gitignore란"></a> gitignore란?</h2>
+<p>git으로 관리되고 있는 디렉토리내에서<br />
+git에 포함되지 않아야하는 <code>폴더</code>,<code>파일</code>들을 설정하게 제외시킬 수 있는설정파일</p>
+<h2 id="gitignoreio"><a class="markdownIt-Anchor" href="#gitignoreio"></a> <a href="http://gitignore.io" target="_blank" rel="noopener">gitignore.io</a></h2>
+<p><a href="http://gitignore.io/" target="_blank" rel="noopener">gitignore.io</a>여기로 가면 내가 원하는 gitignore파일을 만들 수 있다.</p>
+<img src="/2020/02/gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/gitignore1.png" class="" title="gitignore1">
+<h2 id="매번-입력하기-귀찮으니-스크립트로-만들자"><a class="markdownIt-Anchor" href="#매번-입력하기-귀찮으니-스크립트로-만들자"></a> 매번 입력하기 귀찮으니 스크립트로 만들자</h2>
+<p><a href="https://docs.gitignore.io/install/command-line" target="_blank" rel="noopener">gitignore docs</a><br />
+해당 링크로 가면 셸별로 command 명령어 모음이 있다.</p>
+<p>해당 내용을 바탕으로 스크립트를 만들고 싶었다.<br />
+<code>git</code>자체에 명령을 추가하는 방식도 있지만 좀 더 범용적이게 <code>shell function</code>으로 만들려고 했다.</p>
+<h3 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function gi() &#123;</span><br><span class="line">    status_code=$(curl -s -o /dev/null -w "%&#123;http_code&#125;" https://gitignore.io/api)</span><br><span class="line">    if [ $status_code == '200' ]; then</span><br><span class="line">        curl -sLw '\n' https://www.gitignore.io/api/$@ &gt; .gitignore ;</span><br><span class="line">        echo 'create .gitignore'</span><br><span class="line">    else</span><br><span class="line">        echo 'create fail\n reason: request failed';</span><br><span class="line">    fi</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="사용법"><a class="markdownIt-Anchor" href="#사용법"></a> 사용법</h3>
+<p>사용법은 다음과 같다.</p>
+<ol>
+<li>터미널을 킨다.</li>
+<li>zshrc파일을 열어준다 (MacOS의 경우 ~/로 가면 .zshrc가 있다.)</li>
+<li>.zshrc 파일 제일밑에 해당 함수를 넣어준다.</li>
+<li>터미널에서 <code>source ~/.zshrc</code> 혹은 터미널만 껐다킨다.</li>
+<li>이후 <code>.gitignore</code>를 만들고 싶은곳에서 <code>gi macos,python,swift</code> 등 내가 추가하고 싶은 파일을 <code>,</code>단위로 구분하여 입력한다.</li>
+<li>생성된 파일을 확인</li>
+</ol>
+<h3 id="설명"><a class="markdownIt-Anchor" href="#설명"></a> 설명</h3>
+<p>해당 함수는 두번에 걸쳐 <a href="http://gitignore.io/" target="_blank" rel="noopener">gitignore.io</a>에 <code>request</code>를 보낸다.<br />
+첫번째는 해당 서버가 살아있는지 확인후</p>
+<blockquote>
+<p>status code가 200이 떨어지는경우를 살아있다고 판단.</p>
+</blockquote>
+<p><a href="http://gitignore.io/" target="_blank" rel="noopener">gitignore.io</a>에 API로 터미널에서 입력받은 파라미터들을 붙여서 <code>GET</code>요청을 보낸다.<br />
+그러면 <code>response</code>에 해당 파라미터들에 관한 <code>ignore</code>내용들이 나오는데<br />
+내용들을 .gitignore라는 파일에 덮어씌우고 정상 생성되었다는 메시지를 출력하고 종료한다.</p>
+<blockquote>
+<p>이경우 파일이 없다면 자동으로 생성된다.</p>
+</blockquote>
+<p>만약 서버가 살아있지않다면 파일생성을 하지 않고 실패했다는 메시지를 출력하고 종료한다.</p>
+<h2 id="마치며"><a class="markdownIt-Anchor" href="#마치며"></a> 마치며</h2>
+<p>사실 셸 스크립트를 다루어본적은 몇번 없어서 저 짧은 코드를 쓰는데 꽤나 애를먹었다.<br />
+그래도 검색을 하고 내가 원하는 내용인지 판단하고 테스트하는 실력이 많이 올라온것같아 기분이 좋다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/01/Swift-%EC%9E%90%EB%A6%BF%EC%88%98-%EB%8D%94%ED%95%98%EA%B8%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -426,188 +561,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/" class="post-title-link" itemprop="url">hexo 구글 애드센스(Adsense) 적용하기</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2020-01-06 16:42:07 / Updated at: 19:06:20" itemprop="dateCreated datePublished" datetime="2020-01-06T16:42:07+09:00">2020-01-06</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/hexo-구글-애드센스-Adsense-적용하기/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="hexo-시리즈-바로가기"><a class="markdownIt-Anchor" href="#hexo-시리즈-바로가기"></a> Hexo 시리즈 바로가기</h1>
-<ol>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo로 Github Page 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/">Hexo 테마 설정하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 댓글 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">구글 애널리틱스 연동하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 메뉴 추가하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/">블로그 방문자 카운팅</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">sitemap.xml, robots.txt 추가하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/">Hexo 구글 애드센스(Adsense) 적용하기</a></p>
-</li>
-</ol>
-<h1 id="hexo-google-adsense-적용하기"><a class="markdownIt-Anchor" href="#hexo-google-adsense-적용하기"></a> Hexo Google Adsense 적용하기</h1>
-<p>블로그에 <a href="https://www.google.co.kr/intl/ko/adsense/start/#/?modal_active=none" target="_blank" rel="noopener">구글 애드센스(Adsense)</a>를 적용하고 싶어졌다.</p>
-<p>그래서 포스팅한다.</p>
-<h2 id="google-adsense-홈페이지"><a class="markdownIt-Anchor" href="#google-adsense-홈페이지"></a> Google Adsense 홈페이지</h2>
-<p><a href="https://www.google.co.kr/intl/ko/adsense/start/#/?modal_active=none" target="_blank" rel="noopener">구글 애드센스(Adsense)</a></p>
-<p>먼저 구글 애드센스에 가입을 해야한다.<br />
-당연히 구글계정이 필수이다.</p>
-<p>구글 계정으로 로그인 후 애드센스 홈페이지에서 가입을 진행하면 되며</p>
-<p>광고를 적용할 페이지를 구글측에서 검토를 진행한다.</p>
-<p>며칠이상 걸릴수도 있다.</p>
-<blockquote>
-<p>저는 하루정도 걸렸습니다.</p>
-</blockquote>
-<p>가입 후 기다렸다가 승인이 나면 나머지 부분을 진행하시면 됩니다.<br />
-이때 집주소를 입력하셔야 합니다.<br />
-환급이나 기타등등의 서류가 온다고 하는데 저는 왔는지 모르겠네요.</p>
-<h2 id="google-ad"><a class="markdownIt-Anchor" href="#google-ad"></a> Google Ad</h2>
-<p>나는 <code>Hexo</code>를 사용하고 있고 <code>next</code>테마를 사용중이다.</p>
-<p>그리고 광고가 게시물의 가장 하단에 붙길 원했다.</p>
-<blockquote>
-<p>구글에서 웹사이트를 분석해 가장 알맞은 위치에 광고를 넣게 할 수 있는데<br />
-나는 본문의 하단에 그냥 붙이기로 했다.</p>
-</blockquote>
-<img src="/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/google_adsense.png" class="" title="google_adsense">
-<blockquote>
-<p>디스플레이 광고를 선택한다.</p>
-</blockquote>
-<img src="/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/google_adsense2.png" class="" title="google_adsense2">
-<p>그럼 다음과 같은 화면이 나오는데 노출될 위치를 고려하여 <code>사각형</code>,<code>수평형</code>,<code>수직형</code>등을 선택한다.</p>
-<blockquote>
-<p>저는 수평형을 선택했습니다.</p>
-</blockquote>
-<p>선택 후 광고의 이름을 지정하고 만들기를 누르면</p>
-<img src="/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/google_adsense3.png" class="" title="google_adsense3">
-<p>이렇게 코드가 나오는데 해당 코드를 전부 복사해준다.</p>
-<h2 id="hexo"><a class="markdownIt-Anchor" href="#hexo"></a> Hexo</h2>
-<p>이제 복사한 코드를 원하는 위치에 노출이 되게끔 해주어야하는데<br />
-<code>themes/여러분의 테마/</code>로 이동하게 되면 <code>layout</code>폴더가 존재한다.</p>
-<img src="/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/google_adsense4.png" class="" title="google_adsense4">
-<p><code>layout</code>폴더로 이동 후 광고 스크립트들이 존재하게 될 폴더를 하나 만들어주자(ads라는 이름의 폴더)</p>
-<blockquote>
-<p>앞으로 광고스크립트는 여기다 몰아두도록 하자.</p>
-</blockquote>
-<img src="/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/google_adsense5.png" class="" title="google_adsense5">
-<blockquote>
-<p>쿠팡도 예전에 해봤는데 도저히 수익이 날거같지 않아 포기했습니다.<br />
-쿠팡은 기회가 되면 따로 포스팅을…</p>
-</blockquote>
-<p>이렇게 폴더안에 복사한 스크립트를 .swig파일로 만들어 저장한다.</p>
-<p>그리고 이제 위치하고 싶은 공간에 해당 스크립트를 호출해주면 된다.</p>
-<h3 id="광고-적용하기-next기준"><a class="markdownIt-Anchor" href="#광고-적용하기-next기준"></a> 광고 적용하기 (next기준)</h3>
-<h4 id="위치"><a class="markdownIt-Anchor" href="#위치"></a> 위치</h4>
-<p><code>themes/여러분의 테마/layout/_macro/post.swig</code></p>
-<h5 id="게시물-상단"><a class="markdownIt-Anchor" href="#게시물-상단"></a> 게시물 상단</h5>
-<p>170번째 줄 근처</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">167     &#123;#################&#125;</span><br><span class="line">168     &#123;### POST BODY ###&#125;</span><br><span class="line">169     &#123;#################&#125;</span><br><span class="line">170     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post-body&#123;%- if post.direction and post.direction.toLowerCase() === 'rtl' %&#125; rtl&#123;%- endif %&#125;"</span> <span class="attr">itemprop</span>=<span class="string">"articleBody    "</span>&gt;</span></span><br><span class="line">171        &#123;&#123; partial('ads/google_display.swig') &#125;&#125;  <span class="tag">&lt;<span class="name">-</span> 여기</span></span><br><span class="line"><span class="tag"><span class="attr">172</span>       &#123;# <span class="attr">Gallery</span> <span class="attr">support</span> #&#125;</span></span><br></pre></td></tr></table></figure>
-<h5 id="게시물-하단"><a class="markdownIt-Anchor" href="#게시물-하단"></a> 게시물 하단</h5>
-<p>210번째 줄 근처</p>
-<figure class="highlight jinja"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">209           <span class="comment">&lt;!--/noindex--&gt;</span></span></span><br><span class="line"><span class="xml">210         </span><span class="template-tag">&#123;% <span class="name"><span class="name">else</span></span> %&#125;</span></span><br><span class="line"><span class="xml">211           </span><span class="template-variable">&#123;&#123; post.content &#125;&#125;</span></span><br><span class="line"><span class="xml">212         </span><span class="template-tag">&#123;%- <span class="name"><span class="name">endif</span></span> %&#125;</span></span><br><span class="line"><span class="xml">213       </span><span class="template-tag">&#123;% <span class="name"><span class="name">else</span></span> %&#125;</span></span><br><span class="line"><span class="xml">214         </span><span class="template-variable">&#123;&#123; post.content &#125;&#125;</span></span><br><span class="line"><span class="xml">215       </span><span class="template-tag">&#123;%- <span class="name"><span class="name">endif</span></span> %&#125;</span></span><br><span class="line"><span class="xml">216     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">217     </span><span class="template-variable">&#123;&#123; partial('ads/google_display.swig') &#125;&#125;</span><span class="xml"> <span class="tag">&lt;<span class="name">-</span> 여기</span></span></span><br><span class="line"><span class="xml">218</span></span><br><span class="line"><span class="xml">219     </span><span class="comment">&#123;#####################&#125;</span></span><br><span class="line"><span class="xml">220     </span><span class="comment">&#123;### END POST BODY ###&#125;</span></span><br><span class="line"><span class="xml">221     </span><span class="comment">&#123;#####################&#125;</span></span><br></pre></td></tr></table></figure>
-<p>여기까지하고 블로그를 다시 재배포 후 조금 기다리면 광고가 노출된다.</p>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -658,7 +611,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -671,7 +624,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">64</span>
+        <span class="site-state-item-count">67</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
