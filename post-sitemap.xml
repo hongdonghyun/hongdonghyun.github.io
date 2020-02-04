@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>http://hongdonghyun.github.io/2019/11/Swift-Bubble-Sort/</loc>
+        <lastmod>2020-02-04T12:09:54.747Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://hongdonghyun.github.io/2020/02/gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
         <lastmod>2020-02-04T11:51:34.942Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -378,14 +386,6 @@
     <url>
         <loc>http://hongdonghyun.github.io/2019/11/Swift-Selection-Sort/</loc>
         <lastmod>2019-11-20T07:05:13.626Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2019/11/Swift-Bubble-Sort/</loc>
-        <lastmod>2019-11-20T07:00:25.869Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
