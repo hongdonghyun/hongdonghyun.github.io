@@ -205,6 +205,151 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%ED%83%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/Swift-%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%ED%83%91/" class="post-title-link" itemprop="url">[Swift]하노이의탑</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2019-11-27 10:21:44 / Updated at: 14:07:41" itemprop="dateCreated datePublished" datetime="2019-11-27T10:21:44+09:00">2019-11-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/Swift-%ED%95%98%EB%85%B8%EC%9D%B4%EC%9D%98%ED%83%91/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-하노이의탑/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/12946" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<h2 id="swift"><a class="markdownIt-Anchor" href="#swift"></a> Swift</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> n:Int)</span></span> -&gt; [[<span class="type">Int</span>]] &#123;</span><br><span class="line">    <span class="keyword">var</span> hanoiArray: [[<span class="type">Int</span>]] = []</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">hanoi</span><span class="params">(<span class="number">_</span> n: Int, <span class="number">_</span> from: Int, <span class="number">_</span> by: Int, <span class="number">_</span> to: Int)</span></span> -&gt; [[<span class="type">Int</span>]] &#123;</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"\(from)에서 \(by)로 \(n)번째 원반 이동"</span>)</span><br><span class="line">        hanoiArray.append([from,to])</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        hanoi(n-<span class="number">1</span>, from,to,by)</span><br><span class="line">        hanoi(<span class="number">1</span>, from,by,to)</span><br><span class="line">        hanoi(n-<span class="number">1</span>, by,from,to)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> hanoiArray</span><br><span class="line">&#125;   </span><br><span class="line">    <span class="keyword">return</span> hanoi(n,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="python"><a class="markdownIt-Anchor" href="#python"></a> Python</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hanoi</span><span class="params">(n, from_, by_, to_)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        print(from_, <span class="string">"-&gt;"</span>, to_)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    hanoi(n <span class="number">-1</span>, from_, to_, by_)</span><br><span class="line">    hanoi(<span class="number">1</span>,from_,by_,to_)</span><br><span class="line">    hanoi(n<span class="number">-1</span>,by_,from_,to_)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">hanoi(<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h2>
+<p>하노이의 탑을 재귀로 풀어 보았는데<br />
+이해가 잘 되지 않아서</p>
+<blockquote>
+<p>(<s>모르면 외운다</s>)</p>
+</blockquote>
+<p>Swift코드를 Python으로 바꾸어<br />
+<a href="http://pythontutor.com/visualize.html#mode=display" target="_blank" rel="noopener">파이썬 튜터</a>사이트를 통해 viisualize 시킨 후 확인했다.</p>
+<p>재귀함수를 사용하여 풀었고 코드를 시각화해서 보니 이해하기가 한결 편했다.</p>
+<p><code>원반 3개 기준</code></p>
+<ol>
+<li>1번 기둥에 있는 2개(n-1)의 원반을 2번 기둥으로 옮긴다.</li>
+</ol>
+<blockquote>
+<p>from -&gt; by로 옮긴다.</p>
+<blockquote>
+<p>(1 -&gt; 3) -&gt; (1 -&gt; 2) -&gt; (3 -&gt; 2)</p>
+</blockquote>
+</blockquote>
+<ol start="2">
+<li>1번 기둥에 남아있는 큰 원반을 3번 기둥으로 옮긴다.</li>
+</ol>
+<blockquote>
+<p>1.의 과정을 모두 거치면 1번 기둥에는 <strong>가장 큰</strong>원반만 남아 있다.</p>
+<blockquote>
+<p>(1 -&gt; 3)</p>
+</blockquote>
+</blockquote>
+<ol start="3">
+<li>2번 기둥에 있는 원반을(2개) 3번 기둥으로 옮긴다.</li>
+</ol>
+<blockquote>
+<p>by -&gt; to로 옮긴다.</p>
+<blockquote>
+<p>(2 -&gt; 1) -&gt; (2 -&gt; 3) -&gt; (1 -&gt; 3)</p>
+</blockquote>
+</blockquote>
+<p>1층 : 1번 옮기면 끝</p>
+<p>2층: 3번 옮기면 끝</p>
+<p>3층 :  7번 옮기면 끝</p>
+<p>n층 : 2^n -1번 옮기면 끝</p>
+<p>시간 복잡도는 2^n -1번 이지만<br />
+상수는 시간복잡도에서 의미가 없기 때문에 O(2^n)이 된다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -425,119 +570,6 @@ Swift도 처음 써봐서 문법이 틀렸나하고 문법을 뜯어 고치는 �
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-9/" class="post-title-link" itemprop="url">Swift 과제 풀이 9</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2019-11-24 22:28:29 / Updated at: 22:32:15" itemprop="dateCreated datePublished" datetime="2019-11-24T22:28:29+09:00">2019-11-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
-                    <span itemprop="name">과제</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%BC%EC%A0%9C/Swift/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-9/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-과제-풀이-9/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
-<ol>
-<li>UISwitch, UISegmentedControl 을 이용한 문제</li>
-</ol>
-<ul>
-<li>UISwitch : On, Off 가 바뀔 때마다 Label 의 내용이 On, Off 로 표시되도록 구현</li>
-<li>UISegmentedControl : 선택 내용이 바뀔 때마다 Label 의 내용도 해당 타이틀 값으로 함께 변경되도록 구현</li>
-</ul>
-<h1 id="코드"><a class="markdownIt-Anchor" href="#코드"></a> 코드</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> itemArray: [<span class="type">String</span>] = [<span class="string">"홍삼"</span>,<span class="string">"Python"</span>,<span class="string">"Django"</span>,<span class="string">"iOS"</span>,<span class="string">"Swift"</span>]</span><br><span class="line">    <span class="keyword">let</span> resultLabel = <span class="type">UILabel</span>()</span><br><span class="line">    <span class="keyword">let</span> toggle = <span class="type">UISwitch</span>()</span><br><span class="line">    <span class="built_in">lazy</span> <span class="keyword">var</span> segControl = <span class="type">UISegmentedControl</span>(items: itemArray)</span><br><span class="line">    <span class="built_in">lazy</span> <span class="keyword">var</span> superViewHeight = view.frame.size.height</span><br><span class="line">    <span class="built_in">lazy</span> <span class="keyword">var</span> superViewWidth = view.frame.size.width</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        </span><br><span class="line">        initialResultLabel()</span><br><span class="line">        initialToggle()</span><br><span class="line">        initalSegControl()</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">initialResultLabel</span><span class="params">()</span></span> &#123;</span><br><span class="line">        resultLabel.frame = <span class="type">CGRect</span>(x: superViewWidth/<span class="number">3</span>, y: superViewHeight - <span class="number">700</span>, width: superViewWidth/<span class="number">2</span>, height: <span class="number">100</span>)</span><br><span class="line">        resultLabel.text = <span class="type">String</span>(<span class="built_in">count</span>)</span><br><span class="line">        resultLabel.isHidden = <span class="literal">true</span></span><br><span class="line">        resultLabel.font = <span class="type">UIFont</span>.systemFont(ofSize: <span class="number">50</span>)</span><br><span class="line">        view.addSubview(resultLabel)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">initalSegControl</span><span class="params">()</span></span> &#123;</span><br><span class="line">        segControl.frame = <span class="type">CGRect</span>(x: <span class="number">0</span>, y: superViewHeight - <span class="number">400</span>, width: superViewWidth, height: <span class="number">100</span>)</span><br><span class="line">        segControl.addTarget(<span class="keyword">self</span>,action: #selector(actionSegControl(<span class="number">_</span>:)), <span class="keyword">for</span>: .valueChanged)</span><br><span class="line">        view.addSubview(segControl)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">initialToggle</span><span class="params">()</span></span> &#123;</span><br><span class="line">        toggle.frame = <span class="type">CGRect</span>(x: <span class="number">200</span>, y: superViewHeight - <span class="number">500</span>, width: <span class="number">100</span>, height: <span class="number">100</span>)</span><br><span class="line">        toggle.addTarget(<span class="keyword">self</span>,action: #selector(actionToggle(<span class="number">_</span>:)), <span class="keyword">for</span>: .valueChanged)</span><br><span class="line">        view.addSubview(toggle)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">actionSegControl</span><span class="params">(<span class="number">_</span> sender: UISegmentedControl)</span></span> &#123;</span><br><span class="line">        resultLabel.text = itemArray[sender.selectedSegmentIndex]</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">actionAdd</span><span class="params">(<span class="number">_</span> sender: UIButton)</span></span> &#123;</span><br><span class="line">        <span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line">        resultLabel.text = <span class="type">String</span>(<span class="built_in">count</span>)</span><br><span class="line">        resultLabel.textColor = .systemBlue</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">actionToggle</span><span class="params">(<span class="number">_</span> sender: UISwitch)</span></span> &#123;</span><br><span class="line">        resultLabel.isHidden = !sender.isOn</span><br><span class="line">        <span class="built_in">print</span>(resultLabel.isHidden)</span><br><span class="line">        <span class="built_in">print</span>(superViewWidth)</span><br><span class="line">        <span class="built_in">print</span>(superViewHeight)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="스크린샷"><a class="markdownIt-Anchor" href="#스크린샷"></a> 스크린샷</h1>
-<img src="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-9/result.png" class="" title="result">
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -588,7 +620,7 @@ Swift도 처음 써봐서 문법이 틀렸나하고 문법을 뜯어 고치는 �
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-count">71</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -601,7 +633,7 @@ Swift도 처음 써봐서 문법이 틀렸나하고 문법을 뜯어 고치는 �
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">72</span>
+        <span class="site-state-item-count">74</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
