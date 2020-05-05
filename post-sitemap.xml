@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>http://hongdonghyun.github.io/2020/02/Network/</loc>
+        <lastmod>2020-05-05T05:57:24.932Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://hongdonghyun.github.io/2020/05/addSubView%EB%90%9C-ViewController-%EC%B0%BE%EA%B8%B0/</loc>
-        <lastmod>2020-05-05T05:13:58.635Z</lastmod>
+        <lastmod>2020-05-05T05:16:40.011Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -18,14 +26,6 @@
     <url>
         <loc>http://hongdonghyun.github.io/2020/02/sync/</loc>
         <lastmod>2020-02-13T13:48:22.662Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://hongdonghyun.github.io/2020/02/Network/</loc>
-        <lastmod>2020-02-11T13:39:57.723Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

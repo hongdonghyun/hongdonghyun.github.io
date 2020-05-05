@@ -53,15 +53,15 @@
   };
 </script>
 
-  <meta name="description" content="addSubView된 부모 ViewController 찾기 Swift에서 제공하는 모든 UI들은 기본적으로 UIView를 상속받아서 만들어 졌다. 그렇다는것은 UIView에다가 추가적인 메서드를 구현한다면 모든 UI들이 해당 메서드를 사용할 수 있다고 생각한다. 최근 팀프로젝트에서 MVC 디자인 패턴으로 코드를 쪼개고 나누다 보니 특정 UI를 제어하기가">
+  <meta name="description" content="addSubView된 부모 ViewController 찾기 Swift에서 제공하는 모든 UI들은 기본적으로 UIView를 상속받아서 만들어졌다. 그렇다는것은 UIView에다가 추가적인 메서드를 구현한다면 모든 UI들이 해당 메서드를 사용할 수 있다고 생각한다. 최근 팀프로젝트에서 MVC 디자인 패턴으로 코드를 쪼개고 나누다 보니 특정 UI를 제어하기가 좀">
 <meta name="keywords" content="Swift,ViewController,addSubView">
 <meta property="og:type" content="article">
 <meta property="og:title" content="addSubView된 ViewController 찾기">
 <meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;05&#x2F;addSubView%EB%90%9C-ViewController-%EC%B0%BE%EA%B8%B0&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
-<meta property="og:description" content="addSubView된 부모 ViewController 찾기 Swift에서 제공하는 모든 UI들은 기본적으로 UIView를 상속받아서 만들어 졌다. 그렇다는것은 UIView에다가 추가적인 메서드를 구현한다면 모든 UI들이 해당 메서드를 사용할 수 있다고 생각한다. 최근 팀프로젝트에서 MVC 디자인 패턴으로 코드를 쪼개고 나누다 보니 특정 UI를 제어하기가">
+<meta property="og:description" content="addSubView된 부모 ViewController 찾기 Swift에서 제공하는 모든 UI들은 기본적으로 UIView를 상속받아서 만들어졌다. 그렇다는것은 UIView에다가 추가적인 메서드를 구현한다면 모든 UI들이 해당 메서드를 사용할 수 있다고 생각한다. 최근 팀프로젝트에서 MVC 디자인 패턴으로 코드를 쪼개고 나누다 보니 특정 UI를 제어하기가 좀">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2020-05-05T05:13:58.635Z">
+<meta property="og:updated_time" content="2020-05-05T05:16:40.011Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2020/05/addSubView%EB%90%9C-ViewController-%EC%B0%BE%EA%B8%B0/">
@@ -230,7 +230,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2020-05-05 13:50:07 / Updated at: 14:13:58" itemprop="dateCreated datePublished" datetime="2020-05-05T13:50:07+09:00">2020-05-05</time>
+              <time title="Post created: 2020-05-05 13:50:07 / Updated at: 14:16:40" itemprop="dateCreated datePublished" datetime="2020-05-05T13:50:07+09:00">2020-05-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,7 +277,7 @@
 
       
         <h1 id="addsubview된-부모-viewcontroller-찾기"><a class="markdownIt-Anchor" href="#addsubview된-부모-viewcontroller-찾기"></a> addSubView된 부모 ViewController 찾기</h1>
-<p><code>Swift</code>에서 제공하는 모든 UI들은 기본적으로 <code>UIView</code>를 상속받아서 만들어 졌다.</p>
+<p><code>Swift</code>에서 제공하는 모든 UI들은 기본적으로 <code>UIView</code>를 상속받아서 만들어졌다.</p>
 <p>그렇다는것은 <code>UIView</code>에다가 추가적인 메서드를 구현한다면 모든 UI들이 해당 메서드를 사용할 수 있다고 생각한다.</p>
 <p>최근 <a href="https://github.com/iOS-WPS-Team3/iOS-team3/tree/develop" target="_blank" rel="noopener">팀프로젝트</a>에서 <code>MVC</code> 디자인 패턴으로 코드를 쪼개고 나누다 보니 특정 UI를 제어하기가 좀 어려웠었다.</p>
 <p>그럴때 사용하는것이 <code>delegate</code>인데 뎁스가 깊어지면 <code>delegate</code>를 중첩해서 써야하는 경우가 생겼다.</p>
