@@ -9,7 +9,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>개발을 잘하고 싶읍니다</description>
-    <pubDate>Tue, 05 May 2020 06:35:22 GMT</pubDate>
+    <pubDate>Tue, 05 May 2020 06:45:56 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -22,14 +22,13 @@
         
         
           &lt;h1 id=&quot;상단-토스트-메시지&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#상단-토스트-메시지&quot;&gt;&lt;/a&gt; 상단 토스트 메시지&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/iOS-WPS-Team3/iOS-t
+&lt;img src=&quot;/2020/05/Swift-%EC%83%81%EB%8B%A8-Toast/t
         
       
       </description>
       
       
-      <content:encoded><![CDATA[<h1 id="상단-토스트-메시지"><a class="markdownIt-Anchor" href="#상단-토스트-메시지"></a> 상단 토스트 메시지</h1><p><a href="https://github.com/iOS-WPS-Team3/iOS-team3/tree/develop" target="_blank" rel="noopener">팀프로젝트</a> 진행중 이미지 처럼 앱 어디서든지 상단 알림창이 뜨게 만들어야 하는게 있었다.</p>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="상단-토스트-메시지"><a class="markdownIt-Anchor" href="#상단-토스트-메시지"></a> 상단 토스트 메시지</h1><img src="/2020/05/Swift-%EC%83%81%EB%8B%A8-Toast/toast_img.jpeg" class="" title="noti_image"><p><a href="https://github.com/iOS-WPS-Team3/iOS-team3/tree/develop" target="_blank" rel="noopener">팀프로젝트</a> 진행중 이미지 처럼 앱 어디서든지 상단 알림창이 뜨게 만들어야 하는게 있었다.</p>]]></content:encoded>
       
       <comments>http://hongdonghyun.github.io/2020/05/Swift-%EC%83%81%EB%8B%A8-Toast/#disqus_thread</comments>
     </item>
