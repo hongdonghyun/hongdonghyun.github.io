@@ -205,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/02/gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
@@ -219,7 +219,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/" class="post-title-link" itemprop="url">hexo 구글 애드센스(Adsense) 적용하기</a>
+            <a href="/2020/02/gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="post-title-link" itemprop="url">gitignore 스크립트 만들기</a>
         </h2>
 
         <div class="post-meta">
@@ -230,7 +230,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2020-01-06 16:42:07 / Updated at: 19:06:20" itemprop="dateCreated datePublished" datetime="2020-01-06T16:42:07+09:00">2020-01-06</time>
+              <time title="Post created: 2020-02-04 20:32:12 / Updated at: 20:51:34" itemprop="dateCreated datePublished" datetime="2020-02-04T20:32:12+09:00">2020-02-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -238,8 +238,8 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
             </span>
@@ -253,8 +253,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/hexo-구글-애드센스-Adsense-적용하기/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/02/gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/gitignore-스크립트-만들기/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -269,93 +269,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="hexo-시리즈-바로가기"><a class="markdownIt-Anchor" href="#hexo-시리즈-바로가기"></a> Hexo 시리즈 바로가기</h1>
+          <h1 id="gitignore"><a class="markdownIt-Anchor" href="#gitignore"></a> gitignore</h1>
+<h2 id="gitignore란"><a class="markdownIt-Anchor" href="#gitignore란"></a> gitignore란?</h2>
+<p>git으로 관리되고 있는 디렉토리내에서<br />
+git에 포함되지 않아야하는 <code>폴더</code>,<code>파일</code>들을 설정하게 제외시킬 수 있는설정파일</p>
+<h2 id="gitignoreio"><a class="markdownIt-Anchor" href="#gitignoreio"></a> <a href="http://gitignore.io" target="_blank" rel="noopener">gitignore.io</a></h2>
+<p><a href="http://gitignore.io/" target="_blank" rel="noopener">gitignore.io</a>여기로 가면 내가 원하는 gitignore파일을 만들 수 있다.</p>
+<img src="/2020/02/gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/gitignore1.png" class="" title="gitignore1">
+<h2 id="매번-입력하기-귀찮으니-스크립트로-만들자"><a class="markdownIt-Anchor" href="#매번-입력하기-귀찮으니-스크립트로-만들자"></a> 매번 입력하기 귀찮으니 스크립트로 만들자</h2>
+<p><a href="https://docs.gitignore.io/install/command-line" target="_blank" rel="noopener">gitignore docs</a><br />
+해당 링크로 가면 셸별로 command 명령어 모음이 있다.</p>
+<p>해당 내용을 바탕으로 스크립트를 만들고 싶었다.<br />
+<code>git</code>자체에 명령을 추가하는 방식도 있지만 좀 더 범용적이게 <code>shell function</code>으로 만들려고 했다.</p>
+<h3 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h3>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gi</span></span>() &#123;</span><br><span class="line">    status_code=$(curl -s -o /dev/null -w <span class="string">"%&#123;http_code&#125;"</span> https://gitignore.io/api)</span><br><span class="line">    <span class="keyword">if</span> [ <span class="variable">$status_code</span> = <span class="string">'200'</span> ]; <span class="keyword">then</span></span><br><span class="line">        curl -sLw <span class="string">'\n'</span> https://www.gitignore.io/api/<span class="variable">$@</span> &gt; .gitignore ;</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">'create .gitignore'</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">'create fail\n reason: request failed'</span>;</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="사용법"><a class="markdownIt-Anchor" href="#사용법"></a> 사용법</h3>
+<p>사용법은 다음과 같다.</p>
 <ol>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo로 Github Page 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/">Hexo 테마 설정하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 댓글 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">구글 애널리틱스 연동하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 메뉴 추가하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/">블로그 방문자 카운팅</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">sitemap.xml, robots.txt 추가하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/">Hexo 구글 애드센스(Adsense) 적용하기</a></p>
-</li>
+<li>터미널을 킨다.</li>
+<li>zshrc파일을 열어준다 (MacOS의 경우 ~/로 가면 .zshrc가 있다.)</li>
+<li>.zshrc 파일 제일밑에 해당 함수를 넣어준다.</li>
+<li>터미널에서 <code>source ~/.zshrc</code> 혹은 터미널만 껐다킨다.</li>
+<li>이후 <code>.gitignore</code>를 만들고 싶은곳에서 <code>gi macos,python,swift</code> 등 내가 추가하고 싶은 파일을 <code>,</code>단위로 구분하여 입력한다.</li>
+<li>생성된 파일을 확인</li>
 </ol>
-<h1 id="hexo-google-adsense-적용하기"><a class="markdownIt-Anchor" href="#hexo-google-adsense-적용하기"></a> Hexo Google Adsense 적용하기</h1>
-<p>블로그에 <a href="https://www.google.co.kr/intl/ko/adsense/start/#/?modal_active=none" target="_blank" rel="noopener">구글 애드센스(Adsense)</a>를 적용하고 싶어졌다.</p>
-<p>그래서 포스팅한다.</p>
-<h2 id="google-adsense-홈페이지"><a class="markdownIt-Anchor" href="#google-adsense-홈페이지"></a> Google Adsense 홈페이지</h2>
-<p><a href="https://www.google.co.kr/intl/ko/adsense/start/#/?modal_active=none" target="_blank" rel="noopener">구글 애드센스(Adsense)</a></p>
-<p>먼저 구글 애드센스에 가입을 해야한다.<br />
-당연히 구글계정이 필수이다.</p>
-<p>구글 계정으로 로그인 후 애드센스 홈페이지에서 가입을 진행하면 되며</p>
-<p>광고를 적용할 페이지를 구글측에서 검토를 진행한다.</p>
-<p>며칠이상 걸릴수도 있다.</p>
+<h3 id="설명"><a class="markdownIt-Anchor" href="#설명"></a> 설명</h3>
+<p>해당 함수는 두번에 걸쳐 <a href="http://gitignore.io/" target="_blank" rel="noopener">gitignore.io</a>에 <code>request</code>를 보낸다.<br />
+첫번째는 해당 서버가 살아있는지 확인후</p>
 <blockquote>
-<p>저는 하루정도 걸렸습니다.</p>
+<p>status code가 200이 떨어지는경우를 살아있다고 판단.</p>
 </blockquote>
-<p>가입 후 기다렸다가 승인이 나면 나머지 부분을 진행하시면 됩니다.<br />
-이때 집주소를 입력하셔야 합니다.<br />
-환급이나 기타등등의 서류가 온다고 하는데 저는 왔는지 모르겠네요.</p>
-<h2 id="google-ad"><a class="markdownIt-Anchor" href="#google-ad"></a> Google Ad</h2>
-<p>나는 <code>Hexo</code>를 사용하고 있고 <code>next</code>테마를 사용중이다.</p>
-<p>그리고 광고가 게시물의 가장 하단에 붙길 원했다.</p>
+<p><a href="http://gitignore.io/" target="_blank" rel="noopener">gitignore.io</a>에 API로 터미널에서 입력받은 파라미터들을 붙여서 <code>GET</code>요청을 보낸다.<br />
+그러면 <code>response</code>에 해당 파라미터들에 관한 <code>ignore</code>내용들이 나오는데<br />
+내용들을 .gitignore라는 파일에 덮어씌우고 정상 생성되었다는 메시지를 출력하고 종료한다.</p>
 <blockquote>
-<p>구글에서 웹사이트를 분석해 가장 알맞은 위치에 광고를 넣게 할 수 있는데<br />
-나는 본문의 하단에 그냥 붙이기로 했다.</p>
+<p>이경우 파일이 없다면 자동으로 생성된다.</p>
 </blockquote>
-<img src="/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/google_adsense.png" class="" title="google_adsense">
-<blockquote>
-<p>디스플레이 광고를 선택한다.</p>
-</blockquote>
-<img src="/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/google_adsense2.png" class="" title="google_adsense2">
-<p>그럼 다음과 같은 화면이 나오는데 노출될 위치를 고려하여 <code>사각형</code>,<code>수평형</code>,<code>수직형</code>등을 선택한다.</p>
-<blockquote>
-<p>저는 수평형을 선택했습니다.</p>
-</blockquote>
-<p>선택 후 광고의 이름을 지정하고 만들기를 누르면</p>
-<img src="/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/google_adsense3.png" class="" title="google_adsense3">
-<p>이렇게 코드가 나오는데 해당 코드를 전부 복사해준다.</p>
-<h2 id="hexo"><a class="markdownIt-Anchor" href="#hexo"></a> Hexo</h2>
-<p>이제 복사한 코드를 원하는 위치에 노출이 되게끔 해주어야하는데<br />
-<code>themes/여러분의 테마/</code>로 이동하게 되면 <code>layout</code>폴더가 존재한다.</p>
-<img src="/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/google_adsense4.png" class="" title="google_adsense4">
-<p><code>layout</code>폴더로 이동 후 광고 스크립트들이 존재하게 될 폴더를 하나 만들어주자(ads라는 이름의 폴더)</p>
-<blockquote>
-<p>앞으로 광고스크립트는 여기다 몰아두도록 하자.</p>
-</blockquote>
-<img src="/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/google_adsense5.png" class="" title="google_adsense5">
-<blockquote>
-<p>쿠팡도 예전에 해봤는데 도저히 수익이 날거같지 않아 포기했습니다.<br />
-쿠팡은 기회가 되면 따로 포스팅을…</p>
-</blockquote>
-<p>이렇게 폴더안에 복사한 스크립트를 .swig파일로 만들어 저장한다.</p>
-<p>그리고 이제 위치하고 싶은 공간에 해당 스크립트를 호출해주면 된다.</p>
-<h3 id="광고-적용하기-next기준"><a class="markdownIt-Anchor" href="#광고-적용하기-next기준"></a> 광고 적용하기 (next기준)</h3>
-<h4 id="위치"><a class="markdownIt-Anchor" href="#위치"></a> 위치</h4>
-<p><code>themes/여러분의 테마/layout/_macro/post.swig</code></p>
-<h5 id="게시물-상단"><a class="markdownIt-Anchor" href="#게시물-상단"></a> 게시물 상단</h5>
-<p>170번째 줄 근처</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">167     &#123;#################&#125;</span><br><span class="line">168     &#123;### POST BODY ###&#125;</span><br><span class="line">169     &#123;#################&#125;</span><br><span class="line">170     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post-body&#123;%- if post.direction and post.direction.toLowerCase() === 'rtl' %&#125; rtl&#123;%- endif %&#125;"</span> <span class="attr">itemprop</span>=<span class="string">"articleBody    "</span>&gt;</span></span><br><span class="line">171        &#123;&#123; partial('ads/google_display.swig') &#125;&#125;  <span class="tag">&lt;<span class="name">-</span> 여기</span></span><br><span class="line"><span class="tag"><span class="attr">172</span>       &#123;# <span class="attr">Gallery</span> <span class="attr">support</span> #&#125;</span></span><br></pre></td></tr></table></figure>
-<h5 id="게시물-하단"><a class="markdownIt-Anchor" href="#게시물-하단"></a> 게시물 하단</h5>
-<p>210번째 줄 근처</p>
-<figure class="highlight jinja"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">209           <span class="comment">&lt;!--/noindex--&gt;</span></span></span><br><span class="line"><span class="xml">210         </span><span class="template-tag">&#123;% <span class="name"><span class="name">else</span></span> %&#125;</span></span><br><span class="line"><span class="xml">211           </span><span class="template-variable">&#123;&#123; post.content &#125;&#125;</span></span><br><span class="line"><span class="xml">212         </span><span class="template-tag">&#123;%- <span class="name"><span class="name">endif</span></span> %&#125;</span></span><br><span class="line"><span class="xml">213       </span><span class="template-tag">&#123;% <span class="name"><span class="name">else</span></span> %&#125;</span></span><br><span class="line"><span class="xml">214         </span><span class="template-variable">&#123;&#123; post.content &#125;&#125;</span></span><br><span class="line"><span class="xml">215       </span><span class="template-tag">&#123;%- <span class="name"><span class="name">endif</span></span> %&#125;</span></span><br><span class="line"><span class="xml">216     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">217     </span><span class="template-variable">&#123;&#123; partial('ads/google_display.swig') &#125;&#125;</span><span class="xml"> <span class="tag">&lt;<span class="name">-</span> 여기</span></span></span><br><span class="line"><span class="xml">218</span></span><br><span class="line"><span class="xml">219     </span><span class="comment">&#123;#####################&#125;</span></span><br><span class="line"><span class="xml">220     </span><span class="comment">&#123;### END POST BODY ###&#125;</span></span><br><span class="line"><span class="xml">221     </span><span class="comment">&#123;#####################&#125;</span></span><br></pre></td></tr></table></figure>
-<p>여기까지하고 블로그를 다시 재배포 후 조금 기다리면 광고가 노출된다.</p>
+<p>만약 서버가 살아있지않다면 파일생성을 하지 않고 실패했다는 메시지를 출력하고 종료한다.</p>
+<h2 id="마치며"><a class="markdownIt-Anchor" href="#마치며"></a> 마치며</h2>
+<p>사실 셸 스크립트를 다루어본적은 몇번 없어서 저 짧은 코드를 쓰는데 꽤나 애를먹었다.<br />
+그래도 검색을 하고 내가 원하는 내용인지 판단하고 테스트하는 실력이 많이 올라온것같아 기분이 좋다.</p>
 
       
     </div>
@@ -387,7 +340,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/01/Swift-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98/">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/01/Swift-%EC%9E%90%EB%A6%BF%EC%88%98-%EB%8D%94%ED%95%98%EA%B8%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
@@ -401,7 +354,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/Swift-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98/" class="post-title-link" itemprop="url">[Swift] 수박수박수박수박수박수?</a>
+            <a href="/2020/01/Swift-%EC%9E%90%EB%A6%BF%EC%88%98-%EB%8D%94%ED%95%98%EA%B8%B0/" class="post-title-link" itemprop="url">[Swift] 자릿수 더하기</a>
         </h2>
 
         <div class="post-meta">
@@ -412,7 +365,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2020-01-06 11:03:53 / Updated at: 11:20:10" itemprop="dateCreated datePublished" datetime="2020-01-06T11:03:53+09:00">2020-01-06</time>
+              <time title="Post created: 2020-01-10 11:19:30 / Updated at: 11:24:33" itemprop="dateCreated datePublished" datetime="2020-01-10T11:19:30+09:00">2020-01-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -435,8 +388,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020/01/Swift-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/Swift-수박수박수박수박수박수/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/01/Swift-%EC%9E%90%EB%A6%BF%EC%88%98-%EB%8D%94%ED%95%98%EA%B8%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/Swift-자릿수-더하기/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -452,18 +405,22 @@
 
       
           <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
-<p><a href="https://programmers.co.kr/learn/courses/30/lessons/12922?language=swift" target="_blank" rel="noopener">프로그래머스 링크</a></p>
-<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> n:Int)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">String</span>(<span class="type">String</span>(repeating: <span class="string">"수박"</span>, <span class="built_in">count</span>: (n+<span class="number">1</span>) / <span class="number">2</span>).<span class="keyword">prefix</span>(n))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/12931?language=swift" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> n:Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">String</span>(n).<span class="built_in">map</span> &#123; <span class="type">Int</span>(<span class="type">String</span>($<span class="number">0</span>))! &#125;.<span class="built_in">reduce</span>(<span class="number">0</span>, +)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
-<p>Swift를 일주일 정도 사용하지 않았더니 완전 다 까먹어서 감을 끌어올리기위해 풀어보았다.</p>
-<p>주어진 n값 만큼 <code>수</code>,<code>박</code>을 반복하게 하는 알고리즘이다.</p>
-<p>문자열을 맨처음 <code>n+1</code>/2만큼 반복하게 하여 <code>수박수박</code>을 만들게하고</p>
+<p>Integer값이 주어진걸 자릿수를 더하는 문제다.</p>
+<p>처음엔 <code>forEach</code>를 사용하여 풀려고 했지만</p>
+<p>고차함수를 사용하면 더 간결한 코드가 나오지 않을까 고민을 해보았다.</p>
 <blockquote>
-<p>문자열을 자를것이기 때문에 너무 많은 반복을 통해 문자열을 길게만들필요가 없다고 느껴져서 최소한의 수만큼 반복하게 만들었다.</p>
+<p>고차함수를 많이 써본적이 없어서 연습할겸 시도해보았다.</p>
 </blockquote>
-<p>주어진 n만큼 잘라서 출력하게 만들었다.</p>
-<p>다만 prefix를 사용하면 문자열이 <code>subString</code>타입으로 나오기 때문에 <code>String</code>으로 형변환을 해주었다.</p>
+<p>Integer를 문자열로 바꾸고 <code>map</code>함수를 사용해 한자리씩 정수로 다시 바꾸고 그 결과를 reduce를 통해 더해주었다.</p>
+<p>String의 값을 하나씩 빼오면 Character타입이 되는데 이상태에서 바로 정수형으로 바꾸어지지가 않아서 String -&gt; Int로 이중 형변환을 사용하여 Integer로 바꾸어 주었다.</p>
+<p>고차함수를 쓰니 많이 간결해졌다.</p>
+<blockquote>
+<p>축약하는 순서에대해서도 공부해보아야겠다.</p>
+</blockquote>
 
       
     </div>
@@ -495,7 +452,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/01/Swift-%EC%9D%B4%EC%83%81%ED%95%9C-%EB%AC%B8%EC%9E%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
@@ -509,7 +466,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/" class="post-title-link" itemprop="url">트위치 채널 포인트 자동클릭</a>
+            <a href="/2020/01/Swift-%EC%9D%B4%EC%83%81%ED%95%9C-%EB%AC%B8%EC%9E%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="post-title-link" itemprop="url">[Swift] 이상한 문자 만들기</a>
         </h2>
 
         <div class="post-meta">
@@ -518,24 +475,18 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">작성일</span>
+              
 
-              <time title="Post created: 2020-01-05 22:20:07" itemprop="dateCreated datePublished" datetime="2020-01-05T22:20:07+09:00">2020-01-05</time>
+              <time title="Post created: 2020-01-08 15:19:45 / Updated at: 15:25:14" itemprop="dateCreated datePublished" datetime="2020-01-08T15:19:45+09:00">2020-01-08</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2020-01-08 15:39:46" itemprop="dateModified" datetime="2020-01-08T15:39:46+09:00">2020-01-08</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
                   </a>
                 </span>
             </span>
@@ -549,8 +500,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/트위치-채널-포인트-자동클릭/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/01/Swift-%EC%9D%B4%EC%83%81%ED%95%9C-%EB%AC%B8%EC%9E%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/Swift-이상한-문자-만들기/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -565,67 +516,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="트위치"><a class="markdownIt-Anchor" href="#트위치"></a> 트위치</h2>
-<p>나는 트위치를 자주 즐겨 보는데,<br />
-최근 트위치에 채널 포인트라는 제도가 생겼다.</p>
-<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point.png" class="" title="channel_point">
+          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/12930" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Character</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">isAlpha</span><span class="params">()</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"a"</span>...<span class="string">"z"</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">"A"</span>...<span class="string">"Z"</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> s:String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> answer: <span class="type">String</span> = <span class="string">""</span></span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">count</span>: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">c</span> <span class="keyword">in</span> s &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">c</span>.isAlpha() &#123;</span><br><span class="line">            answer += <span class="built_in">count</span> % <span class="number">2</span> == <span class="number">0</span> ? <span class="built_in">c</span>.uppercased() : <span class="built_in">c</span>.lowercased()</span><br><span class="line">            <span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            answer += <span class="string">" "</span></span><br><span class="line">            <span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p>Character에 메서드를 추가해서 풀어보았다.</p>
+<p>맨처음 생각난 풀이는 문자열을 공백기준으로 split하여 2중for문으로 푸는 방법이 생각났는데,</p>
+<p>죽어도 2중for문은 쓰기 싫어서 고민을 한번해보았다.</p>
+<p>extension으로 <code>isAlpha</code>라는 메서드를 만들어 해당 문자가 영어인지 판별 후</p>
+<p>영어인 경우 문제의 조건에 따라 대문자 소문자로 변경해 결과값 문자열에 추가하고,</p>
+<p>영어가 아닌경우를 공백으로 판단하여</p>
 <blockquote>
-<p>포인트를 소모하여 보상을 얻을 수 있다.<br />
-시간제한이 있는 구독자 전용 이모티콘이나 채팅에 하이라이팅 효과를 먹일수 있다.</p>
+<p>사실 이경우 특수기호,한글등이 하나라도 들어가 있다면 난장판이 되겠지만<br />
+문제의 조건이 알파벳을 대문자,소문자로 구분을 해야하기 때문에<br />
+알파벳, 공백이외의 문자는 들어오지 않을거라는 판단하에 진행하였다.</p>
 </blockquote>
-<p>채널 포인트를 획득하는 방법은 이것저것 있지만 방송을 계속 시청하거나 15분 간격으로 나오는 버튼을 누르면 50포인트를 얻을 수 있다.</p>
-<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point2.png" class="" title="channel_point2">
-<blockquote>
-<p>저 버튼이다.</p>
-</blockquote>
-<p>해당버튼을 누르지 않아도 계속시청하면 많은 포인트를 쌓을 수 있지만<br />
-생각보다 저 버튼이 거슬린다.</p>
-<p>그래서 저 버튼을 자동으로 누르게 할수는 없을까 고민을 하다가 트위치가 <a href="https://electronjs.org/" target="_blank" rel="noopener">Electron</a>으로 만들었다는걸 어디서 들은것 같아 시도해보았다.</p>
-<blockquote>
-<p><a href="https://electronjs.org/" target="_blank" rel="noopener">Electron</a>은<br />
-html,javascript로 데스크탑 앱을 만드는 오픈소스<br />
-슬랙, 디스코드등이 이걸로 만들어졌음</p>
-</blockquote>
-<p>웹의 언어를 기반으로 만들었으니 개발자도구를 열어서 내부구현을 확인할 수 있지 않을까 라는 생각으로 시도했고</p>
-<p>내 생각은 적중했다.<br />
-Mac에서는 cmd + alt + i<br />
-Windows에서는 F12를 누르면 개발자도구가 뙇 하고 열린다.</p>
-<blockquote>
-<p>(크롬기준) 브라우저에서도 동일하다.<br />
-일렉트론은 크롬 개발자도구를 기본 내장한다고 한다.</p>
-<blockquote>
-<p>슬랙에서도 시도해보았으나 안열림<br />
-다른툴을 쓰면 열 수 있다고 하는데 그렇게까지 하고 싶진 않았다.</p>
-</blockquote>
-</blockquote>
-<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point3.png" class="" title="channel_point3">
-<blockquote>
-<p><a href="https://www.twitch.tv/hanryang1125" target="_blank" rel="noopener">풍월량</a>님 방송입니다.<br />
-문제 되면 글내림</p>
-</blockquote>
-<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point4.png" class="" title="channel_point4">
-<blockquote>
-<p>이제 이 버튼을 찾아 클릭하게 만들어주면 된다.</p>
-</blockquote>
-<p>요소검사기를 통해 저 버튼을 누르면</p>
-<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point5.png" class="" title="channel_point5">
-<p>이렇게 html코드를 친절히 확인할 수 있다.</p>
-<p>저 버튼은 15분에 한번씩 뜨지만 난 버튼을 이제 10초에 한번씩 누르게 만들것이다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pointClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementsByClassName(<span class="string">"claimable-bonus__icon tw-flex"</span>)[<span class="number">0</span>].click()</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"성공"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">catch</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;    </span><br><span class="line">setInterval(pointClick,<span class="number">10000</span>)</span><br></pre></td></tr></table></figure>
-<p>setInerval을 통해 10초에 한번씩 함수를 실행하게 만들고</p>
-<p>함수 구현부분에서 클릭해야할 요소를 <code>getElementClassName</code>을 통해 찾아내고 클릭하게 만든다.</p>
-<p>당연히 10초에 한번씩 함수가 동작하게 만들었으니<br />
-버튼이 없는데 버튼을 클릭하려고 시도할것이고 그렇게 되면 에러가 쌓인다.</p>
-<p>try-catch문을 통해 에러 메시지가 쌓이지 않도록 처리해주었다.</p>
-<p>이제 저 코드를 콘솔창에서 실행 시켜주면 끝난다.</p>
-<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point6.png" class="" title="channel_point6">
-<p>이렇게 입력해주고 엔터를 누른후 10초 기다리면</p>
-<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point7.png" class="" title="channel_point7">
-<p>성공이다.</p>
-<h2 id="문제점"><a class="markdownIt-Anchor" href="#문제점"></a> 문제점</h2>
-<p>이유는 알 수 없으나 개발자도구를 켜놓은 상태로 트위치를 사용하다보면 크래쉬 나면서 꺼지기도 한다.</p>
-<p>당연하지만 트위치 데스크탑 앱이나 브라우저를 껏다키면 해당부분도 없어지니 매번 킬때마다 다시 입력해줘야한다.</p>
-<p>나중에 이걸 크롬 익스텐션으로도 한번 만들어 보아야겠다.</p>
+<p>공백을 결과값 문자열에 추가해주었다.</p>
+<p>extension에 익숙하지 않았는데 생각보다 재미있게 풀어서 좋았다.</p>
 
       
     </div>
@@ -657,7 +565,7 @@ Windows에서는 F12를 누르면 개발자도구가 뙇 하고 열린다.</p>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
 
@@ -703,7 +611,7 @@ Windows에서는 F12를 누르면 개발자도구가 뙇 하고 열린다.</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">66</span>
+          <span class="site-state-item-count">69</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -716,7 +624,7 @@ Windows에서는 F12를 누르면 개발자도구가 뙇 하고 열린다.</p>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">67</span>
+        <span class="site-state-item-count">69</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>

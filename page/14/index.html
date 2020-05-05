@@ -205,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-7/">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-Insertion-Sort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
@@ -219,7 +219,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-7/" class="post-title-link" itemprop="url">Swift 과제 풀이 7</a>
+            <a href="/2019/11/Swift-Insertion-Sort/" class="post-title-link" itemprop="url">[Swift]Insertion Sort</a>
         </h2>
 
         <div class="post-meta">
@@ -228,30 +228,18 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">작성일</span>
+              
 
-              <time title="Post created: 2019-11-19 18:33:50" itemprop="dateCreated datePublished" datetime="2019-11-19T18:33:50+09:00">2019-11-19</time>
+              <time title="Post created: 2019-11-20 15:49:35 / Updated at: 15:59:20" itemprop="dateCreated datePublished" datetime="2019-11-20T15:49:35+09:00">2019-11-20</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-20 14:16:50" itemprop="dateModified" datetime="2019-11-20T14:16:50+09:00">2019-11-20</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
-                    <span itemprop="name">과제</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%BC%EC%A0%9C/Swift/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift</span>
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
                   </a>
                 </span>
             </span>
@@ -265,8 +253,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-7/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-과제-풀이-7/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/11/Swift-Insertion-Sort/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-Insertion-Sort/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -281,9 +269,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <img src="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-7/hexo_one.png" class="" title="hexo_one">
-<p>첨부된 이미지를 보고 상속을 이용해 구현해보기</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OAnimal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">var</span> brain: <span class="type">Bool</span> = <span class="literal">true</span></span><br><span class="line">    <span class="keyword">var</span> legs: <span class="type">Int</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(<span class="number">_</span> legs: <span class="type">Int</span> = <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.legs = legs</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">OHuman</span>: <span class="title">OAnimal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">init</span>() &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(<span class="number">2</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OPet</span>: <span class="title">OAnimal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">fileprivate</span> <span class="keyword">var</span> fleas: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">init</span>(<span class="number">_</span> fleas: <span class="type">Int</span> = <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.fleas = fleas</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(<span class="number">4</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ODog</span>: <span class="title">OPet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">init</span>() &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(<span class="number">8</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OCat</span>: <span class="title">OPet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">init</span>() &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(<span class="number">4</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> animal = <span class="type">OAnimal</span>()</span><br><span class="line"><span class="keyword">var</span> human = <span class="type">OHuman</span>()</span><br><span class="line"><span class="keyword">var</span> pet = <span class="type">OPet</span>()</span><br><span class="line"><span class="keyword">var</span> dog = <span class="type">ODog</span>()</span><br><span class="line"><span class="keyword">var</span> cat = <span class="type">OCat</span>()</span><br><span class="line">animal.brain</span><br><span class="line">animal.legs</span><br><span class="line"></span><br><span class="line">human.brain</span><br><span class="line">human.legs</span><br><span class="line"></span><br><span class="line">pet.brain</span><br><span class="line">pet.legs</span><br><span class="line">pet.fleas</span><br><span class="line"></span><br><span class="line">dog.brain</span><br><span class="line">dog.legs</span><br><span class="line">dog.fleas</span><br><span class="line"></span><br><span class="line">cat.brain</span><br><span class="line">cat.legs</span><br><span class="line">cat.fleas</span><br></pre></td></tr></table></figure>
+          <h1 id="swift로-풀어보기"><a class="markdownIt-Anchor" href="#swift로-풀어보기"></a> Swift로 풀어보기</h1>
+<h2 id="insertion-sort"><a class="markdownIt-Anchor" href="#insertion-sort"></a> Insertion Sort</h2>
+<div class="video-container"><iframe src="//www.youtube.com/embed/OGzPmgsI-pQ" frameborder="0" allowfullscreen></iframe></div>
+<p>시간복잡도: O(n^2)</p>
+<p>n 개의 원소를 가진 배열을 정렬할 때, i 번째를 정렬할 순서라고 가정하면,</p>
+<p>0 부터 i-1 까지의 원소들은 정렬되어있다는 가정하에,</p>
+<p>i 번째 원소와 i-1 번째 원소부터 0 번째 원소까지 비교하면서 i 번째 원소가 비교하는 원소보다 클 경우 서로의 위치를 바꾸고,</p>
+<p>작을 경우 위치를 바꾸지 않고 다음 순서의 원소와 비교하면서 정렬해준다.</p>
+<p>이 과정을 정렬하려는 배열의 마지막 원소까지 반복해준다.</p>
+<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">insertionSort</span><span class="params">()</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> randomArray = sequence.shuffled()</span><br><span class="line">    <span class="keyword">var</span> pivot: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">var</span> pivotValue: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...randomArray.<span class="built_in">count</span>-<span class="number">1</span> &#123;</span><br><span class="line">        pivot = i</span><br><span class="line">        pivotValue = randomArray[i]</span><br><span class="line">        <span class="keyword">while</span> pivot &gt; <span class="number">0</span> &amp;&amp; randomArray[pivot-<span class="number">1</span>] &gt; pivotValue &#123;</span><br><span class="line">            randomArray.swapAt(pivot, pivot-<span class="number">1</span>)</span><br><span class="line">            pivot -= <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> randomArray</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="개인정리"><a class="markdownIt-Anchor" href="#개인정리"></a> 개인정리</h2>
+<p>개인적으로 버블소트와 셀렉션소트의 차이를 느꼈다면</p>
+<p>Bubble,Selection은<br />
+순회와 정렬이 -&gt;(오른쪽)으로 같이 진행된다고 느낀반면,</p>
+<p>Insertion은<br />
+순회는 -&gt;(오른쪽)<br />
+정렬은 &lt;-(왼쪽) 방향으로 진행된다고 느낀점이다.</p>
+<blockquote>
+<p>물론 시간복잡도는 O(n^2)임</p>
+</blockquote>
+<p>개인적으로 삽입정렬은 재밌었다. 신기했음<br />
+이런식으로도 생각할 수 있구나 라는걸 느낌</p>
+
       
     </div>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -314,7 +323,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-6/">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-Selection-Sort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
@@ -328,7 +337,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-6/" class="post-title-link" itemprop="url">Swift 과제 풀이 6</a>
+            <a href="/2019/11/Swift-Selection-Sort/" class="post-title-link" itemprop="url">[Swift]Selection Sort</a>
         </h2>
 
         <div class="post-meta">
@@ -337,30 +346,18 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">작성일</span>
+              
 
-              <time title="Post created: 2019-11-18 20:00:06" itemprop="dateCreated datePublished" datetime="2019-11-18T20:00:06+09:00">2019-11-18</time>
+              <time title="Post created: 2019-11-20 15:45:17 / Updated at: 16:05:13" itemprop="dateCreated datePublished" datetime="2019-11-20T15:45:17+09:00">2019-11-20</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-19 18:43:01" itemprop="dateModified" datetime="2019-11-19T18:43:01+09:00">2019-11-19</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index">
-                    <span itemprop="name">과제</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%BC%EC%A0%9C/Swift/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift</span>
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
                   </a>
                 </span>
             </span>
@@ -374,8 +371,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-6/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-과제-풀이-6/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/11/Swift-Selection-Sort/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-Selection-Sort/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -390,28 +387,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ol>
-<li>다음과 같은 속성(Property)과 행위(Method)를 가지는 클래스 만들어보기.<br />
-구현 내용은 자유롭게</li>
-</ol>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    ** 강아지 (Dog)</span></span><br><span class="line"><span class="comment">    - 속성: 이름, 나이, 몸무게, 견종</span></span><br><span class="line"><span class="comment">    - 행위: 짖기, 먹기</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> =  <span class="string">""</span></span><br><span class="line">    <span class="keyword">var</span> age: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> weight: <span class="type">Double</span> = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">var</span> kind: <span class="type">String</span> = <span class="string">""</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">bark</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"야옹"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">eat</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"쳐묵쳐묵"</span>)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    ** 학생 (Student)</span></span><br><span class="line"><span class="comment">    - 속성: 이름, 나이, 학교명, 학년</span></span><br><span class="line"><span class="comment">    - 행위: 공부하기, 먹기, 잠자기</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> = <span class="string">""</span></span><br><span class="line">    <span class="keyword">var</span> age: <span class="type">UInt</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> school: <span class="type">String</span> = <span class="string">""</span></span><br><span class="line">    <span class="keyword">var</span> schoolYear: <span class="type">UInt</span> = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">study</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"빡공"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">eat</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"처묵처묵"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sleep</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"쿨쿨"</span>)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Iphone</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     ** 아이폰(IPhone)</span></span><br><span class="line"><span class="comment">     - 속성: 기기명, 가격, faceID 기능 여부(Bool)</span></span><br><span class="line"><span class="comment">     - 행위: 전화 걸기, 문자 전송</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> device: <span class="type">String</span> = <span class="string">""</span></span><br><span class="line">    <span class="keyword">var</span> price: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> faceID: <span class="type">Bool</span> = <span class="literal">false</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">call</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"따르릉"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sms</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"문자"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Coffee</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     ** 커피(Coffee)</span></span><br><span class="line"><span class="comment">     - 속성: 이름, 가격, 원두 원산지</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> = <span class="string">""</span></span><br><span class="line">    <span class="keyword">var</span> price: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> origin: <span class="type">String</span> = <span class="string">""</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>계산기 클래스를 만들고 다음과 같은 기능을 가진 Property 와 Method 정의해보기</li>
-</ol>
-<p>** 계산기 (Calculator)</p>
-<ul>
-<li>속성: 현재 값</li>
-<li>행위: 더하기, 빼기, 나누기, 곱하기, 값 초기화</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calculator</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> value: <span class="type">Double</span> = <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">add</span><span class="params">(<span class="number">_</span> add: Double)</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.value += add</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.value</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">subtract</span><span class="params">(<span class="number">_</span> sub: Double)</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.value -= sub</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.value</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">multiply</span><span class="params">(<span class="number">_</span> mul: Double)</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.value *= mul</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.value</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">divide</span><span class="params">(<span class="number">_</span> div: Double)</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.value /= div</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.value</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">reset</span><span class="params">()</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.value = <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> calculator = <span class="type">Calculator</span>() <span class="comment">// 객체생성</span></span><br><span class="line"></span><br><span class="line">calculator.value  <span class="comment">// 0</span></span><br><span class="line">calculator.add(<span class="number">10</span>)    <span class="comment">// 10</span></span><br><span class="line">calculator.add(<span class="number">5</span>)     <span class="comment">// 15</span></span><br><span class="line"></span><br><span class="line">calculator.subtract(<span class="number">9</span>)  <span class="comment">// 6</span></span><br><span class="line">calculator.subtract(<span class="number">10</span>) <span class="comment">// -4</span></span><br><span class="line"></span><br><span class="line">calculator.multiply(<span class="number">4</span>)   <span class="comment">// -16</span></span><br><span class="line">calculator.multiply(-<span class="number">10</span>) <span class="comment">// 160</span></span><br><span class="line"></span><br><span class="line">calculator.divide(<span class="number">10</span>)   <span class="comment">// 16</span></span><br><span class="line">calculator.reset()      <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>첨부된 그림을 참고하여 각 도형별 클래스를 만들고 각각의 넓이, 둘레, 부피를 구하는 프로퍼티와 메서드 구현하기</li>
-</ol>
-<img src="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-6/hexo_one.png" class="" title="hexo">
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Poly</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> width: <span class="type">Double?</span></span><br><span class="line">    <span class="keyword">var</span> height: <span class="type">Double?</span></span><br><span class="line">    <span class="keyword">var</span> length: <span class="type">Double?</span></span><br><span class="line">    <span class="keyword">var</span> radius: <span class="type">Double?</span></span><br><span class="line">    <span class="keyword">var</span> upperWidth: <span class="type">Double?</span></span><br><span class="line">    <span class="keyword">var</span> pi: <span class="type">Double</span> = <span class="number">3.14</span></span><br><span class="line">    <span class="keyword">var</span> <span class="type">A</span>: <span class="type">Double?</span> = <span class="literal">nil</span></span><br><span class="line">    <span class="keyword">var</span> <span class="type">P</span>: <span class="type">Double?</span> = <span class="literal">nil</span></span><br><span class="line">    <span class="keyword">var</span> <span class="type">C</span>: <span class="type">Double?</span> = <span class="literal">nil</span></span><br><span class="line">    <span class="keyword">var</span> <span class="type">V</span>: <span class="type">Double?</span> = <span class="literal">nil</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(width: <span class="type">Double?</span> = <span class="literal">nil</span>,upperWidth: <span class="type">Double?</span> = <span class="literal">nil</span>, length: <span class="type">Double?</span> = <span class="literal">nil</span>, height: <span class="type">Double?</span> = <span class="literal">nil</span>,radius: <span class="type">Double?</span> = <span class="literal">nil</span>, poly: <span class="type">Int?</span>) &#123;</span><br><span class="line">        <span class="keyword">switch</span> poly &#123;</span><br><span class="line">        <span class="comment">// square</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> w = width &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">A</span> = w * w</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">P</span> = <span class="number">4</span> * w</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="comment">// rectangle</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> w = width, <span class="keyword">let</span> h = height &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">A</span> = w * h</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">P</span> = (<span class="number">2</span> * w) + (<span class="number">2</span> * h)</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> r = radius &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">A</span> = <span class="keyword">self</span>.pi * (r * r)</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">C</span> = <span class="number">2</span> * <span class="keyword">self</span>.pi * r</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> w = width, <span class="keyword">let</span> h = height &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">A</span> = <span class="number">0.5</span> * w * h</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> uw = upperWidth, <span class="keyword">let</span> w = width, <span class="keyword">let</span> h = height &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">A</span> = <span class="number">0.5</span> * h * ( uw + w )</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> w = width &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">V</span> = w * w * w</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> w = width, <span class="keyword">let</span> l = length, <span class="keyword">let</span> h = height &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">V</span> = w * l * h</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> r = radius, <span class="keyword">let</span> h = height &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">V</span> = <span class="keyword">self</span>.pi * (r * r) * h</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> r = radius &#123;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">self</span>.<span class="type">V</span> = <span class="number">1.3</span> * <span class="keyword">self</span>.pi * (r * r * r)</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> r = radius, <span class="keyword">let</span> h = height &#123;</span><br><span class="line">                <span class="keyword">self</span>.<span class="type">V</span> = <span class="number">0.3</span> * <span class="keyword">self</span>.pi * (r * r) * h</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">self</span>.width = <span class="number">0</span></span><br><span class="line">            <span class="keyword">self</span>.height = <span class="number">0</span></span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">getResult</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"--------------------"</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"넓이(A): "</span>, <span class="keyword">self</span>.<span class="type">A</span> ?? <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"둘레(P): "</span>, <span class="keyword">self</span>.<span class="type">P</span> ?? <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"원의둘레(C): "</span>, <span class="keyword">self</span>.<span class="type">C</span> ?? <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"부피(V): "</span>, <span class="keyword">self</span>.<span class="type">V</span> ?? <span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>...<span class="number">9</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    <span class="type">Poly</span>(width: <span class="number">5</span>,upperWidth: <span class="number">5</span>, length: <span class="number">5</span>, height: <span class="number">5</span>,radius: <span class="number">4</span>, poly: i).getResult()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h1 id="swift로-풀어보기"><a class="markdownIt-Anchor" href="#swift로-풀어보기"></a> Swift로 풀어보기</h1>
+<h2 id="selection-sort"><a class="markdownIt-Anchor" href="#selection-sort"></a> Selection Sort</h2>
+<div class="video-container"><iframe src="//www.youtube.com/embed/xWBP4lzkoyM" frameborder="0" allowfullscreen></iframe></div>
+<p>시간복잡도: O(n^2)</p>
+<p>n 개의 원소를 가진 배열을 정렬할 때, 계속해서 바꾸는 것이 아니라 비교하고 있는 값의 index 를 저장해둔다.<br />
+그리고 최종적으로 한 번만 바꿔준다.</p>
+<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sequence = <span class="number">1</span> ..&lt; <span class="number">100</span>+<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">selectionSort</span><span class="params">()</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> randomArray = sequence.shuffled()</span><br><span class="line">    <span class="keyword">var</span> value: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">var</span> location: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;randomArray.<span class="built_in">count</span> &#123;</span><br><span class="line">        value = randomArray[i]</span><br><span class="line">        location = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i+<span class="number">1</span>..&lt;randomArray.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="comment">// 제일 작은값 찾는중</span></span><br><span class="line">            <span class="keyword">if</span> value &gt; randomArray[j] &#123;</span><br><span class="line">                value = randomArray[j]</span><br><span class="line">                location = j</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 완전순회 후 변경</span></span><br><span class="line">        randomArray.swapAt(i, location)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> randomArray</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="개인정리"><a class="markdownIt-Anchor" href="#개인정리"></a> 개인정리</h2>
+<p>for문안에 값과 위치를 저장 할 수있도록 변수를 할당한다.</p>
+<p>그리고 중첩된 for문이 끝나면 값에 대한 조건순회가 끝났으므로 순회를 시작했던 값과 조건순회중 찾은 가장 작은값의 위치를 바꿔준다.</p>
+<p>버블소트는 매번 위치를 수정해 주었다면<br />
+셀렉션소트는 한번 다 훑고 수정해준다는것이 차이점</p>
+<p>하지만 둘다 시간복잡도는 O(n^2) 이라는점</p>
+<blockquote>
+<p>Bubble은 핵비효율적이었다면<br />
+Selection은 덜 비효율</p>
+<blockquote>
+<p>아무튼 비효율적임</p>
+</blockquote>
+</blockquote>
+
       
     </div>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -442,7 +439,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-Bubble-Sort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
@@ -456,7 +453,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/" class="post-title-link" itemprop="url">hexo sitemap,robots.txt 추가하기</a>
+            <a href="/2019/11/Swift-Bubble-Sort/" class="post-title-link" itemprop="url">[Swift]Bubble Sort</a>
         </h2>
 
         <div class="post-meta">
@@ -466,14 +463,14 @@
               </span>
               <span class="post-meta-item-text">작성일</span>
 
-              <time title="Post created: 2019-11-18 10:32:06" itemprop="dateCreated datePublished" datetime="2019-11-18T10:32:06+09:00">2019-11-18</time>
+              <time title="Post created: 2019-11-20 15:35:49" itemprop="dateCreated datePublished" datetime="2019-11-20T15:35:49+09:00">2019-11-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2020-01-06 17:47:45" itemprop="dateModified" datetime="2020-01-06T17:47:45+09:00">2020-01-06</time>
+                <time title="Updated at: 2020-02-04 21:09:54" itemprop="dateModified" datetime="2020-02-04T21:09:54+09:00">2020-02-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -481,8 +478,8 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
                   </a>
                 </span>
             </span>
@@ -496,8 +493,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/hexo-sitemap-robots-txt-추가하기/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/11/Swift-Bubble-Sort/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-Bubble-Sort/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -512,166 +509,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="hexo-시리즈-바로가기"><a class="markdownIt-Anchor" href="#hexo-시리즈-바로가기"></a> Hexo 시리즈 바로가기</h1>
-<ol>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo로 Github Page 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/">Hexo 테마 설정하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 댓글 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">구글 애널리틱스 연동하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 메뉴 추가하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/">블로그 방문자 카운팅</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">sitemap.xml, robots.txt 추가하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/">Hexo 구글 애드센스(Adsense) 적용하기</a></p>
-</li>
-</ol>
-<h1 id="hexo-seo최적화"><a class="markdownIt-Anchor" href="#hexo-seo최적화"></a> hexo SEO최적화</h1>
-<h2 id="seo란"><a class="markdownIt-Anchor" href="#seo란"></a> SEO란?</h2>
-<p>Search Engine Optimization</p>
-<p>검색엔진최적화 라는 뜻을 가지며,</p>
-<p>우리가 만든 웹사이트가 검색엔진에 좀 더 노출이 많이되고, 상위에 노출 되도록 하는것이다.</p>
-<p>웹사이트를 상위노출 시키기 위한 수많은 방법들이 존재하지만</p>
-<p>이번 포스팅에서는 가장 기초적이며 SEO에 기본이 되는 부분들을 세팅해보려고 한다.</p>
-<ul>
-<li>sitemap.xml</li>
-<li>robots.txt</li>
-<li>rss</li>
-</ul>
-<h2 id="sitemap"><a class="markdownIt-Anchor" href="#sitemap"></a> sitemap</h2>
-<p>사이트맵은 일종의 지도다.<br />
-검색엔진들을 위한 지도라고 생각하면 된다.<br />
-검색엔진에게 우리 사이트의 구조를 알려주는 파일이라고 생각하면 된다.</p>
-<h3 id="설치-및-적용"><a class="markdownIt-Anchor" href="#설치-및-적용"></a> 설치 및 적용</h3>
-<ol>
-<li><code>블로그 루트 디렉토리</code>에서 해당 플러그인 설치</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-seo-friendly-sitemap --save</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>에디터로 <code>블로그 루트 디렉토리</code>에 있는 <code>_config.yml</code>을 열어준다.</li>
-</ol>
-<blockquote>
-<p><code>theme/</code>안에 있는 <code>_config.yml</code> 아닙니다.</p>
-</blockquote>
-<ol start="3">
-<li>다음과 같은 내용을 적어준다.</li>
-</ol>
-<img src="/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/hexo_seo1.png" class="" title="hexo_seo1">
-<p>path값은 필수이며, 나머지 옵션은 선택입니다.</p>
-<ul>
-<li>
-<p>path: 루트 디렉토리에 <code>sitemap.xml</code>생성 <code>url/sitemap.xml</code>로 확인이 가능함</p>
-</li>
-<li>
-<p>tag: sitemap에 tag 포함여부</p>
-</li>
-<li>
-<p>category: sitemap에 category 포함여부</p>
-</li>
-</ul>
-<h3 id="확인"><a class="markdownIt-Anchor" href="#확인"></a> 확인</h3>
-<ol>
-<li>
-<p><code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</code></p>
-</li>
-<li>
-<p><code>localhost:4000/sitemap.xml</code> 으로 접근하여 확인</p>
-</li>
-</ol>
-<h2 id="robotstxt"><a class="markdownIt-Anchor" href="#robotstxt"></a> robots.txt</h2>
-<p>웹사이트에는 검색엔진에 노출되야하는 페이지와 노출되면 안되는 페이지가 존재할 수 있다.</p>
-<blockquote>
-<p>ex)<br />
-admin페이지는 노출되면 안된다.<br />
-상품을 파는 페이지는 노출이 되어야한다.</p>
-</blockquote>
-<p>그러한 페이지들을 구분하여 검색엔진에게 알려주는 파일이다.</p>
-<p>더 자세한 내용을 <a href="https://support.google.com/webmasters/answer/6062596?hl=ko" target="_blank" rel="noopener">여기</a>를 참고하자.</p>
-<h3 id="설치-및-적용-2"><a class="markdownIt-Anchor" href="#설치-및-적용-2"></a> 설치 및 적용</h3>
-<ol>
-<li>설치</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-robotstxt --save</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>에디터로 <code>블로그 루트 디렉토리</code>에 있는 <code>_config.yml</code>을 열어준다.</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">robotstxt:</span><br><span class="line">  useragent: "*"</span><br><span class="line">  allow:</span><br><span class="line">    - /</span><br><span class="line">  sitemap: https://&lt;username&gt;.github.io/sitemap.xml</span><br></pre></td></tr></table></figure>
-<ul>
-<li>useragent: 적용시킬 검색엔진 대상</li>
-</ul>
-<blockquote>
-<p>*은 모든 검색엔진에게 적용</p>
-</blockquote>
-<ul>
-<li>allow: 허용할 페이지</li>
-</ul>
-<blockquote>
-<p>/밑에 모든 페이지를 긁어도 좋다.</p>
-</blockquote>
-<ul>
-<li>
-<p>disallow: 금지할 페이지</p>
-</li>
-<li>
-<p>sitemap: 사이트맵의 위치</p>
-</li>
-</ul>
-<blockquote>
-<p><username> 여러분의 github page 주소를 적어주시면 됩니다.</p>
-</blockquote>
-<h3 id="확인-2"><a class="markdownIt-Anchor" href="#확인-2"></a> 확인</h3>
-<ol>
-<li>
-<p><code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</code></p>
-</li>
-<li>
-<p><code>localhost:4000/robots.txt</code> 으로 접근하여 확인</p>
-</li>
-</ol>
-<h2 id="rss"><a class="markdownIt-Anchor" href="#rss"></a> rss</h2>
-<p>RSS feed 는 사이트내의 최신 콘텐츠를 담고 있는 파일</p>
-<p>검색엔진에게 새글 목록만 따로 긁을 수 있게 해준다고 생각하자.</p>
-<h3 id="설치-및-적용-3"><a class="markdownIt-Anchor" href="#설치-및-적용-3"></a> 설치 및 적용</h3>
-<ol>
-<li>설치</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>
-<p>에디터로 <code>블로그 루트 디렉토리</code>에 있는 <code>_config.yml</code>을 열어준다.</p>
-</li>
-<li>
-<p>파일 수정</p>
-</li>
-</ol>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feed:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">rss2</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">rss2.xml</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>type: rss파일 타입</li>
-<li>path: 최신피드가 생성될 경로</li>
-<li>limit: 최신 포스트 갯수</li>
-</ul>
-<h3 id="확인-3"><a class="markdownIt-Anchor" href="#확인-3"></a> 확인</h3>
-<ol>
-<li>
-<p><code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</code></p>
-</li>
-<li>
-<p><code>localhost:4000</code> 으로 접근하여 사이드바에 rss버튼을 눌러보자.</p>
-</li>
-</ol>
+          <h1 id="swift로-풀어보기"><a class="markdownIt-Anchor" href="#swift로-풀어보기"></a> Swift로 풀어보기</h1>
+<h2 id="bubble-sort"><a class="markdownIt-Anchor" href="#bubble-sort"></a> Bubble Sort</h2>
+<div class="video-container"><iframe src="//www.youtube.com/embed/nmhjrI-aW5o" frameborder="0" allowfullscreen></iframe></div>
+<p>시간복잡도: O(n^2)</p>
+<p>n 개의 원소를 가진 배열을 정렬할 때, 인접한 두 개의 데이터를 비교해가면서 정렬을 진행하는 방식이다. 가장 큰 값을 배열의 맨 끝에다 이동시키면서 정렬하고자 하는 원소의 개수 만큼을 두 번 반복하게 된다.</p>
+<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sequence = <span class="type">Array</span>(<span class="number">1</span> ..&lt; <span class="number">100</span>+<span class="number">1</span>).shuffled()</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">bubbleSort</span><span class="params">(input: <span class="keyword">inout</span> [Int])</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">0</span>..&lt;input.<span class="built_in">count</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">0</span>..&lt;input.<span class="built_in">count</span>-<span class="number">1</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> input[j] &gt; input[j+<span class="number">1</span>] &#123;</span><br><span class="line">                input.swapAt(j, j+<span class="number">1</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>전체 배열을 순회하면서</p>
+<p>앞쪽값이 뒷쪽값 보다 큰 경우 서로의 위치를 바꾼다.</p>
+<h3 id="성능향상"><a class="markdownIt-Anchor" href="#성능향상"></a> 성능향상</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sequence = <span class="type">Array</span>(<span class="number">1</span> ..&lt; <span class="number">100</span>+<span class="number">1</span>).shuffled()</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">bubbleSortFlag</span><span class="params">(input: <span class="keyword">inout</span> [Int])</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> flag: <span class="type">Bool</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..&lt;input.<span class="built_in">count</span> &#123;</span><br><span class="line">        flag = <span class="literal">true</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">0</span>..&lt;input.<span class="built_in">count</span>-i &#123;</span><br><span class="line">            <span class="keyword">guard</span> input[j] &gt; input[j+<span class="number">1</span>] <span class="keyword">else</span> &#123; <span class="keyword">continue</span> &#125;</span><br><span class="line">            input.swapAt(j, j+<span class="number">1</span>)</span><br><span class="line">            flag = <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">guard</span> flag <span class="keyword">else</span> &#123; <span class="keyword">continue</span> &#125;</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="개인정리"><a class="markdownIt-Anchor" href="#개인정리"></a> 개인정리</h2>
+<p>버블소트의 특징은 한번 순회를 마치면 가장 큰 값이 배열의 가장 뒤쪽으로 가게 된다는점이다.</p>
+<p>전체 배열을 순회하면서</p>
+<p>앞쪽값이 뒷쪽값 보다 큰 경우 서로의 위치를 바꾼다.<br />
+여기까지는 똑같으나,</p>
+<p>반복문을 계속 진행하다보면 배열의 뒤쪽부분은 큰값의 순서대로 정렬이 될것이고,<br />
+우리가 원하던 정렬이 이미 이루어진 상태이므로 더이상 비교를 하지 않아도 된다.</p>
+<p><code>for j in 0..&lt;input-i</code> 이러한 코드가 작성되게 된것도 위와같은 필요성 때문이며,</p>
+<p><code>flag</code>가 사용된것도 앞쪽이 정렬이 되어있다면 더이상 순회를 돌 필요가 없다는 뜻에서 사용되었다.</p>
 
       
     </div>
@@ -703,7 +560,7 @@ admin페이지는 노출되면 안된다.<br />
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
 
@@ -749,7 +606,7 @@ admin페이지는 노출되면 안된다.<br />
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">66</span>
+          <span class="site-state-item-count">69</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -762,7 +619,7 @@ admin페이지는 노출되면 안된다.<br />
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">67</span>
+        <span class="site-state-item-count">69</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>

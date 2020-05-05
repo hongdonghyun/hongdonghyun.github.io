@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+<meta name="naver-site-verification" content="0561be7c378c2cd6bbee3400289c53c4d8f2d474"/>
+<script data-ad-client="ca-pub-4844823680997120" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/rss2.xml" title="Hong3의 개발블로그" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '복사',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="sync  async 호출한 함수가 종료되지 않아도 return  DispatchQueue  Serial Queue  sync [1, 2, 3] -&amp;gt; [1] 큐에 가장먼저 등록된 작업이 실행되어야 다음 작업이 실행됨  1이 끝나야 2의 작업이 실행된다.   async [1, 2, 3] 앞에 누가 등록되어있는지 고려되지않는다.  다만 등록된 순서대로">
+<meta name="keywords" content="python,swift,hexo,django,flask,aws">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sync">
+<meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;02&#x2F;sync&#x2F;index.html">
+<meta property="og:site_name" content="Hong3의 개발블로그">
+<meta property="og:description" content="sync  async 호출한 함수가 종료되지 않아도 return  DispatchQueue  Serial Queue  sync [1, 2, 3] -&amp;gt; [1] 큐에 가장먼저 등록된 작업이 실행되어야 다음 작업이 실행됨  1이 끝나야 2의 작업이 실행된다.   async [1, 2, 3] 앞에 누가 등록되어있는지 고려되지않는다.  다만 등록된 순서대로">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2020-02-13T13:48:22.662Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://hongdonghyun.github.io/2020/02/sync/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>sync | Hong3의 개발블로그</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106140746-2"></script>
+    <script>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-106140746-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script data-ad-client="ca-pub-4844823680997120" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hong3의 개발블로그</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">- dev hong3</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>홈</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>태그</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>카테고리</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>아카이브</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/02/sync/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          sync
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2020-02-13 22:48:22" itemprop="dateCreated datePublished" datetime="2020-02-13T22:48:22+09:00">2020-02-13</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/02/sync/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/sync/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="sync"><a class="markdownIt-Anchor" href="#sync"></a> sync</h1>
+<h1 id="async"><a class="markdownIt-Anchor" href="#async"></a> async</h1>
+<p>호출한 함수가 종료되지 않아도 return</p>
+<h1 id="dispatchqueue"><a class="markdownIt-Anchor" href="#dispatchqueue"></a> DispatchQueue</h1>
+<h2 id="serial-queue"><a class="markdownIt-Anchor" href="#serial-queue"></a> Serial Queue</h2>
+<h3 id="sync-2"><a class="markdownIt-Anchor" href="#sync-2"></a> sync</h3>
+<p>[1, 2, 3] -&gt; [1]<br />
+큐에 가장먼저 등록된 작업이 실행되어야 다음 작업이 실행됨</p>
+<blockquote>
+<p>1이 끝나야 2의 작업이 실행된다.</p>
+</blockquote>
+<h3 id="async-2"><a class="markdownIt-Anchor" href="#async-2"></a> async</h3>
+<p>[1, 2, 3]<br />
+앞에 누가 등록되어있는지 고려되지않는다.  다만 등록된 순서대로 실행된다.</p>
+<h2 id="concurrent-queue"><a class="markdownIt-Anchor" href="#concurrent-queue"></a> Concurrent Queue</h2>
+<h3 id="sync-3"><a class="markdownIt-Anchor" href="#sync-3"></a> sync</h3>
+<p>큐에 가장먼저 등록된 작업이 실행되어야 다음 작업이 실행됨<br />
+sync인경우 concurrent, serial의 실행결과가 동일</p>
+<h3 id="async-3"><a class="markdownIt-Anchor" href="#async-3"></a> async</h3>
+<p>등록된 순서랑 상관없이 순서가 보장되지 않는다.</p>
+<h2 id="system-dispatchqueue"><a class="markdownIt-Anchor" href="#system-dispatchqueue"></a> System DispatchQueue</h2>
+<p>system이 제공하는 Queue는 main global이 있고 앱 실행시 자동생성</p>
+<p>main -&gt; UI관련 업데이트<br />
+only async</p>
+<blockquote>
+<p>Serial async</p>
+</blockquote>
+<p>global -&gt; UI를 제외한 모든작업시 사용<br />
+async,sync 둘다 가능</p>
+<blockquote>
+<p>concurrent async<br />
+Qos를 사용하여 우선순위를 지정가능</p>
+</blockquote>
+<h2 id="custom-dispatchqueue"><a class="markdownIt-Anchor" href="#custom-dispatchqueue"></a> Custom DispatchQueue</h2>
+<p>Non Main Thread</p>
+<p>Serial / Concurrent, Qos등 여러 옵션을 지정하여 생성 가능하다.</p>
+<h2 id="qos-quality-of-service"><a class="markdownIt-Anchor" href="#qos-quality-of-service"></a> Qos (Quality of Service)</h2>
+<p>우선순위<br />
+6개의 Qos클래스가 존재하며 4개의 주요유형과 2개의 특수유형으로 구분</p>
+<ul>
+<li>
+<p>User Interactive</p>
+<ul>
+<li>즉각 반응해야하는 작업 -&gt; 반응성 및 성능에 중점</li>
+<li>main thread에서 동작하는 인터페이스 새로고침, 애니메이션등 유저와의 상호작용 작업에 할당</li>
+</ul>
+</li>
+<li>
+<p>User Initiated</p>
+<ul>
+<li>몇 초이내, 짧은시간내에 동작해야하는 작업시</li>
+<li>문서를 열거나 버튼액션등 빠른결과를 요구하는 작업시</li>
+</ul>
+</li>
+<li>
+<p>Utility</p>
+<ul>
+<li>수초, 수분에 걸쳐 작업 반응성과 성능 에너지효율등의 균형중시</li>
+<li>데이터를 불러오거나 다운로드 하는등의 작업, 진행표시줄로 표현된다.</li>
+</ul>
+</li>
+<li>
+<p>Background</p>
+<ul>
+<li>백그라운드에서 동작, 색인생성,동기화,백업등 사용자가 볼수 없는 작업에 할당</li>
+<li>저전력 모드시 일시중지</li>
+</ul>
+</li>
+<li>
+<p>Default</p>
+<ul>
+<li>Qos를 지정하지 않으면 설정됨 User Initiated 와 Utility의 중간레벨</li>
+<li>GCD global queue의 기본동작</li>
+</ul>
+</li>
+<li>
+<p>Unspecified</p>
+<ul>
+<li>Qos정보가 없으므로 시스템이 추론해야함</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/02/Network/" rel="next" title="Network">
+                  <i class="fa fa-chevron-left"></i> Network
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2020/05/addSubView%EB%90%9C-ViewController-%EC%B0%BE%EA%B8%B0/" rel="prev" title="addSubView된 ViewController 찾기">
+                  addSubView된 ViewController 찾기 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sync"><span class="nav-number">1.</span> <span class="nav-text"> sync</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#async"><span class="nav-number">2.</span> <span class="nav-text"> async</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dispatchqueue"><span class="nav-number">3.</span> <span class="nav-text"> DispatchQueue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#serial-queue"><span class="nav-number">3.1.</span> <span class="nav-text"> Serial Queue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sync-2"><span class="nav-number">3.1.1.</span> <span class="nav-text"> sync</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#async-2"><span class="nav-number">3.1.2.</span> <span class="nav-text"> async</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concurrent-queue"><span class="nav-number">3.2.</span> <span class="nav-text"> Concurrent Queue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sync-3"><span class="nav-number">3.2.1.</span> <span class="nav-text"> sync</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#async-3"><span class="nav-number">3.2.2.</span> <span class="nav-text"> async</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#system-dispatchqueue"><span class="nav-number">3.3.</span> <span class="nav-text"> System DispatchQueue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#custom-dispatchqueue"><span class="nav-number">3.4.</span> <span class="nav-text"> Custom DispatchQueue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#qos-quality-of-service"><span class="nav-number">3.5.</span> <span class="nav-text"> Qos (Quality of Service)</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hong3"
+      src="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+  <p class="site-author-name" itemprop="name">Hong3</p>
+  <div class="site-description" itemprop="description">개발을 잘하고 싶읍니다</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">69</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/rss2.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hongdonghyun" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;hongdonghyun" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:hong4367@gmail.com" title="E-mail &amp;rarr; mailto:hong4367@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hong3</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+
+<span id="busuanzi_container_site_pv">
+  총 조회 <span id="busuanzi_value_site_pv"></span> 회
+</span> |
+<span id="busuanzi_container_site_uv">
+  총 방문자 <span id="busuanzi_value_site_uv"></span> 명
+</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hong3.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://hongdonghyun.github.io/2020/02/sync/",
+            identifier: "2020/02/sync/",
+            title: "sync"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://hong3.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+</script>
+
+</body>
+</html>
