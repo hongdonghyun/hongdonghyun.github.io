@@ -205,6 +205,135 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/05/addSubView%EB%90%9C-ViewController-%EC%B0%BE%EA%B8%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/addSubView%EB%90%9C-ViewController-%EC%B0%BE%EA%B8%B0/" class="post-title-link" itemprop="url">addSubView된 ViewController 찾기</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2020-05-05 13:50:07 / Updated at: 14:16:40" itemprop="dateCreated datePublished" datetime="2020-05-05T13:50:07+09:00">2020-05-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/05/addSubView%EB%90%9C-ViewController-%EC%B0%BE%EA%B8%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/addSubView된-ViewController-찾기/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="addsubview된-부모-viewcontroller-찾기"><a class="markdownIt-Anchor" href="#addsubview된-부모-viewcontroller-찾기"></a> addSubView된 부모 ViewController 찾기</h1>
+<p><code>Swift</code>에서 제공하는 모든 UI들은 기본적으로 <code>UIView</code>를 상속받아서 만들어졌다.</p>
+<p>그렇다는것은 <code>UIView</code>에다가 추가적인 메서드를 구현한다면 모든 UI들이 해당 메서드를 사용할 수 있다고 생각한다.</p>
+<p>최근 <a href="https://github.com/iOS-WPS-Team3/iOS-team3/tree/develop" target="_blank" rel="noopener">팀프로젝트</a>에서 <code>MVC</code> 디자인 패턴으로 코드를 쪼개고 나누다 보니 특정 UI를 제어하기가 좀 어려웠었다.</p>
+<p>그럴때 사용하는것이 <code>delegate</code>인데 뎁스가 깊어지면 <code>delegate</code>를 중첩해서 써야하는 경우가 생겼다.</p>
+<p>영 내키지 않아서 다른방법을 찾아보다 발견했던것이 <code>Notification</code>이었고 잘 사용하고 있었다.</p>
+<p>하지만 이것도 썩 훌륭한 방법이 아니라고 생각이 들었다.</p>
+<blockquote>
+<p>프로젝트 규모가 커지면 커질수록 <code>Notification</code>이 너무 많아지다보니 관리의 스트레스가 장난없었다.</p>
+</blockquote>
+<p>조금 더 고민을 깊게 해보기로 했고, 우연히 <code>subview</code>된 목록들을 살펴보다 깨달음을 얻었다.</p>
+<p>코드상에선 분명히 쪼개져 있어서 특정UI를 접근하기가 힘들었는데 <code>subviews</code>에서는 버젓이 출력되고 있었다.</p>
+<p>그래서 고민하고 검색하며 찾아낸 코드가 다음의 코드이다.</p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIView</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 뷰컨트롤러 찾기</span></span><br><span class="line">  <span class="keyword">var</span> viewController: <span class="type">UIViewController?</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> vc = <span class="keyword">self</span>.next <span class="keyword">as</span>? <span class="type">UIViewController</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> vc</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> <span class="keyword">let</span> superView = <span class="keyword">self</span>.superview &#123;</span><br><span class="line">      <span class="keyword">return</span> superView.viewController</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="설명"><a class="markdownIt-Anchor" href="#설명"></a> 설명</h1>
+<p>재귀호출의 형태를 가지고 있고, 재귀조건과 탈출조건을 둘다 만족하고 있다.</p>
+<p><code>addSubView</code>가 되지 않았다면 <code>ViewController</code>를 가지고 있을리 없으니 <code>Optional</code>의 형태로 만들었다.</p>
+<p><code>self.next</code>는 <code>UIResponder</code>에 있는 <code>next</code>를 호출한다.</p>
+<blockquote>
+<p>UIView는 UIResponder를 상속받고 있습니다.</p>
+</blockquote>
+<blockquote>
+<p>UIResponder는 특정이벤트를 누가 처리할지에 관한 내용들을 가지고 있습니다.</p>
+</blockquote>
+<blockquote>
+<p>UIResponder Chain이라고 합니다.</p>
+</blockquote>
+<p>하지만 여기서는 이벤트 처리가 아닌 해당UI의 부모가 누군지 찾아내는 용도로 사용을 했다.</p>
+<p>재귀의 형태를 띄고 있으니 <code>next</code>를 계속호출하여 타입이 <code>ViewController</code>인 녀석을 찾아냅니다.</p>
+<blockquote>
+<p>없다면 nil</p>
+</blockquote>
+<p>이렇게 <code>ViewController</code>를 찾아내어 <code>push</code> 또는 <code>navi push</code>등을 할 수 있다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/04/Network/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -578,141 +707,6 @@ Qos를 사용하여 우선순위를 지정가능</p>
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/02/gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="post-title-link" itemprop="url">gitignore 스크립트 만들기</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2020-02-04 20:32:12 / Updated at: 20:51:34" itemprop="dateCreated datePublished" datetime="2020-02-04T20:32:12+09:00">2020-02-04</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/02/gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/gitignore-스크립트-만들기/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="gitignore"><a class="markdownIt-Anchor" href="#gitignore"></a> gitignore</h1>
-<h2 id="gitignore란"><a class="markdownIt-Anchor" href="#gitignore란"></a> gitignore란?</h2>
-<p>git으로 관리되고 있는 디렉토리내에서<br />
-git에 포함되지 않아야하는 <code>폴더</code>,<code>파일</code>들을 설정하게 제외시킬 수 있는설정파일</p>
-<h2 id="gitignoreio"><a class="markdownIt-Anchor" href="#gitignoreio"></a> <a href="http://gitignore.io" target="_blank" rel="noopener">gitignore.io</a></h2>
-<p><a href="http://gitignore.io/" target="_blank" rel="noopener">gitignore.io</a>여기로 가면 내가 원하는 gitignore파일을 만들 수 있다.</p>
-<img src="/2020/02/gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/gitignore1.png" class="" title="gitignore1">
-<h2 id="매번-입력하기-귀찮으니-스크립트로-만들자"><a class="markdownIt-Anchor" href="#매번-입력하기-귀찮으니-스크립트로-만들자"></a> 매번 입력하기 귀찮으니 스크립트로 만들자</h2>
-<p><a href="https://docs.gitignore.io/install/command-line" target="_blank" rel="noopener">gitignore docs</a><br />
-해당 링크로 가면 셸별로 command 명령어 모음이 있다.</p>
-<p>해당 내용을 바탕으로 스크립트를 만들고 싶었다.<br />
-<code>git</code>자체에 명령을 추가하는 방식도 있지만 좀 더 범용적이게 <code>shell function</code>으로 만들려고 했다.</p>
-<h3 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h3>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gi</span></span>() &#123;</span><br><span class="line">    status_code=$(curl -s -o /dev/null -w <span class="string">"%&#123;http_code&#125;"</span> https://gitignore.io/api)</span><br><span class="line">    <span class="keyword">if</span> [ <span class="variable">$status_code</span> = <span class="string">'200'</span> ]; <span class="keyword">then</span></span><br><span class="line">        curl -sLw <span class="string">'\n'</span> https://www.gitignore.io/api/<span class="variable">$@</span> &gt; .gitignore ;</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">'create .gitignore'</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">'create fail\n reason: request failed'</span>;</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="사용법"><a class="markdownIt-Anchor" href="#사용법"></a> 사용법</h3>
-<p>사용법은 다음과 같다.</p>
-<ol>
-<li>터미널을 킨다.</li>
-<li>zshrc파일을 열어준다 (MacOS의 경우 ~/로 가면 .zshrc가 있다.)</li>
-<li>.zshrc 파일 제일밑에 해당 함수를 넣어준다.</li>
-<li>터미널에서 <code>source ~/.zshrc</code> 혹은 터미널만 껐다킨다.</li>
-<li>이후 <code>.gitignore</code>를 만들고 싶은곳에서 <code>gi macos,python,swift</code> 등 내가 추가하고 싶은 파일을 <code>,</code>단위로 구분하여 입력한다.</li>
-<li>생성된 파일을 확인</li>
-</ol>
-<h3 id="설명"><a class="markdownIt-Anchor" href="#설명"></a> 설명</h3>
-<p>해당 함수는 두번에 걸쳐 <a href="http://gitignore.io/" target="_blank" rel="noopener">gitignore.io</a>에 <code>request</code>를 보낸다.<br />
-첫번째는 해당 서버가 살아있는지 확인후</p>
-<blockquote>
-<p>status code가 200이 떨어지는경우를 살아있다고 판단.</p>
-</blockquote>
-<p><a href="http://gitignore.io/" target="_blank" rel="noopener">gitignore.io</a>에 API로 터미널에서 입력받은 파라미터들을 붙여서 <code>GET</code>요청을 보낸다.<br />
-그러면 <code>response</code>에 해당 파라미터들에 관한 <code>ignore</code>내용들이 나오는데<br />
-내용들을 .gitignore라는 파일에 덮어씌우고 정상 생성되었다는 메시지를 출력하고 종료한다.</p>
-<blockquote>
-<p>이경우 파일이 없다면 자동으로 생성된다.</p>
-</blockquote>
-<p>만약 서버가 살아있지않다면 파일생성을 하지 않고 실패했다는 메시지를 출력하고 종료한다.</p>
-<h2 id="마치며"><a class="markdownIt-Anchor" href="#마치며"></a> 마치며</h2>
-<p>사실 셸 스크립트를 다루어본적은 몇번 없어서 저 짧은 코드를 쓰는데 꽤나 애를먹었다.<br />
-그래도 검색을 하고 내가 원하는 내용인지 판단하고 테스트하는 실력이 많이 올라온것같아 기분이 좋다.</p>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -763,7 +757,7 @@ git에 포함되지 않아야하는 <code>폴더</code>,<code>파일</code>들�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">71</span>
+          <span class="site-state-item-count">72</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -776,7 +770,7 @@ git에 포함되지 않아야하는 <code>폴더</code>,<code>파일</code>들�
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">74</span>
+        <span class="site-state-item-count">76</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
