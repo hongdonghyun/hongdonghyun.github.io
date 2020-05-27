@@ -205,6 +205,218 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/04/Network/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/Network/" class="post-title-link" itemprop="url">OSI 7Layer</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2020-04-01 21:52:30" itemprop="dateCreated datePublished" datetime="2020-04-01T21:52:30+09:00">2020-04-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2020-05-05 15:01:31" itemprop="dateModified" datetime="2020-05-05T15:01:31+09:00">2020-05-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EC%BB%B4%EA%B3%B5-%EA%B8%B0%EC%B4%88/" itemprop="url" rel="index">
+                    <span itemprop="name">컴공 기초</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/04/Network/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/04/Network/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="network"><a class="markdownIt-Anchor" href="#network"></a> Network</h1>
+<h2 id="uri"><a class="markdownIt-Anchor" href="#uri"></a> URI</h2>
+<p>인터넷의 자원을 유일하게 식별하기 위한 통합 자원 식별자</p>
+<p>절대적 경로와 상대적경로를 포함하는 URL, URN의 상위개념</p>
+<h3 id="url-주소"><a class="markdownIt-Anchor" href="#url-주소"></a> URL (주소)</h3>
+<p>자원의 위체에 대한 절대경로값</p>
+<blockquote>
+<p>서울시 성동구 XX아파트</p>
+</blockquote>
+<h3 id="urn-주민등록번호"><a class="markdownIt-Anchor" href="#urn-주민등록번호"></a> URN (주민등록번호)</h3>
+<p>위치에 독립적, 지속되는 형태의 자원을 가르키기 위한 유일 식별자<br />
+IETF에서 표준을 정함</p>
+<blockquote>
+<p>901010-1xxxxxx</p>
+</blockquote>
+<h2 id="tcpip-protocol-suite"><a class="markdownIt-Anchor" href="#tcpip-protocol-suite"></a> TCP/IP Protocol Suite</h2>
+<p><code>Protocol Suite</code> 는 인터넷 네트워크에 쓰이는 프로토콜의 모음 <code>TCP/IP</code> 가 가장 많이 사용되기에 <code>TCP/IP</code> <code>프로토콜 스위트</code> 또는 <code>프로토콜 스택</code>이라고도 함</p>
+<p><code>HTTP</code>, <code>FTP</code>, <code>Telnet</code> 등이 <code>TCP/IP</code> 기반</p>
+<ul>
+<li>TCP (Transmission Control Protocol) : 패킷 전송 여부와 순서 보장의 특징</li>
+<li>IP (Internet Protocol) : 비신뢰성(패킷 전송 보장 X)과 비연결성의 특징 (IPv4, IPv6)</li>
+</ul>
+<h2 id="osi-7-layer"><a class="markdownIt-Anchor" href="#osi-7-layer"></a> OSI 7 Layer</h2>
+<p>OSI 7 계층은 NetWork에서 통신이 일어난 과정을 7단계로 나눈것</p>
+<h2 id="why"><a class="markdownIt-Anchor" href="#why"></a> Why?</h2>
+<p>계층을 나눈 이유는 통신이 일어나는 과정을 단계별로 파악할 수 있기 때문</p>
+<ul>
+<li>한눈에 알아보기 쉬움</li>
+<li>이해하기 쉽다.(처음엔 어렵다)</li>
+<li>특정계층에서 고장이나면 거기만 고치면 된다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>OSI 7 Layer Model</th>
+<th>TCP/IP Protocol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>Application</td>
+<td>Application</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Presentation</td>
+<td>Application</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Session</td>
+<td>Application</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Transport</td>
+<td>Transport</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Newwork</td>
+<td>Internet</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Data Link</td>
+<td>Network Interface</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Physical</td>
+<td>Network Interface</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-application-layer응용-계층"><a class="markdownIt-Anchor" href="#7-application-layer응용-계층"></a> 7 Application Layer(응용 계층)</h2>
+<p>최종 <code>Destination</code><br />
+<code>HTTP</code>, <code>FTP</code>, <code>SMTP</code>등의 프로토콜이 있다.</p>
+<p>사용자와 가장 가까운 계층이며<br />
+통상적으로 우리가 만드는 프로그램들은 응용계층에서 동작하게 된다.</p>
+<h2 id="6-presentation-layer표현-계층"><a class="markdownIt-Anchor" href="#6-presentation-layer표현-계층"></a> 6 Presentation Layer(표현 계층)</h2>
+<p>송/수신한 데이터들의 가공을 담당한다.</p>
+<blockquote>
+<p>암/복호화, 압축, 인/디코딩 등을 말함</p>
+</blockquote>
+<h2 id="5-session-layer세션-계층"><a class="markdownIt-Anchor" href="#5-session-layer세션-계층"></a> 5 Session Layer(세션 계층)</h2>
+<p>양 끝점간 통신을 시도할 경우 최초 연결 및 연결을 지속할 수 있도록 하는 계층</p>
+<blockquote>
+<p>연결을 열 수있다면 당연히 닫을 수도 있다.<br />
+여기서 한다.</p>
+</blockquote>
+<h2 id="4-transport-layer전송-계층"><a class="markdownIt-Anchor" href="#4-transport-layer전송-계층"></a> 4 Transport Layer(전송 계층)</h2>
+<p>통신을 시도하기전 계층</p>
+<p>전송방식을 결정하며, 오류검출 및 중복검사등을 진행한다.</p>
+<blockquote>
+<p>(CRC, 패리티비트? 뭐 이런거 였던걸로 기억)</p>
+</blockquote>
+<h2 id="3-network-layer네트워크-계층"><a class="markdownIt-Anchor" href="#3-network-layer네트워크-계층"></a> 3 Network Layer(네트워크 계층)</h2>
+<p>데이터를 목적지(Destination)까지 전달을 담당<br />
+패킷 포워딩과 라우팅(패킷의 이동경로)을 결정한다.</p>
+<h2 id="2-datalink-layer데이터링크-계층"><a class="markdownIt-Anchor" href="#2-datalink-layer데이터링크-계층"></a> 2 DataLink Layer(데이터링크 계층)</h2>
+<p>물리계층을 통해 송수신 되는 데이터들의 주소(MAC 주소)할당과 오류감지를 한다.</p>
+<h2 id="1-physical-layer물리-계층"><a class="markdownIt-Anchor" href="#1-physical-layer물리-계층"></a> 1 Physical Layer(물리 계층)</h2>
+<p>통신 케이블로 부터 데이터를 송/수신하는 계층이며<br />
+여기서 사용되는 데이터들은 Bit단위 이며 우리가 알고 있는 0또는 1이다.</p>
+<p>(0과 1은 전기적 신호가 On, Off로 만들어 지는것)</p>
+<blockquote>
+<p>파동, 주파수 라고 생각하자.</p>
+</blockquote>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/02/sync/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -501,118 +713,6 @@ git에 포함되지 않아야하는 <code>폴더</code>,<code>파일</code>들�
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/01/Swift-%EC%9E%90%EB%A6%BF%EC%88%98-%EB%8D%94%ED%95%98%EA%B8%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/Swift-%EC%9E%90%EB%A6%BF%EC%88%98-%EB%8D%94%ED%95%98%EA%B8%B0/" class="post-title-link" itemprop="url">[Swift] 자릿수 더하기</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2020-01-10 11:19:30 / Updated at: 11:24:33" itemprop="dateCreated datePublished" datetime="2020-01-10T11:19:30+09:00">2020-01-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/01/Swift-%EC%9E%90%EB%A6%BF%EC%88%98-%EB%8D%94%ED%95%98%EA%B8%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/Swift-자릿수-더하기/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
-<p><a href="https://programmers.co.kr/learn/courses/30/lessons/12931?language=swift" target="_blank" rel="noopener">프로그래머스 링크</a></p>
-<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> n:Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">String</span>(n).<span class="built_in">map</span> &#123; <span class="type">Int</span>(<span class="type">String</span>($<span class="number">0</span>))! &#125;.<span class="built_in">reduce</span>(<span class="number">0</span>, +)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
-<p>Integer값이 주어진걸 자릿수를 더하는 문제다.</p>
-<p>처음엔 <code>forEach</code>를 사용하여 풀려고 했지만</p>
-<p>고차함수를 사용하면 더 간결한 코드가 나오지 않을까 고민을 해보았다.</p>
-<blockquote>
-<p>고차함수를 많이 써본적이 없어서 연습할겸 시도해보았다.</p>
-</blockquote>
-<p>Integer를 문자열로 바꾸고 <code>map</code>함수를 사용해 한자리씩 정수로 다시 바꾸고 그 결과를 reduce를 통해 더해주었다.</p>
-<p>String의 값을 하나씩 빼오면 Character타입이 되는데 이상태에서 바로 정수형으로 바꾸어지지가 않아서 String -&gt; Int로 이중 형변환을 사용하여 Integer로 바꾸어 주었다.</p>
-<p>고차함수를 쓰니 많이 간결해졌다.</p>
-<blockquote>
-<p>축약하는 순서에대해서도 공부해보아야겠다.</p>
-</blockquote>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -663,7 +763,7 @@ git에 포함되지 않아야하는 <code>폴더</code>,<code>파일</code>들�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">74</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -676,7 +776,7 @@ git에 포함되지 않아야하는 <code>폴더</code>,<code>파일</code>들�
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-count">81</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>

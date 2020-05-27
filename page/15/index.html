@@ -205,6 +205,118 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EC%A0%95%EC%88%98%EC%9D%98-%ED%95%A9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/Swift-%EC%A0%95%EC%88%98%EC%9D%98-%ED%95%A9/" class="post-title-link" itemprop="url">[Swift]정수의 합</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-21 20:01:16" itemprop="dateCreated datePublished" datetime="2019-11-21T20:01:16+09:00">2019-11-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-25 11:08:03" itemprop="dateModified" datetime="2019-11-25T11:08:03+09:00">2019-11-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/Swift-%EC%A0%95%EC%88%98%EC%9D%98-%ED%95%A9/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-정수의-합/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<ul>
+<li>정수 하나를 입력받은 뒤, 해당 숫자와 숫자 1사이에 있는 모든 정수의 합계 구하기</li>
+<li>e.g.  5 -&gt; 1 + 2 + 3 + 4 + 5 = 15</li>
+<li>-2 -&gt; -2 + -1 + 0 + 1 = -2</li>
+</ul>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p>입력값을 절대값으로 바꿔 계산 후<br />
+음수의 경우와 양수의 경우로 나누어 리턴<br />
+0일 경우에도 따로 리턴</p>
+<h1 id="코드"><a class="markdownIt-Anchor" href="#코드"></a> 코드</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">rangeSum</span><span class="params">(<span class="number">_</span> input: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> input == <span class="number">0</span> &#123; <span class="keyword">return</span> <span class="number">1</span> &#125;</span><br><span class="line">    <span class="keyword">let</span> sign = input &lt; <span class="number">0</span> ? <span class="literal">true</span> : <span class="literal">false</span></span><br><span class="line">    <span class="keyword">let</span> sum = <span class="built_in">abs</span>(input) * (<span class="built_in">abs</span>(input) + <span class="number">1</span>) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> sign ? -sum + <span class="number">1</span> : sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EC%88%98%ED%8F%AC%EC%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -423,122 +535,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-Selection-Sort/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/Swift-Selection-Sort/" class="post-title-link" itemprop="url">[Swift]Selection Sort</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2019-11-20 15:45:17 / Updated at: 16:05:13" itemprop="dateCreated datePublished" datetime="2019-11-20T15:45:17+09:00">2019-11-20</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/Swift-Selection-Sort/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-Selection-Sort/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="swift로-풀어보기"><a class="markdownIt-Anchor" href="#swift로-풀어보기"></a> Swift로 풀어보기</h1>
-<h2 id="selection-sort"><a class="markdownIt-Anchor" href="#selection-sort"></a> Selection Sort</h2>
-<div class="video-container"><iframe src="//www.youtube.com/embed/xWBP4lzkoyM" frameborder="0" allowfullscreen></iframe></div>
-<p>시간복잡도: O(n^2)</p>
-<p>n 개의 원소를 가진 배열을 정렬할 때, 계속해서 바꾸는 것이 아니라 비교하고 있는 값의 index 를 저장해둔다.<br />
-그리고 최종적으로 한 번만 바꿔준다.</p>
-<h2 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h2>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sequence = <span class="number">1</span> ..&lt; <span class="number">100</span>+<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">selectionSort</span><span class="params">()</span></span> -&gt; <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> randomArray = sequence.shuffled()</span><br><span class="line">    <span class="keyword">var</span> value: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">var</span> location: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;randomArray.<span class="built_in">count</span> &#123;</span><br><span class="line">        value = randomArray[i]</span><br><span class="line">        location = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i+<span class="number">1</span>..&lt;randomArray.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="comment">// 제일 작은값 찾는중</span></span><br><span class="line">            <span class="keyword">if</span> value &gt; randomArray[j] &#123;</span><br><span class="line">                value = randomArray[j]</span><br><span class="line">                location = j</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 완전순회 후 변경</span></span><br><span class="line">        randomArray.swapAt(i, location)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> randomArray</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="개인정리"><a class="markdownIt-Anchor" href="#개인정리"></a> 개인정리</h2>
-<p>for문안에 값과 위치를 저장 할 수있도록 변수를 할당한다.</p>
-<p>그리고 중첩된 for문이 끝나면 값에 대한 조건순회가 끝났으므로 순회를 시작했던 값과 조건순회중 찾은 가장 작은값의 위치를 바꿔준다.</p>
-<p>버블소트는 매번 위치를 수정해 주었다면<br />
-셀렉션소트는 한번 다 훑고 수정해준다는것이 차이점</p>
-<p>하지만 둘다 시간복잡도는 O(n^2) 이라는점</p>
-<blockquote>
-<p>Bubble은 핵비효율적이었다면<br />
-Selection은 덜 비효율</p>
-<blockquote>
-<p>아무튼 비효율적임</p>
-</blockquote>
-</blockquote>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -589,7 +585,7 @@ Selection은 덜 비효율</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">74</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -602,7 +598,7 @@ Selection은 덜 비효율</p>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-count">81</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
