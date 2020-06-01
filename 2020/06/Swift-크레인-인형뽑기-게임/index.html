@@ -54,14 +54,14 @@
 </script>
 
   <meta name="description" content="문제 프로그래머스 링크  Code 12345678910111213141516171819func solution(_ board:[[Int]], _ moves:[Int]) -&amp;gt; Int &amp;#123;    var board = board    var resultStack: [Int] = []    var result = 0    moves.forEach &amp;">
-<meta name="keywords" content="Swift,프로그래머스,카카오,Stack">
+<meta name="keywords" content="Swift,프로그래머스,Stack,카카오">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift-크레인 인형뽑기 게임">
 <meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;06&#x2F;Swift-%ED%81%AC%EB%A0%88%EC%9D%B8-%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0-%EA%B2%8C%EC%9E%84&#x2F;index.html">
 <meta property="og:site_name" content="Hong3의 개발블로그">
 <meta property="og:description" content="문제 프로그래머스 링크  Code 12345678910111213141516171819func solution(_ board:[[Int]], _ moves:[Int]) -&amp;gt; Int &amp;#123;    var board = board    var resultStack: [Int] = []    var result = 0    moves.forEach &amp;">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2020-06-01T07:32:00.697Z">
+<meta property="og:updated_time" content="2020-06-01T08:21:02.269Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2020/06/Swift-%ED%81%AC%EB%A0%88%EC%9D%B8-%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0-%EA%B2%8C%EC%9E%84/">
@@ -230,7 +230,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2020-06-01 16:29:20 / Updated at: 16:32:00" itemprop="dateCreated datePublished" datetime="2020-06-01T16:29:20+09:00">2020-06-01</time>
+              <time title="Post created: 2020-06-01 16:29:20 / Updated at: 17:21:02" itemprop="dateCreated datePublished" datetime="2020-06-01T16:29:20+09:00">2020-06-01</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,7 +284,19 @@
 <p>스택을 활용하여 푸는 문제다.<br />
 현재 인형들의 위치정보가 2차원 배열에 담겨져 오고<br />
 뽑은 인형들을 스택에 담으면 된다.</p>
+<p>스택에 담긴 인형들은 가장위의 인형과 마지막으로 뽑은 인형이 동일하다면 없어지고 카운트를 증가시켜서 몇개가 없어졌는지 출력하면 된다.<br />
+<code>push</code>와 <code>pop</code>을 적절히 사용하면 된다.<br />
+그리고 동일한 인형을 뽑았다면 카운트는 2씩 증가해야한다.</p>
 <p>지문이 길어 겁이 나지만 실제로는 레벨1에 해당하는 쉬운편의 문제였다.</p>
+<p>그리고 맨처음에 문제를 잘못 읽어 발생한 문제 였지만 주어진 배열값들을 무의식적으로</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">        <span class="number">1</span>         <span class="number">2</span>           <span class="number">3</span>           <span class="number">4</span>            <span class="number">5</span></span><br><span class="line">[[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">3</span>],[<span class="number">0</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">0</span>,<span class="number">1</span>],[<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">1</span>]]</span><br></pre></td></tr></table></figure>
+<p>이런식으로 세로로 읽으면 문제를 풀 수 없다.</p>
+<blockquote>
+<p>예제는 풀리는게 함정</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>      </span><br><span class="line">[</span><br><span class="line">[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],</span><br><span class="line">[<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">3</span>],</span><br><span class="line">[<span class="number">0</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">0</span>,<span class="number">1</span>],</span><br><span class="line">[<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">2</span>],</span><br><span class="line">[<span class="number">3</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>이렇게 보아야 풀린다.<br />
+이걸 잘못봐서 한참 고생했다.</p>
 
     </div>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -308,8 +320,8 @@
           <div class="post-tags">
               <a href="/tags/Swift/" rel="tag"># Swift</a>
               <a href="/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/" rel="tag"># 프로그래머스</a>
-              <a href="/tags/%EC%B9%B4%EC%B9%B4%EC%98%A4/" rel="tag"># 카카오</a>
               <a href="/tags/Stack/" rel="tag"># Stack</a>
+              <a href="/tags/%EC%B9%B4%EC%B9%B4%EC%98%A4/" rel="tag"># 카카오</a>
           </div>
 
         
