@@ -205,6 +205,130 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/05/Swift-%EA%B8%B0%EC%A7%80%EA%B5%AD-%EC%84%A4%EC%B9%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/Swift-%EA%B8%B0%EC%A7%80%EA%B5%AD-%EC%84%A4%EC%B9%98/" class="post-title-link" itemprop="url">Swift-기지국 설치</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2020-05-06 15:22:20" itemprop="dateCreated datePublished" datetime="2020-05-06T15:22:20+09:00">2020-05-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2020-05-24 22:23:06" itemprop="dateModified" datetime="2020-05-24T22:23:06+09:00">2020-05-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/05/Swift-%EA%B8%B0%EC%A7%80%EA%B5%AD-%EC%84%A4%EC%B9%98/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/Swift-기지국-설치/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/12979" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> n:Int, <span class="number">_</span> stations:[Int], <span class="number">_</span> w:Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="comment">// 최대범위는 2*w+1</span></span><br><span class="line">    <span class="comment">// 왼쪽 station - w</span></span><br><span class="line">    <span class="comment">// 오른쪽 station + w</span></span><br><span class="line">    <span class="keyword">var</span> answer: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> stationIdx: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> location: <span class="type">Int</span> = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> (location &lt;= n) &#123;</span><br><span class="line">        <span class="comment">// 기지국 범위안에 있다!</span></span><br><span class="line">        <span class="keyword">if</span> (stationIdx &lt; stations.<span class="built_in">count</span>) &amp;&amp; (location &gt;= stations[stationIdx] - w) &#123;</span><br><span class="line">            <span class="comment">// 기지국 오른쪽 범위의 다음 한칸으로!</span></span><br><span class="line">            location = stations[stationIdx] + w + <span class="number">1</span></span><br><span class="line">            <span class="comment">// 기지국 배열의 다음거로</span></span><br><span class="line">            stationIdx += <span class="number">1</span></span><br><span class="line">        <span class="comment">// 범위에 없다!</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 설치하고 최대 범위 다음 한칸으로 이동</span></span><br><span class="line">            location += <span class="number">2</span>*w+<span class="number">1</span></span><br><span class="line">            answer += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p>처음엔 배열에 담아서 풀다가 자꾸 터져서 다른 방법을 고민했다.</p>
+<p>주어지는 파라미터들이 정렬된 상태로 주어지기 때문에</p>
+<p>왼쪽에서부터 탐색을 하는 방식으로 진행했다.</p>
+<p>기지국의 전파 최대 범위는 2*w+1 이라는걸 구한 후</p>
+<blockquote>
+<p>기지국 양쪽으로 전파가 닿으니 2*w이고 1은 기지국이 설치된 아파트이다.</p>
+</blockquote>
+<p>왼쪽의 최대 범위와 오른쪽 최대 범위를 이용해서</p>
+<blockquote>
+<p>station ± w</p>
+</blockquote>
+<p>현재 위치의 아파트에 기지국 전파가 닿는지 판단 후</p>
+<p>닿는다면 오른쪽의 최대범위 + 1 만큼 이동하여<br />
+다시 탐색을 진행한다.</p>
+<p>만약 범위가 닿지 않는다면 기지국을 설치해야하는 곳이고</p>
+<p>설치 후 기지국의 최대범위 만큼 이동하여 다시 탐색을 하는 방식이다.</p>
+<p>풀때는 몰랐는데 해당방식처럼 현재의 상태에서 최선의 방법을 선택하는것을 탐욕(Greedy)알고리즘 이라고 부르더라</p>
+<p>어떠한 알고리즘을 선택하여 풀어야할지 공부를 좀 해야할것 같다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/05/Swift-%EC%83%81%EB%8B%A8-Toast/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -428,135 +552,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/05/addSubView%EB%90%9C-ViewController-%EC%B0%BE%EA%B8%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/addSubView%EB%90%9C-ViewController-%EC%B0%BE%EA%B8%B0/" class="post-title-link" itemprop="url">addSubView된 ViewController 찾기</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2020-05-05 13:50:07 / Updated at: 14:16:40" itemprop="dateCreated datePublished" datetime="2020-05-05T13:50:07+09:00">2020-05-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Swift/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/05/addSubView%EB%90%9C-ViewController-%EC%B0%BE%EA%B8%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/addSubView된-ViewController-찾기/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="addsubview된-부모-viewcontroller-찾기"><a class="markdownIt-Anchor" href="#addsubview된-부모-viewcontroller-찾기"></a> addSubView된 부모 ViewController 찾기</h1>
-<p><code>Swift</code>에서 제공하는 모든 UI들은 기본적으로 <code>UIView</code>를 상속받아서 만들어졌다.</p>
-<p>그렇다는것은 <code>UIView</code>에다가 추가적인 메서드를 구현한다면 모든 UI들이 해당 메서드를 사용할 수 있다고 생각한다.</p>
-<p>최근 <a href="https://github.com/iOS-WPS-Team3/iOS-team3/tree/develop" target="_blank" rel="noopener">팀프로젝트</a>에서 <code>MVC</code> 디자인 패턴으로 코드를 쪼개고 나누다 보니 특정 UI를 제어하기가 좀 어려웠었다.</p>
-<p>그럴때 사용하는것이 <code>delegate</code>인데 뎁스가 깊어지면 <code>delegate</code>를 중첩해서 써야하는 경우가 생겼다.</p>
-<p>영 내키지 않아서 다른방법을 찾아보다 발견했던것이 <code>Notification</code>이었고 잘 사용하고 있었다.</p>
-<p>하지만 이것도 썩 훌륭한 방법이 아니라고 생각이 들었다.</p>
-<blockquote>
-<p>프로젝트 규모가 커지면 커질수록 <code>Notification</code>이 너무 많아지다보니 관리의 스트레스가 장난없었다.</p>
-</blockquote>
-<p>조금 더 고민을 깊게 해보기로 했고, 우연히 <code>subview</code>된 목록들을 살펴보다 깨달음을 얻었다.</p>
-<p>코드상에선 분명히 쪼개져 있어서 특정UI를 접근하기가 힘들었는데 <code>subviews</code>에서는 버젓이 출력되고 있었다.</p>
-<p>그래서 고민하고 검색하며 찾아낸 코드가 다음의 코드이다.</p>
-<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIView</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 뷰컨트롤러 찾기</span></span><br><span class="line">  <span class="keyword">var</span> viewController: <span class="type">UIViewController?</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> vc = <span class="keyword">self</span>.next <span class="keyword">as</span>? <span class="type">UIViewController</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> vc</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> <span class="keyword">let</span> superView = <span class="keyword">self</span>.superview &#123;</span><br><span class="line">      <span class="keyword">return</span> superView.viewController</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="설명"><a class="markdownIt-Anchor" href="#설명"></a> 설명</h1>
-<p>재귀호출의 형태를 가지고 있고, 재귀조건과 탈출조건을 둘다 만족하고 있다.</p>
-<p><code>addSubView</code>가 되지 않았다면 <code>ViewController</code>를 가지고 있을리 없으니 <code>Optional</code>의 형태로 만들었다.</p>
-<p><code>self.next</code>는 <code>UIResponder</code>에 있는 <code>next</code>를 호출한다.</p>
-<blockquote>
-<p>UIView는 UIResponder를 상속받고 있습니다.</p>
-</blockquote>
-<blockquote>
-<p>UIResponder는 특정이벤트를 누가 처리할지에 관한 내용들을 가지고 있습니다.</p>
-</blockquote>
-<blockquote>
-<p>UIResponder Chain이라고 합니다.</p>
-</blockquote>
-<p>하지만 여기서는 이벤트 처리가 아닌 해당UI의 부모가 누군지 찾아내는 용도로 사용을 했다.</p>
-<p>재귀의 형태를 띄고 있으니 <code>next</code>를 계속호출하여 타입이 <code>ViewController</code>인 녀석을 찾아냅니다.</p>
-<blockquote>
-<p>없다면 nil</p>
-</blockquote>
-<p>이렇게 <code>ViewController</code>를 찾아내어 <code>push</code> 또는 <code>navi push</code>등을 할 수 있다.</p>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -607,7 +602,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-count">75</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -620,7 +615,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">81</span>
+        <span class="site-state-item-count">82</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
