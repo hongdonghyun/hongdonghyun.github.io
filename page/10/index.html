@@ -634,7 +634,8 @@ google.signIn()</p>
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+  <div class="sidebar-button motion-element">
+    <a onclick="Chatra('openChat', true);"><i class="fa fa-comment"></i>
     채팅방
   </a>
   </div>
@@ -735,6 +736,18 @@ google.signIn()</p>
 
 
 
+  <script>
+    (function(d, w, c) {
+      w.ChatraID = 'hong4367';
+      var s = d.createElement('script');
+      w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+      };
+      s.async = true;
+      s.src = 'https://call.chatra.io/chatra.js';
+      if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+  </script>
 
 
 

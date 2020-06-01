@@ -23,7 +23,7 @@
   </script>
 
   <meta name="description" content="클래스와 구조체  언제 클래스와 구조체를 써야할까? 애플의 권장사항  구조체를 기본으로 사용으로 사용한다는 전제   구조체 사용을 권장할 때  연관된 간단한 값의 집합을 캡슐화 하는 것만이 목적일 때 캡슐화된 값이 참조되는 것보다 복사되는 것이 합당할 때 구조체에 저장된 프로퍼티가 값 타입이며 참조되는 것보다 복사되는 것이 합당할 때 다른 타입으로부터 상">
-<meta name="keywords" content="Swift,Swift기초,Class,Struct">
+<meta name="keywords" content="Swift기초,Swift,Class,Struct">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift 클래스,구조체">
 <meta property="og:url" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2019&#x2F;12&#x2F;Swift-%ED%81%B4%EB%9E%98%EC%8A%A4-%EA%B5%AC%EC%A1%B0%EC%B2%B4&#x2F;index.html">
@@ -328,8 +328,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Swift/" rel="tag"># Swift</a>
               <a href="/tags/Swift%EA%B8%B0%EC%B4%88/" rel="tag"># Swift기초</a>
+              <a href="/tags/Swift/" rel="tag"># Swift</a>
               <a href="/tags/Class/" rel="tag"># Class</a>
               <a href="/tags/Struct/" rel="tag"># Struct</a>
           </div>
@@ -446,7 +446,8 @@
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+  <div class="sidebar-button motion-element">
+    <a onclick="Chatra('openChat', true);"><i class="fa fa-comment"></i>
     채팅방
   </a>
   </div>
@@ -547,6 +548,18 @@
 
 
 
+  <script>
+    (function(d, w, c) {
+      w.ChatraID = 'hong4367';
+      var s = d.createElement('script');
+      w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+      };
+      s.async = true;
+      s.src = 'https://call.chatra.io/chatra.js';
+      if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+  </script>
 
 
 
