@@ -205,6 +205,118 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/05/Swift-%ED%85%8D%EC%8A%A4%ED%8A%B8-%ED%9A%A8%EA%B3%BC-%EB%A8%B9%EC%9D%B4%EA%B8%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/Swift-%ED%85%8D%EC%8A%A4%ED%8A%B8-%ED%9A%A8%EA%B3%BC-%EB%A8%B9%EC%9D%B4%EA%B8%B0/" class="post-title-link" itemprop="url">Swift 텍스트 효과 먹이기</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2020-05-05 15:03:27 / Updated at: 15:23:14" itemprop="dateCreated datePublished" datetime="2020-05-05T15:03:27+09:00">2020-05-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/05/Swift-%ED%85%8D%EC%8A%A4%ED%8A%B8-%ED%9A%A8%EA%B3%BC-%EB%A8%B9%EC%9D%B4%EA%B8%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/Swift-텍스트-효과-먹이기/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="텍스트에-여러가지-효과-먹이기"><a class="markdownIt-Anchor" href="#텍스트에-여러가지-효과-먹이기"></a> 텍스트에 여러가지 효과 먹이기</h1>
+<p>한줄에 표현되는 텍스트중에서 특정부분만 Bold가 되거나 색상이 달라져야 하는 경우가 있었다.</p>
+<p>맨처음에는 달라져야하는 부분만 따로 <code>Label</code>로 지정하여 효과를 다르게 먹이려고 했는데</p>
+<p>지인의 도움으로 <code>NSMutableAttributedString</code>이라는것을 사용해 보았다.</p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">NSMutableAttributedString</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">bold</span><span class="params">(<span class="number">_</span> text: String, fontSize: CGFloat)</span></span> -&gt; <span class="type">NSMutableAttributedString</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> attrs = [<span class="type">NSAttributedString</span>.<span class="type">Key</span>.font: <span class="type">UIFont</span>.boldSystemFont(ofSize: fontSize)]</span><br><span class="line">    <span class="keyword">self</span>.append(<span class="type">NSMutableAttributedString</span>(string: text, attributes: attrs))</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">normal</span><span class="params">(<span class="number">_</span> text: String, textColor: UIColor? = .black, fontSize: CGFloat)</span></span> -&gt; <span class="type">NSMutableAttributedString</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> attrs: [<span class="type">NSAttributedString</span>.<span class="type">Key</span>: <span class="type">Any</span>] = [</span><br><span class="line">      <span class="type">NSAttributedString</span>.<span class="type">Key</span>.font: <span class="type">UIFont</span>.systemFont(ofSize: fontSize),</span><br><span class="line">      <span class="type">NSAttributedString</span>.<span class="type">Key</span>.foregroundColor: textColor ?? .black</span><br><span class="line">    ]</span><br><span class="line">    <span class="keyword">self</span>.append(<span class="type">NSMutableAttributedString</span>(string: text, attributes: attrs))</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">underline</span><span class="params">(<span class="number">_</span> text: String, fontSize: CGFloat)</span></span> -&gt; <span class="type">NSMutableAttributedString</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> attrs: [<span class="type">NSAttributedString</span>.<span class="type">Key</span>: <span class="type">Any</span>] = [</span><br><span class="line">      <span class="type">NSAttributedString</span>.<span class="type">Key</span>.underlineStyle: <span class="type">NSUnderlineStyle</span>.single.rawValue,</span><br><span class="line">      <span class="type">NSAttributedString</span>.<span class="type">Key</span>.font: <span class="type">UIFont</span>.systemFont(ofSize: fontSize)</span><br><span class="line">    ]</span><br><span class="line">    <span class="keyword">self</span>.append(<span class="type">NSMutableAttributedString</span>(string: text, attributes: attrs))</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">strikethrough</span><span class="params">(<span class="number">_</span> text: String, textColor: UIColor = .black)</span></span> -&gt; <span class="type">NSMutableAttributedString</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> attrs: <span class="type">NSMutableAttributedString</span> = <span class="type">NSMutableAttributedString</span>(string: text)</span><br><span class="line">    attrs.addAttribute(</span><br><span class="line">      <span class="type">NSAttributedString</span>.<span class="type">Key</span>.strikethroughStyle,</span><br><span class="line">      value: <span class="number">2</span>,</span><br><span class="line">      range: <span class="type">NSRange</span>(location: <span class="number">0</span>, length: attrs.length)</span><br><span class="line">    )</span><br><span class="line">    attrs.addAttribute(</span><br><span class="line">      <span class="type">NSAttributedString</span>.<span class="type">Key</span>.foregroundColor,</span><br><span class="line">      value: textColor,</span><br><span class="line">      range: <span class="type">NSRange</span>(location: <span class="number">0</span>, length: attrs.length)</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">self</span>.append(attrs)</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">let</span> priceLabel = <span class="type">UILabel</span>().then &#123;</span><br><span class="line">    $<span class="number">0</span>.attributedText = <span class="type">NSMutableAttributedString</span>()</span><br><span class="line">      .bold(<span class="string">"2,185"</span>, fontSize: <span class="number">22</span>)</span><br><span class="line">      .normal(<span class="string">"원 "</span>, fontSize: <span class="number">18</span>)</span><br><span class="line">      .normal(<span class="string">"5%"</span>, textColor: .orange, fontSize: <span class="number">22</span>)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="설명"><a class="markdownIt-Anchor" href="#설명"></a> 설명</h1>
+<p><code>NSMutableAttributedString</code>을 Extension하여 먹일 수 있는 효과들을 따로 메서드로 만들었다.</p>
+<p>사용법은 <code>Code</code>에 있다.<br />
+누군가에겐 도움이 되었으면 한다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/05/addSubView%EB%90%9C-ViewController-%EC%B0%BE%EA%B8%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -542,176 +654,11 @@ IETF에서 표준을 정함</p>
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/02/sync/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/sync/" class="post-title-link" itemprop="url">sync</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-
-              <time title="Post created: 2020-02-13 22:48:22" itemprop="dateCreated datePublished" datetime="2020-02-13T22:48:22+09:00">2020-02-13</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/02/sync/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/sync/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="sync"><a class="markdownIt-Anchor" href="#sync"></a> sync</h1>
-<h1 id="async"><a class="markdownIt-Anchor" href="#async"></a> async</h1>
-<p>호출한 함수가 종료되지 않아도 return</p>
-<h1 id="dispatchqueue"><a class="markdownIt-Anchor" href="#dispatchqueue"></a> DispatchQueue</h1>
-<h2 id="serial-queue"><a class="markdownIt-Anchor" href="#serial-queue"></a> Serial Queue</h2>
-<h3 id="sync-2"><a class="markdownIt-Anchor" href="#sync-2"></a> sync</h3>
-<p>[1, 2, 3] -&gt; [1]<br />
-큐에 가장먼저 등록된 작업이 실행되어야 다음 작업이 실행됨</p>
-<blockquote>
-<p>1이 끝나야 2의 작업이 실행된다.</p>
-</blockquote>
-<h3 id="async-2"><a class="markdownIt-Anchor" href="#async-2"></a> async</h3>
-<p>[1, 2, 3]<br />
-앞에 누가 등록되어있는지 고려되지않는다.  다만 등록된 순서대로 실행된다.</p>
-<h2 id="concurrent-queue"><a class="markdownIt-Anchor" href="#concurrent-queue"></a> Concurrent Queue</h2>
-<h3 id="sync-3"><a class="markdownIt-Anchor" href="#sync-3"></a> sync</h3>
-<p>큐에 가장먼저 등록된 작업이 실행되어야 다음 작업이 실행됨<br />
-sync인경우 concurrent, serial의 실행결과가 동일</p>
-<h3 id="async-3"><a class="markdownIt-Anchor" href="#async-3"></a> async</h3>
-<p>등록된 순서랑 상관없이 순서가 보장되지 않는다.</p>
-<h2 id="system-dispatchqueue"><a class="markdownIt-Anchor" href="#system-dispatchqueue"></a> System DispatchQueue</h2>
-<p>system이 제공하는 Queue는 main global이 있고 앱 실행시 자동생성</p>
-<p>main -&gt; UI관련 업데이트<br />
-only async</p>
-<blockquote>
-<p>Serial async</p>
-</blockquote>
-<p>global -&gt; UI를 제외한 모든작업시 사용<br />
-async,sync 둘다 가능</p>
-<blockquote>
-<p>concurrent async<br />
-Qos를 사용하여 우선순위를 지정가능</p>
-</blockquote>
-<h2 id="custom-dispatchqueue"><a class="markdownIt-Anchor" href="#custom-dispatchqueue"></a> Custom DispatchQueue</h2>
-<p>Non Main Thread</p>
-<p>Serial / Concurrent, Qos등 여러 옵션을 지정하여 생성 가능하다.</p>
-<h2 id="qos-quality-of-service"><a class="markdownIt-Anchor" href="#qos-quality-of-service"></a> Qos (Quality of Service)</h2>
-<p>우선순위<br />
-6개의 Qos클래스가 존재하며 4개의 주요유형과 2개의 특수유형으로 구분</p>
-<ul>
-<li>
-<p>User Interactive</p>
-<ul>
-<li>즉각 반응해야하는 작업 -&gt; 반응성 및 성능에 중점</li>
-<li>main thread에서 동작하는 인터페이스 새로고침, 애니메이션등 유저와의 상호작용 작업에 할당</li>
-</ul>
-</li>
-<li>
-<p>User Initiated</p>
-<ul>
-<li>몇 초이내, 짧은시간내에 동작해야하는 작업시</li>
-<li>문서를 열거나 버튼액션등 빠른결과를 요구하는 작업시</li>
-</ul>
-</li>
-<li>
-<p>Utility</p>
-<ul>
-<li>수초, 수분에 걸쳐 작업 반응성과 성능 에너지효율등의 균형중시</li>
-<li>데이터를 불러오거나 다운로드 하는등의 작업, 진행표시줄로 표현된다.</li>
-</ul>
-</li>
-<li>
-<p>Background</p>
-<ul>
-<li>백그라운드에서 동작, 색인생성,동기화,백업등 사용자가 볼수 없는 작업에 할당</li>
-<li>저전력 모드시 일시중지</li>
-</ul>
-</li>
-<li>
-<p>Default</p>
-<ul>
-<li>Qos를 지정하지 않으면 설정됨 User Initiated 와 Utility의 중간레벨</li>
-<li>GCD global queue의 기본동작</li>
-</ul>
-</li>
-<li>
-<p>Unspecified</p>
-<ul>
-<li>Qos정보가 없으므로 시스템이 추론해야함</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
 
@@ -757,7 +704,7 @@ Qos를 사용하여 우선순위를 지정가능</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -770,7 +717,7 @@ Qos를 사용하여 우선순위를 지정가능</p>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">82</span>
+        <span class="site-state-item-count">85</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>

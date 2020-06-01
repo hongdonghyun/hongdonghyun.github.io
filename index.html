@@ -205,6 +205,122 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/06/Swift-%EB%B9%84%EB%B0%80%EC%A7%80%EB%8F%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/Swift-%EB%B9%84%EB%B0%80%EC%A7%80%EB%8F%84/" class="post-title-link" itemprop="url">Swift-비밀지도</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2020-06-01 16:33:21 / Updated at: 17:14:59" itemprop="dateCreated datePublished" datetime="2020-06-01T16:33:21+09:00">2020-06-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/Swift-%EB%B9%84%EB%B0%80%EC%A7%80%EB%8F%84/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/Swift-비밀지도/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/17681?language=swift" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<p>실패</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> n:Int, <span class="number">_</span> arr1:[Int], <span class="number">_</span> arr2:[Int])</span></span> -&gt; [<span class="type">String</span>] &#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="number">0</span>..&lt;n).<span class="built_in">map</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> binary = <span class="type">String</span>(arr1[$<span class="number">0</span>] | arr2[$<span class="number">0</span>], radix: <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">let</span> padded = (<span class="type">String</span>(repeating: <span class="string">"0"</span>, <span class="built_in">count</span>: n - binary.<span class="built_in">count</span>) + binary).replacingOccurrences(of: <span class="string">"1"</span>, with: <span class="string">"#"</span>).replacingOccurrences(of: <span class="string">"0"</span>, with: <span class="string">" "</span>)</span><br><span class="line">        <span class="keyword">return</span> padded</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>성공</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> n:Int, <span class="number">_</span> arr1:[Int], <span class="number">_</span> arr2:[Int])</span></span> -&gt; [<span class="type">String</span>] &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> (<span class="number">0</span>..&lt;n).<span class="built_in">map</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> binary = <span class="type">String</span>(arr1[$<span class="number">0</span>] | arr2[$<span class="number">0</span>], radix: <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">let</span> padded = <span class="type">String</span>(repeating: <span class="string">"0"</span>, <span class="built_in">count</span>: n - binary.<span class="built_in">count</span>) + binary</span><br><span class="line">        <span class="keyword">return</span> padded.<span class="built_in">reduce</span>(<span class="string">""</span>) &#123; $<span class="number">0</span> + ($<span class="number">1</span> == <span class="string">"0"</span> ? <span class="string">" "</span> : <span class="string">"#"</span>) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p>바이너리 연산을 하는 문제다.</p>
+<p>지문에<br />
+<code>전체 지도는 두 장의 지도를 겹쳐서 얻을 수 있다. 각각 지도 1과 지도 2라고 하자. 지도 1 또는 지도 2 중 어느 하나라도 벽인 부분은 전체 지도에서도 벽이다. 지도 1과 지도 2에서 모두 공백인 부분은 전체 지도에서도 공백이다.</code></p>
+<p>라는 부분에서 OR연산을 떠올려보자</p>
+<p>OR연산은 둘중에 하나라도 참이면 결과가 참이 되는 논리연산이다.</p>
+<p>두장의 지도를 겹쳐야한다고 했으니 지도를 겹쳐서 벽인부분을 #으로 나타내고 아닌 부분을 공백으로 나타나게끔 하면 된다.</p>
+<p>다만 주어지는 입력값이 정수형이기 때문에 이진화 시켜 주어야하는데<br />
+<code>String(1, radix: 2)</code> 이런형태로 사용하면 정수를 이진화 할 수 있다.</p>
+<p>그리고 예제에서는 나타나지 않았지만 자릿수가 안맞는 경우가 있다.<br />
+그렇기 때문에 제일 왼쪽에 0을 집어넣어 모두가 동일한 자릿수를 나타내도록 만들어 주어야한다.</p>
+<p><code>let padded = String(repeating: &quot;0&quot;, count: n - binary.count) + binary</code><br />
+이런식으로</p>
+<p>프로그래머스에서 <code>replacingOccurrences</code>메서드가 호출이 되지않아 <code>reduce</code>로 바꾸어서 처리했더니 통과했다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/06/Swift-%ED%81%AC%EB%A0%88%EC%9D%B8-%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0-%EA%B2%8C%EC%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -411,123 +527,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/05/Swift-%EB%AF%B8%EB%A1%9C%ED%83%90%EC%83%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/Swift-%EB%AF%B8%EB%A1%9C%ED%83%90%EC%83%89/" class="post-title-link" itemprop="url">Swift-미로탐색</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2020-05-24 22:22:15 / Updated at: 22:28:29" itemprop="dateCreated datePublished" datetime="2020-05-24T22:22:15+09:00">2020-05-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/05/Swift-%EB%AF%B8%EB%A1%9C%ED%83%90%EC%83%89/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/Swift-미로탐색/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
-<p><a href="https://www.acmicpc.net/problem/2178" target="_blank" rel="noopener">백준 링크</a></p>
-<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> x: Int, <span class="number">_</span> y: Int, <span class="number">_</span> mage: [String])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="comment">// Int타입의 2차원배열 생성</span></span><br><span class="line">    <span class="keyword">let</span> mage = mage.<span class="built_in">map</span> &#123; $<span class="number">0</span>.compactMap &#123; <span class="type">Int</span>(<span class="type">String</span>($<span class="number">0</span>)) &#125; &#125;</span><br><span class="line">    <span class="comment">// 방문체크를 위한 2차원 배열</span></span><br><span class="line">    <span class="keyword">var</span> visit = [[<span class="type">Int</span>]](repeating: [<span class="type">Int</span>](repeating: <span class="number">0</span>, <span class="built_in">count</span>: y), <span class="built_in">count</span>: x)</span><br><span class="line">    <span class="comment">// 상,하,좌,우</span></span><br><span class="line">    <span class="keyword">let</span> dx = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, -<span class="number">1</span>], dy = [<span class="number">1</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// BFS</span></span><br><span class="line">    <span class="comment">// 위치정보를 담을 변수</span></span><br><span class="line">    <span class="keyword">var</span> queue: [(row: <span class="type">Int</span>, col: <span class="type">Int</span>)] = [(<span class="number">0</span>, <span class="number">0</span>)]</span><br><span class="line">    <span class="comment">// 시작점</span></span><br><span class="line">    visit[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> !queue.isEmpty &#123;</span><br><span class="line">        <span class="comment">// 방문</span></span><br><span class="line">        <span class="keyword">let</span> <span class="type">CURRENT</span> = queue.removeFirst()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"현재 위치:"</span>, <span class="type">CURRENT</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"현재 걸음 수:"</span>, visit[<span class="type">CURRENT</span>.row][<span class="type">CURRENT</span>.col])</span><br><span class="line">        <span class="comment">// 탈출조건: 현재위치가 x-1, y-1이라면 더이상 움직일 필요가 없다.</span></span><br><span class="line">        <span class="keyword">if</span> <span class="type">CURRENT</span>.row == x-<span class="number">1</span> &amp;&amp; <span class="type">CURRENT</span>.col == y-<span class="number">1</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> visit[<span class="type">CURRENT</span>.row][<span class="type">CURRENT</span>.col]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;<span class="number">4</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> <span class="type">NEXT</span>: (row: <span class="type">Int</span>, col: <span class="type">Int</span>) = (<span class="type">CURRENT</span>.row + dx[i], <span class="type">CURRENT</span>.col + dy[i])</span><br><span class="line">            <span class="keyword">if</span> <span class="type">NEXT</span>.row &gt;= <span class="number">0</span> &amp;&amp; <span class="type">NEXT</span>.row &lt; x &amp;&amp; <span class="type">NEXT</span>.col &gt;= <span class="number">0</span> &amp;&amp; <span class="type">NEXT</span>.col &lt; y &#123;</span><br><span class="line">                <span class="keyword">if</span> visit[<span class="type">NEXT</span>.row][<span class="type">NEXT</span>.col] == <span class="number">0</span> &amp;&amp; mage[<span class="type">NEXT</span>.row][<span class="type">NEXT</span>.col] == <span class="number">1</span> &#123;</span><br><span class="line">                    visit[<span class="type">NEXT</span>.row][<span class="type">NEXT</span>.col] = visit[<span class="type">CURRENT</span>.row][<span class="type">CURRENT</span>.col] + <span class="number">1</span></span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">"다음 위치:"</span>, <span class="type">NEXT</span>)</span><br><span class="line">                    queue.append(<span class="type">NEXT</span>)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"----------------------------------------------"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> input = [</span><br><span class="line">    <span class="string">"101111"</span>,</span><br><span class="line">    <span class="string">"101010"</span>,</span><br><span class="line">    <span class="string">"101011"</span>,</span><br><span class="line">    <span class="string">"111011"</span></span><br><span class="line">]</span><br><span class="line"><span class="built_in">print</span>(solution(<span class="number">4</span>, <span class="number">6</span>, input)) <span class="comment">// 15</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> input2 = [</span><br><span class="line">    <span class="string">"110110"</span>,</span><br><span class="line">    <span class="string">"110110"</span>,</span><br><span class="line">    <span class="string">"111111"</span>,</span><br><span class="line">    <span class="string">"111101"</span></span><br><span class="line">]</span><br><span class="line"><span class="built_in">print</span>(solution(<span class="number">4</span>, <span class="number">6</span>, input2)) <span class="comment">// 9</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> input3 = [</span><br><span class="line">    <span class="string">"1011101110111011101110111"</span>,</span><br><span class="line">    <span class="string">"1110111011101110111011101"</span></span><br><span class="line">]</span><br><span class="line"><span class="built_in">print</span>(solution(<span class="number">2</span>, <span class="number">25</span>, input3)) <span class="comment">// 38</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> input4 = [</span><br><span class="line">    <span class="string">"1011111"</span>,</span><br><span class="line">    <span class="string">"1110001"</span>,</span><br><span class="line">    <span class="string">"1000001"</span>,</span><br><span class="line">    <span class="string">"1000001"</span>,</span><br><span class="line">    <span class="string">"1000001"</span>,</span><br><span class="line">    <span class="string">"1000001"</span>,</span><br><span class="line">    <span class="string">"1111111"</span></span><br><span class="line">]</span><br><span class="line"><span class="built_in">print</span>(solution(<span class="number">7</span>, <span class="number">7</span>, input4)) <span class="comment">// 13</span></span><br></pre></td></tr></table></figure>
-<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
-<p>미로를 가장 빨리 탈출할 수 있는 길을 찾는 문제였다.</p>
-<p>BFS를 사용하여 풀어보았다.</p>
-<p>미로의 방문여부를 체크하는 2차원 배열을 만든 후,<br />
-길을 지날때 마다 해당배열의 값을 움직인 거리수로 바꾸어 주고<br />
-주어지는 입력과 현재위치가 동일할때 현재위치에 찍힌 거리수를 출력한다.</p>
-<p>현재위치에서 상, 하, 좌, 우를 탐색할 수 있도록<br />
-<code>let dx = [0, 0, 1, -1], dy = [1, -1, 0, 0]</code><br />
-변수를 만들고</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;<span class="number">4</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> <span class="type">NEXT</span>: (row: <span class="type">Int</span>, col: <span class="type">Int</span>) = (<span class="type">CURRENT</span>.row + dx[i], <span class="type">CURRENT</span>.col + dy[i])</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
-<p>반복문을 통해 인접한 위치를 탐색해준다.</p>
-<p>그 후 모든 조건을 통과한 경우 queue에 집어넣어주게 되고,</p>
-<p>입력된 위치까지 반복하게 된다.</p>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
 
@@ -573,7 +577,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -586,7 +590,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">82</span>
+        <span class="site-state-item-count">85</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
