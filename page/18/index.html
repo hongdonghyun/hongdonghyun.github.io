@@ -177,6 +177,111 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-7/" class="post-title-link" itemprop="url">Swift 과제 풀이 7</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-11-19 18:33:50" itemprop="dateCreated datePublished" datetime="2019-11-19T18:33:50+09:00">2019-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-11-20 14:16:50" itemprop="dateModified" datetime="2019-11-20T14:16:50+09:00">2019-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index"><span itemprop="name">과제</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-7/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-과제-풀이-7/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <img src="/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-7/hexo_one.png" class="" title="hexo_one">
+<p>첨부된 이미지를 보고 상속을 이용해 구현해보기</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OAnimal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">var</span> brain: <span class="type">Bool</span> = <span class="literal">true</span></span><br><span class="line">    <span class="keyword">var</span> legs: <span class="type">Int</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(<span class="number">_</span> legs: <span class="type">Int</span> = <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.legs = legs</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">OHuman</span>: <span class="title">OAnimal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">init</span>() &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(<span class="number">2</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OPet</span>: <span class="title">OAnimal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">fileprivate</span> <span class="keyword">var</span> fleas: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">init</span>(<span class="number">_</span> fleas: <span class="type">Int</span> = <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.fleas = fleas</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(<span class="number">4</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ODog</span>: <span class="title">OPet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">init</span>() &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(<span class="number">8</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OCat</span>: <span class="title">OPet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">init</span>() &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(<span class="number">4</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> animal = <span class="type">OAnimal</span>()</span><br><span class="line"><span class="keyword">var</span> human = <span class="type">OHuman</span>()</span><br><span class="line"><span class="keyword">var</span> pet = <span class="type">OPet</span>()</span><br><span class="line"><span class="keyword">var</span> dog = <span class="type">ODog</span>()</span><br><span class="line"><span class="keyword">var</span> cat = <span class="type">OCat</span>()</span><br><span class="line">animal.brain</span><br><span class="line">animal.legs</span><br><span class="line"></span><br><span class="line">human.brain</span><br><span class="line">human.legs</span><br><span class="line"></span><br><span class="line">pet.brain</span><br><span class="line">pet.legs</span><br><span class="line">pet.fleas</span><br><span class="line"></span><br><span class="line">dog.brain</span><br><span class="line">dog.legs</span><br><span class="line">dog.fleas</span><br><span class="line"></span><br><span class="line">cat.brain</span><br><span class="line">cat.legs</span><br><span class="line">cat.fleas</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B3%BC%EC%A0%9C-%ED%92%80%EC%9D%B4-6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -556,171 +661,6 @@ admin페이지는 노출되면 안된다.<br />
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/" class="post-title-link" itemprop="url">블로그 방문자 카운팅하기</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-
-              <time title="Post created: 2019-11-17 22:06:42" itemprop="dateCreated datePublished" datetime="2019-11-17T22:06:42+09:00">2019-11-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-11-19 10:12:53" itemprop="dateModified" datetime="2019-11-19T10:12:53+09:00">2019-11-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/블로그-방문자-카운팅하기/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="hexo-시리즈-바로가기"><a class="markdownIt-Anchor" href="#hexo-시리즈-바로가기"></a> Hexo 시리즈 바로가기</h1>
-<ol>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo%EB%A1%9C%20Github%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo로 Github Page 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-theme-%EC%84%A4%EC%A0%95/">Hexo 테마 설정하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-%EB%8C%93%EA%B8%80%EA%B3%B5%EA%B0%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 댓글 만들기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/Hexo-Google-Analytics-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">구글 애널리틱스 연동하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-about-catregory-tags-%EB%AA%A9%EB%A1%9D-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Hexo 메뉴 추가하기</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/">블로그 방문자 카운팅</a></p>
-</li>
-<li>
-<p><a href="https://hongdonghyun.github.io/2019/11/hexo-sitemap-robots-txt-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">sitemap.xmlrobots.txt 추가하기</a></p>
-</li>
-</ol>
-<h1 id="블로그-방문자조회수-카운팅"><a class="markdownIt-Anchor" href="#블로그-방문자조회수-카운팅"></a> 블로그 방문자,조회수 카운팅</h1>
-<h1 id="포스팅을-참고하시기전에"><a class="markdownIt-Anchor" href="#포스팅을-참고하시기전에"></a> 포스팅을 참고하시기전에…</h1>
-<p>해당 포스팅은 <code>Hexo</code>, <code>next</code>테마를 기준으로 작성 되었으며 <strong>테마별로 지원이 되지 않거나 적용방법이 다를 수 있으니 테마별 공식문서를 참고해주세요</strong>.</p>
-<h2 id="busuanzi"><a class="markdownIt-Anchor" href="#busuanzi"></a> busuanzi</h2>
-<p><code>next</code> 테마 설정파일을 구경하던중</p>
-<p><code>busuanzi_count</code>라는 옵션을 발견했다.</p>
-<img src="/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/hexo_busuanzi2.png" class="" title="hexo_busuanzi2">
-<blockquote>
-<p>enable을 <code>true</code>로 해주면 쓸 수 있다.</p>
-</blockquote>
-<p>해당 내용을 검색해보니 홈페이지의 방문자와 조회수를 카운트 해주는 라이브러리 라는것을 알게 되었다.</p>
-<p><a href="https://busuanzi.ibruce.info/" target="_blank" rel="noopener">부수안지</a></p>
-<p>중국어로 되어있어 번역기의 힘을 빌려야 했지만<br />
-첫 화면에서 <code>script</code>코드를 주는것을 보고 대강 사용법을 알것 같았다.</p>
-<p>1개의 <code>script</code>코드와 2개의 <code>span</code>코드를 주고 있다.</p>
-<img src="/2019/11/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B0%A9%EB%AC%B8%EC%9E%90-%EC%B9%B4%EC%9A%B4%ED%8C%85%ED%95%98%EA%B8%B0/hexo_busuanzi1.png" class="" title="hexo_busuanzi1">
-<p>이제 이 코드를 테마 어딘가에 넣어주면 된다는 것이다.</p>
-<h2 id="적용하기"><a class="markdownIt-Anchor" href="#적용하기"></a> 적용하기</h2>
-<p><a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener">공식문서</a>를 좀 더 살펴보니<br />
-<code>hexo/theme/layout/_partials</code>의 <code>footer.ejs</code>파일에 내용을 추가하라고 한다.</p>
-<p>왜인지 모르겠지만 난 <code>ejs</code>파일이 아니라 <code>swig</code>파일이다.</p>
-<p>별차이는 없을것 같아 <code>footer.swig</code>파일에 내용을 추가해 주었다.</p>
-<h3 id="script"><a class="markdownIt-Anchor" href="#script"></a> script</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if theme.busuanzi.enabled %&#125;</span><br><span class="line">&lt;script async src = &quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script &gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="span"><a class="markdownIt-Anchor" href="#span"></a> span</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.busuanzi.enabled %&#125;</span><br><span class="line">&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;</span><br><span class="line"> 총 조회 &lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt; 회</span><br><span class="line">&lt;/span&gt; |</span><br><span class="line"></span><br><span class="line">&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;</span><br><span class="line"> 총 방문자 &lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt; 명</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>footer.swig파일 가장 하단에 내용을 추가해주자.</p>
-</blockquote>
-<h2 id="확인"><a class="markdownIt-Anchor" href="#확인"></a> 확인</h2>
-<p><code>script</code>,<code>span</code>을 넣고 자신의 블로그 가장 하단으로 가면<br />
-조회수와 방문자수가 찍혀있다.</p>
-<h2 id="위치변경"><a class="markdownIt-Anchor" href="#위치변경"></a> 위치변경</h2>
-<ul>
-<li>
-<p>만약 조회수,방문자수 중 보여주고 싶지 않은게 있다면 주석처리만 해주면 된다.</p>
-</li>
-<li>
-<p>홈페이지 하단이 아니라 다른곳에서 노출하고 싶다면 노출하고 싶은 부분에 <code>span</code>만<br />
-추가해주면 해당부분에서 잘 보인다.</p>
-</li>
-</ul>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -792,7 +732,7 @@ admin페이지는 노출되면 안된다.<br />
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-count">78</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -805,7 +745,7 @@ admin페이지는 노출되면 안된다.<br />
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-count">90</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
