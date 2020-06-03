@@ -177,6 +177,166 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/" class="post-title-link" itemprop="url">트위치 채널 포인트 자동클릭</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2020-01-05 22:20:07" itemprop="dateCreated datePublished" datetime="2020-01-05T22:20:07+09:00">2020-01-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2020-01-08 15:39:46" itemprop="dateModified" datetime="2020-01-08T15:39:46+09:00">2020-01-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/트위치-채널-포인트-자동클릭/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="트위치"><a class="markdownIt-Anchor" href="#트위치"></a> 트위치</h2>
+<p>나는 트위치를 자주 즐겨 보는데,<br />
+최근 트위치에 채널 포인트라는 제도가 생겼다.</p>
+<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point.png" class="" title="channel_point">
+<blockquote>
+<p>포인트를 소모하여 보상을 얻을 수 있다.<br />
+시간제한이 있는 구독자 전용 이모티콘이나 채팅에 하이라이팅 효과를 먹일수 있다.</p>
+</blockquote>
+<p>채널 포인트를 획득하는 방법은 이것저것 있지만 방송을 계속 시청하거나 15분 간격으로 나오는 버튼을 누르면 50포인트를 얻을 수 있다.</p>
+<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point2.png" class="" title="channel_point2">
+<blockquote>
+<p>저 버튼이다.</p>
+</blockquote>
+<p>해당버튼을 누르지 않아도 계속시청하면 많은 포인트를 쌓을 수 있지만<br />
+생각보다 저 버튼이 거슬린다.</p>
+<p>그래서 저 버튼을 자동으로 누르게 할수는 없을까 고민을 하다가 트위치가 <a href="https://electronjs.org/" target="_blank" rel="noopener">Electron</a>으로 만들었다는걸 어디서 들은것 같아 시도해보았다.</p>
+<blockquote>
+<p><a href="https://electronjs.org/" target="_blank" rel="noopener">Electron</a>은<br />
+html,javascript로 데스크탑 앱을 만드는 오픈소스<br />
+슬랙, 디스코드등이 이걸로 만들어졌음</p>
+</blockquote>
+<p>웹의 언어를 기반으로 만들었으니 개발자도구를 열어서 내부구현을 확인할 수 있지 않을까 라는 생각으로 시도했고</p>
+<p>내 생각은 적중했다.<br />
+Mac에서는 cmd + alt + i<br />
+Windows에서는 F12를 누르면 개발자도구가 뙇 하고 열린다.</p>
+<blockquote>
+<p>(크롬기준) 브라우저에서도 동일하다.<br />
+일렉트론은 크롬 개발자도구를 기본 내장한다고 한다.</p>
+<blockquote>
+<p>슬랙에서도 시도해보았으나 안열림<br />
+다른툴을 쓰면 열 수 있다고 하는데 그렇게까지 하고 싶진 않았다.</p>
+</blockquote>
+</blockquote>
+<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point3.png" class="" title="channel_point3">
+<blockquote>
+<p><a href="https://www.twitch.tv/hanryang1125" target="_blank" rel="noopener">풍월량</a>님 방송입니다.<br />
+문제 되면 글내림</p>
+</blockquote>
+<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point4.png" class="" title="channel_point4">
+<blockquote>
+<p>이제 이 버튼을 찾아 클릭하게 만들어주면 된다.</p>
+</blockquote>
+<p>요소검사기를 통해 저 버튼을 누르면</p>
+<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point5.png" class="" title="channel_point5">
+<p>이렇게 html코드를 친절히 확인할 수 있다.</p>
+<p>저 버튼은 15분에 한번씩 뜨지만 난 버튼을 이제 10초에 한번씩 누르게 만들것이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pointClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementsByClassName(<span class="string">"claimable-bonus__icon tw-flex"</span>)[<span class="number">0</span>].click()</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"성공"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">catch</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;    </span><br><span class="line">setInterval(pointClick,<span class="number">10000</span>)</span><br></pre></td></tr></table></figure>
+<p>setInerval을 통해 10초에 한번씩 함수를 실행하게 만들고</p>
+<p>함수 구현부분에서 클릭해야할 요소를 <code>getElementClassName</code>을 통해 찾아내고 클릭하게 만든다.</p>
+<p>당연히 10초에 한번씩 함수가 동작하게 만들었으니<br />
+버튼이 없는데 버튼을 클릭하려고 시도할것이고 그렇게 되면 에러가 쌓인다.</p>
+<p>try-catch문을 통해 에러 메시지가 쌓이지 않도록 처리해주었다.</p>
+<p>이제 저 코드를 콘솔창에서 실행 시켜주면 끝난다.</p>
+<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point6.png" class="" title="channel_point6">
+<p>이렇게 입력해주고 엔터를 누른후 10초 기다리면</p>
+<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point7.png" class="" title="channel_point7">
+<p>성공이다.</p>
+<h2 id="문제점"><a class="markdownIt-Anchor" href="#문제점"></a> 문제점</h2>
+<p>이유는 알 수 없으나 개발자도구를 켜놓은 상태로 트위치를 사용하다보면 크래쉬 나면서 꺼지기도 한다.</p>
+<p>당연하지만 트위치 데스크탑 앱이나 브라우저를 껏다키면 해당부분도 없어지니 매번 킬때마다 다시 입력해줘야한다.</p>
+<p>나중에 이걸 크롬 익스텐션으로도 한번 만들어 보아야겠다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EC%8B%9C%ED%97%98%EA%B3%B5%EB%B6%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -497,156 +657,10 @@ lazy의 특성도 가지고 있다.</p>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-UITableView/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/Swift-UITableView/" class="post-title-link" itemprop="url">Swift UITableView</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-
-              <time title="Post created: 2019-12-17 13:05:14" itemprop="dateCreated datePublished" datetime="2019-12-17T13:05:14+09:00">2019-12-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-12-23 20:55:13" itemprop="dateModified" datetime="2019-12-23T20:55:13+09:00">2019-12-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/12/Swift-UITableView/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-UITableView/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="uitableview"><a class="markdownIt-Anchor" href="#uitableview"></a> UITableView</h1>
-<ul>
-<li>UIScrollView 를 상속받아 리스트 형태로 반복되는 아이템을 보여주기 위한 뷰 Plain</li>
-</ul>
-<blockquote>
-<p>상당수의 앱이 TableView로 만들어졌다.</p>
-</blockquote>
-<h2 id="plain-table-views"><a class="markdownIt-Anchor" href="#plain-table-views"></a> Plain Table Views</h2>
-<ul>
-<li>기본 스타일</li>
-<li>하나 이상의 섹션을 가질 수 있으며 각 섹션은 다시 하나 이상의 로우를 가짐</li>
-<li>각 섹션은 그 자신의 헤더/푸터 뷰를 가질 수 있고 해당 섹션이 보여질 때 헤더뷰는 Top, 푸터뷰는 Bottom 에 고정</li>
-<li>섹션을 빠르게 검색할 수 있도록 Indexed List 를 설정 가능</li>
-</ul>
-<h2 id="grouped-table-views"><a class="markdownIt-Anchor" href="#grouped-table-views"></a> Grouped Table Views</h2>
-<ul>
-<li>관련된 아이템들을 하나의 그룹으로 그룹핑</li>
-<li>데이터 계층 구조에 대한 상세 정보를 표현 하는 데 적합한 형태</li>
-<li>Plain 스타일과 달리 헤더뷰와 푸터뷰가 Top, Bottom 에 고정되지 않음</li>
-</ul>
-<h2 id="필수구현-프로토콜"><a class="markdownIt-Anchor" href="#필수구현-프로토콜"></a> 필수구현 프로토콜</h2>
-<h3 id="uitableviewdatasource"><a class="markdownIt-Anchor" href="#uitableviewdatasource"></a> UITableViewDataSource</h3>
-<p>TableView 에서 표현할 데이터를 제공하는 데 사용하는 프로토콜</p>
-<h2 id="거의-필수"><a class="markdownIt-Anchor" href="#거의-필수"></a> 거의 필수</h2>
-<h3 id="uitableviewdelegate"><a class="markdownIt-Anchor" href="#uitableviewdelegate"></a> UITableViewDelegate</h3>
-<p>Interaction(상호작용) 과 관련된 동작을 커스터마이징하는 프로토콜</p>
-<h1 id="uitableviewcell"><a class="markdownIt-Anchor" href="#uitableviewcell"></a> UITableViewCell</h1>
-<ul>
-<li>TableView 에서 사용하는 각 아이템을 담는 컨테이너</li>
-<li>반복되는 셀을 매번 생성, 해제, 재할당하는 부담을 덜기 위해 화면에 보여지지 않는 부분의 셀을 재사용</li>
-</ul>
-<blockquote>
-<p>DequeueReusableCell로 시작하는 메서드로 사용한다.</p>
-<blockquote>
-<p>Enqueue도 있다.</p>
-</blockquote>
-</blockquote>
-<h2 id="cell-style"><a class="markdownIt-Anchor" href="#cell-style"></a> Cell Style</h2>
-<h3 id="기본스타일"><a class="markdownIt-Anchor" href="#기본스타일"></a> 기본스타일</h3>
-<ul>
-<li>default</li>
-<li>subtitle</li>
-<li>value 1</li>
-<li>value 2</li>
-</ul>
-<h3 id="customcell"><a class="markdownIt-Anchor" href="#customcell"></a> CustomCell</h3>
-<h2 id="uitableviewcell-영역"><a class="markdownIt-Anchor" href="#uitableviewcell-영역"></a> UITableViewCell 영역</h2>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
 
@@ -714,7 +728,7 @@ lazy의 특성도 가지고 있다.</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">78</span>
+          <span class="site-state-item-count">79</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -727,7 +741,7 @@ lazy의 특성도 가지고 있다.</p>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">90</span>
+        <span class="site-state-item-count">91</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>

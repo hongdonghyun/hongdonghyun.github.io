@@ -177,6 +177,107 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/Swift-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/" class="post-title-link" itemprop="url">[Swift]핸드폰 번호 가리기</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2019-11-26 10:08:07 / Updated at: 13:27:57" itemprop="dateCreated datePublished" datetime="2019-11-26T10:08:07+09:00">2019-11-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/11/Swift-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EA%B0%80%EB%A6%AC%EA%B8%B0/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-핸드폰-번호-가리기/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/12948" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> phone_number:String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> resultString = <span class="type">String</span>(repeating: <span class="string">"*"</span>,<span class="built_in">count</span>: phone_number.<span class="built_in">count</span>-<span class="number">4</span>)</span><br><span class="line">    <span class="keyword">let</span> index = phone_number.index(phone_number.endIndex, offsetBy: -<span class="number">4</span>)</span><br><span class="line">    <span class="keyword">let</span> mySubstring = phone_number[index...]</span><br><span class="line">    <span class="keyword">return</span> resultString + mySubstring</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p>문제에 뒷자리 4자리를 제외한 나머지를 <strong><code>*</code></strong> 로 치환하라는 문제였다.</p>
+<p>전체 문자열 중 뒤의 4자리를 제외한 만큼의 <strong><code>*</code></strong> 이 찍힌 문자열을 만들고</p>
+<p>가장 마지막 4자리를 slicing하여 뽑아내고 합쳐서 리턴 해주면 된다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EB%A9%80%EB%A6%AC%EB%9B%B0%EA%B8%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -401,119 +502,10 @@ Swift도 처음 써봐서 문법이 틀렸나하고 문법을 뜯어 고치는 �
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/11/Swift-%EA%B0%80%EC%9E%A5%ED%81%B0-%EC%88%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/Swift-%EA%B0%80%EC%9E%A5%ED%81%B0-%EC%88%98/" class="post-title-link" itemprop="url">[Swift]가장큰 수</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2019-11-24 20:35:08 / Updated at: 21:24:27" itemprop="dateCreated datePublished" datetime="2019-11-24T20:35:08+09:00">2019-11-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/11/Swift-%EA%B0%80%EC%9E%A5%ED%81%B0-%EC%88%98/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/Swift-가장큰-수/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
-<p><a href="https://programmers.co.kr/learn/courses/30/lessons/42746#_=_" target="_blank" rel="noopener">프로그래머스 링크</a></p>
-<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> numbers:[Int])</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> result = numbers.<span class="built_in">map</span>(&#123; <span class="type">String</span>($<span class="number">0</span>) &#125;).sorted(by: &#123;$<span class="number">0</span> + $<span class="number">1</span> &gt; $<span class="number">1</span> + $<span class="number">0</span>&#125;)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> result[<span class="number">0</span>] == <span class="string">"0"</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"0"</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result.joined()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
-<p>맨 처음에 도통 어떻게 풀어야할지 감을 못잡아서<br />
-한참을 헤맸다.</p>
-<p>그리고 우연히 610과 106중 누가크냐는 힌트를 받았고</p>
-<p>소팅의 규칙을 재정립해서 풀면 할 수 있을것 같았다.</p>
-<p>말이야 쉬웠지 어떻게 하는건지 찾느라 진짜 머리카락이 다 빠질뻔했다.</p>
-<p>어찌어찌 다하고 나서 제출을 했더니 마지막 케이스에서 실패를 해버렸다.</p>
-<p>보통 이런경우에는 문제가 가지고 있는 함정을 해결하지 못해 생기는 경우였다.</p>
-<p>문제에 <strong>0 또는 양의정수</strong>라는것을 확인했고<br />
-0만 들어있는 배열을 넣고 테스트 해보니 “0000” 이런식의 값이 나왔다.</p>
-<p>그래서 그 부분만 예외처리 해줬다.</p>
-<p>진짜 너무 어려운 문제였다.</p>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
 
@@ -581,7 +573,7 @@ Swift도 처음 써봐서 문법이 틀렸나하고 문법을 뜯어 고치는 �
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">78</span>
+          <span class="site-state-item-count">79</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -594,7 +586,7 @@ Swift도 처음 써봐서 문법이 틀렸나하고 문법을 뜯어 고치는 �
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">90</span>
+        <span class="site-state-item-count">91</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
