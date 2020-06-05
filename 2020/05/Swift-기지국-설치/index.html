@@ -30,7 +30,7 @@
 <meta property="og:site_name" content="Hong3의 개발블로그">
 <meta property="og:description" content="문제 프로그래머스 링크  Code 1234567891011121314151617181920212223func solution(_ n:Int, _ stations:[Int], _ w:Int) -&amp;gt; Int &amp;#123;    &#x2F;&#x2F; 최대범위는 2*w+1    &#x2F;&#x2F; 왼쪽 station - w    &#x2F;&#x2F; 오른쪽 station + w    var answer:">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2020-06-05T07:23:36.071Z">
+<meta property="og:updated_time" content="2020-06-05T07:34:04.558Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://hongdonghyun.github.io/2020/05/Swift-%EA%B8%B0%EC%A7%80%EA%B5%AD-%EC%84%A4%EC%B9%98/">
@@ -209,7 +209,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2020-06-05 16:23:36" itemprop="dateModified" datetime="2020-06-05T16:23:36+09:00">2020-06-05</time>
+                <time title="Updated at: 2020-06-05 16:34:04" itemprop="dateModified" datetime="2020-06-05T16:34:04+09:00">2020-06-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,7 +259,21 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> n:Int, <span class="number">_</span> stations:[Int], <span class="number">_</span> w:Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="comment">// 최대범위는 2*w+1</span></span><br><span class="line">    <span class="comment">// 왼쪽 station - w</span></span><br><span class="line">    <span class="comment">// 오른쪽 station + w</span></span><br><span class="line">    <span class="keyword">var</span> answer: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> stationIdx: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> location: <span class="type">Int</span> = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> (location &lt;= n) &#123;</span><br><span class="line">        <span class="comment">// 기지국 범위안에 있다!</span></span><br><span class="line">        <span class="keyword">if</span> (stationIdx &lt; stations.<span class="built_in">count</span>) &amp;&amp; (location &gt;= stations[stationIdx] - w) &#123;</span><br><span class="line">            <span class="comment">// 기지국 오른쪽 범위의 다음 한칸으로!</span></span><br><span class="line">            location = stations[stationIdx] + w + <span class="number">1</span></span><br><span class="line">            <span class="comment">// 기지국 배열의 다음거로</span></span><br><span class="line">            stationIdx += <span class="number">1</span></span><br><span class="line">        <span class="comment">// 범위에 없다!</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 설치하고 최대 범위 다음 한칸으로 이동</span></span><br><span class="line">            location += <span class="number">2</span>*w+<span class="number">1</span></span><br><span class="line">            answer += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
 <p>주어지는 파라미터들이 정렬된 상태로 주어지기 때문에</p>
-<p>왼쪽에서부터 탐색을 하는 방식으로 진행했다.</p>
+<p>왼쪽에서부터 탐색을 하는 방식으로 진행했다.<br />
+왼쪽부터 탐색을 시작하고 전파의 최대범위는 1±w 가 아닌<br />
+2*w+1 이라고 생각해보자.</p>
+<blockquote>
+<p>w가 2라고 했을때</p>
+</blockquote>
+<blockquote>
+<p>1에 설치해서 2*w+1 (5칸)</p>
+</blockquote>
+<blockquote>
+<p>3에 설치해서  3±w (1~5)나 범위는 똑같지 않은가?</p>
+</blockquote>
+<blockquote>
+<p>우리는 기지국이 설치된 위치를 구하는것이 아닌 갯수를 구한다는것에 중점을 두어야한다.</p>
+</blockquote>
 <p>기지국의 전파 최대 범위는 2*w+1 이라는걸 구한 후</p>
 <blockquote>
 <p>기지국 양쪽으로 전파가 닿으니 2*w이고 1은 기지국이 설치된 아파트이다.</p>
