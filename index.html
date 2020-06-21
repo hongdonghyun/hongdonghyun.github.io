@@ -177,6 +177,158 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/" class="post-title-link" itemprop="url">iOS-환경변수 분리하기</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2020-06-21 16:14:55 / Updated at: 16:57:33" itemprop="dateCreated datePublished" datetime="2020-06-21T16:14:55+09:00">2020-06-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/iOS-환경변수-분리하기/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>개발도중 노출되면 안되는것들이 종종있다.</p>
+<p>예를들어 API호출시 사용할때 필요한 키값이라던가<br />
+소셜로그인용 키값, 아이디, 비밀번호 라든지</p>
+<p>이게 코드에 그대로 포함되어도 될까? 라고 생각드는것들이다.</p>
+<blockquote>
+<p>노출되어서 이득볼것이 없다.</p>
+<p>긴가민가 하면 숨기자.</p>
+</blockquote>
+<p>이것들을 숨기고 관리하는 방법을 한번 포스팅 해보겠다.</p>
+<h1 id="xcconfig"><a class="markdownIt-Anchor" href="#xcconfig"></a> xcconfig</h1>
+<p>프로젝트에서 새로운 파일(cmd + n)을 만들기를 하고<br />
+<code>Configuration Settings File</code>을 찾아서 생성해준다.</p>
+<img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image1.png" class="" title="image1">
+<p>나는 <code>Debug</code>, <code>Production</code> 두개를 만들었다.</p>
+<img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image2.png" class="" title="image2">
+<p>그다음 환경변수를 적어주자</p>
+<img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image3.png" class="" title="image3">
+<blockquote>
+<p>변수이름은 서로 같아야 호출할때 편하다.</p>
+</blockquote>
+<p>이걸로 xcconfig세팅은 끝이다.</p>
+<h1 id="config-할당하기"><a class="markdownIt-Anchor" href="#config-할당하기"></a> config 할당하기</h1>
+<p>그다음 <code>project</code>의 <code>info</code>탭으로 이동하자.</p>
+<img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image4.png" class="" title="image4">
+<p>그럼 Configurations에 <code>Debug</code>와 <code>Release</code>가 기본적으로 존재한다.</p>
+<blockquote>
+<p>기본값인듯 하다.</p>
+</blockquote>
+<p>추가적으로 더 만들수도 있다. (밑에 +버튼)</p>
+<p>여기서는 두개만 세팅을 해보겠다.</p>
+<p>열어보면 타겟을 지정해줄 수 있는데<br />
+알아서 우리가 만든 xcconfig를 추적해서 보여준다.</p>
+<img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image5.png" class="" title="image5">
+<p>환경에 맞게 추가해주면 되겠다.</p>
+<img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image6.png" class="" title="image6">
+<p>이제 config할당도 끝났다.<br />
+하지만 아직 할것이 남았다.<br />
+할당한 변수를 사용하기 위해선 <code>info.plist</code>의 수정도 필요하다.</p>
+<h1 id="infoplist"><a class="markdownIt-Anchor" href="#infoplist"></a> info.plist</h1>
+<p><code>info.plist</code>에서 <code>information Property</code>를 추가하자</p>
+<p>추가하는법은 왼쪽 변수중 아무거나 하나 붙잡고 +을 누르면 생기게 된다.</p>
+<p>우리가 사용하게 될 키값이 될테니 <code>Key</code>값을 구분하기 좋게 지어주자.</p>
+<p><code>Value</code>에는 <code>xcconfig</code>에서 지정했던 변수를 <code>$(변수명)</code>의 형태로 적어준다.</p>
+<img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image7.png" class="" title="image7">
+<p>이제 세팅은 끝났다.<br />
+한번 사용해보도록 하자.</p>
+<h1 id="사용"><a class="markdownIt-Anchor" href="#사용"></a> 사용</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Bundle</span>.main.infoDictionary[키값]</span><br></pre></td></tr></table></figure>
+<p>이러한 형태로 <code>info.plist</code> 호출이 가능하다.</p>
+<p>나는 Constants로 따로 모아두는 것을 좋아해서</p>
+<img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image8.png" class="" title="image8">
+<p>이런식으로 사용한다.</p>
+<h1 id="환경-바꾸기"><a class="markdownIt-Anchor" href="#환경-바꾸기"></a> 환경 바꾸기</h1>
+<p>프로젝트 상단을 누르면 사진처럼 뜬다.</p>
+<img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image9.png" class="" title="image9">
+<p><code>Edit scheme</code>을 누르면</p>
+<img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image10.png" class="" title="image10">
+<p>사진처럼 나오게 되고<br />
+여기서 <code>Build Configuration</code>을 바꿔준 후 실행하면 우리가 지정했던 환경변수들을 바꿔가며 사용할 수 있다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/06/Swift-%EC%8A%A4%ED%82%AC%ED%8A%B8%EB%A6%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -411,135 +563,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/06/Swift-%EB%A9%80%EC%A9%A1%ED%95%9C-%EC%82%AC%EA%B0%81%ED%98%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/Swift-%EB%A9%80%EC%A9%A1%ED%95%9C-%EC%82%AC%EA%B0%81%ED%98%95/" class="post-title-link" itemprop="url">Swift-멀쩡한 사각형</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2020-06-03 19:30:22 / Updated at: 20:09:41" itemprop="dateCreated datePublished" datetime="2020-06-03T19:30:22+09:00">2020-06-03</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/06/Swift-%EB%A9%80%EC%A9%A1%ED%95%9C-%EC%82%AC%EA%B0%81%ED%98%95/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/Swift-멀쩡한-사각형/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
-<p><a href="https://programmers.co.kr/learn/courses/30/lessons/62048" target="_blank" rel="noopener">프로그래머스 링크</a></p>
-<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
-<p>처음</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GCD</span> <span class="params">(<span class="number">_</span> a:Int64, <span class="number">_</span> b: Int64)</span></span> -&gt; <span class="type">Int64</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> remain = a % b</span><br><span class="line">    <span class="keyword">if</span> remain == <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> b</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">GCD</span>(b, remain)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> w:Int, <span class="number">_</span> h:Int)</span></span> -&gt; <span class="type">Int64</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> answer:<span class="type">Int64</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">let</span> gcd = <span class="type">GCD</span>(w, h)</span><br><span class="line">    <span class="keyword">let</span> maxQuad: <span class="type">Int64</span> = <span class="type">Int64</span>(w) * <span class="type">Int64</span>(h)</span><br><span class="line">    <span class="keyword">if</span> gcd == <span class="number">1</span> &#123;</span><br><span class="line">        answer = <span class="type">Int64</span>(maxQuad - <span class="type">Int64</span>(w + h - <span class="number">1</span>))</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        answer = <span class="type">Int64</span>(maxQuad - <span class="type">Int64</span>(w + h - gcd))</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>최적화</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GCD</span> <span class="params">(<span class="number">_</span> a:Int64, <span class="number">_</span> b: Int64)</span></span> -&gt; <span class="type">Int64</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> remain = a % b</span><br><span class="line">    <span class="keyword">if</span> remain == <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> b</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">GCD</span>(b, remain)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> w:Int, <span class="number">_</span> h:Int)</span></span> -&gt; <span class="type">Int64</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> w64 = <span class="type">Int64</span>(w), h64 = <span class="type">Int64</span>(h)</span><br><span class="line">    <span class="keyword">return</span> (w64 * h64) - (w64 + h64 - <span class="type">GCD</span>(w64, h64))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="built_in">print</span>(solution(<span class="number">1000000000</span>, <span class="number">100000000</span>))</span><br></pre></td></tr></table></figure>
-<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
-<p>이문제를 처음봤을때 어떻게 풀어야할지 감을 전혀 잡지 못했다.</p>
-<p>그래서 손으로 직접 그려서 규칙을 찾아보려고 했다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ㅂㅁㅁ w 3 ,h: 4</span><br><span class="line">ㅂㅂㅁ answer: 6</span><br><span class="line">ㅁㅂㅂ gcd: 1</span><br><span class="line">ㅁㅁㅂ</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ㅂㅁ w: 2, h: 3</span><br><span class="line">ㅂㅂ answer: 2</span><br><span class="line">ㅁㅂ gcd: 1</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ㅂㅁ w: 2, h: 5</span><br><span class="line">ㅂㅁ answer: 2</span><br><span class="line">ㅂㅂ gcd: 1</span><br><span class="line">ㅁㅂ</span><br><span class="line">ㅁㅂ</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> ㅂㅂㅁㅁㅁ w: 5 h: 4</span><br><span class="line">ㅁㅂㅂㅁㅁ answer: 12</span><br><span class="line">ㅁㅁㅂㅂㅁ gcd: 1</span><br><span class="line">ㅁㅁㅁㅂㅂ</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ㅂㅁㅁ w: 3, h: 3</span><br><span class="line">ㅁㅂㅁ answer: 6</span><br><span class="line">ㅁㅁㅂ gcd: 3</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> ㅂㅁㅁㅁ w: 4 h: 6 ㅁㅂㅁㅁ answer: 16 ㅁㅂㅂㅁ gcd: 2 ㅁㅁㅂㅁ ㅁㅁㅂㅂ ㅁㅁㅁㅂ</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ㅂㅁㅁㅁ w: 4, h: 4</span><br><span class="line">ㅁㅂㅁㅁ answer: 12</span><br><span class="line">ㅁㅁㅂㅁ gcd: 4</span><br><span class="line">ㅁㅁㅁㅂ</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ㅂㅁㅁㅁㅁㅁㅁㅁ w: 8 h: 8</span><br><span class="line">ㅁㅂㅁㅁㅁㅁㅁㅁ answer: 56</span><br><span class="line">ㅁㅁㅂㅁㅁㅁㅁㅁ gcd: 8</span><br><span class="line">ㅁㅁㅁㅂㅁㅁㅁㅁ</span><br><span class="line">ㅁㅁㅁㅁㅂㅁㅁㅁ</span><br><span class="line">ㅁㅁㅁㅁㅁㅂㅁㅁ</span><br><span class="line">ㅁㅁㅁㅁㅁㅁㅂㅁ</span><br><span class="line">ㅁㅁㅁㅁㅁㅁㅁㅂ</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>고민의 흔적</p>
-</blockquote>
-<p>표본을 충분히 그려놓고<br />
-숫자들을 이리저리 더하고 곱하고 지지고 볶고를 시작했다.</p>
-<p>그러다보니 어느순간 규칙성이 보이기 시작했다.</p>
-<p>직사각형의 형태일땐 정사각형때와는 다르게 선이 지저분하게 그려지고 있고</p>
-<p>사각형을 잡아먹는 패턴이 있다는것이 보여졌다.</p>
-<p>그러고나서 예제 입출력을 살펴보니 직사각형의 형태, 지저분한 선, 일정한 패턴이 보였고<br />
-패턴의 갯수를 세어보니 4개가 있었다.</p>
-<p>다시 직사각형의 표본을 살펴보다가</p>
-<p>감을 잃었다 ㅋㅋㅋㅋ</p>
-<p>무언가 느껴지는데 알수가 없었다.</p>
-<p>그렇게 한참을 들여다 보다<br />
-정사각형의 패턴을 봤을때 실마리를 찾았다.<br />
-정사각형의 패턴은 예쁘게 그려져있고 패턴의 수와 크기가 동일하다는걸 보았고<br />
-이리저리 굴려보다 저 패턴이 최대공약수와 동일하단걸 알았다.</p>
-<p>이문제는 정말 운으로 맞춘것 같다.</p>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -611,20 +634,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-count">80</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">92</span>
+        <span class="site-state-item-count">94</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>

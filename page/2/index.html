@@ -177,6 +177,135 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/06/Swift-%EB%A9%80%EC%A9%A1%ED%95%9C-%EC%82%AC%EA%B0%81%ED%98%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/Swift-%EB%A9%80%EC%A9%A1%ED%95%9C-%EC%82%AC%EA%B0%81%ED%98%95/" class="post-title-link" itemprop="url">Swift-멀쩡한 사각형</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2020-06-03 19:30:22 / Updated at: 20:09:41" itemprop="dateCreated datePublished" datetime="2020-06-03T19:30:22+09:00">2020-06-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/Swift-%EB%A9%80%EC%A9%A1%ED%95%9C-%EC%82%AC%EA%B0%81%ED%98%95/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/Swift-멀쩡한-사각형/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/62048" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
+<p>처음</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GCD</span> <span class="params">(<span class="number">_</span> a:Int64, <span class="number">_</span> b: Int64)</span></span> -&gt; <span class="type">Int64</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> remain = a % b</span><br><span class="line">    <span class="keyword">if</span> remain == <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> b</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">GCD</span>(b, remain)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> w:Int, <span class="number">_</span> h:Int)</span></span> -&gt; <span class="type">Int64</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> answer:<span class="type">Int64</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">let</span> gcd = <span class="type">GCD</span>(w, h)</span><br><span class="line">    <span class="keyword">let</span> maxQuad: <span class="type">Int64</span> = <span class="type">Int64</span>(w) * <span class="type">Int64</span>(h)</span><br><span class="line">    <span class="keyword">if</span> gcd == <span class="number">1</span> &#123;</span><br><span class="line">        answer = <span class="type">Int64</span>(maxQuad - <span class="type">Int64</span>(w + h - <span class="number">1</span>))</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        answer = <span class="type">Int64</span>(maxQuad - <span class="type">Int64</span>(w + h - gcd))</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>최적화</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GCD</span> <span class="params">(<span class="number">_</span> a:Int64, <span class="number">_</span> b: Int64)</span></span> -&gt; <span class="type">Int64</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> remain = a % b</span><br><span class="line">    <span class="keyword">if</span> remain == <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> b</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">GCD</span>(b, remain)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> w:Int, <span class="number">_</span> h:Int)</span></span> -&gt; <span class="type">Int64</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> w64 = <span class="type">Int64</span>(w), h64 = <span class="type">Int64</span>(h)</span><br><span class="line">    <span class="keyword">return</span> (w64 * h64) - (w64 + h64 - <span class="type">GCD</span>(w64, h64))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="built_in">print</span>(solution(<span class="number">1000000000</span>, <span class="number">100000000</span>))</span><br></pre></td></tr></table></figure>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p>이문제를 처음봤을때 어떻게 풀어야할지 감을 전혀 잡지 못했다.</p>
+<p>그래서 손으로 직접 그려서 규칙을 찾아보려고 했다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ㅂㅁㅁ w 3 ,h: 4</span><br><span class="line">ㅂㅂㅁ answer: 6</span><br><span class="line">ㅁㅂㅂ gcd: 1</span><br><span class="line">ㅁㅁㅂ</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ㅂㅁ w: 2, h: 3</span><br><span class="line">ㅂㅂ answer: 2</span><br><span class="line">ㅁㅂ gcd: 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ㅂㅁ w: 2, h: 5</span><br><span class="line">ㅂㅁ answer: 2</span><br><span class="line">ㅂㅂ gcd: 1</span><br><span class="line">ㅁㅂ</span><br><span class="line">ㅁㅂ</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> ㅂㅂㅁㅁㅁ w: 5 h: 4</span><br><span class="line">ㅁㅂㅂㅁㅁ answer: 12</span><br><span class="line">ㅁㅁㅂㅂㅁ gcd: 1</span><br><span class="line">ㅁㅁㅁㅂㅂ</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ㅂㅁㅁ w: 3, h: 3</span><br><span class="line">ㅁㅂㅁ answer: 6</span><br><span class="line">ㅁㅁㅂ gcd: 3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> ㅂㅁㅁㅁ w: 4 h: 6 ㅁㅂㅁㅁ answer: 16 ㅁㅂㅂㅁ gcd: 2 ㅁㅁㅂㅁ ㅁㅁㅂㅂ ㅁㅁㅁㅂ</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ㅂㅁㅁㅁ w: 4, h: 4</span><br><span class="line">ㅁㅂㅁㅁ answer: 12</span><br><span class="line">ㅁㅁㅂㅁ gcd: 4</span><br><span class="line">ㅁㅁㅁㅂ</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ㅂㅁㅁㅁㅁㅁㅁㅁ w: 8 h: 8</span><br><span class="line">ㅁㅂㅁㅁㅁㅁㅁㅁ answer: 56</span><br><span class="line">ㅁㅁㅂㅁㅁㅁㅁㅁ gcd: 8</span><br><span class="line">ㅁㅁㅁㅂㅁㅁㅁㅁ</span><br><span class="line">ㅁㅁㅁㅁㅂㅁㅁㅁ</span><br><span class="line">ㅁㅁㅁㅁㅁㅂㅁㅁ</span><br><span class="line">ㅁㅁㅁㅁㅁㅁㅂㅁ</span><br><span class="line">ㅁㅁㅁㅁㅁㅁㅁㅂ</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>고민의 흔적</p>
+</blockquote>
+<p>표본을 충분히 그려놓고<br />
+숫자들을 이리저리 더하고 곱하고 지지고 볶고를 시작했다.</p>
+<p>그러다보니 어느순간 규칙성이 보이기 시작했다.</p>
+<p>직사각형의 형태일땐 정사각형때와는 다르게 선이 지저분하게 그려지고 있고</p>
+<p>사각형을 잡아먹는 패턴이 있다는것이 보여졌다.</p>
+<p>그러고나서 예제 입출력을 살펴보니 직사각형의 형태, 지저분한 선, 일정한 패턴이 보였고<br />
+패턴의 갯수를 세어보니 4개가 있었다.</p>
+<p>다시 직사각형의 표본을 살펴보다가</p>
+<p>감을 잃었다 ㅋㅋㅋㅋ</p>
+<p>무언가 느껴지는데 알수가 없었다.</p>
+<p>그렇게 한참을 들여다 보다<br />
+정사각형의 패턴을 봤을때 실마리를 찾았다.<br />
+정사각형의 패턴은 예쁘게 그려져있고 패턴의 수와 크기가 동일하다는걸 보았고<br />
+이리저리 굴려보다 저 패턴이 최대공약수와 동일하단걸 알았다.</p>
+<p>이문제는 정말 운으로 맞춘것 같다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/06/Swift-%EB%B9%84%EB%B0%80%EC%A7%80%EB%8F%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -401,110 +530,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/05/Swift-%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/Swift-%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9/" class="post-title-link" itemprop="url">Swift-주식가격</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2020-05-27 16:24:16 / Updated at: 16:42:31" itemprop="dateCreated datePublished" datetime="2020-05-27T16:24:16+09:00">2020-05-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/05/Swift-%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/Swift-주식가격/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
-<p><a href="https://programmers.co.kr/learn/courses/30/lessons/42584" target="_blank" rel="noopener">프로그래머스 링크</a></p>
-<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
-<h2 id="swift"><a class="markdownIt-Anchor" href="#swift"></a> Swift</h2>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(prices: [Int])</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">    <span class="keyword">let</span> priceLength = prices.<span class="built_in">count</span></span><br><span class="line">    <span class="keyword">var</span> answer = [<span class="type">Int</span>](repeating: <span class="number">0</span>, <span class="built_in">count</span>: priceLength)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;priceLength &#123;</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">1</span>+i..&lt;priceLength &#123;</span><br><span class="line">            answer[i] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> prices[i] &gt; prices[j] &#123;</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(prices: [Int])</span></span> -&gt; [<span class="type">Int</span>] &#123;</span><br><span class="line">    <span class="keyword">let</span> priceLength = prices.<span class="built_in">count</span></span><br><span class="line">    <span class="keyword">var</span> answer = [<span class="type">Int</span>](repeating: <span class="number">0</span>, <span class="built_in">count</span>: priceLength)</span><br><span class="line">    <span class="keyword">var</span> stack = [<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..&lt;priceLength &#123;</span><br><span class="line">        <span class="keyword">if</span> prices[i] &lt; prices[stack.last!] &#123;</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> stack.reversed() &#123;</span><br><span class="line">                <span class="keyword">if</span> prices[i] &lt; prices[j] &#123;</span><br><span class="line">                    answer[j] = i - j</span><br><span class="line">                    stack.remove(at: j)</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        stack.append(i)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;stack.<span class="built_in">count</span> - <span class="number">1</span> &#123;</span><br><span class="line">        answer[stack[i]] = priceLength - stack[i] - <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(prices)</span>:</span></span><br><span class="line">    price_length = len(prices)</span><br><span class="line">    answer = [<span class="number">0</span>] * price_length</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(price_length):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>, price_length):</span><br><span class="line">            answer[i] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> prices[i] &gt; prices[j]:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line"></span><br><span class="line">solution([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Stack</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(prices)</span>:</span></span><br><span class="line">    price_length = len(prices)</span><br><span class="line">    answer = [<span class="number">0</span>] * price_length</span><br><span class="line">    stack = [<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, price_length):</span><br><span class="line">        <span class="keyword">if</span> prices[i] &lt; prices[stack[<span class="number">-1</span>]]:</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> stack[::<span class="number">-1</span>]:</span><br><span class="line">                <span class="keyword">if</span> prices[i] &lt; prices[j]:</span><br><span class="line">                    answer[j] = i - j</span><br><span class="line">                    stack.remove(j)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">        stack.append(i)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(stack) - <span class="number">1</span>):</span><br><span class="line">        answer[stack[i]] = len(prices) - stack[i] - <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line"></span><br><span class="line">print(solution([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">3</span>]))</span><br></pre></td></tr></table></figure>
-<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
-<p>프로그래머스 스택/큐에 있는 문제였다.</p>
-<p>문제의 원래 의도는 스택을 사용하여 푸는듯 하다.</p>
-<p>스택으로 푸는건 실패했지만 다른사람이 푼 코드를 가져와서 살펴보았다.<br />
-주어지는 값이 커질수록 스택으로 푸는게 훨씬 유리하다.</p>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -576,20 +601,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-count">80</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">92</span>
+        <span class="site-state-item-count">94</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
