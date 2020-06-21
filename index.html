@@ -202,7 +202,7 @@
               <span class="post-meta-item-text">작성일</span>
               
 
-              <time title="Post created: 2020-06-21 16:14:55 / Updated at: 16:57:33" itemprop="dateCreated datePublished" datetime="2020-06-21T16:14:55+09:00">2020-06-21</time>
+              <time title="Post created: 2020-06-21 16:14:55 / Updated at: 17:09:11" itemprop="dateCreated datePublished" datetime="2020-06-21T16:14:55+09:00">2020-06-21</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,15 +244,15 @@
 소셜로그인용 키값, 아이디, 비밀번호 라든지</p>
 <p>이게 코드에 그대로 포함되어도 될까? 라고 생각드는것들이다.</p>
 <blockquote>
-<p>노출되어서 이득볼것이 없다.</p>
-<p>긴가민가 하면 숨기자.</p>
+<p>노출되어서 이득볼것이 없다.<br />
+긴가민가 하면 숨기자.</p>
 </blockquote>
 <p>이것들을 숨기고 관리하는 방법을 한번 포스팅 해보겠다.</p>
 <h1 id="xcconfig"><a class="markdownIt-Anchor" href="#xcconfig"></a> xcconfig</h1>
 <p>프로젝트에서 새로운 파일(cmd + n)을 만들기를 하고<br />
 <code>Configuration Settings File</code>을 찾아서 생성해준다.</p>
 <img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image1.png" class="" title="image1">
-<p>나는 <code>Debug</code>, <code>Production</code> 두개를 만들었다.</p>
+<p>나는 <code>Config</code>라는 폴더 아래에 <code>Debug</code>, <code>Production</code> 두개를 만들었다.</p>
 <img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image2.png" class="" title="image2">
 <p>그다음 환경변수를 적어주자</p>
 <img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image3.png" class="" title="image3">
@@ -270,10 +270,14 @@
 <p>추가적으로 더 만들수도 있다. (밑에 +버튼)</p>
 <p>여기서는 두개만 세팅을 해보겠다.</p>
 <p>열어보면 타겟을 지정해줄 수 있는데<br />
-알아서 우리가 만든 xcconfig를 추적해서 보여준다.</p>
+우리가 만든 xcconfig를 추적해 알아서 보여준다.</p>
 <img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image5.png" class="" title="image5">
 <p>환경에 맞게 추가해주면 되겠다.</p>
 <img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image6.png" class="" title="image6">
+<blockquote>
+<p>Debug에 Debug<br />
+Release에 Production을 설정해주었다.</p>
+</blockquote>
 <p>이제 config할당도 끝났다.<br />
 하지만 아직 할것이 남았다.<br />
 할당한 변수를 사용하기 위해선 <code>info.plist</code>의 수정도 필요하다.</p>
@@ -283,6 +287,10 @@
 <p>우리가 사용하게 될 키값이 될테니 <code>Key</code>값을 구분하기 좋게 지어주자.</p>
 <p><code>Value</code>에는 <code>xcconfig</code>에서 지정했던 변수를 <code>$(변수명)</code>의 형태로 적어준다.</p>
 <img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image7.png" class="" title="image7">
+<blockquote>
+<p>상단에 API_SECRET_KEY<br />
+APP_KEY 로 세팅해두었다.</p>
+</blockquote>
 <p>이제 세팅은 끝났다.<br />
 한번 사용해보도록 하자.</p>
 <h1 id="사용"><a class="markdownIt-Anchor" href="#사용"></a> 사용</h1>
@@ -292,12 +300,34 @@
 <img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image8.png" class="" title="image8">
 <p>이런식으로 사용한다.</p>
 <h1 id="환경-바꾸기"><a class="markdownIt-Anchor" href="#환경-바꾸기"></a> 환경 바꾸기</h1>
-<p>프로젝트 상단을 누르면 사진처럼 뜬다.</p>
+<p>우리는 최초 <code>Debug</code>와 <code>Release</code> 두개에 대해 환경변수를 구성해 주었다.</p>
+<p>이제 그것들을 스위칭하는법을 알아보자</p>
+<p>프로젝트 상단을 누르면 사진처럼 탭들이 나오는데</p>
 <img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image9.png" class="" title="image9">
-<p><code>Edit scheme</code>을 누르면</p>
+<p><code>Edit scheme</code>을 누르면<br />
+다음 사진처럼 나오게 되고</p>
 <img src="/2020/06/iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0/image10.png" class="" title="image10">
-<p>사진처럼 나오게 되고<br />
-여기서 <code>Build Configuration</code>을 바꿔준 후 실행하면 우리가 지정했던 환경변수들을 바꿔가며 사용할 수 있다.</p>
+<p>여기서 <code>Build Configuration</code>을 바꿔준 후 실행하면 우리가 지정했던 환경변수들을 바꿔가며 사용할 수 있다.</p>
+<h1 id="gitignore"><a class="markdownIt-Anchor" href="#gitignore"></a> .gitignore</h1>
+<p>환경변수를 분리했던 목적은 노출시키지 않기 위함 이었다.</p>
+<p>하지만 이상태로 <code>add</code>, <code>commit</code>, <code>push</code>를 하게되면 <code>commit</code>에 포함되어버려서 그대로 노출된다.</p>
+<p>이를 방지하기 위해 <code>.gitignore</code>를 수정해주자</p>
+<blockquote>
+<p>gitignore란 commit에 특정 규칙을 가진 <code>파일</code>, <code>폴더</code>를 제외시킬 수 있도록 해주는 규칙 모음이다.<br />
+.이 파일이름 가장앞에 붙으면 숨김파일</p>
+</blockquote>
+<p><code>.gitignore</code>에<br />
+<code>*.xcconfig</code> 규칙을 추가해주고<br />
+<code>.gitignore</code>만 <code>add</code>, <code>commit</code>을 진행해준다.</p>
+<blockquote>
+<p><code>gitignore</code>가 수정된 후 <code>commit</code>되어야 파일을 제외해준다.<br />
+수정만 했다고 바로 제외해주는게 아니다.</p>
+</blockquote>
+<p>그다음 <code>git status</code>를 입력하여 정상적으로 <code>xcconfig</code>가 빠졌는지 확인을 하면 끝</p>
+<p>안빠졌다면 구글에 <code>gitignore 적용 안됨</code> 이런식으로 검색하면 나오니 한번 살펴보시길 바란다.</p>
+<blockquote>
+<p>해당내용도 언젠가 포스팅 해보겠다.</p>
+</blockquote>
 
       
     </div>
@@ -641,7 +671,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
