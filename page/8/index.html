@@ -177,6 +177,220 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EC%8B%9C%ED%97%98%EA%B3%B5%EB%B6%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/Swift-%EC%8B%9C%ED%97%98%EA%B3%B5%EB%B6%80/" class="post-title-link" itemprop="url">Swift 시험공부</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-12-23 20:53:54" itemprop="dateCreated datePublished" datetime="2019-12-23T20:53:54+09:00">2019-12-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2019-12-26 11:36:52" itemprop="dateModified" datetime="2019-12-26T11:36:52+09:00">2019-12-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/" itemprop="url" rel="index"><span itemprop="name">과제</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%BC%EC%A0%9C/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/12/Swift-%EC%8B%9C%ED%97%98%EA%B3%B5%EB%B6%80/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-시험공부/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="delegate"><a class="markdownIt-Anchor" href="#delegate"></a> Delegate</h2>
+<p>위임하다, 대리자, 대표등의 뜻을 가지고 있다.</p>
+<p>델리게이트는 어떠한 객체가 처리해야할 일들중 일부를 다른객체에게 넘겨 처리를 하게끔 하는것</p>
+<p>어떠한 일들을 처리해야할지는 프로토콜을 채택하여 정한다.</p>
+<p><strong>대신 위임받아 처리해줄 객체</strong> <s>(ViewController)</s><br />
+<strong>처리를 요청하는 객체</strong> <s>(CustomView)</s><br />
+두가지를 기억하자.</p>
+<h2 id="protocol"><a class="markdownIt-Anchor" href="#protocol"></a> Protocol</h2>
+<p>약속, 규약</p>
+<p>특정한 작업 또는 기능에 적합한 메소드, 프로퍼티등의 요구사항을 정의하는것</p>
+<p>스위프트에서의 프로토콜은 <strong>정의</strong>만 하고,<br />
+<strong>구현</strong>은 프로토콜을 채택한 곳에서 진행하여야 한다.</p>
+<blockquote>
+<p>Delegate와 엮어서 이해하자.</p>
+</blockquote>
+<h2 id="singleton"><a class="markdownIt-Anchor" href="#singleton"></a> Singleton</h2>
+<p>객체를 오직 하나만을 생성하여 생성된 객체를 어디서든 참조할 수 있도록 하는 패턴</p>
+<h3 id="장점"><a class="markdownIt-Anchor" href="#장점"></a> 장점</h3>
+<ul>
+<li>메모리 낭비 방지</li>
+<li>데이터를 공유할 수 있다는 이점</li>
+</ul>
+<h3 id="단점"><a class="markdownIt-Anchor" href="#단점"></a> 단점</h3>
+<ul>
+<li>종료될때까지 메모리에 상주 (Swift의 경우 앱이 죽을때까지라는 소리)</li>
+<li>어디서나 쉽게 접근이 가능하기 때문에 스파게티 코드가 될 확률이 높아진다.</li>
+</ul>
+<h3 id="사용법"><a class="markdownIt-Anchor" href="#사용법"></a> 사용법</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> shared = <span class="type">Singleton</span>()</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">init</span>() &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>static변수 : 한번 선언되면 변수가 사용가능한 영역을 벗어나도 메모리에서 사라지지 않는 변수<br />
+lazy의 특성도 가지고 있다.</p>
+</blockquote>
+<h2 id="userdefault"><a class="markdownIt-Anchor" href="#userdefault"></a> UserDefault</h2>
+<p>사용자의 정보(데이터)를 저장하기 위한 싱글톤 인스턴스<br />
+간단한 정보의 저장 및 불러오기가 가능</p>
+<blockquote>
+<p>대량,다량의 데이터를 저장하기 위해서는 데이터베이스를 쓰는게 낫다.</p>
+</blockquote>
+<h3 id="저장하기"><a class="markdownIt-Anchor" href="#저장하기"></a> 저장하기</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(<span class="string">"value"</span>, forkey: <span class="string">"key"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="불러오기"><a class="markdownIt-Anchor" href="#불러오기"></a> 불러오기</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UserDefaults</span>.standard.object(forkey: <span class="string">"key"</span>) <span class="comment">// Object</span></span><br><span class="line"><span class="type">UserDefaults</span>.standard.integer(forkey: <span class="string">"key"</span>) <span class="comment">// 정수</span></span><br><span class="line"><span class="type">UserDefaults</span>.standard.bool(forkey: <span class="string">"key"</span>) <span class="comment">// bool</span></span><br></pre></td></tr></table></figure>
+<h2 id="layout"><a class="markdownIt-Anchor" href="#layout"></a> Layout</h2>
+<h3 id="frame-based-layout"><a class="markdownIt-Anchor" href="#frame-based-layout"></a> Frame Based Layout</h3>
+<ol>
+<li>원점의 위치와 크기를 지정하여 UI가 그려질 영역을 계산하는 방식</li>
+<li>모든 View들에 대해 개별적인 설정과 관리가 필요</li>
+<li>유연하며 빠른 성능</li>
+<li>많은 리소스(노동)소모</li>
+</ol>
+<h3 id="autolayout"><a class="markdownIt-Anchor" href="#autolayout"></a> AutoLayout</h3>
+<ol>
+<li>View들간에 주어진 제약조건에 따라 View의 위치와 크기를 결정하는 Layout System</li>
+<li>외부 혹은 내부의 변화(기기회전,텍스트 크기변화…등등)에 동적으로 반응하여 유저 인터페이스를 구성하는것</li>
+<li>Frame 방식에 비하면 느림</li>
+</ol>
+<h3 id="autoresizingmask"><a class="markdownIt-Anchor" href="#autoresizingmask"></a> autoresizingMask</h3>
+<p>슈퍼뷰(상위뷰)의 바운드가 변경되었을 대 자신의 크기를 어떻게 재조정 하는지를 결정짓는 정수형 비트 마스크</p>
+<h2 id="arc-automatic-reference-counting"><a class="markdownIt-Anchor" href="#arc-automatic-reference-counting"></a> ARC (Automatic Reference Counting)</h2>
+<p>컴파일 타임때 구문분석을 통해 메모리 관리 코드를 적절한 위치에 삽입</p>
+<blockquote>
+<p>런타임때는 별도의 메모리관리가 이루어 지지 않는다.</p>
+<blockquote>
+<p>GC는 런타임중 필요가 없다고 여겨지는 부분을 해제 시킨다는점에서 차이가 있다.</p>
+</blockquote>
+</blockquote>
+<h3 id="strong"><a class="markdownIt-Anchor" href="#strong"></a> Strong</h3>
+<p>강한 참조 (Strong) : 기본값. 참조될 때마다 참조 카운트 1 증가</p>
+<h3 id="weak"><a class="markdownIt-Anchor" href="#weak"></a> Weak</h3>
+<p>접근 객체에 대하여 레퍼런스 카운트를 증가시키지 않는다.<br />
+참조하던 객체 해제 시 nil 값으로 변경 -&gt; Optional</p>
+<h3 id="unowned"><a class="markdownIt-Anchor" href="#unowned"></a> Unowned</h3>
+<p>접근 객체에 대하여 레퍼런스 카운트를 증가시키지 않는다.<br />
+접근 객체에 값이 항상 있다는것을 가정, 참조 객체 해제 시에도 기존 포인터 주소 유지</p>
+<h2 id="typecasting"><a class="markdownIt-Anchor" href="#typecasting"></a> TypeCasting</h2>
+<p>타입 캐스팅은 인스턴스의 타입을 체크하거나,<br />
+해당 인스턴스를 고유한 클래스의 계층 구조의 다른 수퍼 클래스나 서브 클래스로 처리하는 방법</p>
+<ul>
+<li>as : 타입 변환이 확실하게 가능한 경우(업캐스팅, 자기 자신 등) 에만 사용 가능. 그 외에는 컴파일 에러</li>
+<li>as? : 강제 타입 변환 시도. 변환이 성공하면 Optional 값을 가지며, 실패 시에는 nil 반환</li>
+<li>as! : 강제 타입 변환 시도. 성공 시 언래핑 된 값을 가지며, 실패 시 런타임 에러 발생</li>
+</ul>
+<h3 id="업캐스팅"><a class="markdownIt-Anchor" href="#업캐스팅"></a> 업캐스팅</h3>
+<p>상속 관계에 있는 자식 클래스가 부모 클래스로 형 변환하는 것</p>
+<h3 id="다운캐스팅"><a class="markdownIt-Anchor" href="#다운캐스팅"></a> 다운캐스팅</h3>
+<p>형제 클래스나 다른 서브 클래스 등 수퍼 클래스에서 파생된 각종 서브 클래스로의 타입 변환 의미</p>
+<h3 id="any"><a class="markdownIt-Anchor" href="#any"></a> Any</h3>
+<p>어떠한 타입이든 담을수 있다.</p>
+<h3 id="generic"><a class="markdownIt-Anchor" href="#generic"></a> Generic</h3>
+<p>값이 들어오는순간 타입을 정한다.</p>
+<h2 id="initializer"><a class="markdownIt-Anchor" href="#initializer"></a> Initializer</h2>
+<p>객체를 사용하기전 객체 안 모든 저장 프로퍼티에 초기화를 필수로 진행해야한다.</p>
+<ol>
+<li>초기값을 넣거나</li>
+<li>옵셔널 타입으로 선언하거나</li>
+<li>이외의 경우 init메서드 안에서 설정한다.</li>
+</ol>
+<h3 id="designated-initializer-init"><a class="markdownIt-Anchor" href="#designated-initializer-init"></a> Designated Initializer( ==  init)</h3>
+<p>클래스에 하나이상 필요<br />
+초기화 과정에서 반드시 한번은 호출된다.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> someText: <span class="type">String</span></span><br><span class="line">    <span class="keyword">var</span> someInt: <span class="type">Int</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(text: <span class="type">String</span>, someInt: <span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.someText = text</span><br><span class="line">        <span class="keyword">self</span>.someInt = someInt</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(text: <span class="type">String</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.someText = text</span><br><span class="line">        <span class="keyword">self</span>.someInt = <span class="number">10</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(someInt: <span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.someText = <span class="string">"hello world"</span></span><br><span class="line">        <span class="keyword">self</span>.someInt = someInt</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="convenience-initializer"><a class="markdownIt-Anchor" href="#convenience-initializer"></a> Convenience Initializer</h3>
+<p>단독으로 초기화 할 수 없고<br />
+파라미터 일부만 생성을 진행하고 나머지 부분은 다른생성자에게 위임하는 생성자</p>
+<p><strong>중복코드를 제거하기 위해서 사용</strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> someText: <span class="type">String</span></span><br><span class="line">    <span class="keyword">var</span> someInt: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">var</span> someBool: <span class="type">Bool</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(text: <span class="type">String</span>, someInt: <span class="type">Int</span>, someBool: <span class="type">Bool</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.someText = text</span><br><span class="line">        <span class="keyword">self</span>.someInt = someInt</span><br><span class="line">        <span class="keyword">self</span>.someBool = someBool</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(text: <span class="type">String</span>, someBool: <span class="type">Bool</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.someText = text</span><br><span class="line">        <span class="keyword">self</span>.someBool = someBool</span><br><span class="line">        <span class="keyword">self</span>.someInt = <span class="number">10</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">convenience</span> <span class="keyword">init</span>(someBool: <span class="type">Bool</span>, someInt: <span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.<span class="keyword">init</span>(text: <span class="string">"hello world"</span>, someInt: someInt, someBool: someBool)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="failable-initializer"><a class="markdownIt-Anchor" href="#failable-initializer"></a> Failable Initializer</h3>
+<p>class, struct, enum등을 정의할 때 초기화 중 실패할 가능성이 있는경우 사용</p>
+<p>초기화 성공시 옵셔널타입을 반환<br />
+실패시에는 nil을 반환하도록 init을 작성해야한다.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">  <span class="keyword">let</span> age: <span class="type">Int</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">init</span>?(name: <span class="type">String</span>, age: <span class="type">Int</span>) &#123;</span><br><span class="line">    <span class="keyword">guard</span> age &gt; <span class="number">0</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">    <span class="keyword">self</span>.name = name</span><br><span class="line">    <span class="keyword">self</span>.age = age</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%ED%94%84%EB%A6%B0%ED%84%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -427,141 +641,6 @@ Frame 기반에 비해 느린 성능</p>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EC%88%AB%EC%9E%90%EC%95%BC%EA%B5%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/Swift-%EC%88%AB%EC%9E%90%EC%95%BC%EA%B5%AC/" class="post-title-link" itemprop="url">[Swift]숫자야구</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-
-              <time title="Post created: 2019-12-10 10:55:56" itemprop="dateCreated datePublished" datetime="2019-12-10T10:55:56+09:00">2019-12-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2019-12-13 12:35:24" itemprop="dateModified" datetime="2019-12-13T12:35:24+09:00">2019-12-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/12/Swift-%EC%88%AB%EC%9E%90%EC%95%BC%EA%B5%AC/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-숫자야구/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
-<p><a href="https://programmers.co.kr/learn/courses/30/lessons/42841" target="_blank" rel="noopener">프로그래머스 링크</a></p>
-<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> baseball:[[Int]])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> answer = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">123</span>...<span class="number">987</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> itos = <span class="type">String</span>(i)</span><br><span class="line">        <span class="keyword">var</span> flag = <span class="literal">true</span></span><br><span class="line">        <span class="keyword">if</span> itos[itos.startIndex] == itos[itos.index(after: itos.startIndex)] || itos[itos.startIndex] == itos[itos.index(before: itos.endIndex)] || itos[itos.index(after: itos.startIndex)] == itos[itos.index(before: itos.endIndex)] &#123; <span class="keyword">continue</span> &#125;</span><br><span class="line">        <span class="keyword">if</span> itos.<span class="built_in">contains</span>(<span class="string">"0"</span>) &#123;</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> b <span class="keyword">in</span> baseball &#123;</span><br><span class="line">            <span class="keyword">var</span> strike = <span class="number">0</span>, ball = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">0</span>...<span class="number">2</span> &#123;</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="number">0</span>...<span class="number">2</span> &#123;</span><br><span class="line">                    <span class="keyword">let</span> checkBaseball = <span class="type">String</span>(b[<span class="number">0</span>])</span><br><span class="line">                    <span class="keyword">let</span> jIndex = checkBaseball.index(checkBaseball.startIndex, offsetBy: j)</span><br><span class="line">                    <span class="keyword">let</span> kIndex = checkBaseball.index(checkBaseball.startIndex, offsetBy: k)</span><br><span class="line">                    </span><br><span class="line">                    <span class="comment">// 스트라이크</span></span><br><span class="line">                    <span class="keyword">if</span> j == k &amp;&amp; itos[jIndex] == checkBaseball[kIndex] &#123;</span><br><span class="line">                        strike += <span class="number">1</span></span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">// 볼                    </span></span><br><span class="line">                    <span class="keyword">if</span> j != k &amp;&amp; itos[jIndex] == checkBaseball[kIndex] &#123;</span><br><span class="line">                        ball += <span class="number">1</span></span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> strike != b[<span class="number">1</span>] || ball != b[<span class="number">2</span>] &#123;</span><br><span class="line">                flag = <span class="literal">false</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> flag &#123;</span><br><span class="line">            answer += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
-<p>해당문제는 완전탐색 카테고리에 있는 문제다.<br />
-뭔가 탐색에 더 나은방법이 있을까 해서 고민했지만 정말로 완전탐색을 해야하는 문제였다.</p>
-<p>문제의 조건에 다음과 같은문구가 있다.</p>
-<p><code>각자 서로 다른 1~9까지 3자리 임의의 숫자를 정한 뒤 서로에게 3자리의 숫자를 불러서 결과를 확인합니다.</code></p>
-<p><strong>서로 다른 1~9까지의 3자리 임의의 숫자</strong></p>
-<p>이말은 서로 정한 숫자가 중복되지 않고 0을 포함하지 않는다는 말이 된다.</p>
-<p>또한, 3자리의 임의의 숫자중 가장 큰 수는 999다.<br />
-범위는 100~999이 될 수 있겠다.</p>
-<p>조금 더 생각해보면 0과 숫자가 중복이 되지 않는다고 한다.<br />
-그렇다면 범위를 123 ~ 987까지 줄일수 있다.</p>
-<blockquote>
-<p>987인 경우는 999가 가장 큰 상황에서 중복을 허용하지 않는다는 전제조건이 있었으니<br />
-987이 가장큰 수가된다.</p>
-</blockquote>
-<p>그럼 123 ~ 987까지 전체 순회를 돌면서</p>
-<p>주어진 경우의 수들에 모두 맞는 숫자를 뽑아내면 된다.</p>
-<blockquote>
-<p>항상 말은 쉽다.</p>
-</blockquote>
-<h1 id="순서"><a class="markdownIt-Anchor" href="#순서"></a> 순서</h1>
-<ol>
-<li>가장 바깥의 순회는 123 ~ 987을 돈다.</li>
-<li>숫자의 중복,0 포함의 경우는 순회를 건너뛴다.</li>
-<li>주어진 경우의수를 순회한다.</li>
-<li>바깥의 수와 주어진 수의 자릿수를 비교한다. (0:0,0:1,0:2,1:0,1:1,1:2) 이런순서로</li>
-<li>자릿수가 같으면서 값이 같으면 스트라이크</li>
-<li>자릿수가 다르지만 값이 같다면 볼</li>
-<li>주어진 스트라이크,볼 카운트를 직접센 카운트와 비교</li>
-<li>카운트(스트라이크,볼)가 하나라도 다르면 그건 다음번 수가 될 수 없다.</li>
-<li>이런식으로 뽑아낸 모든 숫자들의 갯수를 리턴하면 된다.</li>
-</ol>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -633,7 +712,7 @@ Frame 기반에 비해 느린 성능</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-count">80</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -646,7 +725,7 @@ Frame 기반에 비해 느린 성능</p>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">95</span>
+        <span class="site-state-item-count">98</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
