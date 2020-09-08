@@ -40,7 +40,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;06&#x2F;iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0&#x2F;image8.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;06&#x2F;iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0&#x2F;image9.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;06&#x2F;iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0&#x2F;image10.png">
-<meta property="og:updated_time" content="2020-06-21T08:10:58.660Z">
+<meta property="og:updated_time" content="2020-09-08T02:40:46.617Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;06&#x2F;iOS-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0&#x2F;image1.png">
 
@@ -212,10 +212,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">작성일</span>
-              
 
-              <time title="Post created: 2020-06-21 16:14:55 / Updated at: 17:10:58" itemprop="dateCreated datePublished" datetime="2020-06-21T16:14:55+09:00">2020-06-21</time>
+              <time title="Post created: 2020-06-21 16:14:55" itemprop="dateCreated datePublished" datetime="2020-06-21T16:14:55+09:00">2020-06-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2020-09-08 11:40:46" itemprop="dateModified" datetime="2020-09-08T11:40:46+09:00">2020-09-08</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -347,6 +353,12 @@ APP_KEY 로 세팅해두었다.</p>
 <blockquote>
 <p>해당내용도 언젠가 포스팅 해보겠다.</p>
 </blockquote>
+<h1 id="pods"><a class="markdownIt-Anchor" href="#pods"></a> Pods</h1>
+<p>만약 Pod을 사용하고 있다면 환경변수쪽에서 에러가 날텐데 이럴경우 Custom한 환경변수에<br />
+다음과 같이 추가해주자</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include <span class="string">"Pods/Target Support Files/프로젝트명/프로젝트명.debug.xcconfig"</span></span><br></pre></td></tr></table></figure>
+<p>Pod으로 외부 라이브러리를 설치하게 되면 Pod전용 <code>xcconfig</code>들이 생기는 해당 config를<br />
+<code>include</code>시켜 사용하면 에러를 해결할 수 있다.</p>
 <h1 id="끝"><a class="markdownIt-Anchor" href="#끝"></a> 끝</h1>
 
     </div>
@@ -452,7 +464,7 @@ APP_KEY 로 세팅해두었다.</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#xcconfig"><span class="nav-number">1.</span> <span class="nav-text"> xcconfig</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#config-할당하기"><span class="nav-number">2.</span> <span class="nav-text"> config 할당하기</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#infoplist"><span class="nav-number">3.</span> <span class="nav-text"> info.plist</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#사용"><span class="nav-number">4.</span> <span class="nav-text"> 사용</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#환경-바꾸기"><span class="nav-number">5.</span> <span class="nav-text"> 환경 바꾸기</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gitignore"><span class="nav-number">6.</span> <span class="nav-text"> .gitignore</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#끝"><span class="nav-number">7.</span> <span class="nav-text"> 끝</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#xcconfig"><span class="nav-number">1.</span> <span class="nav-text"> xcconfig</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#config-할당하기"><span class="nav-number">2.</span> <span class="nav-text"> config 할당하기</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#infoplist"><span class="nav-number">3.</span> <span class="nav-text"> info.plist</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#사용"><span class="nav-number">4.</span> <span class="nav-text"> 사용</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#환경-바꾸기"><span class="nav-number">5.</span> <span class="nav-text"> 환경 바꾸기</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gitignore"><span class="nav-number">6.</span> <span class="nav-text"> .gitignore</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pods"><span class="nav-number">7.</span> <span class="nav-text"> Pods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#끝"><span class="nav-number">8.</span> <span class="nav-text"> 끝</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
