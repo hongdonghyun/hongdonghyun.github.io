@@ -31,7 +31,7 @@
 <meta property="og:description" content="gitignore  gitignore란? git으로 관리되고 있는 디렉토리내에서 git에 포함되지 않아야하는 폴더,파일들을 설정하게 제외시킬 수 있는설정파일  gitignore.io gitignore.io여기로 가면 내가 원하는 gitignore파일을 만들 수 있다.   매번 입력하기 귀찮으니 스크립트로 만들자 gitignore docs 해당 링크로 가면">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;02&#x2F;gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0&#x2F;gitignore1.png">
-<meta property="og:updated_time" content="2020-02-04T11:51:34.942Z">
+<meta property="og:updated_time" content="2020-09-08T02:23:40.247Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;hongdonghyun.github.io&#x2F;2020&#x2F;02&#x2F;gitignore-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0&#x2F;gitignore1.png">
 
@@ -203,10 +203,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">작성일</span>
-              
 
-              <time title="Post created: 2020-02-04 20:32:12 / Updated at: 20:51:34" itemprop="dateCreated datePublished" datetime="2020-02-04T20:32:12+09:00">2020-02-04</time>
+              <time title="Post created: 2020-02-04 20:32:12" itemprop="dateCreated datePublished" datetime="2020-02-04T20:32:12+09:00">2020-02-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2020-09-08 11:23:40" itemprop="dateModified" datetime="2020-09-08T11:23:40+09:00">2020-09-08</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -262,7 +268,7 @@ git에 포함되지 않아야하는 <code>폴더</code>,<code>파일</code>들�
 <p>해당 내용을 바탕으로 스크립트를 만들고 싶었다.<br />
 <code>git</code>자체에 명령을 추가하는 방식도 있지만 좀 더 범용적이게 <code>shell function</code>으로 만들려고 했다.</p>
 <h3 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h3>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gi</span></span>() &#123;</span><br><span class="line">    status_code=$(curl -s -o /dev/null -w <span class="string">"%&#123;http_code&#125;"</span> https://gitignore.io/api)</span><br><span class="line">    <span class="keyword">if</span> [ <span class="variable">$status_code</span> = <span class="string">'200'</span> ]; <span class="keyword">then</span></span><br><span class="line">        curl -sLw <span class="string">'\n'</span> https://www.gitignore.io/api/<span class="variable">$@</span> &gt; .gitignore ;</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">'create .gitignore'</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">'create fail\n reason: request failed'</span>;</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">gi</span></span>() &#123;</span><br><span class="line">    status_code=$(curl -s -o /dev/null -w <span class="string">"%&#123;http_code&#125;"</span> https://www.toptal.com/developers/gitignore/api)</span><br><span class="line">    <span class="keyword">if</span> [ <span class="variable">$status_code</span> = <span class="string">'200'</span> ]; <span class="keyword">then</span></span><br><span class="line">        curl -sLw <span class="string">'\n'</span> https://www.toptal.com/developers/gitignore/api/<span class="variable">$@</span> &gt; .gitignore ;</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"create .gitignore $*"</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">'create fail\n reason: request failed'</span>;</span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="사용법"><a class="markdownIt-Anchor" href="#사용법"></a> 사용법</h3>
 <p>사용법은 다음과 같다.</p>
 <ol>
@@ -273,6 +279,9 @@ git에 포함되지 않아야하는 <code>폴더</code>,<code>파일</code>들�
 <li>이후 <code>.gitignore</code>를 만들고 싶은곳에서 <code>gi macos,python,swift</code> 등 내가 추가하고 싶은 파일을 <code>,</code>단위로 구분하여 입력한다.</li>
 <li>생성된 파일을 확인</li>
 </ol>
+<blockquote>
+<p>bash일 경우 ~/.bashrc로 진행해주세요.</p>
+</blockquote>
 <h3 id="설명"><a class="markdownIt-Anchor" href="#설명"></a> 설명</h3>
 <p>해당 함수는 두번에 걸쳐 <a href="http://gitignore.io/" target="_blank" rel="noopener">gitignore.io</a>에 <code>request</code>를 보낸다.<br />
 첫번째는 해당 서버가 살아있는지 확인후</p>
