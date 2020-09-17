@@ -177,6 +177,117 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/01/Swift-%EC%9D%B4%EC%83%81%ED%95%9C-%EB%AC%B8%EC%9E%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/Swift-%EC%9D%B4%EC%83%81%ED%95%9C-%EB%AC%B8%EC%9E%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="post-title-link" itemprop="url">[Swift] 이상한 문자 만들기</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2020-01-08 15:19:45 / Updated at: 15:25:14" itemprop="dateCreated datePublished" datetime="2020-01-08T15:19:45+09:00">2020-01-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/01/Swift-%EC%9D%B4%EC%83%81%ED%95%9C-%EB%AC%B8%EC%9E%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/Swift-이상한-문자-만들기/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/12930" target="_blank" rel="noopener">프로그래머스 링크</a></p>
+<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> code</h1>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Character</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">isAlpha</span><span class="params">()</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"a"</span>...<span class="string">"z"</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">"A"</span>...<span class="string">"Z"</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> s:String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> answer: <span class="type">String</span> = <span class="string">""</span></span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">count</span>: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">c</span> <span class="keyword">in</span> s &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">c</span>.isAlpha() &#123;</span><br><span class="line">            answer += <span class="built_in">count</span> % <span class="number">2</span> == <span class="number">0</span> ? <span class="built_in">c</span>.uppercased() : <span class="built_in">c</span>.lowercased()</span><br><span class="line">            <span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            answer += <span class="string">" "</span></span><br><span class="line">            <span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
+<p>Character에 메서드를 추가해서 풀어보았다.</p>
+<p>맨처음 생각난 풀이는 문자열을 공백기준으로 split하여 2중for문으로 푸는 방법이 생각났는데,</p>
+<p>죽어도 2중for문은 쓰기 싫어서 고민을 한번해보았다.</p>
+<p>extension으로 <code>isAlpha</code>라는 메서드를 만들어 해당 문자가 영어인지 판별 후</p>
+<p>영어인 경우 문제의 조건에 따라 대문자 소문자로 변경해 결과값 문자열에 추가하고,</p>
+<p>영어가 아닌경우를 공백으로 판단하여</p>
+<blockquote>
+<p>사실 이경우 특수기호,한글등이 하나라도 들어가 있다면 난장판이 되겠지만<br />
+문제의 조건이 알파벳을 대문자,소문자로 구분을 해야하기 때문에<br />
+알파벳, 공백이외의 문자는 들어오지 않을거라는 판단하에 진행하였다.</p>
+</blockquote>
+<p>공백을 결과값 문자열에 추가해주었다.</p>
+<p>extension에 익숙하지 않았는데 생각보다 재미있게 풀어서 좋았다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/01/hexo-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-Adsense-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -459,166 +570,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/" class="post-title-link" itemprop="url">트위치 채널 포인트 자동클릭</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-
-              <time title="Post created: 2020-01-05 22:20:07" itemprop="dateCreated datePublished" datetime="2020-01-05T22:20:07+09:00">2020-01-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Updated at: 2020-01-08 15:39:46" itemprop="dateModified" datetime="2020-01-08T15:39:46+09:00">2020-01-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/트위치-채널-포인트-자동클릭/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="트위치"><a class="markdownIt-Anchor" href="#트위치"></a> 트위치</h2>
-<p>나는 트위치를 자주 즐겨 보는데,<br />
-최근 트위치에 채널 포인트라는 제도가 생겼다.</p>
-<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point.png" class="" title="channel_point">
-<blockquote>
-<p>포인트를 소모하여 보상을 얻을 수 있다.<br />
-시간제한이 있는 구독자 전용 이모티콘이나 채팅에 하이라이팅 효과를 먹일수 있다.</p>
-</blockquote>
-<p>채널 포인트를 획득하는 방법은 이것저것 있지만 방송을 계속 시청하거나 15분 간격으로 나오는 버튼을 누르면 50포인트를 얻을 수 있다.</p>
-<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point2.png" class="" title="channel_point2">
-<blockquote>
-<p>저 버튼이다.</p>
-</blockquote>
-<p>해당버튼을 누르지 않아도 계속시청하면 많은 포인트를 쌓을 수 있지만<br />
-생각보다 저 버튼이 거슬린다.</p>
-<p>그래서 저 버튼을 자동으로 누르게 할수는 없을까 고민을 하다가 트위치가 <a href="https://electronjs.org/" target="_blank" rel="noopener">Electron</a>으로 만들었다는걸 어디서 들은것 같아 시도해보았다.</p>
-<blockquote>
-<p><a href="https://electronjs.org/" target="_blank" rel="noopener">Electron</a>은<br />
-html,javascript로 데스크탑 앱을 만드는 오픈소스<br />
-슬랙, 디스코드등이 이걸로 만들어졌음</p>
-</blockquote>
-<p>웹의 언어를 기반으로 만들었으니 개발자도구를 열어서 내부구현을 확인할 수 있지 않을까 라는 생각으로 시도했고</p>
-<p>내 생각은 적중했다.<br />
-Mac에서는 cmd + alt + i<br />
-Windows에서는 F12를 누르면 개발자도구가 뙇 하고 열린다.</p>
-<blockquote>
-<p>(크롬기준) 브라우저에서도 동일하다.<br />
-일렉트론은 크롬 개발자도구를 기본 내장한다고 한다.</p>
-<blockquote>
-<p>슬랙에서도 시도해보았으나 안열림<br />
-다른툴을 쓰면 열 수 있다고 하는데 그렇게까지 하고 싶진 않았다.</p>
-</blockquote>
-</blockquote>
-<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point3.png" class="" title="channel_point3">
-<blockquote>
-<p><a href="https://www.twitch.tv/hanryang1125" target="_blank" rel="noopener">풍월량</a>님 방송입니다.<br />
-문제 되면 글내림</p>
-</blockquote>
-<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point4.png" class="" title="channel_point4">
-<blockquote>
-<p>이제 이 버튼을 찾아 클릭하게 만들어주면 된다.</p>
-</blockquote>
-<p>요소검사기를 통해 저 버튼을 누르면</p>
-<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point5.png" class="" title="channel_point5">
-<p>이렇게 html코드를 친절히 확인할 수 있다.</p>
-<p>저 버튼은 15분에 한번씩 뜨지만 난 버튼을 이제 10초에 한번씩 누르게 만들것이다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pointClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementsByClassName(<span class="string">"claimable-bonus__icon tw-flex"</span>)[<span class="number">0</span>].click()</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"성공"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">catch</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;    </span><br><span class="line">setInterval(pointClick,<span class="number">10000</span>)</span><br></pre></td></tr></table></figure>
-<p>setInerval을 통해 10초에 한번씩 함수를 실행하게 만들고</p>
-<p>함수 구현부분에서 클릭해야할 요소를 <code>getElementClassName</code>을 통해 찾아내고 클릭하게 만든다.</p>
-<p>당연히 10초에 한번씩 함수가 동작하게 만들었으니<br />
-버튼이 없는데 버튼을 클릭하려고 시도할것이고 그렇게 되면 에러가 쌓인다.</p>
-<p>try-catch문을 통해 에러 메시지가 쌓이지 않도록 처리해주었다.</p>
-<p>이제 저 코드를 콘솔창에서 실행 시켜주면 끝난다.</p>
-<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point6.png" class="" title="channel_point6">
-<p>이렇게 입력해주고 엔터를 누른후 10초 기다리면</p>
-<img src="/2020/01/%ED%8A%B8%EC%9C%84%EC%B9%98-%EC%B1%84%EB%84%90-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99%ED%81%B4%EB%A6%AD/channel_point7.png" class="" title="channel_point7">
-<p>성공이다.</p>
-<h2 id="문제점"><a class="markdownIt-Anchor" href="#문제점"></a> 문제점</h2>
-<p>이유는 알 수 없으나 개발자도구를 켜놓은 상태로 트위치를 사용하다보면 크래쉬 나면서 꺼지기도 한다.</p>
-<p>당연하지만 트위치 데스크탑 앱이나 브라우저를 껏다키면 해당부분도 없어지니 매번 킬때마다 다시 입력해줘야한다.</p>
-<p>나중에 이걸 크롬 익스텐션으로도 한번 만들어 보아야겠다.</p>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -690,20 +641,20 @@ Windows에서는 F12를 누르면 개발자도구가 뙇 하고 열린다.</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">80</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">98</span>
+        <span class="site-state-item-count">100</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>

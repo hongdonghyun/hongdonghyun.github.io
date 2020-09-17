@@ -177,6 +177,159 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%ED%81%B4%EB%9E%98%EC%8A%A4-%EA%B5%AC%EC%A1%B0%EC%B2%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/Swift-%ED%81%B4%EB%9E%98%EC%8A%A4-%EA%B5%AC%EC%A1%B0%EC%B2%B4/" class="post-title-link" itemprop="url">Swift 클래스,구조체</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+              
+
+              <time title="Post created: 2019-12-09 13:12:16 / Updated at: 17:56:49" itemprop="dateCreated datePublished" datetime="2019-12-09T13:12:16+09:00">2019-12-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/12/Swift-%ED%81%B4%EB%9E%98%EC%8A%A4-%EA%B5%AC%EC%A1%B0%EC%B2%B4/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-클래스-구조체/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="클래스와-구조체"><a class="markdownIt-Anchor" href="#클래스와-구조체"></a> 클래스와 구조체</h1>
+<h2 id="언제-클래스와-구조체를-써야할까"><a class="markdownIt-Anchor" href="#언제-클래스와-구조체를-써야할까"></a> 언제 클래스와 구조체를 써야할까?</h2>
+<p><strong>애플의 권장사항</strong></p>
+<ul>
+<li>구조체를 기본으로 사용으로 사용한다는 전제</li>
+</ul>
+<h3 id="구조체-사용을-권장할-때"><a class="markdownIt-Anchor" href="#구조체-사용을-권장할-때"></a> 구조체 사용을 권장할 때</h3>
+<ul>
+<li>연관된 간단한 값의 집합을 캡슐화 하는 것만이 목적일 때</li>
+<li>캡슐화된 값이 참조되는 것보다 복사되는 것이 합당할 때</li>
+<li>구조체에 저장된 프로퍼티가 값 타입이며 참조되는 것보다 복사되는 것이 합당할 때</li>
+<li>다른 타입으로부터 상속받거나 자신이 상속될 필요가 없을 때</li>
+</ul>
+<h3 id="클래스를-사용해야-할-때"><a class="markdownIt-Anchor" href="#클래스를-사용해야-할-때"></a> 클래스를 사용해야 할 때</h3>
+<ul>
+<li>Objective-C와 호환성이 필요할 때</li>
+<li>equality(동등성) 외에 identity(정체성, 동일성)를 제어해야 할 때</li>
+<li>RC(Reference Counting)와 소멸자(deinitialization)가 필요할 때</li>
+<li>값이 중앙에서 관리되고 공유되어야 할 때</li>
+</ul>
+<h2 id="공통점"><a class="markdownIt-Anchor" href="#공통점"></a> 공통점</h2>
+<ul>
+<li>값을 저장하기 위한 프로퍼티</li>
+<li>기능을 제공하기 위한 메서드</li>
+<li>초기 상태를 설정하기 위한 생성자</li>
+<li>기본 구현에서 기능을 추가하기 위한 확장(Extension)</li>
+<li>특정 값에 접근할 수 있는 첨자(Subscript)</li>
+<li>특정한 기능을 수행하기 위한 프로토콜 채택</li>
+<li>Upper Camel Case 사용</li>
+</ul>
+<h2 id="차이점"><a class="markdownIt-Anchor" href="#차이점"></a> 차이점</h2>
+<ul>
+<li>구조체는 값타입 (Value Type)</li>
+<li>클래스는 참조타입 (Reference Type)</li>
+</ul>
+<h2 id="only-class"><a class="markdownIt-Anchor" href="#only-class"></a> Only Class</h2>
+<ul>
+<li>상속 (Inheritance)을 통해 다른 클래스의 특성을 이어받을 수 있다</li>
+<li>해제함수(deinitializer)를 사용해 사용한 자원을 반환할 수 있다</li>
+<li>참조 카운팅(Reference counting)을 통해 한 클래스 인스턴스를 여러 군데에서 참조(사용)할 수 있다</li>
+</ul>
+<h1 id="생성자-비교"><a class="markdownIt-Anchor" href="#생성자-비교"></a> 생성자 비교</h1>
+<h2 id="저장-프로퍼티-중-일부에만-초기화-값이-있을-때"><a class="markdownIt-Anchor" href="#저장-프로퍼티-중-일부에만-초기화-값이-있을-때"></a> 저장 프로퍼티 중 일부에만 초기화 값이 있을 때</h2>
+<h3 id="struct"><a class="markdownIt-Anchor" href="#struct"></a> struct</h3>
+<ul>
+<li>초기화 값이 없는 저장 프로퍼티에 대해서만 생성자로 전달</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">UserStruct3</span> </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> name: <span class="type">String</span> = <span class="string">"홍길동"</span></span><br><span class="line">  <span class="keyword">let</span> age: <span class="type">Int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> userS3 = <span class="type">UserStruct3</span>(age: <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="class"><a class="markdownIt-Anchor" href="#class"></a> class</h3>
+<ul>
+<li>저장 프로퍼티 중 하나라도 초기화 값이 없는 경우 생성자를 구현해야 함</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserClass3</span> </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> name: <span class="type">String</span> = <span class="string">"홍길동"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//  let age: Int</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="프로퍼티-변경"><a class="markdownIt-Anchor" href="#프로퍼티-변경"></a> 프로퍼티 변경</h2>
+<h3 id="struct-2"><a class="markdownIt-Anchor" href="#struct-2"></a> struct</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PointStruct</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 프로퍼티 변경시 mutating사용</span></span><br><span class="line">    <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">updateX</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.x = <span class="number">5</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 연산 프로퍼티의 setter는 기본적으로 mutating</span></span><br><span class="line">    <span class="keyword">var</span> updateProperty: <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123; x &#125;</span><br><span class="line">        <span class="keyword">set</span> &#123; x = newValue &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="class-2"><a class="markdownIt-Anchor" href="#class-2"></a> class</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PointClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 클래스에서는 mutating을 사용하지 않는다.</span></span><br><span class="line">    <span class="comment">// 값타입일 경우 Mutating 사용</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">updateX</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.x = <span class="number">5</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="프로토콜-적용"><a class="markdownIt-Anchor" href="#프로토콜-적용"></a> 프로토콜 적용</h2>
+<h3 id="struct-3"><a class="markdownIt-Anchor" href="#struct-3"></a> struct</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Mutate</span> </span>&#123;</span><br><span class="line">      <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">mutatingUpdate</span><span class="params">()</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PointStruct1</span>: <span class="title">Mutate</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">mutatingUpdate</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.x = <span class="number">5</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-TypeCasting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -441,111 +594,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EC%98%88%EC%82%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/Swift-%EC%98%88%EC%82%B0/" class="post-title-link" itemprop="url">[Swift]예산</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2019-12-04 15:05:38 / Updated at: 15:12:12" itemprop="dateCreated datePublished" datetime="2019-12-04T15:05:38+09:00">2019-12-04</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/12/Swift-%EC%98%88%EC%82%B0/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-예산/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="문제"><a class="markdownIt-Anchor" href="#문제"></a> 문제</h1>
-<p><a href="https://programmers.co.kr/learn/courses/30/lessons/12982" target="_blank" rel="noopener">프로그래머스 링크</a></p>
-<h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solution</span><span class="params">(<span class="number">_</span> d:[Int], <span class="number">_</span> budget:Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span>, <span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> d.sorted() &#123;</span><br><span class="line">        result += i</span><br><span class="line">        <span class="keyword">if</span> result &lt;= budget &#123;</span><br><span class="line">            <span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">count</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="풀이"><a class="markdownIt-Anchor" href="#풀이"></a> 풀이</h1>
-<p>문제의 입출력 예시를 그대로 보고 풀려고하면 상당히 어려워 진다.</p>
-<p>해당 문제는 수학적으로 접근해야할 필요가 있다.</p>
-<p>문제의 핵심은 최대한 많은부서에 물품을 지원해라는 것이다.</p>
-<p>입력값 d는 부서별 요구 금액이다.</p>
-<p>최대한 많은부서에 물품을 지원하려면 요구금액이 가장 작은순서대로 예산을 소모하면 가장 많은 부서들을 지원해줄 수 있다.</p>
-<p>그렇다면 신청금액은 오름차순으로 정렬하여 예산에 맞추어 지원을 해주면 된다.</p>
-<p>생각의 흐름을 코드로 나타내는건 그다지 어렵지 않았다.</p>
-
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -617,20 +665,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">80</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">98</span>
+        <span class="site-state-item-count">100</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>

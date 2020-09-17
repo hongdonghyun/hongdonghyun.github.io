@@ -177,6 +177,150 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EC%98%A4%ED%86%A0%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
+      <meta itemprop="name" content="Hong3">
+      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hong3의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/Swift-%EC%98%A4%ED%86%A0%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83/" class="post-title-link" itemprop="url">Swift 오토레이아웃</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">작성일</span>
+
+              <time title="Post created: 2019-12-12 21:39:59" itemprop="dateCreated datePublished" datetime="2019-12-12T21:39:59+09:00">2019-12-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Updated at: 2020-06-21 17:16:01" itemprop="dateModified" datetime="2020-06-21T17:16:01+09:00">2020-06-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/12/Swift-%EC%98%A4%ED%86%A0%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-오토레이아웃/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="frame-based-layout"><a class="markdownIt-Anchor" href="#frame-based-layout"></a> Frame Based Layout</h1>
+<p>프레임 기반의 프로프래밍 방식</p>
+<ul>
+<li>원점의 위치와 크기를 통해 영역 계산</li>
+<li>가장 유연하며 빠른 성능</li>
+<li>모든 뷰에 대해 개별적 설정,관리가 필요</li>
+<li>동적인 변화에 대한 설계,디버그,유지보수등에 많은 시간을 투자</li>
+</ul>
+<h2 id="frame-based-layout-for-programmatically"><a class="markdownIt-Anchor" href="#frame-based-layout-for-programmatically"></a> Frame Based Layout for Programmatically</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> redView = <span class="type">UIView</span>()</span><br><span class="line">    <span class="keyword">let</span> blueView = <span class="type">UIView</span>()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        redView.backgroundColor = .systemRed</span><br><span class="line">        view.addSubview(redView)</span><br><span class="line">        blueView.backgroundColor = .systemIndigo</span><br><span class="line">        view.addSubview(blueView)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewSafeAreaInsetsDidChange</span><span class="params">()</span></span> &#123;</span><br><span class="line">        setUpViewFrame()</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">setUpViewFrame</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">let</span> safeArea = view.safeAreaInsets</span><br><span class="line">        <span class="keyword">let</span> margin: <span class="type">CGFloat</span> = <span class="number">20</span></span><br><span class="line">        <span class="keyword">let</span> padding: <span class="type">CGFloat</span> = <span class="number">10</span></span><br><span class="line">        <span class="keyword">let</span> yOffset = safeArea.top + margin</span><br><span class="line">        <span class="keyword">let</span> safeAreaWidthOffset = safeArea.<span class="keyword">left</span> + safeArea.<span class="keyword">right</span></span><br><span class="line">        <span class="keyword">let</span> viewWidth = (view.frame.width - padding - safeAreaWidthOffset) / <span class="number">2</span> - margin</span><br><span class="line">        <span class="keyword">let</span> viewHeight = view.frame.height - yOffset - (safeArea.bottom + margin)</span><br><span class="line">        </span><br><span class="line">        redView.frame = <span class="type">CGRect</span>(</span><br><span class="line">            x: safeArea.<span class="keyword">left</span> + margin,</span><br><span class="line">            y: yOffset,</span><br><span class="line">            width: viewWidth,</span><br><span class="line">            height: viewHeight</span><br><span class="line">        )</span><br><span class="line">        blueView.frame = <span class="type">CGRect</span>(x: redView.frame.maxX + padding, y: yOffset, width: redView.bounds.width, height: redView.bounds.height)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="viewsafeareainsetsdidchange"><a class="markdownIt-Anchor" href="#viewsafeareainsetsdidchange"></a> ViewSafeAreaInsetsDidChange</h2>
+<ul>
+<li>뷰가 로드 될때 SafeArea의 크기를 얻는곳</li>
+<li>해당 시점에 레이아웃을 그려줘야 safeArea의 크기를 얻을 수있으므로 해당타이밍에 UI를 그리는 부분을 수행해 주었다.</li>
+</ul>
+<h1 id="autolayout"><a class="markdownIt-Anchor" href="#autolayout"></a> AutoLayout</h1>
+<p>제약 조건을 이용해 유저 인터페이스 정의<br />
+View간의 관계 설정을 통한 크기와 위치 계산<br />
+내/외부 변경사항에 동적으로 반응<br />
+Frame 기반에 비해 느린 성능</p>
+<ul>
+<li>뷰에 주어진 제약조건에 따라 뷰의 크기와 위치를 동적으로 계산해 배치하는 것</li>
+<li>외부 또는 내부의 변화에 동적으로 반응하여 유저 인터페이스 구성</li>
+</ul>
+<h2 id="외적-변화-요소"><a class="markdownIt-Anchor" href="#외적-변화-요소"></a> 외적 변화 요소</h2>
+<ul>
+<li>서로 다른 기기 및 스크린 크기</li>
+<li>기기 회전</li>
+<li>iPad / iPhone등에서 split View</li>
+</ul>
+<h2 id="내적-변화-요소"><a class="markdownIt-Anchor" href="#내적-변화-요소"></a> 내적 변화 요소</h2>
+<ul>
+<li>앱에서 보여지는 컨텐츠의 변화</li>
+<li>국제화 지원 (언어별 지원) -&gt; 글자의 길이가 변하거나, 날짜등</li>
+<li>Dynamic Type지원 (글꼴 크기)</li>
+</ul>
+<h2 id="autolayout-for-programmatically"><a class="markdownIt-Anchor" href="#autolayout-for-programmatically"></a> AutoLayout for Programmatically</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> blackView = <span class="type">UIView</span>()</span><br><span class="line">    <span class="keyword">let</span> greenView = <span class="type">UIView</span>()</span><br><span class="line">    <span class="keyword">let</span> yellowView = <span class="type">UIView</span>()</span><br><span class="line">    <span class="keyword">let</span> cyanView = <span class="type">UIView</span>()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line"><span class="comment">//      setUpViewAutoLayout()</span></span><br><span class="line">        setUpViewAutoLayoutPractice()</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">setUpViewAutoLayout</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">let</span> layoutGuide = view.safeAreaLayoutGuide</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> margin: <span class="type">CGFloat</span> = <span class="number">20</span></span><br><span class="line">        </span><br><span class="line">        redView.translatesAutoresizingMaskIntoConstraints = <span class="literal">false</span></span><br><span class="line">        </span><br><span class="line">        redView.topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        redView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor,constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        redView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor,constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        redView.trailingAnchor.constraint(equalTo: blueView.leadingAnchor,constant: -<span class="number">10</span>).isActive = <span class="literal">true</span></span><br><span class="line">        </span><br><span class="line">        redView.widthAnchor.constraint(equalTo: blueView.widthAnchor, multiplier: <span class="number">1</span>).isActive = <span class="literal">true</span></span><br><span class="line">        </span><br><span class="line">        blueView.translatesAutoresizingMaskIntoConstraints = <span class="literal">false</span></span><br><span class="line">        </span><br><span class="line">        blueView.topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        blueView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        blueView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">autoSize</span><span class="params">(origin: UIView, target: UIView)</span></span> &#123;</span><br><span class="line">        target.widthAnchor.constraint(equalTo: origin.widthAnchor, multiplier: <span class="number">1</span>).isActive = <span class="literal">true</span></span><br><span class="line">        target.heightAnchor.constraint(equalTo: origin.heightAnchor, multiplier: <span class="number">1</span>).isActive = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">setUpViewAutoLayoutPractice</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">let</span> views: [<span class="type">UIView</span>: <span class="type">UIColor</span>] = [blackView: .black, greenView: .green, yellowView: .systemYellow, cyanView: .cyan]</span><br><span class="line">        <span class="keyword">let</span> margin: <span class="type">CGFloat</span> = <span class="number">10</span></span><br><span class="line">        <span class="keyword">let</span> layoutGuide = view.safeAreaLayoutGuide</span><br><span class="line">                </span><br><span class="line">        <span class="keyword">for</span> key <span class="keyword">in</span> views.keys &#123;</span><br><span class="line">            key.backgroundColor = views[key]</span><br><span class="line">            view.addSubview(key)</span><br><span class="line">            key.translatesAutoresizingMaskIntoConstraints = <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 좌상</span></span><br><span class="line">        blackView.topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        blackView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        blackView.bottomAnchor.constraint(equalTo: yellowView.topAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//우상</span></span><br><span class="line">        greenView.topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        greenView.leadingAnchor.constraint(equalTo: blackView.trailingAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        greenView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        greenView.bottomAnchor.constraint(equalTo: cyanView.topAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//좌하</span></span><br><span class="line">        yellowView.topAnchor.constraint(equalTo: blackView.bottomAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        yellowView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        yellowView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//우하</span></span><br><span class="line">        cyanView.leadingAnchor.constraint(equalTo: yellowView.trailingAnchor, constant: margin).isActive = <span class="literal">true</span></span><br><span class="line">        cyanView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        cyanView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -margin).isActive = <span class="literal">true</span></span><br><span class="line">        </span><br><span class="line">        autoSize(origin: blackView, target: greenView)</span><br><span class="line">        autoSize(origin: blackView, target: yellowView)</span><br><span class="line">        autoSize(origin: blackView, target: cyanView)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="리뷰"><a class="markdownIt-Anchor" href="#리뷰"></a> 리뷰</h2>
+<p>처음에는 오토레이아웃이 마음처럼 되지 않아 힘들었다.</p>
+<p><code>setUpViewAutoLayout</code>함수는 두개의 <code>UIView</code>를 수평으로 두개를 그리는 함수이다.<br />
+<code>setUpViewAutoLayoutPractice</code>함수는 4개의 <code>UIView</code>를 동등한 크기를 잡아 4분면으로 뿌려주는 함수를 연습했다.</p>
+<p>그저 4개의 뷰를 뿌려주기만 하는 코드인데 상당히 길어져 나름대로 중복코드를 제거해보려고 했지만<br />
+막상 뷰를 그리는부분은 최적화를 하기가 힘들어서 손을 대지못했다.</p>
+<p>언젠가 현업에 가게된다면 해당 부분은 조금 더 고민을 해볼 여지가 있는문제로 남았다.</p>
+
+      
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4844823680997120"
+     data-ad-slot="8396675595"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
     <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%EC%88%AB%EC%9E%90%EC%95%BC%EA%B5%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -507,159 +651,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://hongdonghyun.github.io/2019/12/Swift-%ED%81%B4%EB%9E%98%EC%8A%A4-%EA%B5%AC%EC%A1%B0%EC%B2%B4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/28532674?s=460&v=4">
-      <meta itemprop="name" content="Hong3">
-      <meta itemprop="description" content="개발을 잘하고 싶읍니다">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hong3의 개발블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/Swift-%ED%81%B4%EB%9E%98%EC%8A%A4-%EA%B5%AC%EC%A1%B0%EC%B2%B4/" class="post-title-link" itemprop="url">Swift 클래스,구조체</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">작성일</span>
-              
-
-              <time title="Post created: 2019-12-09 13:12:16 / Updated at: 17:56:49" itemprop="dateCreated datePublished" datetime="2019-12-09T13:12:16+09:00">2019-12-09</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/12/Swift-%ED%81%B4%EB%9E%98%EC%8A%A4-%EA%B5%AC%EC%A1%B0%EC%B2%B4/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/Swift-클래스-구조체/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="클래스와-구조체"><a class="markdownIt-Anchor" href="#클래스와-구조체"></a> 클래스와 구조체</h1>
-<h2 id="언제-클래스와-구조체를-써야할까"><a class="markdownIt-Anchor" href="#언제-클래스와-구조체를-써야할까"></a> 언제 클래스와 구조체를 써야할까?</h2>
-<p><strong>애플의 권장사항</strong></p>
-<ul>
-<li>구조체를 기본으로 사용으로 사용한다는 전제</li>
-</ul>
-<h3 id="구조체-사용을-권장할-때"><a class="markdownIt-Anchor" href="#구조체-사용을-권장할-때"></a> 구조체 사용을 권장할 때</h3>
-<ul>
-<li>연관된 간단한 값의 집합을 캡슐화 하는 것만이 목적일 때</li>
-<li>캡슐화된 값이 참조되는 것보다 복사되는 것이 합당할 때</li>
-<li>구조체에 저장된 프로퍼티가 값 타입이며 참조되는 것보다 복사되는 것이 합당할 때</li>
-<li>다른 타입으로부터 상속받거나 자신이 상속될 필요가 없을 때</li>
-</ul>
-<h3 id="클래스를-사용해야-할-때"><a class="markdownIt-Anchor" href="#클래스를-사용해야-할-때"></a> 클래스를 사용해야 할 때</h3>
-<ul>
-<li>Objective-C와 호환성이 필요할 때</li>
-<li>equality(동등성) 외에 identity(정체성, 동일성)를 제어해야 할 때</li>
-<li>RC(Reference Counting)와 소멸자(deinitialization)가 필요할 때</li>
-<li>값이 중앙에서 관리되고 공유되어야 할 때</li>
-</ul>
-<h2 id="공통점"><a class="markdownIt-Anchor" href="#공통점"></a> 공통점</h2>
-<ul>
-<li>값을 저장하기 위한 프로퍼티</li>
-<li>기능을 제공하기 위한 메서드</li>
-<li>초기 상태를 설정하기 위한 생성자</li>
-<li>기본 구현에서 기능을 추가하기 위한 확장(Extension)</li>
-<li>특정 값에 접근할 수 있는 첨자(Subscript)</li>
-<li>특정한 기능을 수행하기 위한 프로토콜 채택</li>
-<li>Upper Camel Case 사용</li>
-</ul>
-<h2 id="차이점"><a class="markdownIt-Anchor" href="#차이점"></a> 차이점</h2>
-<ul>
-<li>구조체는 값타입 (Value Type)</li>
-<li>클래스는 참조타입 (Reference Type)</li>
-</ul>
-<h2 id="only-class"><a class="markdownIt-Anchor" href="#only-class"></a> Only Class</h2>
-<ul>
-<li>상속 (Inheritance)을 통해 다른 클래스의 특성을 이어받을 수 있다</li>
-<li>해제함수(deinitializer)를 사용해 사용한 자원을 반환할 수 있다</li>
-<li>참조 카운팅(Reference counting)을 통해 한 클래스 인스턴스를 여러 군데에서 참조(사용)할 수 있다</li>
-</ul>
-<h1 id="생성자-비교"><a class="markdownIt-Anchor" href="#생성자-비교"></a> 생성자 비교</h1>
-<h2 id="저장-프로퍼티-중-일부에만-초기화-값이-있을-때"><a class="markdownIt-Anchor" href="#저장-프로퍼티-중-일부에만-초기화-값이-있을-때"></a> 저장 프로퍼티 중 일부에만 초기화 값이 있을 때</h2>
-<h3 id="struct"><a class="markdownIt-Anchor" href="#struct"></a> struct</h3>
-<ul>
-<li>초기화 값이 없는 저장 프로퍼티에 대해서만 생성자로 전달</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">UserStruct3</span> </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> name: <span class="type">String</span> = <span class="string">"홍길동"</span></span><br><span class="line">  <span class="keyword">let</span> age: <span class="type">Int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> userS3 = <span class="type">UserStruct3</span>(age: <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="class"><a class="markdownIt-Anchor" href="#class"></a> class</h3>
-<ul>
-<li>저장 프로퍼티 중 하나라도 초기화 값이 없는 경우 생성자를 구현해야 함</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserClass3</span> </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> name: <span class="type">String</span> = <span class="string">"홍길동"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//  let age: Int</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="프로퍼티-변경"><a class="markdownIt-Anchor" href="#프로퍼티-변경"></a> 프로퍼티 변경</h2>
-<h3 id="struct-2"><a class="markdownIt-Anchor" href="#struct-2"></a> struct</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PointStruct</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 프로퍼티 변경시 mutating사용</span></span><br><span class="line">    <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">updateX</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.x = <span class="number">5</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 연산 프로퍼티의 setter는 기본적으로 mutating</span></span><br><span class="line">    <span class="keyword">var</span> updateProperty: <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123; x &#125;</span><br><span class="line">        <span class="keyword">set</span> &#123; x = newValue &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="class-2"><a class="markdownIt-Anchor" href="#class-2"></a> class</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PointClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 클래스에서는 mutating을 사용하지 않는다.</span></span><br><span class="line">    <span class="comment">// 값타입일 경우 Mutating 사용</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">updateX</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.x = <span class="number">5</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="프로토콜-적용"><a class="markdownIt-Anchor" href="#프로토콜-적용"></a> 프로토콜 적용</h2>
-<h3 id="struct-3"><a class="markdownIt-Anchor" href="#struct-3"></a> struct</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Mutate</span> </span>&#123;</span><br><span class="line">      <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">mutatingUpdate</span><span class="params">()</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PointStruct1</span>: <span class="title">Mutate</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">mutatingUpdate</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.x = <span class="number">5</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 디스플레이 광고 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4844823680997120"
-     data-ad-slot="8396675595"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -731,20 +722,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">80</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">98</span>
+        <span class="site-state-item-count">100</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
